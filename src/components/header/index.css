@@ -1,0 +1,14 @@
+.header {
+  position: fixed;
+  z-index: 9;
+  height: 45px;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.header h4 {
+  height: 100%;
+  margin: 0;
+  margin-left: 2%;
+  line-height: 45px;
+}
