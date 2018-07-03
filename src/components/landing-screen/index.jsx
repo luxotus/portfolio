@@ -1,4 +1,5 @@
 import React from 'react';
+import BackgroundParticles from '../background-particles/index.jsx';
 import './index.css';
 
 export default class LandingScreen extends React.Component {
@@ -9,8 +10,8 @@ export default class LandingScreen extends React.Component {
 
   render() {
     return (
-      <div className="landing-screen">
-        {/* TODO */}
+      <div id="landing-screen">
+        <BackgroundParticles />
       </div>
     );
   }
