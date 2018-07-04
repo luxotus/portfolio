@@ -19,8 +19,11 @@
       padding: 5px 20px;
       border: none;
       border-radius: 5px;
+      background-color: #fff;
       font-size: 1.25em;
       cursor: pointer;
       outline: none; }
     #sites-container li button:hover {
-      background-color: #43b0ff; }
+      color: #0f89e2de; }
+  #sites-container li.active button {
+    color: #0f89e2de; }
