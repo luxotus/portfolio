@@ -1,9 +1,13 @@
+$menu-color: #fff;
+$border-color: #efefef;
+$overlay-color: #000;
+
  #menu-side-wrapper {
   position: absolute;
   left: 0;
   height: 100vh;
   width: 0;
-  background-color: #000;
+  background-color: $overlay-color;
   opacity: .5;
   transition-duration: 1s;
  }
@@ -20,8 +24,8 @@
   z-index: 1;
   height: 100vh;
   width: 250px;
-  border-left: solid 1px #efefef;
-  background-color: #fff;
+  border-left: solid 1px $border-color;
+  background-color: $menu-color;
   transition-duration: 1s;
   transform: translateX(250px);
 

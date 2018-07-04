@@ -15,8 +15,10 @@ export default class MenuButton extends React.Component {
 
   toggleState() {
     const menuId = document.getElementById(this.state.menuBtnId);
-    menuId.classList.toggle('menu-close-btn');
-    this.setState({ isOpen: menuId.classList.contains('menu-close-btn') ? 'open-menu' : '' });
+    const closeBtnClass = 'menu-close-btn';
+
+    menuId.classList.toggle(closeBtnClass);
+    this.setState({ isOpen: menuId.classList.contains(closeBtnClass) ? 'open-menu' : '' });
   }
 
   render() {
