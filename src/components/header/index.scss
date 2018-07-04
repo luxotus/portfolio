@@ -3,10 +3,11 @@
   z-index: 9;
   height: 45px;
   width: 100vw;
-  background-color: #fff;
 
   h4 {
+    float: left;
     height: 100%;
+    width: fit-content;
     margin: 0;
     margin-left: 2%;
     line-height: 45px;

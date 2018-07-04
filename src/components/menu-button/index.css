@@ -1,0 +1,23 @@
+#menu-btn-container {
+  display: block;
+  float: right;
+  margin-top: 5px;
+  margin-right: 2%;
+  cursor: pointer; }
+  #menu-btn-container div {
+    height: 5px;
+    width: 35px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s; }
+
+.menu-close div:nth-child(1) {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px); }
+
+.menu-close div:nth-child(2) {
+  opacity: 0; }
+
+.menu-close div:nth-child(3) {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px); }

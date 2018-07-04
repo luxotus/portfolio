@@ -1,4 +1,5 @@
 import React from 'react';
+import MenuButton from '../menu-button/index.jsx';
 import './index.css';
 
 export default class Header extends React.Component {
@@ -8,6 +9,7 @@ export default class Header extends React.Component {
         <h4>
           {'Felix Manuel'}
         </h4>
+        <MenuButton />
       </div>
     );
   }
