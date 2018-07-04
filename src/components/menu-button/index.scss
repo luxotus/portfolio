@@ -1,4 +1,6 @@
 #menu-btn-container {
+  position: relative;
+  z-index: 2;
   display: block;
   float: right;
   margin-top: 5px;
@@ -6,24 +8,24 @@
   cursor: pointer;
 
   div {
-    height: 5px;
-    width: 35px;
+    height: 3px;
+    width: 25px;
     background-color: #333;
-    margin: 6px 0;
+    margin: 4px 0;
     transition: 0.4s;
   }
 }
 
 .menu-close {
   div:nth-child(1) {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-    transform: rotate(-45deg) translate(-9px, 6px) ;
+    -webkit-transform: rotate(-45deg) translate(-3px, 6px);
+    transform: rotate(-45deg) translate(-3px, 6px);
   }
   div:nth-child(2) {
     opacity: 0;
   }
   div:nth-child(3) {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
+    -webkit-transform: rotate(45deg) translate(-4px, -7px);
+    transform: rotate(45deg) translate(-4px, -7px);
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Menu from '../menu/index.jsx';
 import './index.css';
 
 export default class MenuButton extends React.Component {
@@ -19,16 +20,19 @@ export default class MenuButton extends React.Component {
 
   render() {
     return (
-      <div
-        id="menu-btn-container"
-        data-isopen={this.state.isOpen}
-        role="presentation"
-        onClick={this.toggleState}
-        onKeyDown={this.toggleState}
-      >
-        <div />
-        <div />
-        <div />
+      <div>
+        <div
+          id="menu-btn-container"
+          data-isopen={this.state.isOpen}
+          role="presentation"
+          onClick={this.toggleState}
+          onKeyDown={this.toggleState}
+        >
+          <div />
+          <div />
+          <div />
+        </div>
+        <Menu />
       </div>
     );
   }
