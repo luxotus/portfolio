@@ -13,13 +13,16 @@
     margin: 4px 0;
     transition: 0.4s; }
 
-.menu-close div:nth-child(1) {
+#menu-btn-container:hover div {
+  background-color: #0f89e2de; }
+
+.menu-close-btn div:nth-child(1) {
   -webkit-transform: rotate(-45deg) translate(-3px, 6px);
   transform: rotate(-45deg) translate(-3px, 6px); }
 
-.menu-close div:nth-child(2) {
+.menu-close-btn div:nth-child(2) {
   opacity: 0; }
 
-.menu-close div:nth-child(3) {
+.menu-close-btn div:nth-child(3) {
   -webkit-transform: rotate(45deg) translate(-4px, -7px);
   transform: rotate(45deg) translate(-4px, -7px); }

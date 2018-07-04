@@ -1,3 +1,19 @@
+ #menu-side-wrapper {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 0;
+  background-color: #000;
+  opacity: .5;
+  transition-duration: 1s;
+ }
+
+ .open-menu #menu-side-wrapper {
+  cursor: pointer;
+  width: calc(100vw - 250px);
+  transition-duration: 1s;
+ }
+
 .menu-container {
   position: absolute;
   right: 0;
@@ -12,6 +28,7 @@
   ul {
     margin-top: 35px;
     padding-top: 60%;
+    padding-left: 30px;
     list-style: none;
   }
 
@@ -22,11 +39,16 @@
 
   a {
     text-decoration: none;
+    text-transform: capitalize;
     color: #373737;
+  }
+
+  a:hover {
+    color: #0f89e2de;
   }
 }
 
-.menu-container.open {
+.open-menu .menu-container {
   transition-duration: 1s;
   transform: translateX(0px);
 }

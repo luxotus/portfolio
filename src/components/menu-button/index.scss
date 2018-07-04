@@ -16,7 +16,11 @@
   }
 }
 
-.menu-close {
+#menu-btn-container:hover div {
+  background-color: #0f89e2de;
+}
+
+.menu-close-btn {
   div:nth-child(1) {
     -webkit-transform: rotate(-45deg) translate(-3px, 6px);
     transform: rotate(-45deg) translate(-3px, 6px);
