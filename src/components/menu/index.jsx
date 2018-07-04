@@ -13,11 +13,18 @@ export default class Menu extends React.Component {
         'open source',
       ],
     };
+    this.changeMenuState = this.changeMenuState.bind(this);
+  }
+
+  changeMenuState(isOpen) {
+    if (isOpen) {
+      console.log('test');
+    }
   }
 
   render() {
     return (
-      <div className="menu-container">
+      <div className={`menu-container ${this.props.isOpen}`}>
         <ul>
           {this.state.items.map(item => (
             <li key={item}>

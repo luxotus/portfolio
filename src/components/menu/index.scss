@@ -6,6 +6,8 @@
   width: 250px;
   border-left: solid 1px #efefef;
   background-color: #fff;
+  transition-duration: 1s;
+  transform: translateX(250px);
 
   ul {
     margin-top: 35px;
@@ -22,6 +24,11 @@
     text-decoration: none;
     color: #373737;
   }
+}
+
+.menu-container.open {
+  transition-duration: 1s;
+  transform: translateX(0px);
 }
 
 .icon-container {

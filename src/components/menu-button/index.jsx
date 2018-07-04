@@ -6,7 +6,7 @@ export default class MenuButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
+      isOpen: '',
     };
 
     this.toggleState = this.toggleState.bind(this);
@@ -15,7 +15,7 @@ export default class MenuButton extends React.Component {
   toggleState() {
     const menuId = document.getElementById('menu-btn-container');
     menuId.classList.toggle('menu-close');
-    this.setState({ isOpen: menuId.classList.contains('menu-close') });
+    this.setState({ isOpen: menuId.classList.contains('menu-close') ? 'open' : '' });
   }
 
   render() {
@@ -23,7 +23,6 @@ export default class MenuButton extends React.Component {
       <div>
         <div
           id="menu-btn-container"
-          data-isopen={this.state.isOpen}
           role="presentation"
           onClick={this.toggleState}
           onKeyDown={this.toggleState}
@@ -32,7 +31,7 @@ export default class MenuButton extends React.Component {
           <div />
           <div />
         </div>
-        <Menu />
+        <Menu {...this.state} />
       </div>
     );
   }
