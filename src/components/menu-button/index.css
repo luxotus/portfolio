@@ -26,3 +26,8 @@
 .menu-close-btn div:nth-child(3) {
   -webkit-transform: rotate(45deg) translate(-4px, -7px);
   transform: rotate(45deg) translate(-4px, -7px); }
+
+/* Mobile */
+@media only screen and (max-device-width: 740px) {
+  #menu-btn-container:hover div {
+    background-color: #333; } }

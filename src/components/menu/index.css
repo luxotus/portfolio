@@ -50,3 +50,19 @@
     padding-left: 5%;
     padding-right: 5%;
     font-size: 1.75em; }
+
+/* Portrait */
+@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+  .menu-container ul {
+    margin-top: 0; } }
+
+/* Mobile Landscape */
+@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  .menu-container ul {
+    margin-top: 0;
+    padding-top: 65px; }
+  .menu-container li a {
+    font-size: 1.5em;
+    line-height: 1.75em; }
+  .icon-container {
+    bottom: 10px; } }

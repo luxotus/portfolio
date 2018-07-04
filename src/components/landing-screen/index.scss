@@ -17,3 +17,36 @@
     font-size: 1.75em;
   }
 }
+
+/* Mobile Portrait */
+@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+    #landing-text-holder {
+      width: 80%;
+
+      h1 {
+        font-size: 3em;
+        line-height: 1.25em;
+        margin-top: 45%;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+}
+
+/* Mobile Landscape */
+@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  #landing-text-holder {
+    width: 75%;
+
+    h1 {
+      margin-top: 10%;
+      font-size: 3.5em;
+    }
+
+    p {
+      font-size: 1.25em;
+    }
+  }
+}
