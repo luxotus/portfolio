@@ -1,0 +1,39 @@
+$background-color: #fff;
+
+#sites-container {
+  height: 100vh;
+  width: 100%;
+  background-color: $background-color;
+
+  h1 {
+    margin: 0;
+    padding-top: 75px;
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+
+    button {
+      padding: 5px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.25em;
+      cursor: pointer;
+      outline: none;
+    }
+
+    button:hover {
+      background-color: #43b0ff;
+    }
+  }
+}
