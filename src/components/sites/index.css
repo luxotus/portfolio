@@ -1,14 +1,16 @@
 #sites-container {
-  height: 100vh;
-  width: 100%;
+  width: inherit;
+  padding: 0 10px;
   background-color: #fff; }
   #sites-container h1 {
     margin: 0;
     padding-top: 75px;
+    padding-bottom: 25px;
     font-size: 2.5em;
     text-align: center; }
   #sites-container ul {
     padding-left: 0;
+    margin-bottom: 50px;
     list-style: none;
     text-align: center; }
   #sites-container li {
@@ -27,3 +29,22 @@
       color: #0f89e2de; }
   #sites-container li.active button {
     color: #0f89e2de; }
+
+.sites-section {
+  display: inline-block;
+  padding-bottom: 50px; }
+
+.sites-item {
+  position: relative;
+  display: block;
+  float: left;
+  width: 29.3%;
+  padding: 0 25px;
+  margin-bottom: 50px; }
+  .sites-item .item-overlay {
+    display: none; }
+  .sites-item .item-image {
+    box-shadow: 1px 3px 12px 0 rgba(0, 0, 0, 0.11); }
+  .sites-item img {
+    display: block;
+    width: 100%; }
