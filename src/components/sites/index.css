@@ -48,3 +48,15 @@
   .sites-item img {
     display: block;
     width: 100%; }
+
+.sites-item:hover .item-overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: calc(100% - 50px);
+  background-color: rgba(255, 255, 255, 0.86);
+  text-align: center;
+  font-size: 1.5em;
+  cursor: pointer; }
