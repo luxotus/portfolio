@@ -1,0 +1,10 @@
+#lab-container {
+  height: 100vh;
+  background-color: #181818;
+  color: white; }
+
+header {
+  height: 100px;
+  line-height: 100px; }
+  header h1 {
+    text-align: center; }

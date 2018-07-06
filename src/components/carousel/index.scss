@@ -1,0 +1,50 @@
+#carousel-container {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  width: 100%;
+  background-color: rgba(0, 255, 158, 0.09);
+
+  .floating-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .hidden-item {
+    height: 50px;
+    width: 100px;
+    background-color: rgb(0, 117, 252);
+  }
+
+  .hidden-item.left {
+    left: -100px;
+  }
+
+  .hidden-item.right {
+    right: -100px;
+  }
+
+  .side-item {
+    height: 200px;
+    width: 400px;
+    background-color: rgb(214, 160, 160);
+  }
+
+  .side-item.left {
+    left: -200px;
+  }
+
+  .side-item.right {
+    right: -200px;
+  }
+
+  .main-item {
+    left: 0;
+    right: 0;
+    height: 400px;
+    width: 600px;
+    background-color: #9fd6ea;
+  }
+}

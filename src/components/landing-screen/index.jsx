@@ -1,8 +1,9 @@
 import React from 'react';
-import BackgroundParticles from '../background-particles/index.jsx';
-import Header from '../header/index.jsx';
-import Sites from '../sites/index.jsx';
 import './index.css';
+import BackgroundParticles from '../background-particles';
+import Header from '../header';
+import Sites from '../sites';
+import Lab from '../lab';
 
 export default class LandingScreen extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class LandingScreen extends React.Component {
           <BackgroundParticles />
         </div>
         <Sites />
+        <Lab />
       </div>
     );
   }
