@@ -38,7 +38,7 @@
   position: relative;
   display: block;
   float: left;
-  width: 29.3%;
+  width: calc(33.33% - 50px);
   padding: 0 25px;
   margin-bottom: 50px; }
   .sites-item .item-overlay {
@@ -60,3 +60,24 @@
   text-align: center;
   font-size: 1.5em;
   cursor: pointer; }
+
+/* Mobile */
+@media only screen and (max-device-width: 740px) {
+  .sites-item {
+    width: calc(100% - 50px); }
+  #sites-container li button {
+    background-color: #ddd;
+    margin-bottom: 15%; }
+  #sites-container li button:hover {
+    color: #fff;
+    background-color: #0f89e2de; } }
+
+/* Tablet Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .sites-item {
+    width: calc(100% - 50px); } }
+
+/* Tablet Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .sites-item {
+    width: calc(50% - 50px); } }
