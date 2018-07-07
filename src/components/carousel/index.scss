@@ -5,6 +5,9 @@ $hidden-itm-width: 100px;
 $main-itm-height: 66.667%;
 $main-itm-width: 47.4989%;
 
+$bread-crumbs-color-default: #999;
+$bread-crumbs-color-active: #00f6ff;
+
 #carousel-container {
   position: relative;
   overflow: hidden;
@@ -88,11 +91,93 @@ $main-itm-width: 47.4989%;
   .hexagon {
     left: 0;
     right: 0;
-    margin: auto;
-    margin-top: 15px;
-    height: 20px;
     width: 20px;
-    background-color: aqua;
-    border-radius: 50%;
+    margin: auto;
+
+    .triangle {
+      height: 0;
+      width: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+    }
+  
+    .triangle.top {
+      border-bottom: 6px solid $bread-crumbs-color-default;
+    }
+  
+    .triangle.bottom {
+      border-top: 6px solid $bread-crumbs-color-default;
+    }
+  
+    .square.middle {
+      height: 7.3077px;
+      width: 16px;
+      background-color: $bread-crumbs-color-default;
+    }
+  }
+
+  .hexagon.active {
+    .triangle.top {
+      border-bottom-color: $bread-crumbs-color-active;
+    }
+    .triangle.bottom {
+      border-top-color: $bread-crumbs-color-active;
+    }
+    .square.middle {
+      background-color: $bread-crumbs-color-active;
+    }
+  }
+}
+
+/* Mobile Portrait */
+@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+  #lab-container {
+    height: inherit;
+  }
+  
+  #carousel-container {
+    .main-item {
+      height: 47.667%;
+      width: 77.4989%;
+    }
+    .side-item.left {
+      left: -($side-itm-width);
+    }
+
+    .side-item.right {
+      right: -($side-itm-width);
+    }
+  }
+}
+
+/* Mobile Landscape */
+@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  #lab-container {
+    height: inherit;
+  }
+
+  #carousel-container {
+    height: 379px;
+
+    .side-item.left {
+      left: -(($side-itm-width / 2) + $side-itm-width/4);
+    }
+
+    .side-item.right {
+      right: -(($side-itm-width / 2) + $side-itm-width/4);
+    }
+  }
+}
+
+/* Tablet Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #carousel-container {
+    .side-item.left {
+      left: -(($side-itm-width / 2) + ($side-itm-width / 2)/4);
+    }
+
+    .side-item.right {
+      right: -(($side-itm-width / 2) + ($side-itm-width / 2)/4);
+    }
   }
 }

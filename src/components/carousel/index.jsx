@@ -29,7 +29,11 @@ export default class Carousel extends React.Component {
           <div id="right-hidden-item" className="floating-item hidden-item right" />
         </div>
         <div id="bread-crumbs">
-          <div className="hexagon"></div>
+          <div className="hexagon">
+            <div className="triangle top" />
+            <div className="square middle" />
+            <div className="triangle bottom" />
+          </div>
         </div>
       </div>
 

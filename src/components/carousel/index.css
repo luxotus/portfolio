@@ -56,9 +56,54 @@
   #bread-crumbs .hexagon {
     left: 0;
     right: 0;
-    margin: auto;
-    margin-top: 15px;
-    height: 20px;
     width: 20px;
-    background-color: aqua;
-    border-radius: 50%; }
+    margin: auto; }
+    #bread-crumbs .hexagon .triangle {
+      height: 0;
+      width: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent; }
+    #bread-crumbs .hexagon .triangle.top {
+      border-bottom: 6px solid #999; }
+    #bread-crumbs .hexagon .triangle.bottom {
+      border-top: 6px solid #999; }
+    #bread-crumbs .hexagon .square.middle {
+      height: 7.3077px;
+      width: 16px;
+      background-color: #999; }
+  #bread-crumbs .hexagon.active .triangle.top {
+    border-bottom-color: #00f6ff; }
+  #bread-crumbs .hexagon.active .triangle.bottom {
+    border-top-color: #00f6ff; }
+  #bread-crumbs .hexagon.active .square.middle {
+    background-color: #00f6ff; }
+
+/* Mobile Portrait */
+@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+  #lab-container {
+    height: inherit; }
+  #carousel-container .main-item {
+    height: 47.667%;
+    width: 77.4989%; }
+  #carousel-container .side-item.left {
+    left: -400px; }
+  #carousel-container .side-item.right {
+    right: -400px; } }
+
+/* Mobile Landscape */
+@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  #lab-container {
+    height: inherit; }
+  #carousel-container {
+    height: 379px; }
+    #carousel-container .side-item.left {
+      left: -300px; }
+    #carousel-container .side-item.right {
+      right: -300px; } }
+
+/* Tablet Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #carousel-container .side-item.left {
+    left: -250px; }
+  #carousel-container .side-item.right {
+    right: -250px; } }
