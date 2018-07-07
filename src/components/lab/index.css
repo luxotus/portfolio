@@ -1,10 +1,7 @@
 #lab-container {
-  height: 100vh;
+  padding: 100px 0;
   background-color: #181818;
   color: white; }
-
-header {
-  height: 100px;
-  line-height: 100px; }
-  header h1 {
+  #lab-container header h1 {
+    margin: 0;
     text-align: center; }

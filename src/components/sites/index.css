@@ -1,10 +1,11 @@
 #sites-container {
   width: inherit;
   padding: 0 10px;
+  padding-bottom: 100px;
   background-color: #fff; }
   #sites-container h1 {
     margin: 0;
-    padding-top: 75px;
+    padding-top: 100px;
     padding-bottom: 25px;
     font-size: 2.5em;
     text-align: center; }
@@ -31,8 +32,7 @@
     color: #0f89e2de; }
 
 .sites-section {
-  display: inline-block;
-  padding-bottom: 50px; }
+  display: inline-block; }
 
 .sites-item {
   position: relative;
