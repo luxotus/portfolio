@@ -1,0 +1,21 @@
+#osp-container {
+  height: 100vh;
+  padding: 75px 0;
+  background-color: antiquewhite; }
+  #osp-container header h1 {
+    padding-bottom: 50px;
+    margin: 0;
+    text-align: center; }
+
+#osp-wrapper {
+  display: grid;
+  grid-template-columns: 31.4% 31.4% 31.4%;
+  grid-gap: 30px;
+  width: 80%;
+  margin: 0 auto; }
+  #osp-wrapper .item {
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff; }

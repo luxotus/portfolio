@@ -4,6 +4,7 @@ import BackgroundParticles from '../background-particles';
 import Header from '../header';
 import Sites from '../sites';
 import Lab from '../lab';
+import OpenSourceProjects from '../open-source-projects';
 
 export default class LandingScreen extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ export default class LandingScreen extends React.Component {
         </div>
         <Sites />
         <Lab />
+        <OpenSourceProjects />
       </div>
     );
   }
