@@ -1,23 +1,99 @@
-$text-color: #373737;
-$hover-text-color: #0f89e2de;
+$primary-color: #373737;
+$secondary-color: #0f89e2de;
+$bread-crumb-section-height: 50px;
+$dot-size: 15px;
+$arrow-section-height: 300px;
+$arrow-size: 25px;
 
 #blog-container {
-  height: 100vh;
+  position: relative;
+  display: inline-block;
+  padding: 150px 0;
 
   .blog-sections {
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 300px;
     width: 50%;
     float: left;
+  }
+
+  .arrow-section {
+    position: absolute;
+    top: -($bread-crumb-section-height * 2);
+    bottom: 0;
+    height: $arrow-section-height;
+    width: 50px;
+    margin: auto;
+    cursor: pointer;
+  }
+
+  .arrow {
+    height: $arrow-size;
+    width: $arrow-size;
+    margin-top: $arrow-section-height / 2 - $arrow-size;
+    transform: rotate(45deg);
+  }
+
+  .arrow-section.left {
+    left: 0;
+
+    .arrow {
+      margin-left: $arrow-size * 0.66;
+      border-left: 2px solid $primary-color;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+
+  .arrow-section.right {
+    right: 0;
+
+    .arrow {
+      margin-left: $arrow-size * 0.22;
+      border-top: 2px solid $primary-color;
+      border-right: 2px solid $primary-color;
+    }
+  }
+
+  .arrow-section:hover .arrow {
+    border-color: $secondary-color;
+  }
+
+
+
+  .bread-crumbs {
+    position: relative;
+    display: inline-block;
+    height: $bread-crumb-section-height;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .dot-section {
+    width: $dot-size * 5;
+    margin: ($bread-crumb-section-height/2 - $dot-size/2) auto;
+  }
+
+  .dot {
+    float: left;
+    height: $dot-size;
+    width: $dot-size;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: $primary-color;
+    cursor: pointer;
+  }
+
+  .dot:hover,
+  .dot.active {
+    background-color: $secondary-color;
   }
 }
 
 #blog-left-section {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  background-color: rgb(235, 235, 235);
-  color: $text-color;
+  color: $primary-color;
 
   .pad {
     padding-left: 25%;
@@ -37,16 +113,31 @@ $hover-text-color: #0f89e2de;
   }
 
   a {
-    color: $text-color;
     text-decoration: none;
-    font-size: 1.25em;
+    display: inline-block;
   }
 
-  a:hover {
-    color: $hover-text-color;
+  button {
+    padding: 12px 24px;
+    border: none;
+    font-size: 1em;
+    color: white;
+    background-color: $primary-color;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: $secondary-color;
   }
 }
 
 #blog-right-section {
-  background-color: rgb(173, 173, 173);
+  .pad {
+    padding-left: 5%;
+    padding-right: 10%;
+  }
+
+  img {
+    max-width: 100%;
+  }
 }
