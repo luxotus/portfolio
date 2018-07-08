@@ -3,7 +3,7 @@ $grid-column-width: 31.4%;
 #osp-container {
   height: 100vh;
   padding: 75px 0;
-  background-color: antiquewhite;
+  background-color: #fff;
 
   header h1 {
     padding-bottom: 50px;
@@ -23,7 +23,20 @@ $grid-column-width: 31.4%;
     height: 200px;
     padding: 20px;
     border-radius: 5px;
-    background-color: #444;
-    color: #fff;
+    border: 1px solid #eeeeee;
+    background-color: #fff;
+    color: #373737;
+    box-shadow: 1px 3px 12px 0 rgba(0, 0, 0, 0.11);
+    text-align: center;
+
+    h3 {
+      font-size: 1.5em;
+    }
+
+    a {
+      color: #373737;
+      font-size: 1.75em;
+      text-decoration: none;
+    }
   }
 }

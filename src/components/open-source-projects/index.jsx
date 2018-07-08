@@ -11,7 +11,15 @@ export default class OpenSourceProjects extends React.Component {
           </h1>
         </header>
         <div id="osp-wrapper">
-          <div className="item" />
+          <div className="item">
+            <h3>
+              {'Color Blindness Tool'}
+            </h3>
+            <p>
+              {'Simple test to see how this section would look if it had content in this area. Which would be really great once I add it.'}
+            </p>
+            <a href="https://github.com/luxotus" className="icon-github" />
+          </div>
           <div className="item" />
           <div className="item" />
 
