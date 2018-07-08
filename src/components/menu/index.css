@@ -51,7 +51,7 @@
     padding-right: 5%;
     font-size: 1.75em; }
 
-/* Portrait */
+/* Mobile Portrait */
 @media only screen and (max-device-width: 740px) and (orientation: portrait) {
   .menu-container ul {
     margin-top: 0; } }

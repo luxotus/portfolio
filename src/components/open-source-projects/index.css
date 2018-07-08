@@ -1,5 +1,4 @@
 #osp-container {
-  height: 100vh;
   padding: 75px 0;
   background-color: #fff; }
   #osp-container header h1 {
@@ -9,12 +8,11 @@
 
 #osp-wrapper {
   display: grid;
-  grid-template-columns: 31.4% 31.4% 31.4%;
+  grid-template-columns:  31.4% 31.4% 31.4%;
   grid-gap: 30px;
   width: 80%;
   margin: 0 auto; }
   #osp-wrapper .item {
-    height: 200px;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #eeeeee;
@@ -28,3 +26,21 @@
       color: #373737;
       font-size: 1.75em;
       text-decoration: none; }
+    #osp-wrapper .item a:hover {
+      color: #0f89e2de; }
+
+/* Mobile */
+@media only screen and (max-device-width: 740px) {
+  #osp-wrapper {
+    grid-template-columns:  100%; } }
+
+/* Mobile Landscape */
+@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  #osp-wrapper {
+    grid-template-columns:  100%;
+    width: 50%; } }
+
+/* Tablet Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #osp-wrapper {
+    grid-template-columns:  47.4% 47.4%; } }

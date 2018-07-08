@@ -20,12 +20,52 @@ export default class OpenSourceProjects extends React.Component {
             </p>
             <a href="https://github.com/luxotus" className="icon-github" />
           </div>
-          <div className="item" />
-          <div className="item" />
+          <div className="item">
+            <h3>
+              {'Color Contrast Tool'}
+            </h3>
+            <p>
+              {'Simple test to see how this section would look if it had content in this area. Which would be really great once I add it.'}
+            </p>
+            <a href="https://github.com/luxotus" className="icon-github" />
+          </div>
+          <div className="item">
+            <h3>
+              {'VR Animation'}
+            </h3>
+            <p>
+              {'Simple test to see how this section would look if it had content in this area. Which would be really great once I add it.'}
+            </p>
+            <a href="https://github.com/luxotus" className="icon-github" />
+          </div>
 
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
+          <div className="item">
+            <h3>
+              {'Data Driven UI'}
+            </h3>
+            <p>
+              {'Simple test to see how this section would look if it had content in this area. Which would be really great once I add it.'}
+            </p>
+            <a href="https://github.com/luxotus" className="icon-github" />
+          </div>
+          <div className="item">
+            <h3>
+              {'Something Really Cool'}
+            </h3>
+            <p>
+              {'Simple test to see how this section would look if it had content in this area. Which would be really great once I add it.'}
+            </p>
+            <a href="https://github.com/luxotus" className="icon-github" />
+          </div>
+          <div className="item">
+            <h3>
+              {'Flying Doughnuts'}
+            </h3>
+            <p>
+              {'Simple test to see how this section would look if it had content in this area. Which would be really great once I add it.'}
+            </p>
+            <a href="https://github.com/luxotus" className="icon-github" />
+          </div>
         </div>
       </div>
     );
