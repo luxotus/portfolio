@@ -1,0 +1,52 @@
+$text-color: #373737;
+$hover-text-color: #0f89e2de;
+
+#blog-container {
+  height: 100vh;
+
+  .blog-sections {
+    height: 100%;
+    width: 50%;
+    float: left;
+  }
+}
+
+#blog-left-section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  background-color: rgb(235, 235, 235);
+  color: $text-color;
+
+  .pad {
+    padding-left: 25%;
+    padding-right: 5%;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 100;
+  }
+
+  p {
+    margin: 35px 0;
+    font-size: 1.1em;
+    line-height: 1.25em;
+  }
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 1.25em;
+  }
+
+  a:hover {
+    color: $hover-text-color;
+  }
+}
+
+#blog-right-section {
+  background-color: rgb(173, 173, 173);
+}

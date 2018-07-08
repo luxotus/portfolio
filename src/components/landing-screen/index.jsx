@@ -5,6 +5,7 @@ import Header from '../header';
 import Sites from '../sites';
 import Lab from '../lab';
 import OpenSourceProjects from '../open-source-projects';
+import Blog from '../blog';
 
 export default class LandingScreen extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ export default class LandingScreen extends React.Component {
         <Sites />
         <Lab />
         <OpenSourceProjects />
+        <Blog />
       </div>
     );
   }
