@@ -2,7 +2,7 @@
   width: inherit;
   padding: 0 10px;
   padding-bottom: 100px;
-  background-color: #fff;
+  background-color: #f3f3f3;
   color: #373737; }
   #sites-container h1 {
     margin: 0;
@@ -28,7 +28,7 @@
       padding: 5px 20px;
       border: none;
       border-radius: 5px;
-      background-color: #fff;
+      background-color: #f3f3f3;
       font-size: 1.25em;
       cursor: pointer;
       outline: none; }
