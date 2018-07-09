@@ -2,6 +2,14 @@ $background-color: #f3f3f3;
 $primary-color: #373737;
 $hover-color: #0f89e2de;
 
+@function build-grid-columns($column-width, $column-count) {
+  $grid-column: "";
+  @for $i from 0 to $column-count {
+    $grid-column: $grid-column + " " + $column-width;
+  }
+  @return unquote($grid-column);
+}
+
 #sites-container {
   width: inherit;
   padding: 0 10px;
@@ -59,16 +67,18 @@ $hover-color: #0f89e2de;
 }
 
 .sites-section {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: build-grid-columns(31.4%, 3);
+  grid-gap: 30px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .sites-item {
   position: relative;
   display: block;
   float: left;
-  width: calc(33.33% - 50px);
-  padding: 0 25px;
-  margin-bottom: 50px;
+  width: 100%;
 
   .item-overlay {
     display: none;
@@ -91,7 +101,7 @@ $hover-color: #0f89e2de;
     justify-content: center;
     flex-direction: column;
     height: 100%;
-    width: calc(100% - 50px);
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.86);
     text-align: center;
     font-size: 1.5em;
@@ -101,8 +111,8 @@ $hover-color: #0f89e2de;
 
 /* Mobile */
 @media only screen and (max-device-width: 740px) {
-  .sites-item {
-    width: calc(100% - 50px);
+  .sites-section {
+    grid-template-columns: build-grid-columns(100%, 1);
   }
 
   #sites-container li button {
@@ -116,16 +126,16 @@ $hover-color: #0f89e2de;
   }
 }
 
-/* Tablet Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .sites-item {
-    width: calc(100% - 50px);
+/* Mobile Landscape */
+@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  .sites-section {
+    width: 50%;
   }
 }
 
-/* Tablet Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .sites-item {
-    width: calc(50% - 50px);
+/* Tablet Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .sites-section {
+    grid-template-columns: build-grid-columns(47.4%, 2);
   }
 }

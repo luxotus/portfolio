@@ -61,8 +61,8 @@ $hover-text-color: #0f89e2de;
   }
 }
 
-/* Mobile */
-@media only screen and (max-device-width: 740px) {
+/* Mobile Portrait */
+@media only screen and (max-device-width: 740px) and (orientation: portrait) {
   #osp-wrapper {
     grid-template-columns: build-grid-columns(100%, 1);
   }
