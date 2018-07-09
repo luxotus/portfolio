@@ -34,7 +34,7 @@ export default class Menu extends React.Component {
           <ul>
             {this.state.items.map(item => (
               <li key={item}>
-                <a href={`#${item}`}>
+                <a href={`/${item.replace(' ', '-')}`}>
                   {item}
                 </a>
               </li>
