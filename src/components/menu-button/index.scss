@@ -1,12 +1,14 @@
 $button-color: #333;
 $hover-color: #0f89e2de;
+$header-height: 50px;
+$menu-btn-size: 25px;
 
 #menu-btn-container {
   position: relative;
   z-index: 2;
   display: block;
   float: right;
-  margin-top: 10px;
+  margin-top: ($header-height - $menu-btn-size) / 2;
   margin-right: 3%;
   cursor: pointer;
 

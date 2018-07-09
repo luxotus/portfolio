@@ -1,0 +1,47 @@
+$primary-color: #373737;
+$secondary-color: #35a2f2;
+$foreground-color: #fff;
+$footer-height: 50px;
+
+footer {
+  height: $footer-height;
+  padding: 0 10%;
+  background-color: $primary-color;
+
+  h2 {
+    float: left;
+    width: 50%;
+    margin: 0;
+    color: $foreground-color;
+    font-size: 1em;
+    font-weight: 100;
+    line-height: $footer-height;
+  }
+
+  span {
+    color: $secondary-color;
+  }
+
+  .follow-section {
+    float: left;
+    height: 50px;
+    width: 50%;
+    background-color: black;
+  }
+
+  .icon-container {
+    text-align: right;
+
+    a {
+      padding: 0 5px;
+      font-size: 1.5em;
+      line-height: $footer-height;
+      text-decoration: none;
+      color: $foreground-color;
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+}

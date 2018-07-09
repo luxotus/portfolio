@@ -1,12 +1,14 @@
 .header {
   position: fixed;
   z-index: 9;
-  height: 45px;
-  width: 100vw; }
+  height: 50px;
+  width: 100vw;
+  border-bottom: solid 1px #efefef;
+  background-color: #fff; }
   .header h4 {
     float: left;
     height: 100%;
     width: fit-content;
     margin: 0;
     margin-left: 2%;
-    line-height: 45px; }
+    line-height: 50px; }

@@ -6,6 +6,7 @@ import Sites from '../sites';
 import Lab from '../lab';
 import OpenSourceProjects from '../open-source-projects';
 import Blog from '../blog';
+import Footer from '../footer';
 
 export default class LandingScreen extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ export default class LandingScreen extends React.Component {
         <Lab />
         <OpenSourceProjects />
         <Blog />
+        <Footer />
       </div>
     );
   }

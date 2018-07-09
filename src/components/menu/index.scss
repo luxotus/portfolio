@@ -50,6 +50,19 @@ $overlay-color: #000;
   a:hover {
     color: #0f89e2de;
   }
+
+  .icon-container {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+  
+    a {
+      padding-left: 5%;
+      padding-right: 5%;
+      font-size: 1.75em;
+    }
+  }
 }
 
 .open-menu .menu-container {
@@ -57,18 +70,7 @@ $overlay-color: #000;
   transform: translateX(0px);
 }
 
-.icon-container {
-  position: absolute;
-  bottom: 25px;
-  width: 100%;
-  text-align: center;
 
-  a {
-    padding-left: 5%;
-    padding-right: 5%;
-    font-size: 1.75em;
-  }
-}
 
 /* Mobile Portrait */
 @media only screen and (max-device-width: 740px) and (orientation: portrait) {
@@ -90,9 +92,9 @@ $overlay-color: #000;
       font-size: 1.5em;
       line-height: 1.75em;
     }
-  }
 
-  .icon-container {
-    bottom: 10px;
+    .icon-container {
+      bottom: 10px;
+    }
   }
 }

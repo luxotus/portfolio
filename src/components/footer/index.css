@@ -1,0 +1,29 @@
+footer {
+  height: 50px;
+  padding: 0 10%;
+  background-color: #373737; }
+  footer h2 {
+    float: left;
+    width: 50%;
+    margin: 0;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    line-height: 50px; }
+  footer span {
+    color: #35a2f2; }
+  footer .follow-section {
+    float: left;
+    height: 50px;
+    width: 50%;
+    background-color: black; }
+  footer .icon-container {
+    text-align: right; }
+    footer .icon-container a {
+      padding: 0 5px;
+      font-size: 1.5em;
+      line-height: 50px;
+      text-decoration: none;
+      color: #fff; }
+    footer .icon-container a:hover {
+      color: #35a2f2; }
