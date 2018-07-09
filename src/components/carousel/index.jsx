@@ -29,10 +29,10 @@ export default class Carousel extends React.Component {
           <div id="right-hidden-item" className="floating-item hidden-item right" />
         </div>
         <div className="bread-crumbs">
-          <div className="hexagon">
-            <div className="triangle top" />
-            <div className="square middle" />
-            <div className="triangle bottom" />
+          <div className="dot-section">
+            <div className="dot" />
+            <div className="dot" />
+            <div className="dot" />
           </div>
         </div>
       </div>
