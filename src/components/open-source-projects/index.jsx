@@ -7,7 +7,9 @@ export default class OpenSourceProjects extends React.Component {
       <div id="osp-container">
         <header>
           <h1>
-            {'Open Source Projects'}
+            <a href="/open-source">
+              {'Open Source Projects'}
+            </a>
           </h1>
         </header>
         <div id="osp-wrapper">

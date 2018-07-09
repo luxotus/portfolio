@@ -13,7 +13,9 @@ export default class Lab extends React.Component {
       <div id="lab-container">
         <header>
           <h1>
-            {'Experimental Lab'}
+            <a href="/lab">
+              {'Experimental Lab'}
+            </a>
           </h1>
         </header>
         <Carousel />

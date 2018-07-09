@@ -8,7 +8,25 @@ $arrow-size: 25px;
 #blog-container {
   position: relative;
   display: inline-block;
-  padding: 150px 0;
+  padding: 75px 0;
+
+  .title {
+    text-align: center;
+
+    h1 {
+      margin: 0;
+      margin-bottom: 75px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
+  }
 
   .blog-sections {
     display: flex;
@@ -89,6 +107,22 @@ $arrow-size: 25px;
   .dot:hover,
   .dot.active {
     background-color: $secondary-color;
+  }
+
+  .view-page-btn {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
   }
 }
 

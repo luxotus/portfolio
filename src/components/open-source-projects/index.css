@@ -5,6 +5,11 @@
     padding-bottom: 75px;
     margin: 0;
     text-align: center; }
+    #osp-container header h1 a {
+      text-decoration: none;
+      color: #373737; }
+    #osp-container header h1 a:hover {
+      color: #0f89e2de; }
 
 #osp-wrapper {
   display: grid;

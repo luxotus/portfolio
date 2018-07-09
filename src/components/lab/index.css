@@ -5,3 +5,8 @@
   #lab-container header h1 {
     margin: 0;
     text-align: center; }
+    #lab-container header h1 a {
+      text-decoration: none;
+      color: #fff; }
+    #lab-container header h1 a:hover {
+      color: #35a2f2; }

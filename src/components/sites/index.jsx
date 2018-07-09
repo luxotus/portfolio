@@ -99,7 +99,9 @@ export default class Sites extends React.Component {
     return (
       <div id="sites-container">
         <h1>
-          {'Sites'}
+          <a href="/sites">
+            {'Sites'}
+          </a>
         </h1>
         <ul>
           {React.createElement(this.subMenuItems)}

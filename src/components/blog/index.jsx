@@ -5,6 +5,13 @@ export default class Blog extends React.Component {
   render() {
     return (
       <div id="blog-container">
+        <div className="title">
+          <h1>
+            <a href="/blog">
+              {'Blog'}
+            </a>
+          </h1>
+        </div>
         <div id="blog-left-section" className="blog-sections">
           <div className="arrow-section left">
             <div className="arrow" />

@@ -1,4 +1,5 @@
 $background-color: #fff;
+$primary-color: #373737;
 $hover-color: #0f89e2de;
 
 #sites-container {
@@ -6,6 +7,7 @@ $hover-color: #0f89e2de;
   padding: 0 10px;
   padding-bottom: 100px;
   background-color: $background-color;
+  color: $primary-color;
 
   h1 {
     margin: 0;
@@ -13,6 +15,15 @@ $hover-color: #0f89e2de;
     padding-bottom: 25px;
     font-size: 2.5em;
     text-align: center;
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+    }
+
+    a:hover {
+      color: $hover-color;
+    }
   }
 
   ul {

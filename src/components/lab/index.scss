@@ -1,3 +1,6 @@
+$primary-color: #fff;
+$secondary-color: #35a2f2;
+
 #lab-container {
   padding: 100px 0;
   background-color: #181818;
@@ -6,5 +9,14 @@
   header h1 {
     margin: 0;
     text-align: center;
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
   }
 }
