@@ -2,11 +2,6 @@ import React from 'react';
 import './index.css';
 import BackgroundParticles from '../background-particles';
 import Header from '../header';
-import Sites from '../sites';
-import Lab from '../lab';
-import OpenSourceProjects from '../open-source-projects';
-import Blog from '../blog';
-import Footer from '../footer';
 
 export default class LandingScreen extends React.Component {
   constructor(props) {
@@ -16,28 +11,21 @@ export default class LandingScreen extends React.Component {
 
   render() {
     return (
-      <div>
-        <div id="landing-screen">
-          <Header />
-          <div id="landing-text-holder">
-            <h1>
-              {'I create'}
-              <br />
-              {'interactive'}
-              <br />
-              {'experiences.'}
-            </h1>
-            <p>
-              {'Web developer that uses JavaScript and CSS to build high-end interactive sites, applications and tools.'}
-            </p>
-          </div>
-          <BackgroundParticles />
+      <div id="landing-screen">
+        <Header />
+        <div id="landing-text-holder">
+          <h1>
+            {'I create'}
+            <br />
+            {'interactive'}
+            <br />
+            {'experiences.'}
+          </h1>
+          <p>
+            {'Web developer that uses JavaScript and CSS to build high-end interactive sites, applications and tools.'}
+          </p>
         </div>
-        <Sites />
-        <Lab />
-        <OpenSourceProjects />
-        <Blog />
-        <Footer />
+        <BackgroundParticles />
       </div>
     );
   }
