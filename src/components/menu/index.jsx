@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 export default class Menu extends React.Component {
@@ -34,9 +35,9 @@ export default class Menu extends React.Component {
           <ul>
             {this.state.items.map(item => (
               <li key={item}>
-                <a href={`/${item.replace(' ', '-')}`}>
+                <Link to={`/${item.replace(' ', '-')}`}>
                   {item}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

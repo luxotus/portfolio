@@ -1,6 +1,6 @@
 import React from 'react';
-import MenuButton from '../menu-button';
 import './index.css';
+import MenuButton from '../menu-button';
 
 export default class Header extends React.Component {
   render() {

@@ -5,6 +5,7 @@ import OpenSourceProjects from '../open-source-projects';
 import Blog from '../blog';
 import Footer from '../footer';
 import LandingScreen from '../landing-screen';
+import Main from '../main';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -15,12 +16,15 @@ export default class App extends React.Component {
   render() {
     return (
       <div id="app-container">
-        <LandingScreen />
-        <Sites />
-        <Lab />
-        <OpenSourceProjects />
-        <Blog />
-        <Footer />
+        <div id="landing-page-container">
+          <LandingScreen />
+          <Sites />
+          <Lab />
+          <OpenSourceProjects />
+          <Blog />
+          <Footer />
+        </div>
+        <Main />
       </div>
     );
   }
