@@ -6,7 +6,7 @@ import Blog from '../blog';
 import Footer from '../footer';
 import LandingScreen from '../landing-screen';
 
-export default class Main extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -14,7 +14,7 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <div id="main-container">
+      <div id="app-container">
         <LandingScreen />
         <Sites />
         <Lab />
