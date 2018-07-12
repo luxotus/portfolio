@@ -15,10 +15,7 @@ export default class Main extends React.Component {
     return (
       <div id="main-container">
         <Switch>
-          <Route
-            path="/lab"
-            render={props => <Lab {...props} displaySize="whole" />}
-          />
+          <Route path="/lab" component={Lab} />
           <Route path="/blog" component={Blog} />
           <Route path="/sites" component={Sites} />
           <Route path="/open-source" component={OpenSourceProjects} />
