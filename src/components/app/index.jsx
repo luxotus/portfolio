@@ -10,7 +10,9 @@ import Main from '../main';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      displaysize: 'part',
+    };
   }
 
   render() {
@@ -18,10 +20,10 @@ export default class App extends React.Component {
       <div id="app-container">
         <div id="landing-page-container">
           <LandingScreen />
-          <Sites />
-          <Lab />
-          <OpenSourceProjects />
-          <Blog />
+          <Sites displaySize={this.state.displaysize} />
+          <Lab displaySize={this.state.displaysize} />
+          <OpenSourceProjects displaySize={this.state.displaysize} />
+          <Blog displaySize={this.state.displaysize} />
           <Footer />
         </div>
         <Main />

@@ -4,11 +4,6 @@ import BackgroundParticles from '../background-particles';
 import Header from '../header';
 
 export default class LandingScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <div id="landing-screen">

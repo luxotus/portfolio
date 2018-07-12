@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 
 export default class OpenSourceProjects extends React.Component {
-  render() {
+  part() {
     return (
       <div id="osp-container">
         <header>
@@ -71,5 +71,23 @@ export default class OpenSourceProjects extends React.Component {
         </div>
       </div>
     );
+  }
+
+  whole() {
+    return <div id="osp-screen" />;
+  }
+
+  displayElement(props) {
+    const displaySize = props.displaySize;
+
+    if (displaySize === 'part') {
+      return this.part();
+    }
+
+    return this.whole();
+  }
+
+  render() {
+    return (this.displayElement(this.props));
   }
 }

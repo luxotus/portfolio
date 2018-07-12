@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 
 export default class Blog extends React.Component {
-  render() {
+  part() {
     return (
       <div id="blog-container">
         <div className="title">
@@ -49,5 +49,23 @@ export default class Blog extends React.Component {
         </div>
       </div>
     );
+  }
+
+  whole() {
+    return <div id="blog-screen" />;
+  }
+
+  displayElement(props) {
+    const displaySize = props.displaySize;
+
+    if (displaySize === 'part') {
+      return this.part();
+    }
+
+    return this.whole();
+  }
+
+  render() {
+    return (this.displayElement(this.props));
   }
 }
