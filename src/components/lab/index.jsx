@@ -33,6 +33,7 @@ export default class Lab extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (this.displayElement(this.props));
   }
 }
