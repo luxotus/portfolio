@@ -5,6 +5,7 @@ import OpenSourceProjects from '../open-source-projects';
 import Blog from '../blog';
 import Footer from '../footer';
 import LandingScreen from '../landing-screen';
+import Header from '../header';
 import Main from '../main';
 
 export default class App extends React.Component {
@@ -18,6 +19,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div id="app-container">
+        <Header />
         <div id="landing-page-container">
           <LandingScreen />
           <Sites displaySize={this.state.displaysize} />

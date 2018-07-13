@@ -1,13 +1,11 @@
 import React from 'react';
 import './index.css';
 import BackgroundParticles from '../background-particles';
-import Header from '../header';
 
 export default class LandingScreen extends React.Component {
   render() {
     return (
       <div id="landing-screen">
-        <Header />
         <div id="landing-text-holder">
           <h1>
             {'I create'}
