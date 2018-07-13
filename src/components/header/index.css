@@ -12,6 +12,10 @@
     margin: 0;
     margin-left: 2%;
     line-height: 50px; }
+    #top-nav-bar h4 a {
+      font-size: inherit;
+      color: inherit;
+      text-decoration: none; }
 
 #menu-btn-container {
   position: relative;

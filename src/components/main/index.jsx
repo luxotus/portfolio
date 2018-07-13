@@ -5,9 +5,6 @@ import Blog from '../blog';
 import Sites from '../sites';
 import OpenSourceProjects from '../open-source-projects';
 
-
-// console.log('test:' + this.props);
-
 export default class Main extends React.Component {
   render() {
     return (

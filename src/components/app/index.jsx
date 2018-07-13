@@ -16,15 +16,18 @@ export default class App extends React.Component {
     };
   }
 
-  changeDisplaySize() {
-    const updatedSize = (this.state.displaysize === 'part') ? 'whole' : 'part';
+  changeDisplaySize(selectedPath) {
+    const updatedSize = (selectedPath === '/') ? 'part' : 'whole';
     this.setState({ displaysize: updatedSize });
   }
 
   render() {
     return (
       <div id="app-container">
-        <Header displaySize={this.state.displaysize} onClick={() => this.changeDisplaySize()} />
+        <Header
+          displaySize={this.state.displaysize}
+          onClick={selectedPath => this.changeDisplaySize(selectedPath)}
+        />
         <div id="landing-page-container">
           <LandingScreen />
           <Sites displaySize={this.state.displaysize} />

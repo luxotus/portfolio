@@ -48,12 +48,9 @@ export default class Header extends React.Component {
             {linkItm.map(item => (
               <li key={item}>
                 <Link
-                  to={{
-                    pathname: `/${item.replace(' ', '-')}`,
-                    state: this.props.displaysize,
-                  }}
-                  onClick={this.props.onClick}
-                  onKeyDown={this.props.onClick}
+                  to={`/${item.replace(' ', '-')}`}
+                  onClick={() => this.props.onClick(`/${item.replace(' ', '-')}`)}
+                  onKeyDown={() => this.props.onClick(`/${item.replace(' ', '-')}`)}
                 >
                   {item}
                 </Link>
@@ -90,7 +87,13 @@ export default class Header extends React.Component {
     return (
       <header id="top-nav-bar">
         <h4>
-          {'Felix Manuel'}
+          <Link
+            to="/"
+            onClick={() => this.props.onClick('/')}
+            onKeyDown={() => this.props.onClick('/')}
+          >
+            {'Felix Manuel'}
+          </Link>
         </h4>
         {this.menuBtn()}
         {this.menu()}
