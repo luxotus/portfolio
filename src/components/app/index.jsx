@@ -16,10 +16,15 @@ export default class App extends React.Component {
     };
   }
 
+  changeDisplaySize() {
+    const updatedSize = (this.state.displaysize === 'part') ? 'whole' : 'part';
+    this.setState({ displaysize: updatedSize });
+  }
+
   render() {
     return (
       <div id="app-container">
-        <Header />
+        <Header displaySize={this.state.displaysize} onClick={() => this.changeDisplaySize()} />
         <div id="landing-page-container">
           <LandingScreen />
           <Sites displaySize={this.state.displaysize} />
@@ -28,7 +33,7 @@ export default class App extends React.Component {
           <Blog displaySize={this.state.displaysize} />
           <Footer />
         </div>
-        <Main />
+        <Main displaySize={this.state.displaysize} />
       </div>
     );
   }

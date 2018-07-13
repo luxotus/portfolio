@@ -47,7 +47,14 @@ export default class Header extends React.Component {
           <ul>
             {linkItm.map(item => (
               <li key={item}>
-                <Link to={`/${item.replace(' ', '-')}`}>
+                <Link
+                  to={{
+                    pathname: `/${item.replace(' ', '-')}`,
+                    state: this.props.displaysize,
+                  }}
+                  onClick={this.props.onClick}
+                  onKeyDown={this.props.onClick}
+                >
                   {item}
                 </Link>
               </li>
