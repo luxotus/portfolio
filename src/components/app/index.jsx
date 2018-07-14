@@ -14,9 +14,6 @@ export default class App extends React.Component {
     this.state = {
       displaysize: (window.location.pathname === '/') ? 'part' : 'whole',
     };
-
-    // this.fade = this.fade.bind(this);
-    // this.unfade = this.unfade.bind(this);
   }
 
   fade(el) {
