@@ -54,6 +54,7 @@ export default class App extends React.Component {
         clearInterval(timer);
         element.style.opacity = maxVal;
         element.style.filter = `alpha(opacity=${maxVal})`;
+        this.forceUpdate();
       } else {
         element.style.opacity = op;
         element.style.filter = `alpha(opacity=${op * 100})`;
