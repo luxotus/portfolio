@@ -22,31 +22,47 @@ export default class App extends React.Component {
   }
 
   fade(el) {
-    let op = 1; // initial opacity
     const element = el;
+    const minVal = 0;
+    const OpStep = 0.1;
+    const milSec = 50;
+    let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
+    op = (op === 0) ? OpStep : op;
+
     const timer = setInterval(() => {
       if (op <= 0.1) {
         clearInterval(timer);
         element.style.display = 'none';
+        element.style.opacity = minVal;
+        element.style.filter = `alpha(opacity=${minVal})`;
+      } else {
+        element.style.opacity = op;
+        element.style.filter = `alpha(opacity=${op * 100})`;
+        op -= op * OpStep;
       }
-      element.style.opacity = op;
-      element.style.filter = `alpha(opacity=${op * 100})`;
-      op -= op * 0.1;
-    }, 50);
+    }, milSec);
   }
 
   unfade(el) {
-    let op = 0.1; // initial opacity
     const element = el;
+    const maxVal = 1;
+    const OpStep = 0.1;
+    const milSec = 10;
+    let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
+    op = (op === 0) ? OpStep : op;
     element.style.display = 'block';
+
     const timer = setInterval(() => {
-      if (op >= 1) {
+      if (op >= maxVal) {
         clearInterval(timer);
+        element.style.opacity = maxVal;
+        element.style.filter = `alpha(opacity=${maxVal})`;
+      } else {
+        element.style.opacity = op;
+        element.style.filter = `alpha(opacity=${op * 100})`;
+        op += op * OpStep;
       }
-      element.style.opacity = op;
-      element.style.filter = `alpha(opacity=${op * 100})`;
-      op += op * 0.1;
-    }, 10);
+    }, milSec);
   }
 
   fadeComponents(size) {
