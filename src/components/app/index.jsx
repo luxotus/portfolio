@@ -20,33 +20,11 @@ export default class App extends React.Component {
     this.updateMenuState = this.updateMenuState.bind(this);
   }
 
-  fade(el) {
-    const element = el;
-    const minVal = 0;
-    const OpStep = 0.1;
-    const milSec = 50;
-    let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
-    op = (op === 0) ? OpStep : op;
-
-    const timer = setInterval(() => {
-      if (op <= 0.1) {
-        clearInterval(timer);
-        element.style.display = 'none';
-        element.style.opacity = minVal;
-        element.style.filter = `alpha(opacity=${minVal})`;
-      } else {
-        element.style.opacity = op;
-        element.style.filter = `alpha(opacity=${op * 100})`;
-        op -= op * OpStep;
-      }
-    }, milSec);
-  }
-
   unfade(el) {
     const element = el;
     const maxVal = 1;
     const OpStep = 0.1;
-    const milSec = 10;
+    const milSec = 50;
     let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
     op = (op === 0) ? OpStep : op;
     element.style.display = 'block';
@@ -64,14 +42,41 @@ export default class App extends React.Component {
     }, milSec);
   }
 
+  fadingEffect(elHide, elShow) {
+    const element = elHide;
+    const minVal = 0;
+    const OpStep = 0.1;
+    const milSec = 50;
+    let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
+    op = (op === 0) ? OpStep : op;
+
+    const timer = setInterval(() => {
+      if (op <= 0.1) {
+        clearInterval(timer);
+        element.style.display = 'none';
+        element.style.opacity = minVal;
+        element.style.filter = `alpha(opacity=${minVal})`;
+        this.unfade(elShow);
+      } else {
+        element.style.opacity = op;
+        element.style.filter = `alpha(opacity=${op * 100})`;
+        op -= op * OpStep;
+      }
+    }, milSec);
+  }
+
   fadeComponents(size) {
     if (size === 'whole') {
+      const elements = [
+        document.getElementById('landing-page-container'),
+        document.getElementById('main-container'),
+      ];
+
       if (this.state.isMenuOpen === 'open-menu') {
         document.getElementById(this.state.menuBtnId).click();
       }
 
-      this.fade(document.getElementById('landing-page-container'));
-      this.unfade(document.getElementById('main-container'));
+      this.fadingEffect(elements[0], elements[1]);
     }
   }
 
