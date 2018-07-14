@@ -13,7 +13,10 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       displaysize: (window.location.pathname === '/') ? 'part' : 'whole',
+      isMenuOpen: '',
     };
+
+    this.updateMenuState = this.updateMenuState.bind(this);
   }
 
   fade(el) {
@@ -57,11 +60,17 @@ export default class App extends React.Component {
     this.fadeComponents(updatedSize);
   }
 
+  updateMenuState(menuState) {
+    this.setState({ isMenuOpen: menuState });
+  }
+
   render() {
     return (
       <div id="app-container">
         <Header
+          isMenuOpen={this.state.isMenuOpen}
           displaySize={this.state.displaysize}
+          updateMenuState={this.updateMenuState}
           onClick={selectedPath => this.changeDisplaySize(selectedPath)}
         />
         <div id="landing-page-container">

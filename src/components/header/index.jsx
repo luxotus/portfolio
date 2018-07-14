@@ -17,9 +17,11 @@ export default class Header extends React.Component {
   toggleState() {
     const menuId = document.getElementById(this.state.menuBtnId);
     const closeBtnClass = 'menu-close-btn';
-
     menuId.classList.toggle(closeBtnClass);
-    this.setState({ isOpen: menuId.classList.contains(closeBtnClass) ? 'open-menu' : '' });
+
+    const menuState = menuId.classList.contains(closeBtnClass) ? 'open-menu' : '';
+    this.setState({ isOpen: menuState });
+    this.props.updateMenuState(menuState);
   }
 
   triggerMenuBtn() {
