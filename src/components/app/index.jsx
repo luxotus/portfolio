@@ -86,7 +86,7 @@ export default class App extends React.Component {
   }
 
   fadeComponents(size) {
-    const elements = [
+    const parentContainers = [
       document.getElementById('landing-page-container'),
       document.getElementById('main-container'),
     ];
@@ -96,9 +96,9 @@ export default class App extends React.Component {
     }
 
     if (size === 'whole') {
-      this.fadingEffect(elements[0], elements[1]);
+      this.fadingEffect(parentContainers[0], parentContainers[1]);
     } else if (size === 'part') {
-      this.fadingEffect(elements[1], elements[0]);
+      this.fadingEffect(parentContainers[1], parentContainers[0]);
     }
   }
 
