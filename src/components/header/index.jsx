@@ -36,8 +36,8 @@ export default class Header extends React.Component {
         <div
           id="menu-side-wrapper"
           role="presentation"
-          onClick={this.props.triggerMenuBtn}
-          onKeyDown={this.props.triggerMenuBtn}
+          onClick={() => document.getElementById(this.props.menuBtnId).click()}
+          onKeyDown={() => document.getElementById(this.props.menuBtnId).click()}
         />
         <div id="menu" className="menu-container">
           <ul>
