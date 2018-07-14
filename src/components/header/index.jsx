@@ -7,25 +7,19 @@ export default class Header extends React.Component {
     super(props);
     this.state = {
       isOpen: '',
-      menuBtnId: 'menu-btn-container',
     };
 
     this.toggleState = this.toggleState.bind(this);
-    this.triggerMenuBtn = this.triggerMenuBtn.bind(this);
   }
 
   toggleState() {
-    const menuId = document.getElementById(this.state.menuBtnId);
+    const menuId = document.getElementById(this.props.menuBtnId);
     const closeBtnClass = 'menu-close-btn';
     menuId.classList.toggle(closeBtnClass);
 
     const menuState = menuId.classList.contains(closeBtnClass) ? 'open-menu' : '';
     this.setState({ isOpen: menuState });
     this.props.updateMenuState(menuState);
-  }
-
-  triggerMenuBtn() {
-    document.getElementById(this.state.menuBtnId).click();
   }
 
   menu() {
@@ -42,8 +36,8 @@ export default class Header extends React.Component {
         <div
           id="menu-side-wrapper"
           role="presentation"
-          onClick={this.triggerMenuBtn}
-          onKeyDown={this.triggerMenuBtn}
+          onClick={this.props.triggerMenuBtn}
+          onKeyDown={this.props.triggerMenuBtn}
         />
         <div id="menu" className="menu-container">
           <ul>
@@ -72,7 +66,7 @@ export default class Header extends React.Component {
     return (
       <div>
         <div
-          id={this.state.menuBtnId}
+          id={this.props.menuBtnId}
           role="presentation"
           onClick={this.toggleState}
           onKeyDown={this.toggleState}

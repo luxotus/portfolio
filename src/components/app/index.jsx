@@ -14,9 +14,11 @@ export default class App extends React.Component {
     this.state = {
       displaysize: (window.location.pathname === '/') ? 'part' : 'whole',
       isMenuOpen: '',
+      menuBtnId: 'menu-btn-container',
     };
 
     this.updateMenuState = this.updateMenuState.bind(this);
+    this.triggerMenuBtn = this.triggerMenuBtn.bind(this);
   }
 
   fade(el) {
@@ -49,6 +51,7 @@ export default class App extends React.Component {
 
   fadeComponents(size) {
     if (size === 'whole') {
+      if (this.state.isMenuOpen === 'open-menu') this.triggerMenuBtn();
       this.fade(document.getElementById('landing-page-container'));
       this.unfade(document.getElementById('main-container'));
     }
@@ -64,13 +67,19 @@ export default class App extends React.Component {
     this.setState({ isMenuOpen: menuState });
   }
 
+  triggerMenuBtn() {
+    document.getElementById(this.state.menuBtnId).click();
+  }
+
   render() {
     return (
       <div id="app-container">
         <Header
+          menuBtnId={this.state.menuBtnId}
           isMenuOpen={this.state.isMenuOpen}
           displaySize={this.state.displaysize}
           updateMenuState={this.updateMenuState}
+          triggerMenuBtn={this.triggerMenuBtn}
           onClick={selectedPath => this.changeDisplaySize(selectedPath)}
         />
         <div id="landing-page-container">
