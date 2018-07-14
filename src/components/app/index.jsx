@@ -16,8 +16,28 @@ export default class App extends React.Component {
       isMenuOpen: '',
       menuBtnId: 'menu-btn-container',
     };
-
     this.updateMenuState = this.updateMenuState.bind(this);
+  }
+
+  componentDidMount() {
+    const parentContainers = [
+      document.getElementById('landing-page-container'),
+      document.getElementById('main-container'),
+    ];
+
+    if (window.location.pathname !== '/') {
+      this.inverseVisible(parentContainers[0], parentContainers[1]);
+    }
+  }
+
+  inverseVisible(elToBeHidden, elToBeShown) {
+    const elements = [
+      elToBeHidden,
+      elToBeShown,
+    ];
+
+    elements[0].style.display = 'none';
+    elements[1].style.display = 'block';
   }
 
   unfade(el) {
@@ -66,17 +86,19 @@ export default class App extends React.Component {
   }
 
   fadeComponents(size) {
+    const elements = [
+      document.getElementById('landing-page-container'),
+      document.getElementById('main-container'),
+    ];
+
+    if (this.state.isMenuOpen === 'open-menu') {
+      document.getElementById(this.state.menuBtnId).click();
+    }
+
     if (size === 'whole') {
-      const elements = [
-        document.getElementById('landing-page-container'),
-        document.getElementById('main-container'),
-      ];
-
-      if (this.state.isMenuOpen === 'open-menu') {
-        document.getElementById(this.state.menuBtnId).click();
-      }
-
       this.fadingEffect(elements[0], elements[1]);
+    } else if (size === 'part') {
+      this.fadingEffect(elements[1], elements[0]);
     }
   }
 

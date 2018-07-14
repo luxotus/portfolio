@@ -7,6 +7,21 @@ import Sites from '../sites';
 import OpenSourceProjects from '../open-source-projects';
 
 export default class Main extends React.Component {
+  // constructor(props) {
+  //   super(props);
+
+  // }
+
+  // inverseVisible(elToBeHidden, elToBeShown) {
+  //   const elements = [
+  //     elToBeHidden,
+  //     elToBeShown,
+  //   ];
+
+  //   elements[0].style.display = 'none';
+  //   elements[1].style.display = 'block';
+  // }
+
   render() {
     return (
       <div id="main-container">
