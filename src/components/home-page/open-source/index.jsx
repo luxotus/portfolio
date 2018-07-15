@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-export default class OpenSourceProjects extends React.Component {
+export default class OpenSource extends React.Component {
   render() {
     return (
       <div id="osp-container">

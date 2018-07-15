@@ -1,7 +1,7 @@
 import React from 'react';
 import Sites from '../home-page/sites';
 import Lab from '../home-page/lab';
-import OpenSourceProjects from '../home-page/open-source-projects';
+import OpenSource from '../home-page/open-source';
 import Blog from '../home-page/blog';
 import Footer from '../home-page/footer';
 import LandingScreen from '../home-page/landing-screen';
@@ -17,7 +17,6 @@ export default class App extends React.Component {
       menuBtnId: 'menu-btn-container',
     };
     this.updateMenuState = this.updateMenuState.bind(this);
-    // this.updateScrollPosition = this.updateScrollPosition.bind(this);
   }
 
   componentDidMount() {
@@ -106,16 +105,9 @@ export default class App extends React.Component {
 
   updateMenuState(menuState) {
     this.setState({ isMenuOpen: menuState });
-    // this.updateScrollPosition();
   }
 
-  // updateScrollPosition() {
-  //   this.setState({ scrollYPos: window.scrollY });
-  // }
-
   changeDisplaySize(selectedPath) {
-    // console.log(`Y: ${this.props.scrollYPos}`);
-    // window.scrollTo(0, this.props.scrollYPos);
     const updatedSize = (selectedPath === '/') ? 'part' : 'whole';
     this.setState({
       displaysize: updatedSize,
@@ -137,7 +129,7 @@ export default class App extends React.Component {
           <LandingScreen />
           <Sites />
           <Lab />
-          <OpenSourceProjects />
+          <OpenSource />
           <Blog />
           <Footer />
         </div>
