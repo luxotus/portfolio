@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './index.css';
-import Lab from '../lab';
-import Blog from '../blog';
-import Sites from '../sites';
-import OpenSourceProjects from '../open-source-projects';
+import Lab from '../home-page/lab';
+import Blog from '../home-page/blog';
+import Sites from '../home-page/sites';
+import OpenSourceProjects from '../home-page/open-source-projects';
 
-export default class Main extends React.Component {
+export default class MainRouter extends React.Component {
   render() {
     return (
       <div id="main-container">

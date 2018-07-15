@@ -1,12 +1,12 @@
 import React from 'react';
-import Sites from '../sites';
-import Lab from '../lab';
-import OpenSourceProjects from '../open-source-projects';
-import Blog from '../blog';
-import Footer from '../footer';
-import LandingScreen from '../landing-screen';
+import Sites from '../home-page/sites';
+import Lab from '../home-page/lab';
+import OpenSourceProjects from '../home-page/open-source-projects';
+import Blog from '../home-page/blog';
+import Footer from '../home-page/footer';
+import LandingScreen from '../home-page/landing-screen';
 import Header from '../header';
-import Main from '../main';
+import MainRouter from '../main-router';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -141,7 +141,7 @@ export default class App extends React.Component {
           <Blog />
           <Footer />
         </div>
-        <Main displaySize={this.state.displaysize} />
+        <MainRouter displaySize={this.state.displaysize} />
       </div>
     );
   }
