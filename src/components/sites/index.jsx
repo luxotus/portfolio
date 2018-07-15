@@ -94,7 +94,7 @@ export default class Sites extends React.Component {
     );
   }
 
-  part() {
+  render() {
     return (
       <div id="sites-container">
         <h1>
@@ -110,23 +110,5 @@ export default class Sites extends React.Component {
         </div>
       </div>
     );
-  }
-
-  whole() {
-    return <div id="lab-screen" />;
-  }
-
-  displayElement(props) {
-    const displaySize = props.displaySize;
-
-    if (displaySize === 'part') {
-      return this.part();
-    }
-
-    return this.whole();
-  }
-
-  render() {
-    return (this.displayElement(this.props));
   }
 }

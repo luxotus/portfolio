@@ -17,6 +17,7 @@ export default class App extends React.Component {
       menuBtnId: 'menu-btn-container',
     };
     this.updateMenuState = this.updateMenuState.bind(this);
+    // this.updateScrollPosition = this.updateScrollPosition.bind(this);
   }
 
   componentDidMount() {
@@ -48,13 +49,13 @@ export default class App extends React.Component {
     let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
     op = (op === 0) ? OpStep : op;
     element.style.display = 'block';
+    this.forceUpdate();
 
     const timer = setInterval(() => {
       if (op >= maxVal) {
         clearInterval(timer);
         element.style.opacity = maxVal;
         element.style.filter = `alpha(opacity=${maxVal})`;
-        this.forceUpdate();
       } else {
         element.style.opacity = op;
         element.style.filter = `alpha(opacity=${op * 100})`;
@@ -103,14 +104,23 @@ export default class App extends React.Component {
     }
   }
 
-  changeDisplaySize(selectedPath) {
-    const updatedSize = (selectedPath === '/') ? 'part' : 'whole';
-    this.setState({ displaysize: updatedSize });
-    this.fadeComponents(updatedSize);
-  }
-
   updateMenuState(menuState) {
     this.setState({ isMenuOpen: menuState });
+    // this.updateScrollPosition();
+  }
+
+  // updateScrollPosition() {
+  //   this.setState({ scrollYPos: window.scrollY });
+  // }
+
+  changeDisplaySize(selectedPath) {
+    // console.log(`Y: ${this.props.scrollYPos}`);
+    // window.scrollTo(0, this.props.scrollYPos);
+    const updatedSize = (selectedPath === '/') ? 'part' : 'whole';
+    this.setState({
+      displaysize: updatedSize,
+    });
+    this.fadeComponents(updatedSize);
   }
 
   render() {
@@ -125,10 +135,10 @@ export default class App extends React.Component {
         />
         <div id="landing-page-container">
           <LandingScreen />
-          <Sites displaySize={this.state.displaysize} />
-          <Lab displaySize={this.state.displaysize} />
-          <OpenSourceProjects displaySize={this.state.displaysize} />
-          <Blog displaySize={this.state.displaysize} />
+          <Sites />
+          <Lab />
+          <OpenSourceProjects />
+          <Blog />
           <Footer />
         </div>
         <Main displaySize={this.state.displaysize} />
