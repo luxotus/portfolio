@@ -8,20 +8,67 @@ export default class Sites extends React.Component {
     this.siteItems = this.siteItems.bind(this);
   }
 
+  categoryClick(e) {
+    document.querySelector('#sites-container li.active').classList.remove('active');
+    e.target.parentElement.classList.add('active');
+    this.itemEffect(e.target.parentElement.getAttribute('data-types'));
+  }
+
+  itemEffect(category) {
+    console.log(`category: ${category}`);
+  }
+
+  compareTitle(a, b) {
+    if (a.title < b.title) {
+      return -1;
+    }
+
+    if (a.title > b.title) {
+      return 1;
+    }
+
+    return 0;
+  }
+
   subMenuItems() {
     const listTypes = [
-      'React',
-      'Vue',
-      'Sass',
-      'Php',
-      'JQuery',
+      {
+        id: 0,
+        isActive: true,
+        title: 'all',
+      },
+      {
+        id: 1,
+        isActive: false,
+        title: 'restaurants',
+      },
+      {
+        id: 2,
+        isActive: false,
+        title: 'landing page',
+      },
+      {
+        id: 3,
+        isActive: false,
+        title: 'shops',
+      },
+      {
+        id: 4,
+        isActive: false,
+        title: 'social media',
+      },
+      {
+        id: 5,
+        isActive: false,
+        title: 'news',
+      },
     ];
 
     return (
-      listTypes.map(item => (
-        <li key={item}>
-          <button type="button">
-            {item}
+      listTypes.sort(this.compareTitle).map(item => (
+        <li key={item.id} className={item.isActive ? 'active' : ''} data-types={item.title}>
+          <button type="button" onClick={e => this.categoryClick(e, this)} onKeyDown={e => this.categoryClick(e, this)}>
+            {item.title}
           </button>
         </li>
       ))
@@ -31,50 +78,53 @@ export default class Sites extends React.Component {
   siteItems() {
     const listSites = [
       {
+        id: 0,
         name: 'Main Home',
         types: [
-          'React',
-          'Sass',
+          'restaurants',
+          'landing page',
         ],
         imageSrc: '/images/test.jpg',
       },
       {
+        id: 1,
         name: 'Simple Slide',
         types: [
-          'React',
-          'Sass',
+          'news',
+          'landing page',
         ],
         imageSrc: '/images/test.jpg',
       },
       {
+        id: 2,
         name: 'Team Gold',
         types: [
-          'React',
-          'Sass',
+          'restaurants',
         ],
         imageSrc: '/images/test.jpg',
       },
       {
+        id: 3,
         name: 'Main Home2',
         types: [
-          'React',
-          'Sass',
+          'news',
+          'landing page',
         ],
         imageSrc: '/images/test.jpg',
       },
       {
+        id: 4,
         name: 'Simple Slide2',
         types: [
-          'React',
-          'Sass',
+          'shops',
         ],
         imageSrc: '/images/test.jpg',
       },
       {
+        id: 5,
         name: 'Team Gold2',
         types: [
-          'React',
-          'Sass',
+          'social media',
         ],
         imageSrc: '/images/test.jpg',
       },
@@ -82,7 +132,7 @@ export default class Sites extends React.Component {
 
     return (
       listSites.map(item => (
-        <div className="sites-item" key={item.name}>
+        <div className="sites-item" key={item.id} data-types={item.types.join(',')}>
           <div className="item-overlay">
             {item.name}
           </div>
