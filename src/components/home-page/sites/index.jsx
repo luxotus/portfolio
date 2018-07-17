@@ -4,18 +4,29 @@ import './index.css';
 export default class Sites extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      activeCategory: 'all',
+    };
     this.subMenuItems = this.subMenuItems.bind(this);
     this.siteItems = this.siteItems.bind(this);
+    this.itemEffect = this.itemEffect.bind(this);
+    this.updateActiveCategory = this.updateActiveCategory.bind(this);
+  }
+
+  updateActiveCategory(category) {
+    this.setState({ activeCategory: category }, () => {
+      this.itemEffect();
+    });
   }
 
   categoryClick(e) {
     document.querySelector('#sites-container li.active').classList.remove('active');
     e.target.parentElement.classList.add('active');
-    this.itemEffect(e.target.parentElement.getAttribute('data-types'));
+    this.updateActiveCategory(e.target.parentElement.getAttribute('data-types'));
   }
 
-  itemEffect(category) {
-    console.log(`category: ${category}`);
+  itemEffect() {
+    console.log(`category: ${this.state.activeCategory}`);
   }
 
   compareTitle(a, b) {
@@ -34,39 +45,33 @@ export default class Sites extends React.Component {
     const listTypes = [
       {
         id: 0,
-        isActive: true,
         title: 'all',
       },
       {
         id: 1,
-        isActive: false,
         title: 'restaurants',
       },
       {
         id: 2,
-        isActive: false,
         title: 'landing page',
       },
       {
         id: 3,
-        isActive: false,
         title: 'shops',
       },
       {
         id: 4,
-        isActive: false,
         title: 'social media',
       },
       {
         id: 5,
-        isActive: false,
         title: 'news',
       },
     ];
 
     return (
       listTypes.sort(this.compareTitle).map(item => (
-        <li key={item.id} className={item.isActive ? 'active' : ''} data-types={item.title}>
+        <li key={item.id} className={this.state.activeCategory === item.title ? 'active' : ''} data-types={item.title}>
           <button type="button" onClick={e => this.categoryClick(e, this)} onKeyDown={e => this.categoryClick(e, this)}>
             {item.title}
           </button>
