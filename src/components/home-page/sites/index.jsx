@@ -25,8 +25,48 @@ export default class Sites extends React.Component {
     this.updateActiveCategory(e.target.parentElement.getAttribute('data-types'));
   }
 
+  /**
+   * Check to if element is visible if not then fade in
+   * @param {*} el
+   */
+  fadeIn(el) {
+    const elDisplay = window.getComputedStyle(el, null).getPropertyValue('display');
+    const elOpacity = parseFloat(window.getComputedStyle(el, null).getPropertyValue('opacity'));
+
+    if (elDisplay !== 'none' && elOpacity > 0) {
+      console.log('FadeIn: visible');
+    } else {
+      console.log('FadeIn: hidden');
+    }
+  }
+
+  /**
+   * Check to if element is visible if so then fade out
+   * @param {*} el
+   */
+  fadeOut(el) {
+    const elDisplay = window.getComputedStyle(el, null).getPropertyValue('display');
+    const elOpacity = parseFloat(window.getComputedStyle(el, null).getPropertyValue('opacity'));
+
+    if (elDisplay !== 'none' && elOpacity > 0) {
+      console.log('FadeOut: visible');
+    } else {
+      console.log('FadeOut: hidden');
+    }
+  }
+
   itemEffect() {
-    console.log(`category: ${this.state.activeCategory}`);
+    const siteItems = document.querySelectorAll('.sites-section .sites-item');
+
+    siteItems.forEach((el) => {
+      const matchFound = el.getAttribute('data-types').split(',').includes(this.state.activeCategory);
+
+      if (matchFound) {
+        this.fadeIn(el);
+      } else {
+        this.fadeOut(el);
+      }
+    });
   }
 
   compareTitle(a, b) {
