@@ -163,14 +163,21 @@ export default class Sites extends React.Component {
 
     return (
       listSites.map(item => (
-        <div className="sites-item" key={item.id} data-types={item.types.join(',')}>
-          <div className="item-overlay">
-            {item.name}
+        <Link
+          key={item.id}
+          to={`/sites/${item.name.toLowerCase().replace(' ', '-')}`}
+          onClick={() => this.props.onClick('/sites')}
+          onKeyDown={() => this.props.onClick('/sites')}
+        >
+          <div className="sites-item" key={item.id} data-types={item.types.join(',')}>
+            <div className="item-overlay">
+              {item.name}
+            </div>
+            <div className="item-image">
+              <img src={item.imageSrc} alt={item.name} />
+            </div>
           </div>
-          <div className="item-image">
-            <img src={item.imageSrc} alt={item.name} />
-          </div>
-        </div>
+        </Link>
       ))
     );
   }

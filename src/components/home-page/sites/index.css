@@ -49,7 +49,8 @@
   position: relative;
   display: block;
   float: left;
-  width: 100%; }
+  width: 100%;
+  color: #373737; }
   .sites-item .item-overlay {
     display: none; }
   .sites-item .item-image {
