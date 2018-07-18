@@ -80,7 +80,8 @@
     text-decoration: none;
     text-transform: capitalize;
     color: #373737; }
-  .menu-container a:hover {
+  .menu-container a:hover,
+  .menu-container li.active a {
     color: #0f89e2de; }
   .menu-container .icon-container {
     position: absolute;

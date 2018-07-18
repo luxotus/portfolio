@@ -42,7 +42,7 @@ export default class Header extends React.Component {
         <div id="menu" className="menu-container">
           <ul>
             {linkItm.map(item => (
-              <li key={item}>
+              <li key={item} className={(window.location.pathname.includes(`/${item.replace(' ', '-')}`)) ? 'active' : ''}>
                 <Link
                   to={`/${item.replace(' ', '-')}`}
                   onClick={() => this.props.onClick(`/${item.replace(' ', '-')}`)}

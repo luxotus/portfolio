@@ -109,7 +109,8 @@ $overlay-color: #000;
     color: #373737;
   }
 
-  a:hover {
+  a:hover,
+  li.active a {
     color: #0f89e2de;
   }
 
