@@ -40,11 +40,10 @@ export default class App extends React.Component {
     elements[1].style.display = 'block';
   }
 
-  unfade(el) {
+  unfade(el, milSec) {
     const element = el;
     const maxVal = 1;
     const OpStep = 0.1;
-    const milSec = 50;
     let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
     op = (op === 0) ? OpStep : op;
     element.style.display = 'block';
@@ -63,11 +62,10 @@ export default class App extends React.Component {
     }, milSec);
   }
 
-  fadingEffect(elHide, elShow) {
+  fadingEffect(elHide, elShow, milSec) {
     const element = elHide;
     const minVal = 0;
     const OpStep = 0.1;
-    const milSec = 50;
     let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
     op = (op === 0) ? OpStep : op;
 
@@ -77,7 +75,10 @@ export default class App extends React.Component {
         element.style.display = 'none';
         element.style.opacity = minVal;
         element.style.filter = `alpha(opacity=${minVal})`;
-        this.unfade(elShow);
+
+        if (typeof elShow !== 'undefined' && elShow != null) {
+          this.unfade(elShow, milSec);
+        }
       } else {
         element.style.opacity = op;
         element.style.filter = `alpha(opacity=${op * 100})`;
@@ -97,9 +98,9 @@ export default class App extends React.Component {
     }
 
     if (size === 'whole') {
-      this.fadingEffect(parentContainers[0], parentContainers[1]);
+      this.fadingEffect(parentContainers[0], parentContainers[1], 50);
     } else if (size === 'part') {
-      this.fadingEffect(parentContainers[1], parentContainers[0]);
+      this.fadingEffect(parentContainers[1], parentContainers[0], 50);
     }
   }
 
@@ -127,7 +128,7 @@ export default class App extends React.Component {
         />
         <div id="landing-page-container">
           <LandingScreen />
-          <Sites />
+          <Sites fadingEffect={this.fadingEffect} />
           <Lab />
           <OpenSource />
           <Blog />

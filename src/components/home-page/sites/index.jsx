@@ -25,33 +25,15 @@ export default class Sites extends React.Component {
     this.updateActiveCategory(e.target.parentElement.getAttribute('data-types'));
   }
 
-  /**
-   * Check to if element is visible if not then fade in
-   * @param {*} el
-   */
-  fadeIn(el) {
+  showElement(el) {
     const elDisplay = window.getComputedStyle(el, null).getPropertyValue('display');
     const elOpacity = parseFloat(window.getComputedStyle(el, null).getPropertyValue('opacity'));
 
-    if (elDisplay !== 'none' && elOpacity > 0) {
-      console.log('FadeIn: visible');
-    } else {
-      console.log('FadeIn: hidden');
-    }
-  }
-
-  /**
-   * Check to if element is visible if so then fade out
-   * @param {*} el
-   */
-  fadeOut(el) {
-    const elDisplay = window.getComputedStyle(el, null).getPropertyValue('display');
-    const elOpacity = parseFloat(window.getComputedStyle(el, null).getPropertyValue('opacity'));
-
-    if (elDisplay !== 'none' && elOpacity > 0) {
-      console.log('FadeOut: visible');
-    } else {
-      console.log('FadeOut: hidden');
+    if (elDisplay === 'none' || elOpacity < 1) {
+      const element = el;
+      element.style.display = 'block';
+      element.style.opacity = 1;
+      element.style.filter = 'alpha(opacity=1)';
     }
   }
 
@@ -62,9 +44,9 @@ export default class Sites extends React.Component {
       const matchFound = el.getAttribute('data-types').split(',').includes(this.state.activeCategory);
 
       if (matchFound) {
-        this.fadeIn(el);
+        this.showElement(el);
       } else {
-        this.fadeOut(el);
+        this.props.fadingEffect(el, null, 25);
       }
     });
   }
