@@ -128,7 +128,10 @@ export default class App extends React.Component {
         />
         <div id="landing-page-container">
           <LandingScreen />
-          <Sites fadingEffect={this.fadingEffect} />
+          <Sites
+            fadingEffect={this.fadingEffect}
+            onClick={selectedPath => this.changeDisplaySize(selectedPath)}
+          />
           <Lab />
           <OpenSource />
           <Blog />

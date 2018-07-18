@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 export default class Sites extends React.Component {
@@ -178,9 +179,13 @@ export default class Sites extends React.Component {
     return (
       <div id="sites-container">
         <h1>
-          <a href="/sites">
+          <Link
+            to="/sites"
+            onClick={() => this.props.onClick('/sites')}
+            onKeyDown={() => this.props.onClick('/sites')}
+          >
             {'Sites'}
-          </a>
+          </Link>
         </h1>
         <ul>
           {React.createElement(this.subMenuItems)}
