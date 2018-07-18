@@ -28,10 +28,13 @@ export default class Sites extends React.Component {
   showElement(el) {
     const elDisplay = window.getComputedStyle(el, null).getPropertyValue('display');
     const elOpacity = parseFloat(window.getComputedStyle(el, null).getPropertyValue('opacity'));
+    const element = el;
 
-    if (elDisplay === 'none' || elOpacity < 1) {
-      const element = el;
+    if (elDisplay === 'none') {
       element.style.display = 'block';
+    }
+
+    if (elOpacity < 1) {
       element.style.opacity = 1;
       element.style.filter = 'alpha(opacity=1)';
     }
@@ -41,7 +44,7 @@ export default class Sites extends React.Component {
     const siteItems = document.querySelectorAll('.sites-section .sites-item');
 
     siteItems.forEach((el) => {
-      const matchFound = el.getAttribute('data-types').split(',').includes(this.state.activeCategory);
+      const matchFound = (this.state.activeCategory === 'all') ? true : el.getAttribute('data-types').split(',').includes(this.state.activeCategory);
 
       if (matchFound) {
         this.showElement(el);
