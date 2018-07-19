@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 export default class Lab extends React.Component {
@@ -7,9 +8,13 @@ export default class Lab extends React.Component {
       <div id="lab-container">
         <header>
           <h1>
-            <a href="/lab">
+            <Link
+              to="/lab"
+              onClick={() => this.props.onClick('/lab')}
+              onKeyDown={() => this.props.onClick('/lab')}
+            >
               {'Experimental Lab'}
-            </a>
+            </Link>
           </h1>
         </header>
         <div id="carousel-container">
