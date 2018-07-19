@@ -48,10 +48,10 @@
     bottom: 0;
     width: 100%; }
     #carousel-container .bread-crumbs .dot-section {
-      width: 75px;
-      margin: 0 auto; }
+      width: 100%;
+      text-align: center; }
     #carousel-container .bread-crumbs .dot {
-      float: left;
+      display: inline-block;
       height: 15px;
       width: 15px;
       margin: 0 5px;

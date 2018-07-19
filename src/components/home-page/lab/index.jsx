@@ -13,35 +13,37 @@ export default class Lab extends React.Component {
         rightHidden: 3,
         rightVisible: 4,
       },
-      data: [
-        {
-          id: 0,
-          title: 'Garlic',
-          link: '/lab/garlic',
-        },
-        {
-          id: 1,
-          title: 'Salt',
-          link: '/lab/salt',
-        },
-        {
-          id: 2,
-          title: 'Rosemary',
-          link: '/lab/rosemary',
-        },
-        {
-          id: 3,
-          title: 'Basil',
-          link: '/lab/basil',
-        },
-        {
-          id: 4,
-          title: 'Olives',
-          link: '/lab/olives',
-        },
-      ],
+      activeSlide: 2,
     };
+    this.dataForSlides = [
+      {
+        id: 0,
+        title: 'Garlic',
+        link: '/lab/garlic',
+      },
+      {
+        id: 1,
+        title: 'Salt',
+        link: '/lab/salt',
+      },
+      {
+        id: 2,
+        title: 'Rosemary',
+        link: '/lab/rosemary',
+      },
+      {
+        id: 3,
+        title: 'Basil',
+        link: '/lab/basil',
+      },
+      {
+        id: 4,
+        title: 'Olives',
+        link: '/lab/olives',
+      },
+    ];
     this.rotateSlides = this.rotateSlides.bind(this);
+    this.dots = this.dots.bind(this);
   }
 
   rotateSlides(direction) {
@@ -49,28 +51,35 @@ export default class Lab extends React.Component {
     const updateSlides = {};
     Object.entries(this.state.slides).forEach(([key, value]) => {
       if (value <= 0) {
-        updateSlides[key] = this.state.data.length - 1;
+        updateSlides[key] = this.dataForSlides.length - 1;
       } else {
         updateSlides[key] = this.state.slides[key] + step;
       }
     });
 
-    console.log(updateSlides);
-
-
     this.setState({ slides: updateSlides }, () => {
+      // logic for rotating slides in view goes here
       console.table(this.state.slides);
     });
-
-    console.log(`Direction: ${direction}`);
   }
 
   /**
    * Builds dots under the middle slide
    * @param {{title: string, isActive: boolean}} items
    */
-  dots(items) {
-    console.log(items);
+  dots() {
+    return (
+      this.dataForSlides.map(item => (
+        <div
+          className={`dot ${(this.state.activeSlide === item.id) ? 'active' : ''}`}
+          role="button"
+          key={item.id}
+          tabIndex={item.id}
+          onClick={() => this.rotateSlides('left')}
+          onKeyDown={() => this.rotateSlides('left')}
+        />
+      ))
+    );
   }
 
   render() {
@@ -108,15 +117,7 @@ export default class Lab extends React.Component {
           </div>
           <div className="bread-crumbs">
             <div className="dot-section">
-              <div
-                className="dot"
-                role="button"
-                tabIndex="0"
-                onClick={() => this.rotateSlides('left')}
-                onKeyDown={() => this.rotateSlides('left')}
-              />
-              <div className="dot active" />
-              <div className="dot" />
+              {React.createElement(this.dots)}
             </div>
           </div>
         </div>

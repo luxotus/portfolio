@@ -88,12 +88,12 @@ $dot-count: 5;
     width: 100%;
 
     .dot-section {
-      width: $dot-size * $dot-count;
-      margin: 0 auto;
+      width: 100%;
+      text-align: center;
     }
 
     .dot {
-      float: left;
+      display: inline-block;
       height: $dot-size;
       width: $dot-size;
       margin: 0 5px;
