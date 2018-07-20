@@ -10,9 +10,10 @@ export default class Lab extends React.Component {
         leftHidden: 0,
         leftVisible: 1,
         middle: 2,
-        rightHidden: 3,
-        rightVisible: 4,
+        rightVisible: 3,
+        rightHidden: 4,
       },
+      direction: '',
     };
     this.dataForSlides = [
       {
@@ -42,22 +43,37 @@ export default class Lab extends React.Component {
       },
     ];
     this.updateSlides = this.updateSlides.bind(this);
+    this.carouselAnimation = this.carouselAnimation.bind(this);
+  }
+
+  carouselAnimation() {
+    console.log(`Direction: ${this.state.direction}`);
   }
 
   updateSlides(direction) {
-    const step = (direction === 'left') ? -1 : 1;
+    const step = 1;
     const slides = {};
-    Object.entries(this.state.slides).forEach(([key, value]) => {
-      if (value <= 0) {
-        slides[key] = this.dataForSlides.length - 1;
-      } else {
-        slides[key] = this.state.slides[key] + step;
-      }
-    });
+    const lastSlidePosition = this.dataForSlides.length - 1;
 
-    this.setState({ slides: slides }, () => {
+    if (direction === 'left') {
+      Object.entries(this.state.slides).forEach(([key, value]) => {
+        slides[key] = (value <= 0) ? lastSlidePosition : value - step;
+      });
+    }
+
+    if (direction === 'right') {
+      Object.entries(this.state.slides).forEach(([key, value]) => {
+        slides[key] = (value === lastSlidePosition) ? 0 : value + step;
+      });
+    }
+
+    this.setState({
+      slides: slides,
+      direction: direction,
+    }, () => {
       // logic for rotating slides in view goes here
       console.table(this.state.slides);
+      this.carouselAnimation();
     });
   }
 
@@ -78,7 +94,14 @@ export default class Lab extends React.Component {
         <div id="carousel-container">
           <div className="carousel">
             <div id="left-hidden-item" className="floating-item hidden-item left" />
-            <div id="left-shown-item" className="floating-item side-item left" />
+            <div
+              id="left-shown-item"
+              className="floating-item side-item left"
+              role="button"
+              tabIndex="0"
+              onClick={() => this.updateSlides('left')}
+              onKeyDown={() => this.updateSlides('left')}
+            />
             <div id="middle-shown-item" className="floating-item main-item">
               <div id="details">
                 <h1>
@@ -91,7 +114,14 @@ export default class Lab extends React.Component {
                 </p>
               </div>
             </div>
-            <div id="right-shown-item" className="floating-item side-item right" />
+            <div
+              id="right-shown-item"
+              className="floating-item side-item right"
+              role="button"
+              tabIndex="0"
+              onClick={() => this.updateSlides('right')}
+              onKeyDown={() => this.updateSlides('right')}
+            />
             <div id="right-hidden-item" className="floating-item hidden-item right" />
           </div>
         </div>
