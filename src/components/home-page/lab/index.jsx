@@ -14,6 +14,7 @@ export default class Lab extends React.Component {
         rightHidden: 4,
       },
       direction: '',
+      isCarouselAnimating: false,
     };
     this.dataForSlides = [
       {
@@ -47,7 +48,48 @@ export default class Lab extends React.Component {
   }
 
   carouselAnimation() {
-    console.log(`Direction: ${this.state.direction}`);
+    const domSlides = {
+      leftHidden: document.querySelector('#carousel-container .hidden-item.left'),
+      leftVisible: document.querySelector('#carousel-container .side-item.left'),
+      middle: document.querySelector('#carousel-container .main-item'),
+      middleDetails: document.querySelector('#middle-shown-item .carousel-middle-details'),
+      rightVisible: document.querySelector('#carousel-container .side-item.right'),
+      rightHidden: document.querySelector('#carousel-container .hidden-item.right'),
+    };
+
+    // Prevent animation from triggering when animation is active
+    if (this.state.isCarouselAnimating) {
+      return;
+    }
+
+    if (!this.state.isCarouselAnimating) {
+      this.setState({ isCarouselAnimating: true });
+    }
+
+    // Left
+    if (this.state.direction === 'left') {
+      //
+    }
+
+    // Right
+    if (this.state.direction === 'right') {
+      // Fade out middle item text
+      this.props.fadingEffect(domSlides.middleDetails, null, 20);
+
+      // right hidden item to right side item
+
+      // right side item to middle item
+
+      // middle item to left side item
+
+      // left side item to left hidden item
+
+      // left hidden item removed
+
+      // create right hidden item
+    }
+
+    console.log(this.state);
   }
 
   updateSlides(direction) {
@@ -102,7 +144,7 @@ export default class Lab extends React.Component {
               onKeyDown={() => this.updateSlides('left')}
             />
             <div id="middle-shown-item" className="floating-item main-item">
-              <div id="details">
+              <div className="carousel-middle-details">
                 <h1>
                   {'Arkade'}
                   <br />

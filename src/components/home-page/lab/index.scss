@@ -62,6 +62,7 @@ $dot-size: 15px;
     width: $side-itm-width;
     background-color: #5f5f5f;
     cursor: pointer;
+    outline: none;
   }
 
   .side-item.left {
@@ -81,7 +82,7 @@ $dot-size: 15px;
   }
 }
 
-#details {
+.carousel-middle-details {
   display: flex;
   justify-content: center;
   align-content: center;
