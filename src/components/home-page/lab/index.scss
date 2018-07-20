@@ -5,8 +5,8 @@ $side-itm-height: 250px;
 $side-itm-width: 400px;
 $hidden-itm-height: 50px;
 $hidden-itm-width: 100px;
-$main-itm-height: 66.667%;
-$main-itm-width: 47.4989%;
+$main-itm-height: 400px;
+$main-itm-width: 600px;
 $dot-size: 15px;
 
 
@@ -50,11 +50,13 @@ $dot-size: 15px;
   }
 
   .hidden-item.left {
-    left: -($hidden-itm-width);
+    left: calc(-100% - #{$hidden-itm-width});
+    right: 0;
   }
 
   .hidden-item.right {
-    right: -($hidden-itm-width);
+    left: 0;
+    right: calc(-100% - #{$hidden-itm-width});
   }
 
   .side-item {
@@ -66,11 +68,13 @@ $dot-size: 15px;
   }
 
   .side-item.left {
-    left: -($side-itm-width / 2);
+    left: calc(-100%);
+    right: 0;
   }
 
   .side-item.right {
-    right: -($side-itm-width / 2);
+    left: 0;
+    right: calc(-100%);
   }
 
   .main-item {
