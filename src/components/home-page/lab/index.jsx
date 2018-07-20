@@ -13,7 +13,6 @@ export default class Lab extends React.Component {
         rightHidden: 3,
         rightVisible: 4,
       },
-      activeSlide: 2,
     };
     this.dataForSlides = [
       {
@@ -42,44 +41,24 @@ export default class Lab extends React.Component {
         link: '/lab/olives',
       },
     ];
-    this.rotateSlides = this.rotateSlides.bind(this);
-    this.dots = this.dots.bind(this);
+    this.updateSlides = this.updateSlides.bind(this);
   }
 
-  rotateSlides(direction) {
+  updateSlides(direction) {
     const step = (direction === 'left') ? -1 : 1;
-    const updateSlides = {};
+    const slides = {};
     Object.entries(this.state.slides).forEach(([key, value]) => {
       if (value <= 0) {
-        updateSlides[key] = this.dataForSlides.length - 1;
+        slides[key] = this.dataForSlides.length - 1;
       } else {
-        updateSlides[key] = this.state.slides[key] + step;
+        slides[key] = this.state.slides[key] + step;
       }
     });
 
-    this.setState({ slides: updateSlides }, () => {
+    this.setState({ slides: slides }, () => {
       // logic for rotating slides in view goes here
       console.table(this.state.slides);
     });
-  }
-
-  /**
-   * Builds dots under the middle slide
-   * @param {{title: string, isActive: boolean}} items
-   */
-  dots() {
-    return (
-      this.dataForSlides.map(item => (
-        <div
-          className={`dot ${(this.state.activeSlide === item.id) ? 'active' : ''}`}
-          role="button"
-          key={item.id}
-          tabIndex={item.id}
-          onClick={() => this.rotateSlides('left')}
-          onKeyDown={() => this.rotateSlides('left')}
-        />
-      ))
-    );
   }
 
   render() {
@@ -114,11 +93,6 @@ export default class Lab extends React.Component {
             </div>
             <div id="right-shown-item" className="floating-item side-item right" />
             <div id="right-hidden-item" className="floating-item hidden-item right" />
-          </div>
-          <div className="bread-crumbs">
-            <div className="dot-section">
-              {React.createElement(this.dots)}
-            </div>
           </div>
         </div>
       </div>

@@ -43,24 +43,6 @@
     height: 66.667%;
     width: 47.4989%;
     background-color: #100c15; }
-  #carousel-container .bread-crumbs {
-    position: absolute;
-    bottom: 0;
-    width: 100%; }
-    #carousel-container .bread-crumbs .dot-section {
-      width: 100%;
-      text-align: center; }
-    #carousel-container .bread-crumbs .dot {
-      display: inline-block;
-      height: 15px;
-      width: 15px;
-      margin: 0 5px;
-      border-radius: 50%;
-      background-color: #999;
-      cursor: pointer; }
-    #carousel-container .bread-crumbs .dot.active,
-    #carousel-container .bread-crumbs .dot:hover {
-      background-color: #00f6ff; }
 
 #details {
   display: flex;

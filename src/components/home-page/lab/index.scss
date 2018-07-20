@@ -1,7 +1,5 @@
 $primary-color: #fff;
 $secondary-color: #35a2f2;
-$bread-crumbs-color-default: #999;
-$bread-crumbs-color-active: #00f6ff;
 
 $side-itm-height: 250px;
 $side-itm-width: 400px;
@@ -79,32 +77,6 @@ $dot-size: 15px;
     height: $main-itm-height;
     width: $main-itm-width;
     background-color: #100c15;
-  }
-
-  .bread-crumbs {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-
-    .dot-section {
-      width: 100%;
-      text-align: center;
-    }
-
-    .dot {
-      display: inline-block;
-      height: $dot-size;
-      width: $dot-size;
-      margin: 0 5px;
-      border-radius: 50%;
-      background-color: $bread-crumbs-color-default;
-      cursor: pointer;
-    }
-
-    .dot.active,
-    .dot:hover {
-      background-color: $bread-crumbs-color-active;
-    }
   }
 }
 
