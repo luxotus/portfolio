@@ -71,8 +71,7 @@ export default class Lab extends React.Component {
       slides: slides,
       direction: direction,
     }, () => {
-      // logic for rotating slides in view goes here
-      console.table(this.state.slides);
+      // console.table(this.state.slides);
       this.carouselAnimation();
     });
   }
