@@ -66,17 +66,26 @@ export default class Lab extends React.Component {
     let currentVal = from;
 
     const timer = setInterval(() => {
-      if ((currentVal - step) <= to) {
-        clearInterval(timer);
-        element.style[direction] = (isHiddenItm) ? '-100%' : '0%';
+      if (direction === 'right') {
+        if ((currentVal - step) <= to) {
+          clearInterval(timer);
+          element.style[direction] = (isHiddenItm) ? '-100%' : '0%';
+        }
+        currentVal -= step;
       }
 
-      currentVal -= step;
+      if (direction === 'left') {
+        if ((currentVal + step) >= to) {
+          clearInterval(timer);
+          element.style[direction] = (isHiddenItm) ? 'calc(-100% - 200px)' : '-100%';
+        }
+        currentVal += step;
+      }
 
       if (isHiddenItm) {
         element.style[direction] = (currentVal === 0) ? '-100%' : `calc(-100% - ${currentVal}px)`;
       } else {
-        element.style[direction] = `calc(-${currentVal}%)`;
+        element.style[direction] = `-${currentVal}%`;
       }
     }, milSec);
   }
@@ -112,10 +121,9 @@ export default class Lab extends React.Component {
       step[key] = isIncreasing ? value : -value;
     });
 
-    console.log(step);
-
     const timerWidth = setInterval(() => {
-      if (currentSize.width >= elements.to.size.width) {
+      if ((isIncreasing && currentSize.width >= elements.to.size.width)
+      || (!isIncreasing && currentSize.width <= elements.to.size.width)) {
         clearInterval(timerWidth);
         elements.from.el.style.width = `${elements.to.size.width}px`;
       } else {
@@ -125,7 +133,8 @@ export default class Lab extends React.Component {
     }, milSec);
 
     const timerHeight = setInterval(() => {
-      if (currentSize.height >= elements.to.size.height) {
+      if ((isIncreasing && currentSize.height >= elements.to.size.height)
+      || (!isIncreasing && currentSize.height <= elements.to.size.height)) {
         clearInterval(timerHeight);
         elements.from.el.style.height = `${elements.to.size.height}px`;
       } else {
@@ -133,9 +142,6 @@ export default class Lab extends React.Component {
         currentSize.height += step.height;
       }
     }, milSec);
-
-    console.table(elements.to.size);
-    console.table(elements.from.size);
   }
 
   carouselAnimation() {
@@ -168,14 +174,20 @@ export default class Lab extends React.Component {
       this.props.fadingEffect(domSlides.middleDetails, null, 20);
 
       // right hidden item to right side item
+      this.toFromAnimation(domSlides.rightHidden, 'right', 0, 100, true);
+      this.reSizeAnimation(domSlides.rightHidden, domSlides.rightVisible, true);
 
       // right side item to middle item
       this.toFromAnimation(domSlides.rightVisible, 'right', 0, 100, false);
       this.reSizeAnimation(domSlides.rightVisible, domSlides.middle, true);
 
       // middle item to left side item
+      this.toFromAnimation(domSlides.middle, 'left', 100, 0, false);
+      this.reSizeAnimation(domSlides.middle, domSlides.leftVisible, false);
 
       // left side item to left hidden item
+      this.toFromAnimation(domSlides.leftVisible, 'left', 100, 0, true);
+      this.reSizeAnimation(domSlides.leftVisible, domSlides.leftHidden, true);
 
       // left hidden item removed
 
