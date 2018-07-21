@@ -144,6 +144,13 @@ export default class Lab extends React.Component {
     }, milSec);
   }
 
+  slideAnimation(fromEl, toEl, direction, targetVal, currentVal, isHiddenItm, isIncreasing) {
+    const fromElement = fromEl;
+    this.toFromAnimation(fromEl, direction, targetVal, currentVal, isHiddenItm);
+    this.reSizeAnimation(fromEl, toEl, isIncreasing);
+    fromElement.classList = toEl.classList;
+  }
+
   carouselAnimation() {
     const domSlides = {
       leftHidden: document.querySelector('#carousel-container .hidden-item.left'),
@@ -170,37 +177,19 @@ export default class Lab extends React.Component {
 
     // Right
     if (this.state.direction === 'right') {
-      // Fade out middle item text
+      // Adding right hidden item since previous will become right side item
+      const cln = domSlides.rightHidden.cloneNode(true);
+      document.querySelector('#carousel-container .carousel').appendChild(cln);
+
+      this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true);
+      this.slideAnimation(domSlides.rightVisible, domSlides.middle, 'right', 0, 100, false, true);
       this.props.fadingEffect(domSlides.middleDetails, null, 10);
+      this.slideAnimation(domSlides.middle, domSlides.leftVisible, 'left', 100, 0, false, false);
+      this.slideAnimation(domSlides.leftVisible, domSlides.leftHidden, 'left', 200, 100, true, true);
 
-      // right hidden item to right side item
-      this.toFromAnimation(domSlides.rightHidden, 'right', 0, 100, true);
-      this.reSizeAnimation(domSlides.rightHidden, domSlides.rightVisible, true);
-      domSlides.rightHidden.classList = domSlides.rightVisible.classList;
-
-      // right side item to middle item
-      this.toFromAnimation(domSlides.rightVisible, 'right', 0, 100, false);
-      this.reSizeAnimation(domSlides.rightVisible, domSlides.middle, true);
-      domSlides.rightVisible.classList = domSlides.middle.classList;
-
-      // Fade in right side item detail text
-
-      // middle item to left side item
-      this.toFromAnimation(domSlides.middle, 'left', 100, 0, false);
-      this.reSizeAnimation(domSlides.middle, domSlides.leftVisible, false);
-      domSlides.middle.classList = domSlides.leftVisible.classList;
-
-      // left side item to left hidden item
-      this.toFromAnimation(domSlides.leftVisible, 'left', 100, 0, true);
-      this.reSizeAnimation(domSlides.leftVisible, domSlides.leftHidden, true);
-      domSlides.leftVisible.classList = domSlides.leftHidden.classList;
-
-      // left hidden item removed
-
-      // create right hidden item
+      // left hidden item is removed since it is replaced by left side item
+      domSlides.leftHidden.parentNode.removeChild(domSlides.leftHidden);
     }
-
-    console.log(this.state);
   }
 
   updateSlides(direction) {
