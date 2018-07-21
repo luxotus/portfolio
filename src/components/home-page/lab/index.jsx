@@ -58,15 +58,16 @@ export default class Lab extends React.Component {
    * @param {int} to
    * @param {int} from
    * @param {boolean} isHiddenItm
+   * @param {rotation} direction
    */
-  toFromAnimation(el, direction, to, from, isHiddenItm) {
+  toFromAnimation(el, direction, to, from, isHiddenItm, btn) {
     const element = el;
     const milSec = 10;
     const step = this.calcStepRatios(to, from, milSec);
     let currentVal = from;
 
     const timer = setInterval(() => {
-      if (direction === 'right') {
+      if ((direction === 'right' && btn === 'right-btn') || (direction === 'left' && btn === 'left-btn')) {
         if ((currentVal - step) <= to) {
           clearInterval(timer);
           element.style[direction] = (isHiddenItm) ? '-100%' : '0%';
@@ -74,7 +75,7 @@ export default class Lab extends React.Component {
         currentVal -= step;
       }
 
-      if (direction === 'left') {
+      if ((direction === 'left' && btn === 'right-btn') || (direction === 'right' && btn === 'left-btn')) {
         if ((currentVal + step) >= to) {
           clearInterval(timer);
           element.style[direction] = (isHiddenItm) ? 'calc(-100% - 200px)' : '-100%';
@@ -144,9 +145,9 @@ export default class Lab extends React.Component {
     }, milSec);
   }
 
-  slideAnimation(fromEl, toEl, direction, targetVal, currentVal, isHiddenItm, isIncreasing) {
+  slideAnimation(fromEl, toEl, direction, targetVal, currentVal, isHiddenItm, isIncreasing, btn) {
     const fromElement = fromEl;
-    this.toFromAnimation(fromEl, direction, targetVal, currentVal, isHiddenItm);
+    this.toFromAnimation(fromEl, direction, targetVal, currentVal, isHiddenItm, btn);
     this.reSizeAnimation(fromEl, toEl, isIncreasing);
     fromElement.classList = toEl.classList;
   }
@@ -170,22 +171,31 @@ export default class Lab extends React.Component {
       this.setState({ isCarouselAnimating: true });
     }
 
-    // Left
+    // Left button was clicked
     if (this.state.direction === 'left') {
-      //
+      // Add left hidden item since previous will become left side item
+      const cln = domSlides.leftHidden.cloneNode(true);
+      document.querySelector('#carousel-container .carousel').appendChild(cln);
+
+      this.slideAnimation(domSlides.leftHidden, domSlides.leftVisible, 'left', 0, 100, true, true, 'left-btn');
+      this.slideAnimation(domSlides.leftVisible, domSlides.middle, 'left', 0, 100, false, true, 'left-btn');
+      this.slideAnimation(domSlides.middle, domSlides.rightVisible, 'right', 100, 0, false, false, 'left-btn');
+      this.slideAnimation(domSlides.rightVisible, domSlides.rightHidden, 'right', 200, 100, true, true, 'left-btn');
+
+      // Right hidden item is removed since it is replaced by right side item
+      domSlides.rightHidden.parentNode.removeChild(domSlides.rightHidden);
     }
 
-    // Right
+    // Right button was clicked
     if (this.state.direction === 'right') {
       // Adding right hidden item since previous will become right side item
       const cln = domSlides.rightHidden.cloneNode(true);
       document.querySelector('#carousel-container .carousel').appendChild(cln);
 
-      this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true);
-      this.slideAnimation(domSlides.rightVisible, domSlides.middle, 'right', 0, 100, false, true);
-      this.props.fadingEffect(domSlides.middleDetails, null, 10);
-      this.slideAnimation(domSlides.middle, domSlides.leftVisible, 'left', 100, 0, false, false);
-      this.slideAnimation(domSlides.leftVisible, domSlides.leftHidden, 'left', 200, 100, true, true);
+      this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true, 'right-btn');
+      this.slideAnimation(domSlides.rightVisible, domSlides.middle, 'right', 0, 100, false, true, 'right-btn');
+      this.slideAnimation(domSlides.middle, domSlides.leftVisible, 'left', 100, 0, false, false, 'right-btn');
+      this.slideAnimation(domSlides.leftVisible, domSlides.leftHidden, 'left', 200, 100, true, true, 'right-btn');
 
       // left hidden item is removed since it is replaced by left side item
       domSlides.leftHidden.parentNode.removeChild(domSlides.leftHidden);
