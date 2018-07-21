@@ -64,6 +64,7 @@ export default class Lab extends React.Component {
     const timer = setInterval(() => {
       if ((currentVal - step) <= to) {
         clearInterval(timer);
+        element.style[direction] = (isHiddenItm) ? '-100%' : '0%';
       }
 
       currentVal -= step;
@@ -103,7 +104,7 @@ export default class Lab extends React.Component {
     const timerWidth = setInterval(() => {
       if (currentSize.width >= elements.to.size.width) {
         clearInterval(timerWidth);
-        elements.from.el.style.width = `${elements.to.width}px`;
+        elements.from.el.style.width = `${elements.to.size.width}px`;
       } else {
         elements.from.el.style.width = `${currentSize.width}px`;
         currentSize.width += step;
@@ -113,7 +114,7 @@ export default class Lab extends React.Component {
     const timerHeight = setInterval(() => {
       if (currentSize.height >= elements.to.size.height) {
         clearInterval(timerHeight);
-        elements.from.el.style.height = `${elements.to.height}px`;
+        elements.from.el.style.height = `${elements.to.size.height}px`;
       } else {
         elements.from.el.style.height = `${currentSize.height}px`;
         currentSize.height += step;
