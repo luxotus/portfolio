@@ -68,13 +68,13 @@ $dot-size: 15px;
   }
 
   .side-item.left {
-    left: calc(-100%);
+    left: -100%;
     right: 0;
   }
 
   .side-item.right {
     left: 0;
-    right: calc(-100%);
+    right: -100%;
   }
 
   .main-item {

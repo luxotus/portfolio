@@ -47,6 +47,35 @@ export default class Lab extends React.Component {
     this.carouselAnimation = this.carouselAnimation.bind(this);
   }
 
+  /**
+   *
+   * @param {obj} el
+   * @param {string} direction
+   * @param {int} to
+   * @param {int} from
+   * @param {boolean} isHiddenItm
+   */
+  toFromAnimation(el, direction, to, from, isHiddenItm) {
+    const element = el;
+    const milSec = 25;
+    const step = 1;
+    let currentVal = from;
+
+    const timer = setInterval(() => {
+      if ((currentVal - step) <= to) {
+        clearInterval(timer);
+      }
+
+      currentVal -= step;
+
+      if (isHiddenItm) {
+        element.style[direction] = (currentVal === 0) ? '-100%' : `calc(-100% - ${currentVal}px)`;
+      } else {
+        element.style[direction] = `calc(-${currentVal}%)`;
+      }
+    }, milSec);
+  }
+
   carouselAnimation() {
     const domSlides = {
       leftHidden: document.querySelector('#carousel-container .hidden-item.left'),
@@ -79,6 +108,7 @@ export default class Lab extends React.Component {
       // right hidden item to right side item
 
       // right side item to middle item
+      this.toFromAnimation(domSlides.rightVisible, 'right', 0, 100, false);
 
       // middle item to left side item
 

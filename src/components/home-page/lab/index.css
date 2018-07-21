@@ -38,11 +38,11 @@
     cursor: pointer;
     outline: none; }
   #carousel-container .side-item.left {
-    left: calc(-100%);
+    left: -100%;
     right: 0; }
   #carousel-container .side-item.right {
     left: 0;
-    right: calc(-100%); }
+    right: -100%; }
   #carousel-container .main-item {
     left: 0;
     right: 0;
