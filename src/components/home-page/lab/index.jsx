@@ -57,8 +57,8 @@ export default class Lab extends React.Component {
    */
   toFromAnimation(el, direction, to, from, isHiddenItm) {
     const element = el;
-    const milSec = 25;
-    const step = 1;
+    const milSec = 10;
+    const step = 1.15;
     let currentVal = from;
 
     const timer = setInterval(() => {
@@ -74,6 +74,54 @@ export default class Lab extends React.Component {
         element.style[direction] = `calc(-${currentVal}%)`;
       }
     }, milSec);
+  }
+
+  reSizeAnimation(fromEl, toEl, isIncreasing) {
+    const elements = {
+      to: {
+        el: toEl,
+        size: {
+          height: parseInt(window.getComputedStyle(toEl).getPropertyValue('height'), 10),
+          width: parseInt(window.getComputedStyle(toEl).getPropertyValue('width'), 10),
+        },
+      },
+      from: {
+        el: fromEl,
+        size: {
+          height: parseInt(window.getComputedStyle(fromEl).getPropertyValue('height'), 10),
+          width: parseInt(window.getComputedStyle(fromEl).getPropertyValue('width'), 10),
+        },
+      },
+    };
+    const currentSize = {
+      height: elements.from.size.height,
+      width: elements.from.size.width,
+    };
+    const step = isIncreasing ? 2 : -2;
+    const milSec = 10;
+
+    const timerWidth = setInterval(() => {
+      if (currentSize.width >= elements.to.size.width) {
+        clearInterval(timerWidth);
+        elements.from.el.style.width = `${elements.to.width}px`;
+      } else {
+        elements.from.el.style.width = `${currentSize.width}px`;
+        currentSize.width += step;
+      }
+    }, milSec);
+
+    const timerHeight = setInterval(() => {
+      if (currentSize.height >= elements.to.size.height) {
+        clearInterval(timerHeight);
+        elements.from.el.style.height = `${elements.to.height}px`;
+      } else {
+        elements.from.el.style.height = `${currentSize.height}px`;
+        currentSize.height += step;
+      }
+    }, milSec);
+
+    console.table(elements.to.size);
+    console.table(elements.from.size);
   }
 
   carouselAnimation() {
@@ -109,6 +157,7 @@ export default class Lab extends React.Component {
 
       // right side item to middle item
       this.toFromAnimation(domSlides.rightVisible, 'right', 0, 100, false);
+      this.reSizeAnimation(domSlides.rightVisible, domSlides.middle, true);
 
       // middle item to left side item
 
