@@ -149,7 +149,7 @@ export default class Lab extends React.Component {
       leftHidden: document.querySelector('#carousel-container .hidden-item.left'),
       leftVisible: document.querySelector('#carousel-container .side-item.left'),
       middle: document.querySelector('#carousel-container .main-item'),
-      middleDetails: document.querySelector('#middle-shown-item .carousel-middle-details'),
+      middleDetails: document.querySelector('.carousel-slide-details'),
       rightVisible: document.querySelector('#carousel-container .side-item.right'),
       rightHidden: document.querySelector('#carousel-container .hidden-item.right'),
     };
@@ -171,23 +171,29 @@ export default class Lab extends React.Component {
     // Right
     if (this.state.direction === 'right') {
       // Fade out middle item text
-      this.props.fadingEffect(domSlides.middleDetails, null, 20);
+      this.props.fadingEffect(domSlides.middleDetails, null, 10);
 
       // right hidden item to right side item
       this.toFromAnimation(domSlides.rightHidden, 'right', 0, 100, true);
       this.reSizeAnimation(domSlides.rightHidden, domSlides.rightVisible, true);
+      domSlides.rightHidden.classList = domSlides.rightVisible.classList;
 
       // right side item to middle item
       this.toFromAnimation(domSlides.rightVisible, 'right', 0, 100, false);
       this.reSizeAnimation(domSlides.rightVisible, domSlides.middle, true);
+      domSlides.rightVisible.classList = domSlides.middle.classList;
+
+      // Fade in right side item detail text
 
       // middle item to left side item
       this.toFromAnimation(domSlides.middle, 'left', 100, 0, false);
       this.reSizeAnimation(domSlides.middle, domSlides.leftVisible, false);
+      domSlides.middle.classList = domSlides.leftVisible.classList;
 
       // left side item to left hidden item
       this.toFromAnimation(domSlides.leftVisible, 'left', 100, 0, true);
       this.reSizeAnimation(domSlides.leftVisible, domSlides.leftHidden, true);
+      domSlides.leftVisible.classList = domSlides.leftHidden.classList;
 
       // left hidden item removed
 
@@ -239,21 +245,12 @@ export default class Lab extends React.Component {
         </header>
         <div id="carousel-container">
           <div className="carousel">
-            <div id="left-hidden-item" className="floating-item hidden-item left" />
-            <div
-              id="left-shown-item"
-              className="floating-item side-item left"
-              role="button"
-              tabIndex="0"
-              onClick={() => this.updateSlides('left')}
-              onKeyDown={() => this.updateSlides('left')}
-            />
-            <div id="middle-shown-item" className="floating-item main-item">
-              <div className="carousel-middle-details">
+            <div className="floating-item hidden-item left">
+              <div className="carousel-slide-details">
                 <h1>
-                  {'Arkade'}
+                  {'HiddenItm'}
                   <br />
-                  {'London'}
+                  {'Left'}
                 </h1>
                 <p>
                   {'- Audio Reactive Art'}
@@ -261,14 +258,65 @@ export default class Lab extends React.Component {
               </div>
             </div>
             <div
-              id="right-shown-item"
+              className="floating-item side-item left"
+              role="button"
+              tabIndex="0"
+              onClick={() => this.updateSlides('left')}
+              onKeyDown={() => this.updateSlides('left')}
+            >
+              <div className="carousel-slide-details">
+                <h1>
+                  {'SideItm'}
+                  <br />
+                  {'Left'}
+                </h1>
+                <p>
+                  {'- Audio Reactive Art'}
+                </p>
+              </div>
+            </div>
+            <div className="floating-item main-item">
+              <div className="carousel-slide-details">
+                <h1>
+                  {'MiddleItm'}
+                  <br />
+                  {'Center'}
+                </h1>
+                <p>
+                  {'- Audio Reactive Art'}
+                </p>
+              </div>
+            </div>
+            <div
               className="floating-item side-item right"
               role="button"
               tabIndex="0"
               onClick={() => this.updateSlides('right')}
               onKeyDown={() => this.updateSlides('right')}
-            />
-            <div id="right-hidden-item" className="floating-item hidden-item right" />
+            >
+              <div className="carousel-slide-details">
+                <h1>
+                  {'SideItm'}
+                  <br />
+                  {'Right'}
+                </h1>
+                <p>
+                  {'- Audio Reactive Art'}
+                </p>
+              </div>
+            </div>
+            <div className="floating-item hidden-item right">
+              <div className="carousel-slide-details">
+                <h1>
+                  {'HiddenItm'}
+                  <br />
+                  {'Right'}
+                </h1>
+                <p>
+                  {'- Audio Reactive Art'}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
