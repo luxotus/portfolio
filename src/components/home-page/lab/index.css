@@ -22,15 +22,15 @@
     bottom: 0;
     margin: auto; }
   #carousel-container .hidden-item {
-    height: 50px;
-    width: 100px;
+    height: 100px;
+    width: 200px;
     background-color: #0075fc; }
   #carousel-container .hidden-item.left {
-    left: calc(-100% - 100px);
+    left: calc(-100% - 200px);
     right: 0; }
   #carousel-container .hidden-item.right {
     left: 0;
-    right: calc(-100% - 100px); }
+    right: calc(-100% - 200px); }
   #carousel-container .side-item {
     height: 250px;
     width: 400px;

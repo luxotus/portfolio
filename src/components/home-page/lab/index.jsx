@@ -47,6 +47,10 @@ export default class Lab extends React.Component {
     this.carouselAnimation = this.carouselAnimation.bind(this);
   }
 
+  calcStepRatios(valTo, valFrom, milSec) {
+    return (Math.abs(valFrom - valTo) / milSec) / 4;
+  }
+
   /**
    *
    * @param {obj} el
@@ -58,7 +62,7 @@ export default class Lab extends React.Component {
   toFromAnimation(el, direction, to, from, isHiddenItm) {
     const element = el;
     const milSec = 10;
-    const step = 1.15;
+    const step = this.calcStepRatios(to, from, milSec);
     let currentVal = from;
 
     const timer = setInterval(() => {
@@ -98,8 +102,17 @@ export default class Lab extends React.Component {
       height: elements.from.size.height,
       width: elements.from.size.width,
     };
-    const step = isIncreasing ? 2 : -2;
     const milSec = 10;
+    const step = {
+      height: this.calcStepRatios(elements.to.size.height, elements.from.size.height, milSec),
+      width: this.calcStepRatios(elements.to.size.width, elements.from.size.width, milSec),
+    };
+
+    Object.entries(step).forEach(([key, value]) => {
+      step[key] = isIncreasing ? value : -value;
+    });
+
+    console.log(step);
 
     const timerWidth = setInterval(() => {
       if (currentSize.width >= elements.to.size.width) {
@@ -107,7 +120,7 @@ export default class Lab extends React.Component {
         elements.from.el.style.width = `${elements.to.size.width}px`;
       } else {
         elements.from.el.style.width = `${currentSize.width}px`;
-        currentSize.width += step;
+        currentSize.width += step.width;
       }
     }, milSec);
 
@@ -117,7 +130,7 @@ export default class Lab extends React.Component {
         elements.from.el.style.height = `${elements.to.size.height}px`;
       } else {
         elements.from.el.style.height = `${currentSize.height}px`;
-        currentSize.height += step;
+        currentSize.height += step.height;
       }
     }, milSec);
 
