@@ -211,10 +211,12 @@ export default class Lab extends React.Component {
       const cln = domSlides.rightHidden.cloneNode(true);
       document.querySelector('#carousel-container .carousel').appendChild(cln);
 
-      // console.log(getEventListeners(domSlides.rightVisible));
+      console.log(domSlides.rightVisible);
 
       this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true, 'right-btn');
+      console.log('1');
       this.slideAnimation(domSlides.rightVisible, domSlides.middle, 'right', 0, 100, false, true, 'right-btn');
+      console.log('2');
       this.slideAnimation(domSlides.middle, domSlides.leftVisible, 'left', 100, 0, false, false, 'right-btn');
       this.slideAnimation(domSlides.leftVisible, domSlides.leftHidden, 'left', 200, 100, true, true, 'right-btn');
 
