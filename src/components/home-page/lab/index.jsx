@@ -191,7 +191,9 @@ export default class Lab extends React.Component {
     // Left button was clicked
     if (direction === 'left') {
       // Add left hidden item since previous will become left side item
-      const cln = domSlides.leftHidden.cloneNode(true);
+      const cln = domSlides.rightHidden.cloneNode(true);
+      cln.classList = domSlides.leftHidden.classList;
+      cln.style = domSlides.leftHidden.style;
       document.querySelector('#carousel-container .carousel').appendChild(cln);
 
       this.slideAnimation(domSlides.leftHidden, domSlides.leftVisible, 'left', 0, 100, true, true, 'left-btn');
@@ -206,7 +208,9 @@ export default class Lab extends React.Component {
     // Right button was clicked
     if (direction === 'right') {
       // Adding right hidden item since previous will become right side item
-      const cln = domSlides.rightHidden.cloneNode(true);
+      const cln = domSlides.leftHidden.cloneNode(true);
+      cln.classList = domSlides.rightHidden.classList;
+      cln.style = domSlides.rightHidden.style;
       document.querySelector('#carousel-container .carousel').appendChild(cln);
 
       this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true, 'right-btn');

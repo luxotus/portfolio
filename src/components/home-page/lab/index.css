@@ -78,7 +78,7 @@
   #carousel-container .hidden-item {
     height: 100px;
     width: 200px;
-    background-color: #0075fc; }
+    background-color: #5f5f5f; }
   #carousel-container .hidden-item.left {
     left: calc(-100% - 200px);
     right: 0; }
@@ -103,7 +103,7 @@
     right: 0;
     height: 400px;
     width: 600px;
-    background-color: #100c15; }
+    background-color: #5f5f5f; }
 
 /* Mobile Portrait */
 @media only screen and (max-device-width: 740px) and (orientation: portrait) {

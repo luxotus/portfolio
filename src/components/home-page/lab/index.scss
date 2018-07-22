@@ -1,5 +1,6 @@
 $primary-color: #fff;
 $secondary-color: #35a2f2;
+$slide-bg-color: #5f5f5f;
 
 $side-itm-height: 250px;
 $side-itm-width: 400px;
@@ -124,7 +125,7 @@ $dot-size: 15px;
   .hidden-item {
     height: $hidden-itm-height;
     width: $hidden-itm-width;
-    background-color: rgb(0, 117, 252);
+    background-color: $slide-bg-color;
   }
 
   .hidden-item.left {
@@ -147,7 +148,7 @@ $dot-size: 15px;
   .side-item {
     height: $side-itm-height;
     width: $side-itm-width;
-    background-color: #5f5f5f;
+    background-color: $slide-bg-color;
   }
 
   .side-item.left {
@@ -165,7 +166,7 @@ $dot-size: 15px;
     right: 0;
     height: $main-itm-height;
     width: $main-itm-width;
-    background-color: #100c15;
+    background-color: $slide-bg-color;
   }
 }
 
