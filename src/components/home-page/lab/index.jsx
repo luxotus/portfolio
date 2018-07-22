@@ -14,6 +14,20 @@ export default class Lab extends React.Component {
         rightHidden: 4,
       },
     };
+    this.isAnimationRunning = {
+      toFrom: [
+        false,
+        false,
+        false,
+        false,
+      ],
+      resize: [
+        false,
+        false,
+        false,
+        false,
+      ],
+    };
     this.dataForSlides = [
       {
         id: 0,
@@ -73,6 +87,28 @@ export default class Lab extends React.Component {
     return (Math.abs(valFrom - valTo) / milSec) / 4;
   }
 
+  updateAllRunningSlides() {
+    this.isAnimationRunning.toFrom = this.isAnimationRunning.toFrom.map(val => !val);
+    this.isAnimationRunning.resize = this.isAnimationRunning.resize.map(val => !val);
+  }
+
+  updateRunningSlide(pos, isRunning, type) {
+    if (this.isAnimationRunning[type].length > Math.abs(pos)) {
+      this.isAnimationRunning[type][pos] = isRunning;
+    }
+  }
+
+  checkRunningAnimations() {
+    let isRunning = false;
+    this.isAnimationRunning.toFrom.forEach((itm) => { if (itm) isRunning = true; });
+
+    if (!isRunning) {
+      this.isAnimationRunning.resize.forEach((itm) => { if (itm) isRunning = true; });
+    }
+
+    return isRunning;
+  }
+
   /**
    *
    * @param {obj} el
@@ -82,7 +118,7 @@ export default class Lab extends React.Component {
    * @param {boolean} isHiddenItm
    * @param {rotation} direction
    */
-  toFromAnimation(el, direction, to, from, isHiddenItm, btn) {
+  toFromAnimation(el, direction, to, from, isHiddenItm, btn, posStatus) {
     const element = el;
     const milSec = 10;
     const step = this.calcStepRatios(to, from, milSec);
@@ -93,6 +129,7 @@ export default class Lab extends React.Component {
         if ((currentVal - step) <= to) {
           clearInterval(timer);
           element.style[direction] = (isHiddenItm) ? '-100%' : '0%';
+          this.updateRunningSlide(posStatus, false, 'toFrom');
         }
         currentVal -= step;
       }
@@ -101,6 +138,7 @@ export default class Lab extends React.Component {
         if ((currentVal + step) >= to) {
           clearInterval(timer);
           element.style[direction] = (isHiddenItm) ? 'calc(-100% - 200px)' : '-100%';
+          this.updateRunningSlide(posStatus, false, 'toFrom');
         }
         currentVal += step;
       }
@@ -113,7 +151,7 @@ export default class Lab extends React.Component {
     }, milSec);
   }
 
-  reSizeAnimation(fromEl, toEl, isIncreasing) {
+  reSizeAnimation(fromEl, toEl, isIncreasing, posStatus) {
     const elements = {
       to: {
         el: toEl,
@@ -149,6 +187,7 @@ export default class Lab extends React.Component {
       || (!isIncreasing && currentSize.width <= elements.to.size.width)) {
         clearInterval(timerWidth);
         elements.from.el.style.width = `${elements.to.size.width}px`;
+        this.updateRunningSlide(posStatus, false, 'resize');
       } else {
         elements.from.el.style.width = `${currentSize.width}px`;
         currentSize.width += step.width;
@@ -160,6 +199,7 @@ export default class Lab extends React.Component {
       || (!isIncreasing && currentSize.height <= elements.to.size.height)) {
         clearInterval(timerHeight);
         elements.from.el.style.height = `${elements.to.size.height}px`;
+        this.updateRunningSlide(posStatus, false, 'resize');
       } else {
         elements.from.el.style.height = `${currentSize.height}px`;
         currentSize.height += step.height;
@@ -167,10 +207,11 @@ export default class Lab extends React.Component {
     }, milSec);
   }
 
-  slideAnimation(fromEl, toEl, direction, targetVal, currentVal, isHiddenItm, isIncreasing, btn) {
+  slideAnimation(fromEl, toEl, direction, targetVal, currentVal, isHiddenItm,
+    isIncreasing, btn, posStatus) {
     const fromElement = fromEl;
-    this.toFromAnimation(fromEl, direction, targetVal, currentVal, isHiddenItm, btn);
-    this.reSizeAnimation(fromEl, toEl, isIncreasing);
+    this.toFromAnimation(fromEl, direction, targetVal, currentVal, isHiddenItm, btn, posStatus);
+    this.reSizeAnimation(fromEl, toEl, isIncreasing, posStatus);
     fromElement.classList = toEl.classList;
   }
 
@@ -185,13 +226,13 @@ export default class Lab extends React.Component {
     };
 
     // Prevent animation from triggering when animation is active
-    if (this.state.isCarouselAnimating) {
+    if (this.checkRunningAnimations()) {
       return;
     }
 
-    // if (!this.state.isCarouselAnimating) {
-    //   this.setState({ isCarouselAnimating: true });
-    // }
+    if (!this.checkRunningAnimations()) {
+      this.updateAllRunningSlides();
+    }
 
     // Left button was clicked
     if (direction === 'left') {
@@ -201,10 +242,10 @@ export default class Lab extends React.Component {
       cln.style = domSlides.leftHidden.style;
       document.querySelector('#carousel-container .carousel').appendChild(cln);
 
-      this.slideAnimation(domSlides.leftHidden, domSlides.leftVisible, 'left', 0, 100, true, true, 'left-btn');
-      this.slideAnimation(domSlides.leftVisible, domSlides.middle, 'left', 0, 100, false, true, 'left-btn');
-      this.slideAnimation(domSlides.middle, domSlides.rightVisible, 'right', 100, 0, false, false, 'left-btn');
-      this.slideAnimation(domSlides.rightVisible, domSlides.rightHidden, 'right', 200, 100, true, true, 'left-btn');
+      this.slideAnimation(domSlides.leftHidden, domSlides.leftVisible, 'left', 0, 100, true, true, 'left-btn', 0);
+      this.slideAnimation(domSlides.leftVisible, domSlides.middle, 'left', 0, 100, false, true, 'left-btn', 1);
+      this.slideAnimation(domSlides.middle, domSlides.rightVisible, 'right', 100, 0, false, false, 'left-btn', 2);
+      this.slideAnimation(domSlides.rightVisible, domSlides.rightHidden, 'right', 200, 100, true, true, 'left-btn', 3);
 
       // Right hidden item is removed since it is replaced by right side item
       domSlides.rightHidden.parentNode.removeChild(domSlides.rightHidden);
@@ -218,10 +259,10 @@ export default class Lab extends React.Component {
       cln.style = domSlides.rightHidden.style;
       document.querySelector('#carousel-container .carousel').appendChild(cln);
 
-      this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true, 'right-btn');
-      this.slideAnimation(domSlides.rightVisible, domSlides.middle, 'right', 0, 100, false, true, 'right-btn');
-      this.slideAnimation(domSlides.middle, domSlides.leftVisible, 'left', 100, 0, false, false, 'right-btn');
-      this.slideAnimation(domSlides.leftVisible, domSlides.leftHidden, 'left', 200, 100, true, true, 'right-btn');
+      this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true, 'right-btn', 0);
+      this.slideAnimation(domSlides.rightVisible, domSlides.middle, 'right', 0, 100, false, true, 'right-btn', 1);
+      this.slideAnimation(domSlides.middle, domSlides.leftVisible, 'left', 100, 0, false, false, 'right-btn', 2);
+      this.slideAnimation(domSlides.leftVisible, domSlides.leftHidden, 'left', 200, 100, true, true, 'right-btn', 3);
 
       // left hidden item is removed since it is replaced by left side item
       domSlides.leftHidden.parentNode.removeChild(domSlides.leftHidden);
