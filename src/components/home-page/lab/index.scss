@@ -36,6 +36,56 @@ $dot-size: 15px;
   height: 600px;
   width: 100%;
 
+  .arrow-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    height: 225px;
+    width: 50px;
+    padding: 0;
+    border: none;
+    margin: auto 0;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    margin: auto;
+    transform: rotate(45deg);
+  }
+
+  .arrow-btn.left {
+    left: 0;
+
+    .arrow {
+      border-left: 3px solid black;
+      border-bottom: 3px solid black;
+    }
+  }
+
+  .arrow-btn.right {
+    right: 0;
+
+    .arrow {
+      border-top: 3px solid black;
+      border-right: 3px solid black;
+    }
+  }
+
+  .arrow-btn:hover .arrow,
+  .arrow-btn:focus .arrow {
+    border-color: $secondary-color;
+  }
+
   .floating-item {
     position: absolute;
     top: 0;
@@ -94,7 +144,6 @@ $dot-size: 15px;
     height: $side-itm-height;
     width: $side-itm-width;
     background-color: #5f5f5f;
-    cursor: pointer;
   }
 
   .side-item.left {

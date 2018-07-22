@@ -167,9 +167,9 @@ export default class Lab extends React.Component {
       return;
     }
 
-    if (!this.state.isCarouselAnimating) {
-      this.setState({ isCarouselAnimating: true });
-    }
+    // if (!this.state.isCarouselAnimating) {
+    //   this.setState({ isCarouselAnimating: true });
+    // }
 
     // Left button was clicked
     if (this.state.direction === 'left') {
@@ -191,6 +191,8 @@ export default class Lab extends React.Component {
       // Adding right hidden item since previous will become right side item
       const cln = domSlides.rightHidden.cloneNode(true);
       document.querySelector('#carousel-container .carousel').appendChild(cln);
+
+      // console.log(getEventListeners(domSlides.rightVisible));
 
       this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true, 'right-btn');
       this.slideAnimation(domSlides.rightVisible, domSlides.middle, 'right', 0, 100, false, true, 'right-btn');
@@ -244,6 +246,14 @@ export default class Lab extends React.Component {
         </header>
         <div id="carousel-container">
           <div className="carousel">
+            <button
+              type="button"
+              className="arrow-btn left"
+              onClick={() => this.updateSlides('left')}
+              onKeyDown={() => this.updateSlides('left')}
+            >
+              <div className="arrow" />
+            </button>
             <div className="floating-item hidden-item left">
               <div className="carousel-slide-details">
                 <h1>
@@ -256,13 +266,7 @@ export default class Lab extends React.Component {
                 </p>
               </div>
             </div>
-            <div
-              className="floating-item side-item left"
-              role="button"
-              tabIndex="0"
-              onClick={() => this.updateSlides('left')}
-              onKeyDown={() => this.updateSlides('left')}
-            >
+            <div className="floating-item side-item left">
               <div className="carousel-slide-details">
                 <h1>
                   {'SideItm'}
@@ -286,13 +290,7 @@ export default class Lab extends React.Component {
                 </p>
               </div>
             </div>
-            <div
-              className="floating-item side-item right"
-              role="button"
-              tabIndex="0"
-              onClick={() => this.updateSlides('right')}
-              onKeyDown={() => this.updateSlides('right')}
-            >
+            <div className="floating-item side-item right">
               <div className="carousel-slide-details">
                 <h1>
                   {'SideItm'}
@@ -316,6 +314,14 @@ export default class Lab extends React.Component {
                 </p>
               </div>
             </div>
+            <button
+              type="button"
+              className="arrow-btn right"
+              onClick={() => this.updateSlides('right')}
+              onKeyDown={() => this.updateSlides('right')}
+            >
+              <div className="arrow" />
+            </button>
           </div>
         </div>
       </div>
