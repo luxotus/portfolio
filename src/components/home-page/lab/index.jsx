@@ -19,27 +19,46 @@ export default class Lab extends React.Component {
     this.dataForSlides = [
       {
         id: 0,
-        title: 'Garlic',
+        title: [
+          'Garlic',
+          'Butter',
+        ],
+        subTitle: '',
         link: '/lab/garlic',
       },
       {
         id: 1,
-        title: 'Salt',
+        title: [
+          'Salt',
+          'Shaker',
+        ],
+        subTitle: '',
         link: '/lab/salt',
       },
       {
         id: 2,
-        title: 'Rosemary',
+        title: [
+          'Rosemary',
+          'Leaves',
+        ],
+        subTitle: '',
         link: '/lab/rosemary',
       },
       {
         id: 3,
-        title: 'Basil',
+        title: [
+          'Basil',
+          'And Rice',
+        ],
         link: '/lab/basil',
       },
       {
         id: 4,
-        title: 'Olives',
+        title: [
+          'Olives',
+          'Hummus',
+        ],
+        subTitle: '',
         link: '/lab/olives',
       },
     ];
@@ -230,6 +249,61 @@ export default class Lab extends React.Component {
     });
   }
 
+  createSlideItm(slidePosition, slideData) {
+    let strClasses = '';
+
+    switch (slidePosition) {
+      case 'leftHidden':
+        strClasses = 'floating-item hidden-item left';
+        break;
+      case 'leftVisible':
+        strClasses = 'floating-item side-item left';
+        break;
+      case 'middle':
+        strClasses = 'floating-item main-item';
+        break;
+      case 'rightVisible':
+        strClasses = 'floating-item side-item right';
+        break;
+      case 'rightHidden':
+        strClasses = 'floating-item hidden-item right';
+        break;
+      default:
+        break;
+    }
+
+    return (
+      <div className={strClasses} key={slideData.id}>
+        <Link to={slideData.link}>
+          <div className="carousel-slide-details">
+            <h1>
+              {slideData.title[0]}
+              <br />
+              {slideData.title[1]}
+            </h1>
+            <p>
+              {slideData.subTitle}
+            </p>
+          </div>
+        </Link>
+      </div>
+    );
+  }
+
+  buildCarousel() {
+    const html = [];
+
+    Object.entries(this.state.slides).forEach(([classPos, dataID]) => {
+      Object.entries(this.dataForSlides).forEach(([obj]) => {
+        if (this.dataForSlides[obj].id === dataID) {
+          html.push(this.createSlideItm(classPos, this.dataForSlides[obj]));
+        }
+      });
+    });
+
+    return html;
+  }
+
   render() {
     return (
       <div id="lab-container">
@@ -254,66 +328,7 @@ export default class Lab extends React.Component {
             >
               <div className="arrow" />
             </button>
-            <div className="floating-item hidden-item left">
-              <div className="carousel-slide-details">
-                <h1>
-                  {'HiddenItm'}
-                  <br />
-                  {'Left'}
-                </h1>
-                <p>
-                  {'- Audio Reactive Art'}
-                </p>
-              </div>
-            </div>
-            <div className="floating-item side-item left">
-              <div className="carousel-slide-details">
-                <h1>
-                  {'SideItm'}
-                  <br />
-                  {'Left'}
-                </h1>
-                <p>
-                  {'- Audio Reactive Art'}
-                </p>
-              </div>
-            </div>
-            <div className="floating-item main-item">
-              <div className="carousel-slide-details">
-                <h1>
-                  {'MiddleItm'}
-                  <br />
-                  {'Center'}
-                </h1>
-                <p>
-                  {'- Audio Reactive Art'}
-                </p>
-              </div>
-            </div>
-            <div className="floating-item side-item right">
-              <div className="carousel-slide-details">
-                <h1>
-                  {'SideItm'}
-                  <br />
-                  {'Right'}
-                </h1>
-                <p>
-                  {'- Audio Reactive Art'}
-                </p>
-              </div>
-            </div>
-            <div className="floating-item hidden-item right">
-              <div className="carousel-slide-details">
-                <h1>
-                  {'HiddenItm'}
-                  <br />
-                  {'Right'}
-                </h1>
-                <p>
-                  {'- Audio Reactive Art'}
-                </p>
-              </div>
-            </div>
+            {this.buildCarousel()}
             <button
               type="button"
               className="arrow-btn right"

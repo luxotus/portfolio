@@ -58,6 +58,9 @@
     bottom: 0;
     margin: auto;
     outline: none; }
+    #carousel-container .floating-item a {
+      color: white;
+      text-decoration: none; }
   #carousel-container .carousel-slide-details {
     display: flex;
     justify-content: center;

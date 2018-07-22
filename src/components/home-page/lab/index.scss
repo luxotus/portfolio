@@ -92,6 +92,11 @@ $dot-size: 15px;
     bottom: 0;
     margin: auto;
     outline: none;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 
   .carousel-slide-details {
