@@ -23,6 +23,7 @@ export default class Lab extends React.Component {
         ],
         subTitle: 'test',
         link: '/lab/garlic',
+        image: '/images/test.jpg',
       },
       {
         id: 1,
@@ -32,6 +33,7 @@ export default class Lab extends React.Component {
         ],
         subTitle: 'aewfe',
         link: '/lab/salt',
+        image: '/images/test2.jpg',
       },
       {
         id: 2,
@@ -41,6 +43,7 @@ export default class Lab extends React.Component {
         ],
         subTitle: 'aefwaa',
         link: '/lab/rosemary',
+        image: '/images/test3.jpg',
       },
       {
         id: 3,
@@ -49,6 +52,7 @@ export default class Lab extends React.Component {
           'And Rice',
         ],
         link: '/lab/basil',
+        image: '/images/test4.jpg',
       },
       {
         id: 4,
@@ -58,6 +62,7 @@ export default class Lab extends React.Component {
         ],
         subTitle: 'hrerew',
         link: '/lab/olives',
+        image: '/images/test5.jpg',
       },
     ];
     this.carouselAnimation = this.carouselAnimation.bind(this);
@@ -249,7 +254,10 @@ export default class Lab extends React.Component {
     return (
       <div className={strClasses} key={slideData.id}>
         <Link to={slideData.link}>
-          <div className="carousel-slide-details">
+          <div
+            className="carousel-slide-details"
+            style={{ background: `url(${slideData.image}) no-repeat center center fixed`, backgroundSize: 'cover' }}
+          >
             <h1>
               {slideData.title[0]}
               <br />
