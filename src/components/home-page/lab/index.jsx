@@ -13,8 +13,6 @@ export default class Lab extends React.Component {
         rightVisible: 3,
         rightHidden: 4,
       },
-      direction: '',
-      isCarouselAnimating: false,
     };
     this.dataForSlides = [
       {
@@ -23,7 +21,7 @@ export default class Lab extends React.Component {
           'Garlic',
           'Butter',
         ],
-        subTitle: '',
+        subTitle: 'test',
         link: '/lab/garlic',
       },
       {
@@ -32,7 +30,7 @@ export default class Lab extends React.Component {
           'Salt',
           'Shaker',
         ],
-        subTitle: '',
+        subTitle: 'aewfe',
         link: '/lab/salt',
       },
       {
@@ -41,7 +39,7 @@ export default class Lab extends React.Component {
           'Rosemary',
           'Leaves',
         ],
-        subTitle: '',
+        subTitle: 'aefwaa',
         link: '/lab/rosemary',
       },
       {
@@ -58,12 +56,12 @@ export default class Lab extends React.Component {
           'Olives',
           'Hummus',
         ],
-        subTitle: '',
+        subTitle: 'hrerew',
         link: '/lab/olives',
       },
     ];
-    this.updateSlides = this.updateSlides.bind(this);
     this.carouselAnimation = this.carouselAnimation.bind(this);
+    this.buildCarousel = this.buildCarousel.bind(this);
   }
 
   calcStepRatios(valTo, valFrom, milSec) {
@@ -171,7 +169,7 @@ export default class Lab extends React.Component {
     fromElement.classList = toEl.classList;
   }
 
-  carouselAnimation() {
+  carouselAnimation(direction) {
     const domSlides = {
       leftHidden: document.querySelector('#carousel-container .hidden-item.left'),
       leftVisible: document.querySelector('#carousel-container .side-item.left'),
@@ -191,7 +189,7 @@ export default class Lab extends React.Component {
     // }
 
     // Left button was clicked
-    if (this.state.direction === 'left') {
+    if (direction === 'left') {
       // Add left hidden item since previous will become left side item
       const cln = domSlides.leftHidden.cloneNode(true);
       document.querySelector('#carousel-container .carousel').appendChild(cln);
@@ -206,49 +204,19 @@ export default class Lab extends React.Component {
     }
 
     // Right button was clicked
-    if (this.state.direction === 'right') {
+    if (direction === 'right') {
       // Adding right hidden item since previous will become right side item
       const cln = domSlides.rightHidden.cloneNode(true);
       document.querySelector('#carousel-container .carousel').appendChild(cln);
 
-      console.log(domSlides.rightVisible);
-
       this.slideAnimation(domSlides.rightHidden, domSlides.rightVisible, 'right', 0, 100, true, true, 'right-btn');
-      console.log('1');
       this.slideAnimation(domSlides.rightVisible, domSlides.middle, 'right', 0, 100, false, true, 'right-btn');
-      console.log('2');
       this.slideAnimation(domSlides.middle, domSlides.leftVisible, 'left', 100, 0, false, false, 'right-btn');
       this.slideAnimation(domSlides.leftVisible, domSlides.leftHidden, 'left', 200, 100, true, true, 'right-btn');
 
       // left hidden item is removed since it is replaced by left side item
       domSlides.leftHidden.parentNode.removeChild(domSlides.leftHidden);
     }
-  }
-
-  updateSlides(direction) {
-    const step = 1;
-    const slides = {};
-    const lastSlidePosition = this.dataForSlides.length - 1;
-
-    if (direction === 'left') {
-      Object.entries(this.state.slides).forEach(([key, value]) => {
-        slides[key] = (value <= 0) ? lastSlidePosition : value - step;
-      });
-    }
-
-    if (direction === 'right') {
-      Object.entries(this.state.slides).forEach(([key, value]) => {
-        slides[key] = (value === lastSlidePosition) ? 0 : value + step;
-      });
-    }
-
-    this.setState({
-      slides: slides,
-      direction: direction,
-    }, () => {
-      // console.table(this.state.slides);
-      this.carouselAnimation();
-    });
   }
 
   createSlideItm(slidePosition, slideData) {
@@ -325,17 +293,17 @@ export default class Lab extends React.Component {
             <button
               type="button"
               className="arrow-btn left"
-              onClick={() => this.updateSlides('left')}
-              onKeyDown={() => this.updateSlides('left')}
+              onClick={() => this.carouselAnimation('left')}
+              onKeyDown={() => this.carouselAnimation('left')}
             >
               <div className="arrow" />
             </button>
-            {this.buildCarousel()}
+            {React.createElement(this.buildCarousel)}
             <button
               type="button"
               className="arrow-btn right"
-              onClick={() => this.updateSlides('right')}
-              onKeyDown={() => this.updateSlides('right')}
+              onClick={() => this.carouselAnimation('right')}
+              onKeyDown={() => this.carouselAnimation('right')}
             >
               <div className="arrow" />
             </button>
