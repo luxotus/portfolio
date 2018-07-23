@@ -20,7 +20,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
     height: 225px;
     width: 50px;
     padding: 0;
@@ -68,6 +68,7 @@
     height: 100%; }
     #carousel-container .carousel-slide-details h1,
     #carousel-container .carousel-slide-details p {
+      z-index: 2;
       margin-left: -10.5%; }
     #carousel-container .carousel-slide-details h1 {
       margin-top: 0;
@@ -105,32 +106,53 @@
     width: 600px;
     background-color: #5f5f5f; }
 
+/* Mobile */
+@media only screen and (max-device-width: 740px) {
+  #carousel-container .side-item {
+    display: none; }
+  #carousel-container .carousel-slide-details h1 {
+    font-size: 3em; }
+  #carousel-container .carousel-slide-details h1,
+  #carousel-container .carousel-slide-details p {
+    margin-left: 2.5%; }
+  #carousel-container .arrow-btn.left .arrow {
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff; }
+  #carousel-container .arrow-btn.right .arrow {
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff; } }
+
 /* Mobile Portrait */
 @media only screen and (max-device-width: 740px) and (orientation: portrait) {
   #lab-container {
     height: inherit; }
   #carousel-container .main-item {
     height: 47.667%;
-    width: 77.4989%; }
-  #carousel-container .side-item.left {
-    left: -400px; }
-  #carousel-container .side-item.right {
-    right: -400px; } }
+    width: 77.4989%; } }
 
 /* Mobile Landscape */
 @media only screen and (max-device-width: 740px) and (orientation: landscape) {
   #lab-container {
-    height: inherit; }
+    height: inherit;
+    padding: 40px 0; }
+    #lab-container header h1 {
+      margin-bottom: 40px; }
   #carousel-container {
-    height: 379px; }
-    #carousel-container .side-item.left {
-      left: -300px; }
-    #carousel-container .side-item.right {
-      right: -300px; } }
+    height: 379px; } }
+
+/* Tablet */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #carousel-container .carousel-slide-details h1,
+  #carousel-container .carousel-slide-details p {
+    margin-left: -4.5%; } }
 
 /* Tablet Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  #carousel-container .side-item.left {
-    left: -250px; }
-  #carousel-container .side-item.right {
-    right: -250px; } }
+  #carousel-container .side-item {
+    display: none; }
+  #carousel-container .arrow-btn.left .arrow {
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff; }
+  #carousel-container .arrow-btn.right .arrow {
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff; } }

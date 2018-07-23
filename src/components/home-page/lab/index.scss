@@ -41,7 +41,7 @@ $dot-size: 15px;
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
     height: 225px;
     width: 50px;
     padding: 0;
@@ -108,6 +108,7 @@ $dot-size: 15px;
   
     h1,
     p {
+      z-index: 2;
       margin-left: -10.5%;
     }
   
@@ -170,6 +171,33 @@ $dot-size: 15px;
   }
 }
 
+/* Mobile */
+@media only screen and (max-device-width: 740px) {
+  #carousel-container {
+    .side-item {
+      display: none;
+    }
+
+    .carousel-slide-details h1 {
+      font-size: 3em;
+    }
+
+    .carousel-slide-details h1,
+    .carousel-slide-details p {
+      margin-left: 2.5%;
+    }
+
+    .arrow-btn.left .arrow {
+      border-left: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+    }
+
+    .arrow-btn.right .arrow {
+      border-top: 3px solid #fff;
+      border-right: 3px solid #fff;
+    }
+  }
+}
 
 
 /* Mobile Portrait */
@@ -183,13 +211,6 @@ $dot-size: 15px;
       height: 47.667%;
       width: 77.4989%;
     }
-    .side-item.left {
-      left: -($side-itm-width);
-    }
-
-    .side-item.right {
-      right: -($side-itm-width);
-    }
   }
 }
 
@@ -197,17 +218,24 @@ $dot-size: 15px;
 @media only screen and (max-device-width: 740px) and (orientation: landscape) {
   #lab-container {
     height: inherit;
+    padding: 40px 0;
+
+    header h1 {
+      margin-bottom: 40px;
+    }
   }
 
   #carousel-container {
     height: 379px;
+  }
+}
 
-    .side-item.left {
-      left: -(($side-itm-width / 2) + $side-itm-width/4);
-    }
-
-    .side-item.right {
-      right: -(($side-itm-width / 2) + $side-itm-width/4);
+/* Tablet */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #carousel-container {
+    .carousel-slide-details h1,
+    .carousel-slide-details p {
+      margin-left: -4.5%;
     }
   }
 }
@@ -215,12 +243,18 @@ $dot-size: 15px;
 /* Tablet Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   #carousel-container {
-    .side-item.left {
-      left: -(($side-itm-width / 2) + ($side-itm-width / 2)/4);
+    .side-item {
+      display: none;
     }
 
-    .side-item.right {
-      right: -(($side-itm-width / 2) + ($side-itm-width / 2)/4);
+    .arrow-btn.left .arrow {
+      border-left: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+    }
+
+    .arrow-btn.right .arrow {
+      border-top: 3px solid #fff;
+      border-right: 3px solid #fff;
     }
   }
 }
