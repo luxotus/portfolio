@@ -18,7 +18,7 @@ export default class LandingScreen extends React.Component {
             {'Web developer that uses JavaScript and CSS to build high-end interactive sites, applications and tools.'}
           </p>
         </div>
-        <BackgroundParticles />
+        <BackgroundParticles colors={{ general: '#a9a9a9', points: '#000000', line: '#bdbdbd' }} />
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import MainRouter from '../main-router';
 import Sites from '../home-page/sites';
 import Lab from '../home-page/lab';
 import OpenSource from '../home-page/open-source';
@@ -6,7 +7,7 @@ import Blog from '../home-page/blog';
 import Footer from '../home-page/footer';
 import LandingScreen from '../home-page/landing-screen';
 import Header from '../header';
-import MainRouter from '../main-router';
+import Contact from '../home-page/contact';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -135,6 +136,7 @@ export default class App extends React.Component {
           <Lab onClick={selectedPath => this.changeDisplaySize(selectedPath)} />
           <OpenSource />
           <Blog />
+          <Contact />
           <Footer />
         </div>
         <MainRouter displaySize={this.state.displaysize} />

@@ -22,13 +22,13 @@ export default class BackgroundParticles extends React.Component {
               },
             },
             color: {
-              value: '#a9a9a9',
+              value: this.props.colors.general,
             },
             shape: {
               type: 'circle',
               stroke: {
                 width: 0,
-                color: '#000000',
+                color: this.props.colors.points,
               },
               polygon: {
                 nb_sides: 5,
@@ -62,7 +62,7 @@ export default class BackgroundParticles extends React.Component {
             line_linked: {
               enable: true,
               distance: 150,
-              color: '#bdbdbd',
+              color: this.props.colors.line,
               opacity: 0.49716301422833176,
               width: 1,
             },

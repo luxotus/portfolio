@@ -1,22 +1,17 @@
 footer {
   height: 50px;
   padding: 0 10%;
-  background-color: #373737; }
+  background-color: #fff; }
   footer h2 {
     float: left;
     width: 50%;
     margin: 0;
-    color: #fff;
+    color: #181818;
     font-size: 1em;
     font-weight: 100;
     line-height: 50px; }
   footer span {
-    color: #35a2f2; }
-  footer .follow-section {
-    float: left;
-    height: 50px;
-    width: 50%;
-    background-color: black; }
+    color: #0071c5; }
   footer .icon-container {
     text-align: right; }
     footer .icon-container a {
@@ -24,6 +19,6 @@ footer {
       font-size: 1.5em;
       line-height: 50px;
       text-decoration: none;
-      color: #fff; }
+      color: #181818; }
     footer .icon-container a:hover {
-      color: #35a2f2; }
+      color: #0071c5; }

@@ -1,6 +1,6 @@
-$primary-color: #373737;
-$secondary-color: #35a2f2;
-$foreground-color: #fff;
+$primary-color: #fff;
+$secondary-color: #0071c5;
+$foreground-color: #181818;
 $footer-height: 50px;
 
 footer {
@@ -20,13 +20,6 @@ footer {
 
   span {
     color: $secondary-color;
-  }
-
-  .follow-section {
-    float: left;
-    height: 50px;
-    width: 50%;
-    background-color: black;
   }
 
   .icon-container {
