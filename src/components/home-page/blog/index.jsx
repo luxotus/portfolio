@@ -91,6 +91,9 @@ export default class Blog extends React.Component {
 
   eraserAnimation(direction) {
     const element = document.getElementById('blog-eraser');
+    const blogWrapper = document.querySelector('.blog-sides-wrapper');
+    const blogPad = parseFloat(window.getComputedStyle(blogWrapper, null).getPropertyValue('padding-top')) * 2;
+    const blogHeight = parseFloat(window.getComputedStyle(blogWrapper, null).getPropertyValue('height')) + blogPad;
     const width = {
       current: parseFloat(window.getComputedStyle(element, null).getPropertyValue('width')),
       max: window.innerWidth,
@@ -99,6 +102,7 @@ export default class Blog extends React.Component {
     const milSec = 10;
     const needsToBeUnErased = (width.current >= width.max);
     element.style.display = 'block';
+    element.style.height = `${blogHeight}px`;
 
     if (!needsToBeUnErased && direction === 'left') {
       element.style.left = 0;

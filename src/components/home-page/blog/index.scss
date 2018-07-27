@@ -29,12 +29,18 @@ $arrow-size: 25px;
     }
   }
 
+  .blog-sides-wrapper {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
   .blog-sections {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    height: 300px;
+    height: inherit;
     width: 50%;
     float: left;
   }
@@ -181,7 +187,7 @@ $arrow-size: 25px;
 #blog-eraser {
   position: absolute;
   right: 0;
-  height: 330px;
+  height: 345px;
   width: 0%;
   margin-top: -15px;
   background-color: white;
@@ -202,7 +208,16 @@ $arrow-size: 25px;
     }
 
     .arrow-section {
-      display: none;
+      width: 30px;
+
+      .arrow {
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    .arrow-section.left .arrow {
+      margin-left: 8.5px;
     }
 
     .bread-crumbs {
