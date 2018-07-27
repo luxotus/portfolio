@@ -32,6 +32,7 @@ export default class Blog extends React.Component {
     this.keyCount = 0;
     this.getKey = this.getKey.bind(this);
     this.updateBlogPost = this.updateBlogPost.bind(this);
+    this.dotAnimation = this.dotAnimation.bind(this);
   }
 
   getKey() {
@@ -72,16 +73,20 @@ export default class Blog extends React.Component {
     );
   }
 
-  updateBlogPost(direction) {
-    let pos = 0;
+  updateBlogPost(direction, dotLocation) {
     const returnDirection = direction === 'left' ? 'right' : 'left';
+    let pos = 0;
 
-    if (direction === 'right') {
-      pos = (this.state.visibleBlogPost >= this.blogData.length - 1)
-        ? 0 : this.state.visibleBlogPost + 1;
+    if (typeof dotLocation === 'undefined') {
+      if (direction === 'right') {
+        pos = (this.state.visibleBlogPost >= this.blogData.length - 1)
+          ? 0 : this.state.visibleBlogPost + 1;
+      } else {
+        pos = (this.state.visibleBlogPost <= 0)
+          ? this.blogData.length - 1 : this.state.visibleBlogPost - 1;
+      }
     } else {
-      pos = (this.state.visibleBlogPost <= 0)
-        ? this.blogData.length - 1 : this.state.visibleBlogPost - 1;
+      pos = dotLocation;
     }
 
     this.setState({ visibleBlogPost: pos }, () => {
@@ -89,7 +94,7 @@ export default class Blog extends React.Component {
     });
   }
 
-  eraserAnimation(direction) {
+  eraserAnimation(direction, dotLocation) {
     const element = document.getElementById('blog-eraser');
     const blogWrapper = document.querySelector('.blog-sides-wrapper');
     const blogPad = parseFloat(window.getComputedStyle(blogWrapper, null).getPropertyValue('padding-top')) * 2;
@@ -134,12 +139,19 @@ export default class Blog extends React.Component {
         if (width.current >= width.max) {
           clearInterval(timer);
           element.style.width = `${width.max}px`;
-          this.updateBlogPost(direction);
+          this.updateBlogPost(direction, dotLocation);
         } else {
           element.style.width = `${width.current}px`;
           width.current += step;
         }
       }, milSec);
+    }
+  }
+
+  dotAnimation(id) {
+    if (this.state.visibleBlogPost !== id) {
+      const direction = (id < this.state.visibleBlogPost) ? 'left' : 'right';
+      this.eraserAnimation(direction, id);
     }
   }
 
@@ -149,7 +161,15 @@ export default class Blog extends React.Component {
       'dot',
       'dot',
     ];
-    const dots = dotClass.map((dot, key) => <div key={this.getKey()} className={key === acitveID ? `active ${dot}` : dot} />);
+    const dots = dotClass.map((dot, key) => (
+      <div
+        key={this.getKey()}
+        role="presentation"
+        onClick={() => this.dotAnimation(key)}
+        onKeyDown={() => this.dotAnimation(key)}
+        className={key === acitveID ? `active ${dot}` : dot}
+      />
+    ));
     return dots;
   }
 
