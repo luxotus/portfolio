@@ -9,13 +9,7 @@ $highlight-color: #35a2f2;
   padding: 75px 0;
   color: $secondary-color;
   background-color: $primary-color;
-
-  .particle-container {
-    position: absolute;
-    height: 100%;
-    margin-top: -75px;
-  }
-
+  
   .title {
     text-align: center;
 
@@ -53,7 +47,7 @@ $highlight-color: #35a2f2;
 @media only screen and (max-device-width: 740px) {
   #contact-container {
     height: 225px;
-    
+
     .title h2 {
       font-size: 1.5em;
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import BackgroundParticles from '../background-particles';
 import './index.css';
 
 export default class Contact extends React.Component {
@@ -26,5 +25,3 @@ export default class Contact extends React.Component {
     );
   }
 }
-
-// <BackgroundParticles colors={{ general: '#a9a9a9', points: '#000000', line: '#bdbdbd' }} />
