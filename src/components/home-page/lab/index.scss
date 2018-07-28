@@ -105,6 +105,13 @@ $dot-size: 15px;
     align-content: center;
     flex-direction: column;
     height: 100%;
+
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: .75;
+    }
   
     h1,
     p {
@@ -167,7 +174,7 @@ $dot-size: 15px;
     right: 0;
     height: $main-itm-height;
     width: $main-itm-width;
-    background-color: $slide-bg-color;
+    background-color: #000;
   }
 }
 

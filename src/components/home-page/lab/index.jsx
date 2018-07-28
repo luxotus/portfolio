@@ -295,10 +295,8 @@ export default class Lab extends React.Component {
     return (
       <div className={strClasses} key={slideData.id}>
         <Link to={slideData.link}>
-          <div
-            className="carousel-slide-details"
-            style={{ background: `url(${slideData.image}) no-repeat center center fixed`, backgroundSize: 'cover' }}
-          >
+          <div className="carousel-slide-details">
+            <img src={slideData.image} alt="lab-img" />
             <h1>
               {slideData.title[0]}
               <br />

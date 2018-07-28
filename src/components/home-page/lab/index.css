@@ -66,6 +66,11 @@
     align-content: center;
     flex-direction: column;
     height: 100%; }
+    #carousel-container .carousel-slide-details img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: .75; }
     #carousel-container .carousel-slide-details h1,
     #carousel-container .carousel-slide-details p {
       z-index: 2;
@@ -104,7 +109,7 @@
     right: 0;
     height: 400px;
     width: 600px;
-    background-color: #5f5f5f; }
+    background-color: #000; }
 
 /* Mobile */
 @media only screen and (max-device-width: 740px) {
