@@ -1,6 +1,7 @@
 #minimal-layout-container {
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  overflow: hidden; }
   #minimal-layout-container .bread-crumbs-holder {
     display: flex;
     align-items: center;
@@ -31,10 +32,13 @@
   #minimal-layout-container .bread-crumbs-holder {
     float: left; }
   #minimal-layout-container .content-holder {
-    display: flex;
-    align-items: center;
     height: 100%;
-    width: calc(100% - 100px); }
+    width: calc(100% - 100px);
+    overflow: auto; }
+    #minimal-layout-container .content-holder .content-wrapper {
+      display: flex;
+      align-items: center;
+      height: inherit; }
     #minimal-layout-container .content-holder section {
       width: 100%;
       padding: 0 8%; }

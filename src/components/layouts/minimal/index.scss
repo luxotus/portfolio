@@ -4,6 +4,7 @@ $crumb-size: 5px;
 #minimal-layout-container {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 
   .bread-crumbs-holder {
     display: flex;
@@ -49,10 +50,15 @@ $crumb-size: 5px;
   }
 
   .content-holder {
-    display: flex;
-    align-items: center;
     height: 100%;
     width: calc(100% - #{$bc-holder-width});
+    overflow: auto;
+
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      height: inherit;
+    }
 
     section {
       width: 100%;
