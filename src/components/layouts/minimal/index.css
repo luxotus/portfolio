@@ -5,16 +5,17 @@
   #minimal-layout-container .bread-crumbs-holder {
     display: flex;
     align-items: center;
-    height: 100%;
     width: 100px; }
     #minimal-layout-container .bread-crumbs-holder ul {
       padding: 0;
-      margin-left: 95px;
-      margin-right: 0;
+      margin: 0;
       list-style: none; }
     #minimal-layout-container .bread-crumbs-holder li {
-      padding: 10px 0px; }
+      width: 100px;
+      padding: 10px 0px;
+      cursor: pointer; }
     #minimal-layout-container .bread-crumbs-holder .bread-crumb {
+      float: right;
       height: 5px;
       width: 5px;
       border-radius: 50%;
@@ -24,22 +25,23 @@
       width: 0;
       position: absolute;
       left: 0;
-      margin-top: -3px;
+      margin-top: 2px;
       background-color: #000; }
     #minimal-layout-container .bread-crumbs-holder .crumb-line.active {
-      width: 95px; }
+      width: 100px; }
   #minimal-layout-container .content-holder,
   #minimal-layout-container .bread-crumbs-holder {
-    float: left; }
+    float: left;
+    height: calc(100% - 50px);
+    margin-top: 50px; }
   #minimal-layout-container .content-holder {
-    height: 100%;
     width: calc(100% - 100px);
     overflow: auto;
     /* Temporary */ }
     #minimal-layout-container .content-holder .content-wrapper {
       display: flex;
       align-items: center;
-      height: inherit; }
+      height: 100%; }
     #minimal-layout-container .content-holder section {
       width: 100%;
       padding: 0 8%; }

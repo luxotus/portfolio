@@ -25,8 +25,8 @@ export default class Minimal extends React.Component {
         key={this.getKey()}
         data-id={crumb.id}
         role="presentation"
-        onClick={() => this.scrollToElement()}
-        onKeyDown={() => this.scrollToElement()}
+        onClick={() => this.scrollToElement(crumb.id)}
+        onKeyDown={() => this.scrollToElement(crumb.id)}
       >
         <div className="bread-crumb" />
         <div className={(crumb.id === this.state.activeID) ? 'crumb-line active' : 'crumb-line'} />
@@ -53,15 +53,17 @@ export default class Minimal extends React.Component {
     ));
   }
 
-  scrollToElement() {
-    let i = 10;
-    const holderToBeScrolled = document.querySelector('.content-holder');
+  scrollToElement(index) {
     const milSec = 20;
     const step = 10;
+    const holderToBeScrolled = document.querySelector('.content-holder');
+    const targetEl = document.querySelectorAll('.content-wrapper')[index];
+    const scrollDistance = (parseInt(window.getComputedStyle(targetEl).getPropertyValue('height'), 10) * index) + step;
+    let i = holderToBeScrolled.scrollTop;
     const interval = setInterval(() => {
       holderToBeScrolled.scrollTo(0, i);
       i += step;
-      if (i >= 200) clearInterval(interval);
+      if (i >= scrollDistance) clearInterval(interval);
     }, milSec);
   }
 
