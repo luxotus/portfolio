@@ -31,11 +31,15 @@ $crumb-size: 5px;
 
     .crumb-line {
       height: 1px;
-      width: $bc-holder-width - $crumb-size;
+      width: 0;
       position: absolute;
       left: 0;
       margin-top: -3px;
       background-color: #000;
+    }
+
+    .crumb-line.active {
+      width: $bc-holder-width - $crumb-size;
     }
   }
 
