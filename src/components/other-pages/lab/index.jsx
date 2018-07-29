@@ -9,6 +9,7 @@ export default class LabPage extends React.Component {
       {
         id: 0,
         title: 'Crooked Smile',
+        link: '/lab/crooked-smile',
         images: {
           sm: '/images/land.jpg',
           md: '/images/land.jpg',
@@ -18,6 +19,7 @@ export default class LabPage extends React.Component {
       {
         id: 1,
         title: 'Forbidden Fruit',
+        link: '/lab/forbidden-fruit',
         images: {
           sm: '/images/land.jpg',
           md: '/images/land.jpg',
@@ -27,6 +29,7 @@ export default class LabPage extends React.Component {
       {
         id: 2,
         title: 'Born Sinner',
+        link: '/lab/born-sinner',
         images: {
           sm: '/images/land.jpg',
           md: '/images/land.jpg',

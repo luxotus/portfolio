@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 export default class Minimal extends React.Component {
@@ -27,6 +28,21 @@ export default class Minimal extends React.Component {
     ));
   }
 
+  content() {
+    return this.props.data.map(item => (
+      <div key={this.getKey()} className="content-wrapper">
+        <section>
+          <Link to={item.link}>
+            <h2>
+              {item.title}
+            </h2>
+            <img src={item.images.lg} alt="" />
+          </Link>
+        </section>
+      </div>
+    ));
+  }
+
   render() {
     return (
       <div id="minimal-layout-container">
@@ -36,16 +52,7 @@ export default class Minimal extends React.Component {
           </ul>
         </div>
         <div className="content-holder">
-          <div className="content-wrapper">
-            <section>
-              <a href="/lab">
-                <h2>
-                  {'Some Title'}
-                </h2>
-                <img src="/images/land.jpg" alt="" />
-              </a>
-            </section>
-          </div>
+          {this.content()}
         </div>
       </div>
     );
