@@ -54,17 +54,24 @@ export default class Minimal extends React.Component {
   }
 
   scrollToElement(index) {
-    const milSec = 20;
-    const step = 10;
+    const step = 25;
     const holderToBeScrolled = document.querySelector('.content-holder');
     const targetEl = document.querySelectorAll('.content-wrapper')[index];
-    const scrollDistance = (parseInt(window.getComputedStyle(targetEl).getPropertyValue('height'), 10) * index) + step;
+    const scrollPos = (parseInt(window.getComputedStyle(targetEl).getPropertyValue('height'), 10) * index) + step;
+    const isIncreasing = (scrollPos > holderToBeScrolled.scrollTop);
     let i = holderToBeScrolled.scrollTop;
+
     const interval = setInterval(() => {
       holderToBeScrolled.scrollTo(0, i);
-      i += step;
-      if (i >= scrollDistance) clearInterval(interval);
-    }, milSec);
+
+      if (isIncreasing) {
+        i += step;
+        if (i >= scrollPos) clearInterval(interval);
+      } else {
+        i -= step;
+        if (i <= scrollPos) clearInterval(interval);
+      }
+    }, 20);
   }
 
   render() {
