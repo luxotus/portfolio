@@ -20,11 +20,13 @@
       background-color: #000; }
     #minimal-layout-container .bread-crumbs-holder .crumb-line {
       height: 1px;
-      width: 95px;
+      width: 0;
       position: absolute;
       left: 0;
       margin-top: -3px;
       background-color: #000; }
+    #minimal-layout-container .bread-crumbs-holder .crumb-line.active {
+      width: 95px; }
   #minimal-layout-container .content-holder,
   #minimal-layout-container .bread-crumbs-holder {
     float: left; }
