@@ -21,7 +21,13 @@ export default class Minimal extends React.Component {
 
   breadCrumbs() {
     return this.props.data.map(crumb => (
-      <li key={this.getKey()} data-id={crumb.id}>
+      <li
+        key={this.getKey()}
+        data-id={crumb.id}
+        role="presentation"
+        onClick={() => this.scrollToElement()}
+        onKeyDown={() => this.scrollToElement()}
+      >
         <div className="bread-crumb" />
         <div className={(crumb.id === this.state.activeID) ? 'crumb-line active' : 'crumb-line'} />
       </li>
@@ -30,7 +36,11 @@ export default class Minimal extends React.Component {
 
   content() {
     return this.props.data.map(item => (
-      <div key={this.getKey()} className="content-wrapper">
+      <div
+        key={this.getKey()}
+        className="content-wrapper"
+        id={`content-wrapper-${item.id}`}
+      >
         <section>
           <Link to={item.link}>
             <h2>
@@ -41,6 +51,18 @@ export default class Minimal extends React.Component {
         </section>
       </div>
     ));
+  }
+
+  scrollToElement() {
+    let i = 10;
+    const holderToBeScrolled = document.querySelector('.content-holder');
+    const milSec = 20;
+    const step = 10;
+    const interval = setInterval(() => {
+      holderToBeScrolled.scrollTo(0, i);
+      i += step;
+      if (i >= 200) clearInterval(interval);
+    }, milSec);
   }
 
   render() {

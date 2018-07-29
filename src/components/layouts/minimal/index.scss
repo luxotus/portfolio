@@ -52,7 +52,7 @@ $crumb-size: 5px;
   .content-holder {
     height: 100%;
     width: calc(100% - #{$bc-holder-width});
-    overflow: auto;
+    overflow: auto; /* Temporary */
 
     .content-wrapper {
       display: flex;
