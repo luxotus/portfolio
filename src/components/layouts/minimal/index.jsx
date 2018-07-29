@@ -20,7 +20,12 @@ export default class Minimal extends React.Component {
           </ul>
         </div>
         <div className="content-holder">
-          <section />
+          <section>
+            <h2>
+              {'Some Title'}
+            </h2>
+            <img src="/images/land.jpg" alt="" />
+          </section>
         </div>
       </div>
     );

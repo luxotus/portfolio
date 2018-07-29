@@ -1,14 +1,11 @@
 #minimal-layout-container {
   height: 100vh;
-  width: 100vw;
-  background-color: #ddd;
-  /* temporary */ }
+  width: 100vw; }
   #minimal-layout-container .bread-crumbs-holder {
     display: flex;
     align-items: center;
     height: 100%;
-    width: 100px;
-    background-color: #d3d3d3; }
+    width: 100px; }
     #minimal-layout-container .bread-crumbs-holder ul {
       padding: 0;
       margin: 0 auto;
@@ -27,3 +24,22 @@
       left: 0;
       margin-top: -3px;
       background-color: #000; }
+  #minimal-layout-container .content-holder,
+  #minimal-layout-container .bread-crumbs-holder {
+    float: left; }
+  #minimal-layout-container .content-holder {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: calc(100% - 100px); }
+    #minimal-layout-container .content-holder section {
+      width: 100%;
+      padding: 0 10%; }
+      #minimal-layout-container .content-holder section h2 {
+        text-align: center;
+        padding: 0;
+        padding-bottom: 20px;
+        margin: 0; }
+      #minimal-layout-container .content-holder section img {
+        height: calc(100% - 48px);
+        width: 100%; }
