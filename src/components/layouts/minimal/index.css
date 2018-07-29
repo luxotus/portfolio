@@ -35,6 +35,9 @@
     #minimal-layout-container .content-holder section {
       width: 100%;
       padding: 0 10%; }
+      #minimal-layout-container .content-holder section a {
+        color: inherit;
+        text-decoration: none; }
       #minimal-layout-container .content-holder section h2 {
         text-align: center;
         padding: 0;

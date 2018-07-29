@@ -21,10 +21,12 @@ export default class Minimal extends React.Component {
         </div>
         <div className="content-holder">
           <section>
-            <h2>
-              {'Some Title'}
-            </h2>
-            <img src="/images/land.jpg" alt="" />
+            <a href="/lab">
+              <h2>
+                {'Some Title'}
+              </h2>
+              <img src="/images/land.jpg" alt="" />
+            </a>
           </section>
         </div>
       </div>
