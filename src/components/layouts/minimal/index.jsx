@@ -92,10 +92,16 @@ export default class Minimal extends React.Component {
 
       if (isIncreasing) {
         i += step;
-        if (i >= scrollPos) clearInterval(interval);
+        if (i >= scrollPos) {
+          clearInterval(interval);
+          this.setState({ activeID: index });
+        }
       } else {
         i -= step;
-        if (i <= scrollPos) clearInterval(interval);
+        if (i <= scrollPos) {
+          clearInterval(interval);
+          this.setState({ activeID: index });
+        }
       }
     }, 20);
 
