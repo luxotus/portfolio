@@ -53,6 +53,32 @@ export default class Minimal extends React.Component {
     ));
   }
 
+  breadCrumbAnimation(index) {
+    const targetEl = document.querySelector(`.bread-crumbs-holder li[data-id="${index}"] .crumb-line`);
+    const activeEl = document.querySelector('.bread-crumbs-holder li .crumb-line.active');
+    const lineWidth = parseInt(window.getComputedStyle(activeEl).getPropertyValue('width'), 10);
+    const step = 10;
+    let i = lineWidth;
+    const disappear = setInterval(() => {
+      i -= step;
+      activeEl.style.width = `${i}px`;
+      if (i <= 0) {
+        clearInterval(disappear);
+        i = 0;
+        targetEl.style.width = `${i}px`;
+        const reappear = setInterval(() => {
+          i += step;
+          targetEl.style.width = `${i}px`;
+          if (i >= lineWidth) {
+            clearInterval(reappear);
+            activeEl.classList.remove('active');
+            targetEl.classList.add('active');
+          }
+        }, 20);
+      }
+    }, 20);
+  }
+
   scrollToElement(index) {
     const step = 25;
     const holderToBeScrolled = document.querySelector('.content-holder');
@@ -72,6 +98,8 @@ export default class Minimal extends React.Component {
         if (i <= scrollPos) clearInterval(interval);
       }
     }, 20);
+
+    this.breadCrumbAnimation(index);
   }
 
   render() {
