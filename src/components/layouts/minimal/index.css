@@ -36,7 +36,7 @@
     margin-top: 50px; }
   #minimal-layout-container .content-holder {
     width: calc(100% - 100px);
-    overflow: hidden; }
+    overflow: auto; }
     #minimal-layout-container .content-holder .content-wrapper {
       display: flex;
       align-items: center;
