@@ -11,9 +11,9 @@ export default class LabPage extends React.Component {
         title: 'Crooked Smile',
         link: '/lab/crooked-smile',
         images: {
-          sm: '/images/land.jpg',
-          md: '/images/land.jpg',
-          lg: '/images/land.jpg',
+          sm: '/images/site_01.png',
+          md: '/images/site_01.png',
+          lg: '/images/site_01.png',
         },
       },
       {
@@ -21,9 +21,9 @@ export default class LabPage extends React.Component {
         title: 'Forbidden Fruit',
         link: '/lab/forbidden-fruit',
         images: {
-          sm: '/images/land.jpg',
-          md: '/images/land.jpg',
-          lg: '/images/land.jpg',
+          sm: '/images/site_02.png',
+          md: '/images/site_02.png',
+          lg: '/images/site_02.png',
         },
       },
       {
@@ -31,9 +31,19 @@ export default class LabPage extends React.Component {
         title: 'Born Sinner',
         link: '/lab/born-sinner',
         images: {
-          sm: '/images/land.jpg',
-          md: '/images/land.jpg',
-          lg: '/images/land.jpg',
+          sm: '/images/site_03.png',
+          md: '/images/site_03.png',
+          lg: '/images/site_03.png',
+        },
+      },
+      {
+        id: 3,
+        title: 'French Toast',
+        link: '/lab/born-sinner',
+        images: {
+          sm: '/images/site_04.png',
+          md: '/images/site_04.png',
+          lg: '/images/site_04.png',
         },
       },
     ];
