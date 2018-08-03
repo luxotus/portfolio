@@ -1,8 +1,7 @@
 $header-height: 50px;
-$blog-side-pad: 200px;
-$blog-top-pad: 50px;
 
 $hover-color: #00a2d5;
+$button-color: #343434;
 
 #maximum-layout-container {
   overflow: hidden;
@@ -24,22 +23,36 @@ $hover-color: #00a2d5;
     background-size: cover;
   }
 
-  .blog-content {
-    height: calc(100% - #{$blog-top-pad});
-    width: calc(60% - #{$blog-side-pad});
+  .blog-image.min {
+    transform: scale(.8, .8);
+  }
+
+  .blog-holder {
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
     float: left;
-    padding: 0 $blog-side-pad/2;
-    padding-top: $blog-top-pad;
     color: #000;
+
+    .blog-wrapper {
+      overflow: auto;
+      height: 100%;
+      padding: 0 12%;
+      padding-top: 50px;
+    }
 
     h1 {
       font-size: 4em;
     }
 
-    p {
+    .blog-content {
       margin: 0;
       font-size: 1.15em;
       line-height: 1.75em;
+
+      .content {
+        display: none;
+      }
     }
 
     button {
@@ -47,7 +60,7 @@ $hover-color: #00a2d5;
       border: 0;
       margin-top: 42px;
       background: none;
-      color: #343434;
+      color: $button-color;
       font-size: 1.25em;
       cursor: pointer;
 
@@ -57,8 +70,8 @@ $hover-color: #00a2d5;
         margin-top: 9px;
         margin-left: 15px;
         float: right;
-        border-top: 1px solid black;
-        border-right: 1px solid black;
+        border-top: 1px solid $button-color;
+        border-right: 1px solid $button-color;
         transform: rotate(45deg);
       }
     }

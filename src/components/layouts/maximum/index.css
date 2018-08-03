@@ -13,20 +13,28 @@
     width: 40%;
     float: left;
     background-size: cover; }
-  #maximum-layout-container .blog-content {
-    height: calc(100% - 50px);
-    width: calc(60% - 200px);
+  #maximum-layout-container .blog-image.min {
+    transform: scale(0.8, 0.8); }
+  #maximum-layout-container .blog-holder {
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
     float: left;
-    padding: 0 100px;
-    padding-top: 50px;
     color: #000; }
-    #maximum-layout-container .blog-content h1 {
+    #maximum-layout-container .blog-holder .blog-wrapper {
+      overflow: auto;
+      height: 100%;
+      padding: 0 12%;
+      padding-top: 50px; }
+    #maximum-layout-container .blog-holder h1 {
       font-size: 4em; }
-    #maximum-layout-container .blog-content p {
+    #maximum-layout-container .blog-holder .blog-content {
       margin: 0;
       font-size: 1.15em;
       line-height: 1.75em; }
-    #maximum-layout-container .blog-content button {
+      #maximum-layout-container .blog-holder .blog-content .content {
+        display: none; }
+    #maximum-layout-container .blog-holder button {
       padding: 0;
       border: 0;
       margin-top: 42px;
@@ -34,19 +42,19 @@
       color: #343434;
       font-size: 1.25em;
       cursor: pointer; }
-      #maximum-layout-container .blog-content button div {
+      #maximum-layout-container .blog-holder button div {
         height: 7px;
         width: 7px;
         margin-top: 9px;
         margin-left: 15px;
         float: right;
-        border-top: 1px solid black;
-        border-right: 1px solid black;
+        border-top: 1px solid #343434;
+        border-right: 1px solid #343434;
         transform: rotate(45deg); }
-    #maximum-layout-container .blog-content button:focus,
-    #maximum-layout-container .blog-content button:hover {
+    #maximum-layout-container .blog-holder button:focus,
+    #maximum-layout-container .blog-holder button:hover {
       outline: none; }
-    #maximum-layout-container .blog-content button:hover {
+    #maximum-layout-container .blog-holder button:hover {
       color: #00a2d5; }
-    #maximum-layout-container .blog-content button:hover div {
+    #maximum-layout-container .blog-holder button:hover div {
       border-color: #00a2d5; }
