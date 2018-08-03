@@ -33,10 +33,21 @@ export default class Maximum extends React.Component {
                   {'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.'}
                 </div>
               </div>
-              <button type="button">
+              <button type="button" className="read-more">
                 {'Read More'}
                 <div />
               </button>
+              <div className="arrow-container">
+                <button type="button" className="left-arrow arrow">
+                  <div />
+                </button>
+                <button type="button" className="right-arrow arrow">
+                  <div />
+                </button>
+                <button type="button" className="close">
+                  <div />
+                </button>
+              </div>
             </div>
           </div>
         </div>

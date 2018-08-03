@@ -23,7 +23,7 @@
     color: #000; }
     #maximum-layout-container .blog-holder .blog-wrapper {
       overflow: auto;
-      height: 100%;
+      height: 93.5%;
       padding: 0 12%;
       padding-top: 50px; }
     #maximum-layout-container .blog-holder h1 {
@@ -34,27 +34,63 @@
       line-height: 1.75em; }
       #maximum-layout-container .blog-holder .blog-content .content {
         display: none; }
-    #maximum-layout-container .blog-holder button {
+    #maximum-layout-container .blog-holder button.read-more {
       padding: 0;
       border: 0;
       margin-top: 42px;
       background: none;
-      color: #343434;
+      color: #000;
       font-size: 1.25em;
       cursor: pointer; }
-      #maximum-layout-container .blog-holder button div {
+      #maximum-layout-container .blog-holder button.read-more div {
         height: 7px;
         width: 7px;
         margin-top: 9px;
         margin-left: 15px;
         float: right;
-        border-top: 1px solid #343434;
-        border-right: 1px solid #343434;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
         transform: rotate(45deg); }
     #maximum-layout-container .blog-holder button:focus,
     #maximum-layout-container .blog-holder button:hover {
       outline: none; }
-    #maximum-layout-container .blog-holder button:hover {
+    #maximum-layout-container .blog-holder button.read-more:hover {
       color: #00a2d5; }
-    #maximum-layout-container .blog-holder button:hover div {
+    #maximum-layout-container .blog-holder button.read-more:hover div {
       border-color: #00a2d5; }
+    #maximum-layout-container .blog-holder .arrow-container {
+      position: absolute;
+      height: 65px;
+      width: 165px;
+      bottom: 0;
+      right: 0;
+      background-color: #e6e6e6; }
+      #maximum-layout-container .blog-holder .arrow-container .arrow {
+        height: 100%;
+        width: 50%;
+        float: left;
+        background: transparent;
+        border: 0;
+        cursor: pointer; }
+      #maximum-layout-container .blog-holder .arrow-container .left-arrow {
+        border-right: 1px solid #fff; }
+      #maximum-layout-container .blog-holder .arrow-container .arrow div {
+        height: 15px;
+        width: 15px;
+        transform: rotate(45deg); }
+      #maximum-layout-container .blog-holder .arrow-container .left-arrow div {
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #000;
+        margin-left: 31px; }
+      #maximum-layout-container .blog-holder .arrow-container .right-arrow div {
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        margin-left: 22.5px; }
+      #maximum-layout-container .blog-holder .arrow-container .arrow:hover {
+        background-color: #000; }
+        #maximum-layout-container .blog-holder .arrow-container .arrow:hover div {
+          border-color: #fff; }
+      #maximum-layout-container .blog-holder .arrow-container .close {
+        display: none; }
+    #maximum-layout-container .blog-holder .arrow-container.expanded {
+      right: 18px; }

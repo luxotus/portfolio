@@ -1,7 +1,7 @@
 $header-height: 50px;
 
 $hover-color: #00a2d5;
-$button-color: #343434;
+$primary-color: #000;
 
 #maximum-layout-container {
   overflow: hidden;
@@ -32,11 +32,11 @@ $button-color: #343434;
     height: 100%;
     width: 60%;
     float: left;
-    color: #000;
+    color: $primary-color;
 
     .blog-wrapper {
       overflow: auto;
-      height: 100%;
+      height: 93.5%;
       padding: 0 12%;
       padding-top: 50px;
     }
@@ -55,12 +55,12 @@ $button-color: #343434;
       }
     }
 
-    button {
+    button.read-more {
       padding: 0;
       border: 0;
       margin-top: 42px;
       background: none;
-      color: $button-color;
+      color: $primary-color;
       font-size: 1.25em;
       cursor: pointer;
 
@@ -70,8 +70,8 @@ $button-color: #343434;
         margin-top: 9px;
         margin-left: 15px;
         float: right;
-        border-top: 1px solid $button-color;
-        border-right: 1px solid $button-color;
+        border-top: 1px solid $primary-color;
+        border-right: 1px solid $primary-color;
         transform: rotate(45deg);
       }
     }
@@ -81,13 +81,68 @@ $button-color: #343434;
       outline: none;
     }
 
-    button:hover {
+    button.read-more:hover {
       color: $hover-color;
     }
 
-    button:hover div {
+    button.read-more:hover div {
       border-color: $hover-color;
     }
 
+    .arrow-container {
+      position: absolute;
+      height: 65px;
+      width: 165px;
+      bottom: 0;
+      right: 0;
+      background-color: #e6e6e6;
+
+      .arrow {
+        height: 100%;
+        width: 50%;
+        float: left;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+      }
+
+      .left-arrow {
+        border-right: 1px solid #fff;
+      }
+
+      .arrow div {
+        height: 15px;
+        width: 15px;
+        transform: rotate(45deg);
+      }
+
+      .left-arrow div {
+        border-bottom: 1px solid $primary-color;
+        border-left: 1px solid $primary-color;
+        margin-left: 31px;
+      }
+
+      .right-arrow div {
+        border-top: 1px solid $primary-color;
+        border-right: 1px solid $primary-color;
+        margin-left: 22.5px;
+      }
+
+      .arrow:hover {
+        background-color: $primary-color;
+
+        div {
+          border-color: #fff;
+        }
+      }
+
+      .close {
+        display: none;
+      }
+    }
+
+    .arrow-container.expanded {
+      right: 18px;
+    }
   }
 }
