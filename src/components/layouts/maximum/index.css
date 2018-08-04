@@ -173,7 +173,9 @@
       height: 100%;
       padding: 0 5%; }
     #maximum-layout-container .blog-holder .blog-content {
-      font-size: 1em; } }
+      font-size: 1em; }
+    #maximum-layout-container .blog-holder button.read-more {
+      margin-top: 24px; } }
 
 /* Tablet Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
