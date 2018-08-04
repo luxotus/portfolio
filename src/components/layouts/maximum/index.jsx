@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import './index.css';
 
 export default class Maximum extends React.Component {
@@ -18,6 +17,12 @@ export default class Maximum extends React.Component {
     ];
   }
 
+  showBlogContent() {
+    document.querySelector('#maximum-layout-container button.read-more').style.display = 'none';
+    document.querySelector('#maximum-layout-container .blog-content .content').style.display = 'block';
+    document.querySelector('#maximum-layout-container .arrow-container').classList.add('closed');
+  }
+
   createBlogElement(data) {
     return (
       <div className="blog-wrapper">
@@ -29,10 +34,14 @@ export default class Maximum extends React.Component {
             {data.description}
           </div>
           <div className="content">
-            {data.content}
+            {data.content.repeat(5)}
           </div>
         </div>
-        <button type="button" className="read-more">
+        <button
+          type="button"
+          className="read-more"
+          onClick={() => this.showBlogContent()}
+        >
           {'Read More'}
           <div />
         </button>
