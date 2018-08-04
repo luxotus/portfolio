@@ -144,5 +144,74 @@ $primary-color: #000;
     .arrow-container.expanded {
       right: 18px;
     }
+
+    .arrow-container.closed {
+      width: 82.5px;
+
+      .arrow {
+        display: none;
+      }
+
+      .close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        float: left;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+      }
+
+      .close:hover {
+        background-color: $primary-color;
+
+        .x:before,
+        .x:after {
+          border-color: #fff !important;
+        }
+      }
+    }
+  }
+
+  .x {
+    display: block;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    opacity: 1;
+  }
+
+  .x:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 0;
+    width: 15px;
+    border-top: 1px solid $primary-color;
+    margin: auto;
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+
+  .x:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 0;
+    width: 15px;
+    border-top: 1px solid $primary-color;
+    margin: auto;
+    transform: rotate(-45deg);
+    transform-origin: center;
   }
 }

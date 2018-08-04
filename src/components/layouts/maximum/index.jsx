@@ -45,7 +45,7 @@ export default class Maximum extends React.Component {
                   <div />
                 </button>
                 <button type="button" className="close">
-                  <div />
+                  <div className="x" />
                 </button>
               </div>
             </div>
