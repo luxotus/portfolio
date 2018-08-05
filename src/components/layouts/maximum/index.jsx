@@ -9,12 +9,31 @@ export default class Maximum extends React.Component {
     };
     this.data = [
       {
-        title: 'The Great Debate: Vanilla JS or JQuery',
+        title: 'The Great Debate: Vanilla JS or JQuery 1',
+        image: '/images/blog-lg-01.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.',
+        content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
+      },
+      {
+        title: 'The Great Debate: Vanilla JS or JQuery 2',
+        image: '/images/blog-lg-01.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.',
+        content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
+      },
+      {
+        title: 'The Great Debate: Vanilla JS or JQuery 3',
+        image: '/images/blog-lg-01.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.',
+        content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
+      },
+      {
+        title: 'The Great Debate: Vanilla JS or JQuery 4',
         image: '/images/blog-lg-01.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.',
         content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
       },
     ];
+    this.updateCurrentBlog = this.updateCurrentBlog.bind(this);
   }
 
   scaleImage(shouldIncrement) {
@@ -69,6 +88,42 @@ export default class Maximum extends React.Component {
     this.scaleImage(false);
   }
 
+  blogPostAnimation(transform) {
+    const elements = {
+      image: document.querySelector('#maximum-layout-container .blog-image'),
+      wrapper: document.querySelector('#maximum-layout-container .blog-wrapper'),
+    };
+    const step = 5;
+    const xOrigin = 0;
+    let xPos = 120;
+
+    const timer = setInterval(() => {
+      if (xPos <= xOrigin) {
+        clearInterval(timer);
+        elements.image.style.transform = `${transform} translateX(${xOrigin}%)`;
+        elements.wrapper.style.transform = `translateX(${xOrigin}%)`;
+      } else {
+        elements.image.style.transform = `${transform} translateX(-${xPos}%)`;
+        elements.wrapper.style.transform = `translateX(${xPos}%)`;
+        xPos -= step;
+      }
+    }, 20);
+  }
+
+  updateCurrentBlog(direction, transform) {
+    let nextPos = this.state.activeID;
+
+    if (direction === 'left') {
+      nextPos = (this.state.activeID === 0
+        ? this.data.length - 1 : this.state.activeID - 1);
+    } else if (direction === 'right') {
+      nextPos = (this.state.activeID === this.data.length - 1
+        ? 0 : this.state.activeID + 1);
+    }
+
+    this.setState({ activeID: nextPos }, () => this.blogPostAnimation(transform));
+  }
+
   changeBlogPost(direction) {
     const elements = {
       image: document.querySelector('#maximum-layout-container .blog-image'),
@@ -77,17 +132,12 @@ export default class Maximum extends React.Component {
     let matrix = window.getComputedStyle(elements.image, null).getPropertyValue('transform');
     matrix = matrix.substring(7, matrix.length - 1).split(', ');
     const transform = `scale(${matrix[0]}, ${matrix[3]})`;
+    const xPos = 120;
 
-    elements.image.style.display = 'none';
-    elements.wrapper.style.display = 'none';
-    elements.image.style.transform = `${transform} translateX(-120%)`;
-    elements.wrapper.style.transform = `${transform} translateX(100%)`;
+    elements.image.style.transform = `${transform} translateX(-${xPos}%)`;
+    elements.wrapper.style.transform = `${transform} translateX(${xPos}%)`;
 
-    if (direction === 'left') {
-      // document.querySelector('#maximum-layout-container .blog-image')
-    } else if (direction === 'right') {
-      //
-    }
+    this.updateCurrentBlog(direction, transform);
   }
 
   createBlogElement(data) {
