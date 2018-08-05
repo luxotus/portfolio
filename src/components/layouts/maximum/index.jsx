@@ -69,6 +69,27 @@ export default class Maximum extends React.Component {
     this.scaleImage(false);
   }
 
+  changeBlogPost(direction) {
+    const elements = {
+      image: document.querySelector('#maximum-layout-container .blog-image'),
+      wrapper: document.querySelector('#maximum-layout-container .blog-wrapper'),
+    };
+    let matrix = window.getComputedStyle(elements.image, null).getPropertyValue('transform');
+    matrix = matrix.substring(7, matrix.length - 1).split(', ');
+    const transform = `scale(${matrix[0]}, ${matrix[3]})`;
+
+    elements.image.style.display = 'none';
+    elements.wrapper.style.display = 'none';
+    elements.image.style.transform = `${transform} translateX(-120%)`;
+    elements.wrapper.style.transform = `${transform} translateX(100%)`;
+
+    if (direction === 'left') {
+      // document.querySelector('#maximum-layout-container .blog-image')
+    } else if (direction === 'right') {
+      //
+    }
+  }
+
   createBlogElement(data) {
     return (
       <div className="blog-wrapper">
@@ -98,10 +119,18 @@ export default class Maximum extends React.Component {
   createActionBtns() {
     return (
       <div className="arrow-container">
-        <button type="button" className="left-arrow arrow">
+        <button
+          type="button"
+          className="left-arrow arrow"
+          onClick={() => this.changeBlogPost('left')}
+        >
           <div />
         </button>
-        <button type="button" className="right-arrow arrow">
+        <button
+          type="button"
+          className="right-arrow arrow"
+          onClick={() => this.changeBlogPost('right')}
+        >
           <div />
         </button>
         <button
