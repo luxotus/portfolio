@@ -17,10 +17,56 @@ export default class Maximum extends React.Component {
     ];
   }
 
+  scaleImage(shouldIncrement) {
+    const element = document.querySelector('#maximum-layout-container .blog-image');
+    const step = 0.01;
+    const milSec = 10;
+    const range = {
+      min: 0.8,
+      max: 1,
+    };
+
+    if (shouldIncrement) {
+      let scale = range.min;
+
+      const timer = setInterval(() => {
+        if (scale >= range.max) {
+          clearInterval(timer);
+          element.classList.remove('min');
+          element.style.transform = `scale(${range.max}, ${range.max})`;
+        } else {
+          element.style.transform = `scale(${scale}, ${scale})`;
+          scale += step;
+        }
+      }, milSec);
+    } else {
+      let scale = range.max;
+
+      const timer = setInterval(() => {
+        if (scale <= range.min) {
+          clearInterval(timer);
+          element.classList.add('min');
+          element.style.transform = `scale(${range.min}, ${range.min})`;
+        } else {
+          element.style.transform = `scale(${scale}, ${scale})`;
+          scale -= step;
+        }
+      }, milSec);
+    }
+  }
+
   showBlogContent() {
     document.querySelector('#maximum-layout-container button.read-more').style.display = 'none';
     document.querySelector('#maximum-layout-container .blog-content .content').style.display = 'block';
     document.querySelector('#maximum-layout-container .arrow-container').classList.add('closed');
+    this.scaleImage(true);
+  }
+
+  hideBlogContent() {
+    document.querySelector('#maximum-layout-container button.read-more').style.display = 'block';
+    document.querySelector('#maximum-layout-container .blog-content .content').style.display = 'none';
+    document.querySelector('#maximum-layout-container .arrow-container').classList.remove('closed');
+    this.scaleImage(false);
   }
 
   createBlogElement(data) {
@@ -58,7 +104,11 @@ export default class Maximum extends React.Component {
         <button type="button" className="right-arrow arrow">
           <div />
         </button>
-        <button type="button" className="close">
+        <button
+          type="button"
+          className="close"
+          onClick={() => this.hideBlogContent()}
+        >
           <div className="x" />
         </button>
       </div>
