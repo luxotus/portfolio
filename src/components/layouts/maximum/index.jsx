@@ -7,32 +7,6 @@ export default class Maximum extends React.Component {
     this.state = {
       activeID: 0,
     };
-    this.data = [
-      {
-        title: 'The Great Debate: Vanilla JS or JQuery 1',
-        image: '/images/blog-lg-01.jpg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.',
-        content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
-      },
-      {
-        title: 'The Great Debate: Vanilla JS or JQuery 2',
-        image: '/images/blog-lg-01.jpg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.',
-        content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
-      },
-      {
-        title: 'The Great Debate: Vanilla JS or JQuery 3',
-        image: '/images/blog-lg-01.jpg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.',
-        content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
-      },
-      {
-        title: 'The Great Debate: Vanilla JS or JQuery 4',
-        image: '/images/blog-lg-01.jpg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus, sit amet ultrices felis. Vestibulum accumsan neque in metus sodales ultrices. Morbi iaculis viverra nunc ac sodales. Donec vitae tempor tortor. Vivamus eget magna quis magna lacinia pharetra.',
-        content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
-      },
-    ];
     this.updateCurrentBlog = this.updateCurrentBlog.bind(this);
   }
 
@@ -115,9 +89,9 @@ export default class Maximum extends React.Component {
 
     if (direction === 'left') {
       nextPos = (this.state.activeID === 0
-        ? this.data.length - 1 : this.state.activeID - 1);
+        ? this.props.data.length - 1 : this.state.activeID - 1);
     } else if (direction === 'right') {
-      nextPos = (this.state.activeID === this.data.length - 1
+      nextPos = (this.state.activeID === this.props.data.length - 1
         ? 0 : this.state.activeID + 1);
     }
 
@@ -209,7 +183,7 @@ export default class Maximum extends React.Component {
   render() {
     return (
       <div id="maximum-layout-container">
-        {this.createContentHolder(this.data[this.state.activeID])}
+        {this.createContentHolder(this.props.data[this.state.activeID])}
       </div>
     );
   }
