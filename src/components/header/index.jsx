@@ -55,7 +55,7 @@ export default class Header extends React.Component {
           </ul>
           <div className="icon-container">
             <a href="https://github.com/luxotus" className="icon-github" />
-            <a href="https://codepen.io/luxotus/" className="icon-codepen" />
+            <a href="https://twitter.com/ManuelF_Dev" className="icon-twitter" />
           </div>
         </div>
       </div>

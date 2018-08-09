@@ -10,8 +10,7 @@
 }
 
 .icon-github,
-.icon-codepen,
-.icon-slack {
+.icon-twitter {
   font-family: 'icons' !important;
   font-style: normal;
   font-weight: normal;
@@ -25,11 +24,8 @@
 }
 
 .icon-github:before {
-  content: "\e900";
+  content: "\eab0";
 }
-.icon-codepen:before {
-  content: "\e901";
-}
-.icon-slack:before {
-  content: "\e902";
+.icon-twitter:before {
+  content: "\ea96";
 }
