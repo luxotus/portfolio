@@ -6,24 +6,18 @@ export default class Blog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleBlogPost: 1,
+      visibleBlogPost: 0,
     };
     this.blogData = [
       {
-        title: 'Netflix',
+        title: 'Minimum Viable Product',
         description: 'Simple test to see how this section would look if it had content in this area. Which would be really great once I add it.',
         link: '/blog/test',
         image: '/images/blog-example-01.png',
       },
       {
-        title: 'Showcase',
+        title: 'Keeping up with the latest in the Front-End Dev',
         description: 'Using the interactive showcase elements and amazing portfolio sliders in Assemble, you can easily highlight your top portfolio projects in a variety of captivating, innovative, and creative ways.',
-        link: '/blog/test',
-        image: '/images/blog-example-01.png',
-      },
-      {
-        title: 'Hummus',
-        description: 'Active showcase elements and amazing portfolio sliders in Assemble ok if it had content in this area. Which would be really great once I add it.',
         link: '/blog/test',
         image: '/images/blog-example-01.png',
       },
@@ -156,11 +150,8 @@ export default class Blog extends React.Component {
   }
 
   buildDots(acitveID) {
-    const dotClass = [
-      'dot',
-      'dot',
-      'dot',
-    ];
+    const dotClass = Array(this.blogData.length).fill('dot');
+
     const dots = dotClass.map((dot, key) => (
       <div
         key={this.getKey()}
