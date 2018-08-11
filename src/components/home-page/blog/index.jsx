@@ -11,13 +11,13 @@ export default class Blog extends React.Component {
     this.blogData = [
       {
         title: 'Minimum Viable Product',
-        description: 'Simple test to see how this section would look if it had content in this area. Which would be really great once I add it.',
+        description: 'When your starting a new product you should have a minimal viable product. Without it you could end up with a solution to a problem that no one uses or cares about. With it you can reduce your overall risk and increase your chances of launching a successful product.',
         link: '/blog/test',
         image: '/images/blog-example-01.png',
       },
       {
-        title: 'Keeping up with the latest in the Front-End Dev',
-        description: 'Using the interactive showcase elements and amazing portfolio sliders in Assemble, you can easily highlight your top portfolio projects in a variety of captivating, innovative, and creative ways.',
+        title: 'Keeping up with the latest in your Dev Community',
+        description: 'Keeping up with the latest in your development community will help you grow as a developer. From finding better employment opportunities to gaining insight into some of your common problems that others in the community have solved.',
         link: '/blog/test',
         image: '/images/blog-example-01.png',
       },
