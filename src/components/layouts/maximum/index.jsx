@@ -8,6 +8,13 @@ export default class Maximum extends React.Component {
       activeID: 0,
     };
     this.updateCurrentBlog = this.updateCurrentBlog.bind(this);
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
+  }
+
+  getKey() {
+    this.keyCount += 1;
+    return this.keyCount;
   }
 
   scaleImage(shouldIncrement) {
@@ -114,18 +121,55 @@ export default class Maximum extends React.Component {
     this.updateCurrentBlog(direction, transform);
   }
 
+  createContentFromData(data) {
+    const subSection = data.map(section => (
+      <div key={this.getKey()}>
+        <h3>
+          {section.title}
+        </h3>
+        {
+          section.paragraphs.map(paragraph => (
+            <p key={this.getKey()}>
+              {paragraph}
+            </p>
+          ))
+        }
+        {
+          section.list.map(list => (
+            <div className="list-holder" key={this.getKey()}>
+              <h4>
+                {list.title}
+              </h4>
+              <ul className={section.isNumbered ? 'num-list' : ''}>
+                {
+                  list.items.map(item => (
+                    <li key={this.getKey()}>
+                      {item}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    ));
+
+    return subSection;
+  }
+
   createBlogElement(data) {
     return (
       <div className="blog-wrapper">
         <h1>
-          {data.title}
+          {data.main.title}
         </h1>
         <div className="blog-content">
           <div className="description">
-            {data.description}
+            {data.main.description}
           </div>
           <div className="content">
-            {data.content.repeat(5)}
+            {this.createContentFromData(data.subSections)}
           </div>
         </div>
         <button
@@ -171,7 +215,7 @@ export default class Maximum extends React.Component {
   createContentHolder(data) {
     return (
       <div className="content-holder">
-        <div className="blog-image min" style={{ backgroundImage: `url(${data.image})` }} />
+        <div className="blog-image min" style={{ backgroundImage: `url(${data.main.image})` }} />
         <div className="blog-holder">
           {this.createBlogElement(data)}
           {this.createActionBtns()}

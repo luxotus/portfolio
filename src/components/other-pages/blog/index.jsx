@@ -5,7 +5,7 @@ import Maximum from '../../layouts/maximum';
 export default class BlogPage extends React.Component {
   constructor(props) {
     super(props);
-    this.blogData = [
+    this.blogData2 = [
       {
         title: 'Minimum Viable Product',
         image: '/images/blog-lg-01.jpg',
@@ -19,7 +19,7 @@ export default class BlogPage extends React.Component {
         content: 'Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus. Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus.Sed sit amet luctus neque, at tincidunt odio. Phasellus sit amet pulvinar risus',
       },
     ];
-    this.blogData2 = [
+    this.blogData = [
       {
         main: {
           title: 'Minimal Viable Product',
@@ -34,7 +34,6 @@ export default class BlogPage extends React.Component {
             ],
             isNumbered: false,
             list: [],
-            images: [],
           },
           {
             title: 'Why should I have a minimum viable product?',
@@ -44,7 +43,6 @@ export default class BlogPage extends React.Component {
             ],
             isNumbered: false,
             list: [],
-            images: [],
           },
           {
             title: 'How do I figure out my minimum viable product?',
@@ -65,9 +63,7 @@ export default class BlogPage extends React.Component {
                   'Taking what you learned and improving on it and retest it again and again. You want to do this till you get an acceptable growth rate. Ideally these improvement will be smaller as more users are regularly using your product. If your growth rate starts to slow down or fizzle out you may need to consider pivoting, which is beyond the scope of this post.',
                 ],
               },
-
             ],
-            images: [],
           },
           {
             title: 'Final Thoughts',
@@ -106,7 +102,6 @@ export default class BlogPage extends React.Component {
                 ],
               },
             ],
-            images: [],
           },
           {
             title: 'Where can I find my dev community?',
@@ -151,7 +146,6 @@ export default class BlogPage extends React.Component {
                 ],
               },
             ],
-            images: [],
           },
         ],
       },
