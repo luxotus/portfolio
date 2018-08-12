@@ -30,7 +30,8 @@ export default class BlogPage extends React.Component {
           {
             title: 'What is a minimum viable product?',
             paragraphs: [
-              'The most commonly accepted definition comes from the book Lean Startup. Eric Ries defines it as “a version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort”.  Early adopters are the primary target customers for a minimum viable product and validated learning is the feedback from those customers. Keep in mind that feedback can come in many different forms.',
+              'The most commonly accepted definition comes from the book Lean Startup. Eric Ries defines it as “a version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort”.',
+              'Early adopters are the primary target customers for a minimum viable product and validated learning is the feedback from those customers. Keep in mind that feedback can come in many different forms.',
             ],
             isNumbered: false,
             list: [],
@@ -53,6 +54,7 @@ export default class BlogPage extends React.Component {
             list: [
               {
                 title: '',
+                isLinks: false,
                 items: [
                   'Figure out what is the main problem your trying to solve. It’s important to keep this problem as simple as possible, and easy for others to understand. ',
                   'After identifying the problem its time to create a solution. It might help to have a list a solution and using your best guess to choose one. Keep in mind this solution is just an assumption and will need to be tested.',
@@ -92,6 +94,7 @@ export default class BlogPage extends React.Component {
             list: [
               {
                 title: '',
+                isLinks: false,
                 items: [
                   'Finding better employment opportunities',
                   'Increasing your base salary',
@@ -113,6 +116,7 @@ export default class BlogPage extends React.Component {
             list: [
               {
                 title: 'Twitter',
+                isLinks: true,
                 items: [
                   'https://twitter.com/wesbos',
                   'https://twitter.com/addyosmani',
@@ -122,6 +126,7 @@ export default class BlogPage extends React.Component {
               },
               {
                 title: 'Blogs',
+                isLinks: true,
                 items: [
                   'https://www.smashingmagazine.com/',
                   'https://scotch.io/',
@@ -130,6 +135,7 @@ export default class BlogPage extends React.Component {
               },
               {
                 title: 'Podcast',
+                isLinks: true,
                 items: [
                   'https://syntax.fm/',
                   'http://www.fullstackradio.com/',
@@ -138,6 +144,7 @@ export default class BlogPage extends React.Component {
               },
               {
                 title: 'Reddit',
+                isLinks: true,
                 items: [
                   'https://www.reddit.com/r/programming/ ',
                   'https://www.reddit.com/r/Frontend/ ',

@@ -2,6 +2,8 @@
   overflow: hidden;
   height: 100vh;
   width: 100vw; }
+  #maximum-layout-container a {
+    text-decoration: none !important; }
   #maximum-layout-container .content-holder {
     overflow: auto;
     float: left;
@@ -34,6 +36,12 @@
       line-height: 1.75em; }
       #maximum-layout-container .blog-holder .blog-content .content {
         display: none; }
+      #maximum-layout-container .blog-holder .blog-content .content-section {
+        padding: 10px 0; }
+        #maximum-layout-container .blog-holder .blog-content .content-section .list-holder li {
+          padding: 5px 0; }
+        #maximum-layout-container .blog-holder .blog-content .content-section .num-list {
+          list-style: decimal; }
     #maximum-layout-container .blog-holder button.read-more {
       padding: 0;
       border: 0;

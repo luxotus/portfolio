@@ -123,7 +123,7 @@ export default class Maximum extends React.Component {
 
   createContentFromData(data) {
     const subSection = data.map(section => (
-      <div key={this.getKey()}>
+      <div className="content-section" key={this.getKey()}>
         <h3>
           {section.title}
         </h3>
@@ -142,11 +142,19 @@ export default class Maximum extends React.Component {
               </h4>
               <ul className={section.isNumbered ? 'num-list' : ''}>
                 {
-                  list.items.map(item => (
-                    <li key={this.getKey()}>
-                      {item}
-                    </li>
-                  ))
+                  list.isLinks
+                    ? list.items.map(item => (
+                      <li key={this.getKey()}>
+                        <a href={item}>
+                          {item}
+                        </a>
+                      </li>
+                    ))
+                    : list.items.map(item => (
+                      <li key={this.getKey()}>
+                        {item}
+                      </li>
+                    ))
                 }
               </ul>
             </div>

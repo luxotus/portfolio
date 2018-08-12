@@ -8,6 +8,10 @@ $primary-color: #000;
   height: 100vh;
   width: 100vw;
 
+  a {
+    text-decoration: none !important;
+  }
+
   .content-holder {
     overflow: auto;
     float: left;
@@ -52,6 +56,18 @@ $primary-color: #000;
 
       .content {
         display: none;
+      }
+
+      .content-section {
+        padding: 10px 0;
+
+        .list-holder li {
+          padding: 5px 0;
+        }
+
+        .num-list {
+          list-style: decimal;
+        }
       }
     }
 
