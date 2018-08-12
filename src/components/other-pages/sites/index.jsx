@@ -8,8 +8,8 @@ export default class SitesPage extends React.Component {
     this.siteData = [
       {
         id: 0,
-        title: 'Crooked Smile',
-        link: '/lab/crooked-smile',
+        title: 'Tea Shop',
+        link: '/sites/tea-shop',
         images: {
           sm: '/images/site_01.png',
           md: '/images/site_01.png',
@@ -18,8 +18,8 @@ export default class SitesPage extends React.Component {
       },
       {
         id: 1,
-        title: 'Forbidden Fruit',
-        link: '/lab/forbidden-fruit',
+        title: 'Online Store',
+        link: '/sites/online-store',
         images: {
           sm: '/images/site_02.png',
           md: '/images/site_02.png',
@@ -28,8 +28,8 @@ export default class SitesPage extends React.Component {
       },
       {
         id: 2,
-        title: 'Born Sinner',
-        link: '/lab/born-sinner',
+        title: 'Software Product',
+        link: '/sites/software-product',
         images: {
           sm: '/images/site_03.png',
           md: '/images/site_03.png',
