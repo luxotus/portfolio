@@ -11,9 +11,9 @@ export default class SitesPage extends React.Component {
         title: 'Tea Shop',
         link: '/sites/tea-shop',
         images: {
-          sm: '/images/site_01.png',
-          md: '/images/site_01.png',
-          lg: '/images/site_01.png',
+          sm: '/images/sites/testing/site_01.png',
+          md: '/images/sites/testing/site_01.png',
+          lg: '/images/sites/testing/site_01.png',
         },
       },
       {
@@ -21,9 +21,9 @@ export default class SitesPage extends React.Component {
         title: 'Online Store',
         link: '/sites/online-store',
         images: {
-          sm: '/images/site_02.png',
-          md: '/images/site_02.png',
-          lg: '/images/site_02.png',
+          sm: '/images/sites/testing/site_02.png',
+          md: '/images/sites/testing/site_02.png',
+          lg: '/images/sites/testing/site_02.png',
         },
       },
       {
@@ -31,9 +31,9 @@ export default class SitesPage extends React.Component {
         title: 'Software Product',
         link: '/sites/software-product',
         images: {
-          sm: '/images/site_03.png',
-          md: '/images/site_03.png',
-          lg: '/images/site_03.png',
+          sm: '/images/sites/testing/site_03.png',
+          md: '/images/sites/testing/site_03.png',
+          lg: '/images/sites/testing/site_03.png',
         },
       },
       {
@@ -41,9 +41,9 @@ export default class SitesPage extends React.Component {
         title: 'French Toast',
         link: '/lab/born-sinner',
         images: {
-          sm: '/images/site_04.png',
-          md: '/images/site_04.png',
-          lg: '/images/site_04.png',
+          sm: '/images/sites/testing/site_04.png',
+          md: '/images/sites/testing/site_04.png',
+          lg: '/images/sites/testing/site_04.png',
         },
       },
     ];

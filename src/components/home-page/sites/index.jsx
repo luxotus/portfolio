@@ -115,7 +115,7 @@ export default class Sites extends React.Component {
           'restaurants',
           'landing page',
         ],
-        imageSrc: '/images/test.jpg',
+        imageSrc: '/images/sites/testing/test.jpg',
       },
       {
         id: 1,
@@ -124,7 +124,7 @@ export default class Sites extends React.Component {
           'news',
           'landing page',
         ],
-        imageSrc: '/images/test.jpg',
+        imageSrc: '/images/sites/testing/test.jpg',
       },
       {
         id: 2,
@@ -132,7 +132,7 @@ export default class Sites extends React.Component {
         types: [
           'restaurants',
         ],
-        imageSrc: '/images/test.jpg',
+        imageSrc: '/images/sites/testing/test.jpg',
       },
       {
         id: 3,
@@ -141,7 +141,7 @@ export default class Sites extends React.Component {
           'news',
           'landing page',
         ],
-        imageSrc: '/images/test.jpg',
+        imageSrc: '/images/sites/testing/test.jpg',
       },
       {
         id: 4,
@@ -149,7 +149,7 @@ export default class Sites extends React.Component {
         types: [
           'shops',
         ],
-        imageSrc: '/images/test.jpg',
+        imageSrc: '/images/sites/testing/test.jpg',
       },
       {
         id: 5,
@@ -157,7 +157,7 @@ export default class Sites extends React.Component {
         types: [
           'social media',
         ],
-        imageSrc: '/images/test.jpg',
+        imageSrc: '/images/sites/testing/test.jpg',
       },
     ];
 

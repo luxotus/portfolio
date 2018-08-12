@@ -9,7 +9,7 @@ export default class BlogPage extends React.Component {
       {
         main: {
           title: 'Minimal Viable Product',
-          image: '/images/minimum-viable-product.jpeg',
+          image: '/images/blog/minimum-viable-product.jpeg',
           description: 'When your starting a new product you should have a minimal viable product. Without it you could end up with a solution to a problem that no one uses or cares about. With it you can reduce your overall risk and increase your chances of launching a successful product.',
         },
         subSections: [
@@ -67,7 +67,7 @@ export default class BlogPage extends React.Component {
       {
         main: {
           title: 'Keeping up with the latest in your Dev Community',
-          image: '/images/keeping-up-with-the-latest.jpeg',
+          image: '/images/blog/keeping-up-with-the-latest.jpeg',
           description: 'Keeping up with the latest in your development community will help you grow as a developer. From finding better employment opportunities to gaining insight into some of your common problems that others in the community have solved.',
         },
         subSections: [
