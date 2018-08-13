@@ -1,2 +1,74 @@
 #tea-shop-container {
-  height: 100%; }
+  height: 100%;
+  padding-top: 50px; }
+  #tea-shop-container a {
+    text-decoration: none;
+    color: inherit; }
+  #tea-shop-container header {
+    padding-top: 50px;
+    padding-bottom: 30px; }
+    #tea-shop-container header h2 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 10px;
+      text-align: center;
+      text-transform: uppercase; }
+    #tea-shop-container header ul {
+      padding: 0;
+      margin-top: 30px;
+      margin-bottom: 0;
+      text-align: center; }
+    #tea-shop-container header li {
+      display: inline;
+      padding: 0 1.5em;
+      font-size: 1.25em; }
+    #tea-shop-container header li:hover {
+      opacity: .5; }
+  #tea-shop-container .main-img-container {
+    padding: 0 30px; }
+    #tea-shop-container .main-img-container .main-img {
+      height: 520px;
+      background-size: cover;
+      background-position-y: -180px; }
+    #tea-shop-container .main-img-container h3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin: 0;
+      background-color: #0000001a;
+      color: #fff;
+      font-size: 3.5em;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.35em; }
+  #tea-shop-container .about-container {
+    padding: 125px 15%; }
+    #tea-shop-container .about-container h2 {
+      margin-top: 0;
+      font-size: 2em;
+      text-align: center;
+      text-transform: uppercase; }
+    #tea-shop-container .about-container p {
+      margin: 0;
+      text-align: center;
+      font-size: 1.25em;
+      line-height: 1.75em; }
+  #tea-shop-container .detail-holder {
+    display: inline-block;
+    padding: 0 2%;
+    margin-bottom: 100px; }
+    #tea-shop-container .detail-holder .detail-block {
+      width: 33.333%;
+      float: left; }
+      #tea-shop-container .detail-holder .detail-block .detail-block-wrapper {
+        padding: 0 3%; }
+      #tea-shop-container .detail-holder .detail-block .detail-img {
+        height: 250px;
+        width: 100%;
+        background-size: cover; }
+      #tea-shop-container .detail-holder .detail-block h4 {
+        font-size: 1.15em; }
+      #tea-shop-container .detail-holder .detail-block p {
+        line-height: 1.35em; }
