@@ -67,7 +67,7 @@
 
     h2 {
       margin-top: 0;
-      font-size: 2em;
+      font-size: 3em;
       text-align: center;
       text-transform: uppercase;
     }
@@ -106,6 +106,83 @@
       p {
         line-height: 1.35em;
       }
+    }
+  }
+
+  .tea-menu-container {
+    padding: 0 8%;
+    margin-bottom: 75px;
+
+    h2 {
+      font-size: 3em;
+      text-align: center;
+    }
+
+    h3 {
+      padding: 20px 0;
+      border-bottom: 2px solid #e6e6e6;
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    .text-sec {
+      float: left;
+      width: 70%;
+
+      * {
+        margin: 0;
+      }
+
+      h4 {
+        font-size: 1.35em;
+        padding-bottom: 10px;
+      }
+
+      p {
+        color: gray;
+      }
+    }
+
+    .price-sec {
+      float: left;
+      width: 30%;
+      line-height: 23px;
+    }
+
+    .menu-table,
+    .row {
+      display: inline-block;
+      width: 100%;
+    }
+
+    .menu-table {
+      margin-bottom: 75px;
+    }
+
+    .row {
+      padding-top: 35px;
+    }
+  }
+
+  .gallery-container {
+    height: 840px;
+    padding: 0 2%;
+    margin-bottom: 75px;
+
+    .gallery-itm {
+      background-size: cover;
+      float: left;
+      height: 400px;
+      width: calc(50% - 20px);
+    }
+
+    .gallery-itm {
+      margin: 10px;
     }
   }
 }

@@ -47,7 +47,7 @@
     padding: 125px 15%; }
     #tea-shop-container .about-container h2 {
       margin-top: 0;
-      font-size: 2em;
+      font-size: 3em;
       text-align: center;
       text-transform: uppercase; }
     #tea-shop-container .about-container p {
@@ -72,3 +72,50 @@
         font-size: 1.15em; }
       #tea-shop-container .detail-holder .detail-block p {
         line-height: 1.35em; }
+  #tea-shop-container .tea-menu-container {
+    padding: 0 8%;
+    margin-bottom: 75px; }
+    #tea-shop-container .tea-menu-container h2 {
+      font-size: 3em;
+      text-align: center; }
+    #tea-shop-container .tea-menu-container h3 {
+      padding: 20px 0;
+      border-bottom: 2px solid #e6e6e6;
+      margin: 0;
+      font-size: 2em; }
+    #tea-shop-container .tea-menu-container .column {
+      float: left;
+      width: 50%; }
+    #tea-shop-container .tea-menu-container .text-sec {
+      float: left;
+      width: 70%; }
+      #tea-shop-container .tea-menu-container .text-sec * {
+        margin: 0; }
+      #tea-shop-container .tea-menu-container .text-sec h4 {
+        font-size: 1.35em;
+        padding-bottom: 10px; }
+      #tea-shop-container .tea-menu-container .text-sec p {
+        color: gray; }
+    #tea-shop-container .tea-menu-container .price-sec {
+      float: left;
+      width: 30%;
+      line-height: 23px; }
+    #tea-shop-container .tea-menu-container .menu-table,
+    #tea-shop-container .tea-menu-container .row {
+      display: inline-block;
+      width: 100%; }
+    #tea-shop-container .tea-menu-container .menu-table {
+      margin-bottom: 75px; }
+    #tea-shop-container .tea-menu-container .row {
+      padding-top: 35px; }
+  #tea-shop-container .gallery-container {
+    height: 840px;
+    padding: 0 2%;
+    margin-bottom: 75px; }
+    #tea-shop-container .gallery-container .gallery-itm {
+      background-size: cover;
+      float: left;
+      height: 400px;
+      width: calc(50% - 20px); }
+    #tea-shop-container .gallery-container .gallery-itm {
+      margin: 10px; }

@@ -84,6 +84,100 @@ export default class TeaShop extends React.Component {
             </div>
           </div>
         </div>
+        <div className="tea-menu-container">
+          <h2>
+            {'Our Menu'}
+          </h2>
+          <h3>
+            {'Focus'}
+          </h3>
+          <div className="menu-table">
+            <div className="column left">
+              <div className="row">
+                <div className="text-sec">
+                  <h4>
+                    {'Earl Grey'}
+                  </h4>
+                  <p>
+                    {'Red Rooster 2016 Okanagan Valley, BC'}
+                  </p>
+                </div>
+                <div className="price-sec">
+                  {'3.75'}
+                </div>
+              </div>
+              <div className="row">
+                <div className="text-sec">
+                  <h4>
+                    {'Green Tea'}
+                  </h4>
+                  <p>
+                    {'Red Rooster 2016 Okanagan Valley, BC'}
+                  </p>
+                </div>
+                <div className="price-sec">
+                  {'3.75'}
+                </div>
+              </div>
+            </div>
+            <div className="column right">
+              <div className="row">
+                <div className="text-sec">
+                  <h4>
+                    {'Black Tea'}
+                  </h4>
+                  <p>
+                    {'Red Rooster 2016 Okanagan Valley, BC'}
+                  </p>
+                </div>
+                <div className="price-sec">
+                  {'3.75'}
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>
+            {'Cozy'}
+          </h3>
+          <div className="menu-table">
+            <div className="column left">
+              <div className="row">
+                <div className="text-sec">
+                  <h4>
+                    {'Jasmine'}
+                  </h4>
+                  <p>
+                    {'Red Rooster 2016 Okanagan Valley, BC'}
+                  </p>
+                </div>
+                <div className="price-sec">
+                  {'3.75'}
+                </div>
+              </div>
+            </div>
+            <div className="column right">
+              <div className="row">
+                <div className="text-sec">
+                  <h4>
+                    {'Lavender'}
+                  </h4>
+                  <p>
+                    {'Red Rooster 2016 Okanagan Valley, BC'}
+                  </p>
+                </div>
+                <div className="price-sec">
+                  {'3.75'}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="gallery-container">
+          <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/2.jpeg")' }} />
+          <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/8.jpeg")' }} />
+          <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/9.jpeg")' }} />
+          <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/10.jpeg")' }} />
+        </div>
       </div>
     );
   }
