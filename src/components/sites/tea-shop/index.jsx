@@ -178,6 +178,36 @@ export default class TeaShop extends React.Component {
           <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/9.jpeg")' }} />
           <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/10.jpeg")' }} />
         </div>
+        <div className="footer">
+          <div className="store-hour-container">
+            <h4>
+              {'Open Hours'}
+            </h4>
+            <span>
+              {'M-F 9-9pm'}
+            </span>
+            <span>
+              {'Sat 12-10pm'}
+            </span>
+            <span>
+              {'Sun 12-6pm'}
+            </span>
+          </div>
+          <div className="contact-us-container">
+            <h4>
+              {'Contact Us'}
+            </h4>
+            <a href="mailto:hello@teashop.com">
+              {'hello@teashop.com'}
+            </a>
+            <span>
+              {'West Hills Drive 234'}
+            </span>
+            <span>
+              {'Knoxville, TN'}
+            </span>
+          </div>
+        </div>
       </div>
     );
   }

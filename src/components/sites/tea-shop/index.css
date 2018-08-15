@@ -119,3 +119,34 @@
       width: calc(50% - 20px); }
     #tea-shop-container .gallery-container .gallery-itm {
       margin: 10px; }
+  #tea-shop-container .footer {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    border-top: 1px solid #ebebeb;
+    margin-bottom: -4px; }
+    #tea-shop-container .footer .store-hour-container,
+    #tea-shop-container .footer .contact-us-container {
+      width: 50%;
+      float: left; }
+      #tea-shop-container .footer .store-hour-container h4,
+      #tea-shop-container .footer .contact-us-container h4 {
+        font-size: 1.25em;
+        margin-top: 0;
+        margin-bottom: 15px; }
+    #tea-shop-container .footer .store-hour-container h4,
+    #tea-shop-container .footer .store-hour-container span {
+      padding-left: calc(4% + 10px); }
+    #tea-shop-container .footer .store-hour-container span {
+      display: block; }
+    #tea-shop-container .footer .store-hour-container span:nth-child(3) {
+      padding-top: 10px;
+      padding-bottom: 10px; }
+    #tea-shop-container .footer .contact-us-container {
+      text-align: right; }
+      #tea-shop-container .footer .contact-us-container * {
+        display: block;
+        padding-right: calc(4% + 10px); }
+      #tea-shop-container .footer .contact-us-container a + span {
+        padding-top: 10px;
+        padding-bottom: 10px; }
