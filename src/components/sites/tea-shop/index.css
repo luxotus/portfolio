@@ -29,14 +29,14 @@
     #tea-shop-container .main-img-container .main-img {
       height: 520px;
       background-size: cover;
-      background-position-y: -180px; }
+      background-position-y: -180px;
+      background-repeat: no-repeat; }
     #tea-shop-container .main-img-container h3 {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100%;
       margin: 0;
-      background-color: #0000001a;
       color: #fff;
       font-size: 3.5em;
       letter-spacing: 3px;
@@ -150,3 +150,45 @@
       #tea-shop-container .footer .contact-us-container a + span {
         padding-top: 10px;
         padding-bottom: 10px; }
+
+/* Mobile */
+@media only screen and (max-device-width: 740px) {
+  .main-img {
+    background-position-y: 0 !important; }
+  #tea-shop-container .detail-holder .detail-block {
+    width: 100%;
+    padding-bottom: 25px; }
+  #tea-shop-container .main-img-container h3 {
+    font-size: 3em; }
+  #tea-shop-container .tea-menu-container .menu-table {
+    margin-bottom: 25px; }
+  #tea-shop-container .tea-menu-container .column {
+    width: 100%; }
+  #tea-shop-container .tea-menu-container .price-sec {
+    text-align: right; }
+  #tea-shop-container .gallery-container .gallery-itm {
+    height: 190px;
+    width: calc(100% - 20px); } }
+
+/* Mobile Landscape */
+@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  #tea-shop-container .gallery-container .gallery-itm {
+    height: 250px;
+    width: calc(100% - 100px);
+    margin: 10px 50px; } }
+
+/* Tablet */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .main-img {
+    background-position-y: 0 !important; } }
+
+/* Tablet Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #tea-shop-container .detail-holder .detail-block .detail-img {
+    height: 200px; }
+  #tea-shop-container .gallery-container {
+    height: 540px; }
+    #tea-shop-container .gallery-container .gallery-itm {
+      height: 250px; } }
+
+/* Tablet Landscape */
