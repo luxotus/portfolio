@@ -15,32 +15,39 @@ export default class TeaShop extends React.Component {
   }
 
   buildNav() {
+    const links = [
+      {
+        href: '/sites/tea-shop/home',
+        title: 'Home',
+      },
+      {
+        href: '/sites/tea-shop/menu',
+        title: 'Menu',
+      },
+      {
+        href: '/sites/tea-shop/gallery',
+        title: 'Gallery',
+      },
+      {
+        href: '/sites/tea-shop/contact',
+        title: 'Contact',
+      },
+    ];
+    const nav = links.map(link => (
+      <li key={this.getKey()}>
+        <a href={link.href}>
+          {link.title}
+        </a>
+      </li>
+    ));
+
     return (
       <header>
         <h2>
           {'Tea shop'}
         </h2>
         <ul>
-          <li>
-            <a href="/sites/tea-shop/home">
-              {'Home'}
-            </a>
-          </li>
-          <li>
-            <a href="/sites/tea-shop/menu">
-              {'Menu'}
-            </a>
-          </li>
-          <li>
-            <a href="/sites/tea-shop/gallery">
-              {'Gallery'}
-            </a>
-          </li>
-          <li>
-            <a href="/sites/tea-shop/contact">
-              {'Contact'}
-            </a>
-          </li>
+          {nav}
         </ul>
       </header>
     );
@@ -74,41 +81,41 @@ export default class TeaShop extends React.Component {
   }
 
   buildDetails() {
+    const data = [
+      {
+        image: '/images/sites/tea-shop/3.jpeg',
+        title: 'Source',
+        description: 'Nec res una proinde chartam requiri quaenam confuse. De ea se tamquam haberet exempli memores ipsarum ob. Earum se athei vi erunt.',
+      },
+      {
+        image: '/images/sites/tea-shop/6.jpeg',
+        title: 'Ingredients',
+        description: 'Nec res una proinde chartam requiri quaenam confuse. De ea se tamquam haberet exempli memores ipsarum ob. Earum se athei vi erunt.',
+      },
+      {
+        image: '/images/sites/tea-shop/8.jpeg',
+        title: 'Taste',
+        description: 'Nec res una proinde chartam requiri quaenam confuse. De ea se tamquam haberet exempli memores ipsarum ob. Earum se athei vi erunt.',
+      },
+    ];
+
+    const details = data.map(item => (
+      <div className="detail-block" key={this.getKey()}>
+        <div className="detail-block-wrapper">
+          <div className="detail-img" style={{ backgroundImage: `url("${item.image}")` }} />
+          <h4>
+            {item.title}
+          </h4>
+          <p>
+            {item.description}
+          </p>
+        </div>
+      </div>
+    ));
+
     return (
       <div className="detail-holder">
-        <div className="detail-block">
-          <div className="detail-block-wrapper">
-            <div className="detail-img" style={{ backgroundImage: 'url("/images/sites/tea-shop/3.jpeg")' }} />
-            <h4>
-              {'Source'}
-            </h4>
-            <p>
-              {'Nec res una proinde chartam requiri quaenam confuse. De ea se tamquam haberet exempli memores ipsarum ob. Earum se athei vi erunt.'}
-            </p>
-          </div>
-        </div>
-        <div className="detail-block">
-          <div className="detail-block-wrapper">
-            <div className="detail-img" style={{ backgroundImage: 'url("/images/sites/tea-shop/6.jpeg")' }} />
-            <h4>
-              {'Ingredients'}
-            </h4>
-            <p>
-              {'Nec res una proinde chartam requiri quaenam confuse. De ea se tamquam haberet exempli memores ipsarum ob. Earum se athei vi erunt.'}
-            </p>
-          </div>
-        </div>
-        <div className="detail-block">
-          <div className="detail-block-wrapper">
-            <div className="detail-img" style={{ backgroundImage: 'url("/images/sites/tea-shop/8.jpeg")' }} />
-            <h4>
-              {'Taste'}
-            </h4>
-            <p>
-              {'Nec res una proinde chartam requiri quaenam confuse. De ea se tamquam haberet exempli memores ipsarum ob. Earum se athei vi erunt.'}
-            </p>
-          </div>
-        </div>
+        {details}
       </div>
     );
   }
