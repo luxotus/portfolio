@@ -2,6 +2,17 @@ import React from 'react';
 import './index.css';
 
 export default class TeaShop extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
+  }
+
+  getKey() {
+    this.keyCount += 1;
+    return this.keyCount;
+  }
 
   buildNav() {
     return (
@@ -32,6 +43,20 @@ export default class TeaShop extends React.Component {
           </li>
         </ul>
       </header>
+    );
+  }
+
+  buildMainImage() {
+    return (
+      <div className="main-img-container">
+        <div className="main-img" style={{ backgroundImage: 'url("/images/sites/tea-shop/7.jpeg")' }}>
+          <h3>
+            {'we use tea as a'}
+            <br />
+            {'platform to care for others'}
+          </h3>
+        </div>
+      </div>
     );
   }
 
@@ -89,97 +114,155 @@ export default class TeaShop extends React.Component {
   }
 
   buildMenu() {
-    const data = {
-      focus: [
-        {
-          name: 'Earl Grey',
-          location: 'Red Rooster 2016 Okanagan Valley, BC',
-          price: '3.75',
-        },
-        {
-          name: 'Black Tea',
-          location: 'Red Rooster 2016 Okanagan Valley, BC',
-          price: '3.75',
-        },
-      ],
+    const menu = {
+      Focus:
+      {
+        data: [
+          {
+            name: 'Earl Grey',
+            location: 'Red Rooster 2016 Okanagan Valley, BC',
+            price: '3.75',
+          },
+          {
+            name: 'Black Tea',
+            location: 'Red Rooster 2818 Okanagan Valley, BC',
+            price: '3.75',
+          },
+        ],
+        column: {},
+      },
+      Cozy:
+      {
+        data: [
+          {
+            name: 'Jasmine',
+            location: 'Red Rooster 1987 Okanagan Valley, BC',
+            price: '3.75',
+          },
+          {
+            name: 'Lavender',
+            location: 'Red Rooster 2007 Okanagan Valley, BC',
+            price: '3.75',
+          },
+        ],
+        column: {},
+      },
     };
-    const rows = {
-      focus: data,
-    };
+
+    Object.keys(menu).forEach((key) => {
+      menu[key].column.left = menu[key].data.filter((element, index) => {
+        const even = (index % 2 === 0);
+        return even;
+      }).map(row => (
+        <div className="row" key={this.getKey()}>
+          <div className="text-sec">
+            <h4>
+              {row.name}
+            </h4>
+            <p>
+              {row.location}
+            </p>
+          </div>
+          <div className="price-sec">
+            {row.price}
+          </div>
+        </div>
+      ));
+
+      menu[key].column.right = menu[key].data.filter((element, index) => {
+        const even = (index % 2 === 1);
+        return even;
+      }).map(row => (
+        <div className="row" key={this.getKey()}>
+          <div className="text-sec">
+            <h4>
+              {row.name}
+            </h4>
+            <p>
+              {row.location}
+            </p>
+          </div>
+          <div className="price-sec">
+            {row.price}
+          </div>
+        </div>
+      ));
+    });
+
+    const sections = Object.keys(menu).map(key => (
+      <div key={this.getKey()}>
+        <h3>
+          {key}
+        </h3>
+        <div className="menu-table">
+          <div className="column left">
+            {menu[key].column.left}
+          </div>
+          <div className="column right">
+            {menu[key].column.right}
+          </div>
+        </div>
+      </div>
+    ));
+
     return (
       <div className="tea-menu-container">
         <h2>
           {'Our Menu'}
         </h2>
-        <h3>
-          {'Focus'}
-        </h3>
-        <div className="menu-table">
-          <div className="column left">
-            <div className="row">
-              <div className="text-sec">
-                <h4>
-                  {'Earl Grey'}
-                </h4>
-                <p>
-                  {'Red Rooster 2016 Okanagan Valley, BC'}
-                </p>
-              </div>
-              <div className="price-sec">
-                {'3.75'}
-              </div>
-            </div>
-          </div>
-          <div className="column right">
-            <div className="row">
-              <div className="text-sec">
-                <h4>
-                  {'Black Tea'}
-                </h4>
-                <p>
-                  {'Red Rooster 2016 Okanagan Valley, BC'}
-                </p>
-              </div>
-              <div className="price-sec">
-                {'3.75'}
-              </div>
-            </div>
-          </div>
+        {sections}
+      </div>
+    );
+  }
+
+  buildGallery() {
+    const images = [
+      '/images/sites/tea-shop/2.jpeg',
+      '/images/sites/tea-shop/8.jpeg',
+      '/images/sites/tea-shop/9.jpeg',
+      '/images/sites/tea-shop/10.jpeg',
+    ];
+    const galleryItems = images.map(item => (
+      <div className="gallery-itm" key={this.getKey()} style={{ backgroundImage: `url("${item}")` }} />
+    ));
+
+    return (
+      <div className="gallery-container">
+        {galleryItems}
+      </div>
+    );
+  }
+
+  buildFooter() {
+    return (
+      <div className="footer">
+        <div className="store-hour-container">
+          <h4>
+            {'Open Hours'}
+          </h4>
+          <span>
+            {'M-F 9-9pm'}
+          </span>
+          <span>
+            {'Sat 12-10pm'}
+          </span>
+          <span>
+            {'Sun 12-6pm'}
+          </span>
         </div>
-        <h3>
-          {'Cozy'}
-        </h3>
-        <div className="menu-table">
-          <div className="column left">
-            <div className="row">
-              <div className="text-sec">
-                <h4>
-                  {'Jasmine'}
-                </h4>
-                <p>
-                  {'Red Rooster 2016 Okanagan Valley, BC'}
-                </p>
-              </div>
-              <div className="price-sec">
-                {'3.75'}
-              </div>
-            </div>
-          </div>
-          <div className="column right">
-            <div className="row">
-              <div className="text-sec">
-                <h4>
-                  {'Lavender'}
-                </h4>
-                <p>
-                  {'Red Rooster 2016 Okanagan Valley, BC'}
-                </p>
-              </div>
-              <div className="price-sec">
-                {'3.75'}
-              </div>
-            </div>
-          </div>
+        <div className="contact-us-container">
+          <h4>
+            {'Contact Us'}
+          </h4>
+          <a href="mailto:hello@teashop.com">
+            {'hello@teashop.com'}
+          </a>
+          <span>
+            {'West Hills Drive 234'}
+          </span>
+          <span>
+            {'Knoxville, TN'}
+          </span>
         </div>
       </div>
     );
@@ -189,54 +272,12 @@ export default class TeaShop extends React.Component {
     return (
       <div id="tea-shop-container">
         {this.buildNav()}
-        <div className="main-img-container">
-          <div className="main-img" style={{ backgroundImage: 'url("/images/sites/tea-shop/7.jpeg")' }}>
-            <h3>
-              {'we use tea as a'}
-              <br />
-              {'platform to care for others'}
-            </h3>
-          </div>
-        </div>
+        {this.buildMainImage()}
         {this.buildAbout()}
         {this.buildDetails()}
         {this.buildMenu()}
-        <div className="gallery-container">
-          <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/2.jpeg")' }} />
-          <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/8.jpeg")' }} />
-          <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/9.jpeg")' }} />
-          <div className="gallery-itm" style={{ backgroundImage: 'url("/images/sites/tea-shop/10.jpeg")' }} />
-        </div>
-        <div className="footer">
-          <div className="store-hour-container">
-            <h4>
-              {'Open Hours'}
-            </h4>
-            <span>
-              {'M-F 9-9pm'}
-            </span>
-            <span>
-              {'Sat 12-10pm'}
-            </span>
-            <span>
-              {'Sun 12-6pm'}
-            </span>
-          </div>
-          <div className="contact-us-container">
-            <h4>
-              {'Contact Us'}
-            </h4>
-            <a href="mailto:hello@teashop.com">
-              {'hello@teashop.com'}
-            </a>
-            <span>
-              {'West Hills Drive 234'}
-            </span>
-            <span>
-              {'Knoxville, TN'}
-            </span>
-          </div>
-        </div>
+        {this.buildGallery()}
+        {this.buildFooter()}
       </div>
     );
   }
