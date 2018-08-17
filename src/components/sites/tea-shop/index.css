@@ -58,7 +58,7 @@
   #tea-shop-container .detail-holder {
     display: inline-block;
     padding: 0 2%;
-    margin-bottom: 100px; }
+    margin-bottom: 50px; }
     #tea-shop-container .detail-holder .detail-block {
       width: 33.333%;
       float: left; }
@@ -74,7 +74,8 @@
         line-height: 1.35em; }
   #tea-shop-container .tea-menu-container {
     padding: 0 8%;
-    margin-bottom: 75px; }
+    padding-top: 50px;
+    margin-bottom: 25px; }
     #tea-shop-container .tea-menu-container h2 {
       font-size: 3em;
       text-align: center; }
@@ -111,6 +112,7 @@
   #tea-shop-container .gallery-container {
     height: 840px;
     padding: 0 2%;
+    padding-top: 50px;
     margin-bottom: 75px; }
     #tea-shop-container .gallery-container .gallery-itm {
       background-size: cover;

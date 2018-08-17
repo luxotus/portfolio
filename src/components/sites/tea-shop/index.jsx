@@ -17,24 +17,33 @@ export default class TeaShop extends React.Component {
   buildNav() {
     const links = [
       {
-        href: '/sites/tea-shop/home',
-        title: 'Home',
+        href: '#about',
+        title: 'About',
+        el: '.about-container',
       },
       {
-        href: '/sites/tea-shop/menu',
+        href: '#menu',
         title: 'Menu',
+        el: '.tea-menu-container',
       },
       {
-        href: '/sites/tea-shop/gallery',
+        href: '#gallery',
         title: 'Gallery',
+        el: '.gallery-container',
       },
       {
-        href: '/sites/tea-shop/contact',
+        href: '#contact',
         title: 'Contact',
+        el: '.footer',
       },
     ];
     const nav = links.map(link => (
-      <li key={this.getKey()}>
+      <li
+        role="presentation"
+        key={this.getKey()}
+        onClick={() => { document.querySelector(link.el).scrollIntoView(); }}
+        onKeyDown={() => { document.querySelector(link.el).scrollIntoView(); }}
+      >
         <a href={link.href}>
           {link.title}
         </a>
