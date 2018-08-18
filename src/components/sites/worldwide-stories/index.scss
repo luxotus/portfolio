@@ -7,6 +7,9 @@ $down-holder-size: 53px;
 $arrow-down-size: 15px;
 $arrow-border-style: 3px solid white;
 
+/* Placeholder */
+$input-text-size: 1.25em;
+
 @font-face {
   font-family: 'wws-icons';
   src:  url('/fonts/worldwide-stories/icomoon.eot');
@@ -187,22 +190,21 @@ $arrow-border-style: 3px solid white;
       width: 78%;
     }
   }
-  
-  
+
   .title-icon-section {
     height: 40px;
-  
+
     span, h2 {
       float: left;
       line-height: 40px;
     }
-  
+
     span {
       color: $lightred-color;
       font-family: 'wws-icons';
       font-size: 2em;
     }
-  
+
     h2 {
       margin: 0;
       padding-left: 12px;
@@ -210,6 +212,98 @@ $arrow-border-style: 3px solid white;
       font-weight: 500;
       font-size: 2rem;
     }
+  }
+
+  .newsletter-section {
+    background-repeat: repeat;
   
+    .tint {
+      display: flex;
+      height: inherit;
+      background-color: #ae0f0fba;
+    }
+  }
+  .middle-section {
+    height: inherit;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  
+    .download-message {
+      color: white;
+      font-family: sans-serif;
+      font-size: 1.25em;
+    }
+  
+    img {
+      height: 65px;
+    }
+  
+    p, .form-group {
+      margin-bottom: 30px;
+    }
+  
+    .panel {
+      border-radius: 10px;
+      margin-top: 60px;
+      background-color: $light-gray-color;
+    }
+  
+    .panel-body {
+      padding-top: 45px;
+      padding-right: 30px;
+        padding-bottom: 45px;
+        padding-left: 30px;
+    }
+  
+    .newsletter-message {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 1.25em;
+    }
+  
+    input {
+      height: 65px;
+      font-size: $input-text-size;
+    }
+  
+    button[type="submit"] {
+      width: 100%;
+      padding-top: 12px;
+      padding-right: 24px;
+      padding-bottom: 12px;
+      padding-left: 24px;
+      background-color: $lightred-color;
+      font-size: 1.5em;
+    }
+  
+    button[type="submit"]:focus, 
+    button[type="submit"]:hover,
+    input:focus,
+    input:hover {
+      outline: none;
+    }
+  }
+  
+  #newsletter.success {
+    input {
+      border: none;
+        background-color: #f9fcf6 !important;
+        color: #85c446;
+        box-shadow: inset 0 0 0 1px rgba(133,196,70,.5);
+    }
+  
+    button[type="submit"] {
+      background-color: #85c446;
+      border-color: #85c446;
+    }
+  }
+  
+  #newsletter.error {
+    input {
+      border: none;
+        background-color: #fff5f4 !important;
+        color: #fd3c2b;
+        box-shadow: inset 0 0 0 1px rgba(253,60,43,.5);
+    }
   }
 }
