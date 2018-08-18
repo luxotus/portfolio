@@ -77,6 +77,26 @@ $input-text-size: 1.25em;
     text-align: right;
   }
 
+  .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+  }
+
+  .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
   .form-control {
     display: block;
     width: 100%;
@@ -245,7 +265,7 @@ $input-text-size: 1.25em;
     .download-message {
       color: white;
       font-family: sans-serif;
-      font-size: 1.25em;
+      font-size: 1.65em;
     }
   
     img {
@@ -272,12 +292,14 @@ $input-text-size: 1.25em;
     .newsletter-message {
         padding-left: 15px;
         padding-right: 15px;
-        font-size: 1.25em;
+        margin-top: 0;
+        font-size: 1.75em;
     }
   
     input {
       height: 65px;
       font-size: $input-text-size;
+      text-indent: 10px;
     }
   
     button[type="submit"] {
@@ -288,6 +310,7 @@ $input-text-size: 1.25em;
       padding-left: 24px;
       background-color: $lightred-color;
       font-size: 1.5em;
+      cursor: pointer;
     }
   
     button[type="submit"]:focus, 

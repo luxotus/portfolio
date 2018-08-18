@@ -42,6 +42,22 @@
     text-align: center; }
   #worldwide-stories-container .text-right {
     text-align: right; }
+  #worldwide-stories-container .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem; }
+  #worldwide-stories-container .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545; }
   #worldwide-stories-container .form-control {
     display: block;
     width: 100%;
@@ -161,7 +177,7 @@
     #worldwide-stories-container .middle-section .download-message {
       color: white;
       font-family: sans-serif;
-      font-size: 1.25em; }
+      font-size: 1.65em; }
     #worldwide-stories-container .middle-section img {
       height: 65px; }
     #worldwide-stories-container .middle-section p, #worldwide-stories-container .middle-section .form-group {
@@ -178,10 +194,12 @@
     #worldwide-stories-container .middle-section .newsletter-message {
       padding-left: 15px;
       padding-right: 15px;
-      font-size: 1.25em; }
+      margin-top: 0;
+      font-size: 1.75em; }
     #worldwide-stories-container .middle-section input {
       height: 65px;
-      font-size: 1.25em; }
+      font-size: 1.25em;
+      text-indent: 10px; }
     #worldwide-stories-container .middle-section button[type="submit"] {
       width: 100%;
       padding-top: 12px;
@@ -189,7 +207,8 @@
       padding-bottom: 12px;
       padding-left: 24px;
       background-color: #ca3030;
-      font-size: 1.5em; }
+      font-size: 1.5em;
+      cursor: pointer; }
     #worldwide-stories-container .middle-section button[type="submit"]:focus,
     #worldwide-stories-container .middle-section button[type="submit"]:hover,
     #worldwide-stories-container .middle-section input:focus,
