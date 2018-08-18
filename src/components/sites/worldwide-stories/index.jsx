@@ -30,6 +30,22 @@ export default class WorldwideStories extends React.Component {
             <img src="/images/sites/worldwide-stories/play_icon.png" alt="google play icon" />
           </a>
         </div>
+        <div className="row feature-section feature-countries">
+          <div className="col-sm-6 image-section text-center">
+            <img src="/images/sites/worldwide-stories/screens/countries_phone.png" alt="phone with screen shot" />
+          </div>
+          <div className="col-sm-6 text-section">
+            <div className="text-center title-icon-section">
+              <span className="icon-globe" />
+              <h2>
+                {'Countries'}
+              </h2>
+            </div>
+            <p>
+              {'So you probably have a favorite author in your country but do you have one in spain or france or russia? Didn\'t think so, hence why you should use our app. Explore the minds of authors worldwide all in one place.'}
+            </p>
+          </div>
+        </div>
       </div>
     );
   }

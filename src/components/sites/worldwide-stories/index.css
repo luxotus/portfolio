@@ -1,10 +1,33 @@
 /* Arrow */
+@font-face {
+  font-family: 'wws-icons';
+  src: url("/fonts/worldwide-stories/icomoon.eot");
+  src: url("/fonts/worldwide-stories/icomoon.eot?#iefix") format("embedded-opentype"), url("/fonts/worldwide-stories/icomoon.ttf") format("truetype"), url("/fonts/worldwide-stories/icomoon.woff") format("woff"), url("/fonts/worldwide-stories/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Icons */
+.icon-globe:before {
+  content: "\e900"; }
+
+.icon-book:before {
+  content: "\e91f"; }
+
+.icon-bookmark:before {
+  content: "\e9d2"; }
+
+.icon-share:before {
+  content: "\ea82"; }
+
 #worldwide-stories-container {
   padding-top: 50px; }
   #worldwide-stories-container .row {
     position: relative;
     display: flex;
     flex-wrap: wrap; }
+  #worldwide-stories-container .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%; }
   #worldwide-stories-container .col-sm-12 {
     flex: 0 0 100%;
     max-width: 100%; }
@@ -72,3 +95,43 @@
       height: 128px; }
     #worldwide-stories-container .app-download-section img {
       height: 58px; }
+  #worldwide-stories-container .feature-section {
+    padding-top: 100px; }
+    #worldwide-stories-container .feature-section .image-section {
+      height: 410px;
+      overflow-y: hidden; }
+      #worldwide-stories-container .feature-section .image-section img {
+        height: 625px;
+        width: 344.28px; }
+    #worldwide-stories-container .feature-section .text-section p {
+      width: 75%;
+      padding-top: 20px;
+      margin-top: 0;
+      color: #858585;
+      text-align: left;
+      font-size: 1.5em;
+      line-height: 34.4px; }
+  #worldwide-stories-container .feature-section:nth-child(even) {
+    border-top: 1px solid #e0e0e0;
+    background-color: #f4f4f4; }
+    #worldwide-stories-container .feature-section:nth-child(even) .image-section {
+      padding-left: 90px; }
+    #worldwide-stories-container .feature-section:nth-child(even) .text-section {
+      padding-left: 8%; }
+    #worldwide-stories-container .feature-section:nth-child(even) .text-section p {
+      width: 78%; }
+  #worldwide-stories-container .title-icon-section {
+    height: 40px; }
+    #worldwide-stories-container .title-icon-section span, #worldwide-stories-container .title-icon-section h2 {
+      float: left;
+      line-height: 40px; }
+    #worldwide-stories-container .title-icon-section span {
+      color: #ca3030;
+      font-family: 'wws-icons';
+      font-size: 2em; }
+    #worldwide-stories-container .title-icon-section h2 {
+      margin: 0;
+      padding-left: 12px;
+      font-family: sans-serif;
+      font-weight: 500;
+      font-size: 2rem; }
