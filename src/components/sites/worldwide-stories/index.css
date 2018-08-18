@@ -1,2 +1,74 @@
+/* Arrow */
 #worldwide-stories-container {
-  height: 100%; }
+  padding-top: 50px; }
+  #worldwide-stories-container .row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; }
+  #worldwide-stories-container .col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%; }
+  #worldwide-stories-container .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%; }
+  #worldwide-stories-container .col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%; }
+  #worldwide-stories-container .text-center {
+    text-align: center; }
+  #worldwide-stories-container .text-right {
+    text-align: right; }
+  #worldwide-stories-container .header {
+    height: calc(100vh - 178px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+  #worldwide-stories-container .title-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000a6; }
+    #worldwide-stories-container .title-section h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: white;
+      font-family: sans-serif;
+      font-size: 3em;
+      font-weight: 500; }
+    #worldwide-stories-container .title-section p {
+      margin: 0;
+      color: #ca3030;
+      font-family: sans-serif;
+      font-size: 1.75em; }
+  #worldwide-stories-container .arrow-down-section {
+    position: absolute;
+    bottom: 90px;
+    display: flex;
+    justify-content: center;
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    background-color: #ca3030; }
+    #worldwide-stories-container .arrow-down-section div {
+      height: 15px;
+      width: 15px;
+      border-left: 3px solid white;
+      border-bottom: 3px solid white;
+      margin-top: 17px;
+      transform: rotate(-45deg); }
+  #worldwide-stories-container .app-download-section {
+    background-color: #ca3030; }
+    #worldwide-stories-container .app-download-section h3 {
+      height: 128px;
+      line-height: 128px;
+      margin: 0;
+      padding-right: 30px;
+      color: white;
+      font-size: 2.25em;
+      font-weight: 500; }
+    #worldwide-stories-container .app-download-section .play-icon-holder {
+      display: flex;
+      align-items: center;
+      height: 128px; }
+    #worldwide-stories-container .app-download-section img {
+      height: 58px; }

@@ -1,3 +1,118 @@
+$lightred-color: #ca3030;
+$semi-dark: #000000a6;
+
+/* Arrow */
+$down-holder-size: 53px;
+$arrow-down-size: 15px;
+$arrow-border-style: 3px solid white;
+
+@mixin height-pair($size) {
+	height: $size;
+	line-height: $size;
+}
+
 #worldwide-stories-container {
-  height: 100%;
+  padding-top: 50px;
+
+  .row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .header {
+    height: calc(100vh - 178px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .title-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $semi-dark;
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: white;
+      font-family: sans-serif;
+      font-size: 3em;
+      font-weight: 500;
+    }
+  
+    p {
+      margin: 0;
+      color: $lightred-color;
+      font-family: sans-serif;
+      font-size: 1.75em;
+    }
+  }
+  
+  .arrow-down-section {
+    position: absolute;
+    bottom: 90px;
+    display: flex;
+    justify-content: center;
+    height: $down-holder-size;
+    width: $down-holder-size;
+    border-radius: 50%;
+    background-color: $lightred-color;
+  
+    div {
+      height: $arrow-down-size;
+      width: $arrow-down-size;
+      border-left: $arrow-border-style;
+      border-bottom: $arrow-border-style;
+      margin-top: 17px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .app-download-section {
+    background-color: $lightred-color;
+  
+    h3 {
+      @include height-pair(128px);
+      margin: 0;
+      padding-right: 30px;
+      color: white;
+      font-size: 2.25em;
+      font-weight: 500;
+    }
+  
+    .play-icon-holder {
+      display: flex;
+      align-items: center;
+      height: 128px;
+    }
+  
+    img {
+      height: 58px;
+    }
+  }
 }
