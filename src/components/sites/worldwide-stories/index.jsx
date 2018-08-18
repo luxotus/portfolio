@@ -107,9 +107,8 @@ export default class WorldwideStories extends React.Component {
           </div>
         </div>
         <div className="row newsletter-section" style={{ backgroundImage: 'url("/images/sites/worldwide-stories/doodles.png")' }}>
-          <div className="tint col-12">
-            <div className="col-1 col-sm-3" />
-            <div className="col-10 col-sm-6 middle-section text-center">
+          <div className="tint">
+            <div className="col-sm-6 middle-section text-center">
               <p className="download-message">
                 {'Read stories from all of the world. Worldwide stories is the new app for android that helps you explore fascinating stories all in one place.'}
               </p>
@@ -124,12 +123,12 @@ export default class WorldwideStories extends React.Component {
                   <form action="#" id="newsletter">
                     <div className="row">
                       <div className="col-sm-6">
-                        <div className="form-group">
+                        <div className="form-group left">
                           <input type="text" className="form-control" id="first-name" name="first-name" placeholder="First Name" />
                         </div>
                       </div>
                       <div className="col-sm-6">
-                        <div className="form-group">
+                        <div className="form-group right">
                           <input type="text" className="form-control" id="last-name" name="last-name" placeholder="Last Name" />
                         </div>
                       </div>

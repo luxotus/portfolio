@@ -77,6 +77,17 @@ $input-text-size: 1.25em;
     text-align: right;
   }
 
+  .form-control {
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+  }
+
   .header {
     height: calc(100vh - 178px);
     background-size: cover;
@@ -219,7 +230,10 @@ $input-text-size: 1.25em;
   
     .tint {
       display: flex;
+      align-items: center;
+      justify-content: center;
       height: inherit;
+      width: 100%;
       background-color: #ae0f0fba;
     }
   }
@@ -283,7 +297,15 @@ $input-text-size: 1.25em;
       outline: none;
     }
   }
-  
+
+  #newsletter .form-group.left {
+    padding-right: 10px;
+  }
+
+  #newsletter .form-group.right {
+    padding-left: 10px;
+  }
+
   #newsletter.success {
     input {
       border: none;
