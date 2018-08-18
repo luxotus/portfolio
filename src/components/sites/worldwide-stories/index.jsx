@@ -66,6 +66,26 @@ export default class WorldwideStories extends React.Component {
             </div>
           </div>
         </div>
+        <div className="row feature-section feature-bookmarks">
+          <div className="col-sm-6">
+            <div className="image-section left-section text-center">
+              <img src="/images/sites/worldwide-stories/screens/bookmarks_phone.png" alt="phone with screen shot" />
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="text-section right-section">
+              <div className="text-center title-icon-section">
+                <span className="icon-bookmark" />
+                <h2>
+                  {'Bookmarking'}
+                </h2>
+              </div>
+              <p>
+                {'We know the stories can be long and you might not have the time to read it all in one sitting. So we created a feature that will allow you to save your position in the story and come back to it when ever you like. Making it much easier for you to finish stories on your own pace which is missing from 99% of story apps.'}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
