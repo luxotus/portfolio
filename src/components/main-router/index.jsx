@@ -8,7 +8,7 @@ import SitesPage from '../other-pages/sites';
 import OpenSourcePage from '../other-pages/open-source';
 import TeaShop from '../sites/tea-shop';
 import OnlineStore from '../sites/online-store';
-import SoftwareProduct from '../sites/software-product';
+import WorldwideStories from '../sites/worldwide-stories';
 
 export default class MainRouter extends React.Component {
   render() {
@@ -22,7 +22,7 @@ export default class MainRouter extends React.Component {
           <Route path="/sites" exact render={({ match }) => <SitesPage match={match} {...this.props} />} />
           <Route path="/sites/tea-shop" component={TeaShop} />
           <Route path="/sites/online-store" component={OnlineStore} />
-          <Route path="/sites/software-product" component={SoftwareProduct} />
+          <Route path="/sites/worldwide-stories" component={WorldwideStories} />
         </Switch>
       </div>
     );

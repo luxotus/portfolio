@@ -28,8 +28,8 @@ export default class SitesPage extends React.Component {
       },
       {
         id: 2,
-        title: 'Software Product',
-        link: '/sites/software-product',
+        title: 'Worldwide Stories',
+        link: '/sites/worldwide-stories',
         images: {
           sm: '/images/sites/testing/site_03.png',
           md: '/images/sites/testing/site_03.png',
