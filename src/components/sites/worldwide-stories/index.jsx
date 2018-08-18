@@ -46,6 +46,26 @@ export default class WorldwideStories extends React.Component {
             </p>
           </div>
         </div>
+        <div className="row feature-section feature-stories">
+          <div className="col-sm-6">
+            <div className="text-section left-section">
+              <div className="text-center title-icon-section">
+                <span className="icon-book" />
+                <h2>
+                  {'Stories'}
+                </h2>
+              </div>
+              <p>
+                {'From Love at first sight to scary stories from the past, we have it all. Get lost in narratives of vibrant characters that could spark the interest of just about any reader. '}
+              </p>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="image-section right-section">
+              <img src="/images/sites/worldwide-stories/screens/story_phone.png" alt="phone with screen shot" />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
