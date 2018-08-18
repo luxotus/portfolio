@@ -147,6 +147,18 @@ export default class WorldwideStories extends React.Component {
             </div>
           </div>
         </div>
+        <div className="row footer">
+          <div className="copyright-holder">
+            <p>
+              {'© 2018 Luxotus'}
+            </p>
+          </div>
+          <div className="contact-holder">
+            <a href="mailto:example@email.com">
+              {'Contact'}
+            </a>
+          </div>
+        </div>
       </div>
     );
   }

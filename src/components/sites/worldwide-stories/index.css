@@ -231,3 +231,26 @@
     background-color: #fff5f4 !important;
     color: #fd3c2b;
     box-shadow: inset 0 0 0 1px rgba(253, 60, 43, 0.5); }
+  #worldwide-stories-container .footer {
+    height: 45px;
+    background-color: #3b0100; }
+    #worldwide-stories-container .footer div {
+      overflow-y: hidden; }
+    #worldwide-stories-container .footer .copyright-holder {
+      float: left;
+      width: 50%; }
+    #worldwide-stories-container .footer .contact-holder {
+      float: right;
+      width: 50%;
+      text-align: right; }
+    #worldwide-stories-container .footer p,
+    #worldwide-stories-container .footer a {
+      margin: 0;
+      color: white;
+      font-size: 1.25em;
+      line-height: 45px; }
+    #worldwide-stories-container .footer p {
+      padding-left: 20px; }
+    #worldwide-stories-container .footer a {
+      text-decoration: none;
+      padding-right: 20px; }
