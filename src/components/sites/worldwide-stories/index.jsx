@@ -86,6 +86,26 @@ export default class WorldwideStories extends React.Component {
             </div>
           </div>
         </div>
+        <div className="row feature-section feature-share">
+          <div className="col-sm-6">
+            <div className="text-section left-section">
+              <div className="text-center title-icon-section">
+                <span className="icon-share" />
+                <h2>
+                  {'Share'}
+                </h2>
+              </div>
+              <p>
+                {'So you just finished your new favorite story and want to tell a friend about it. We provided you with a easy way to share stories using sms and your favorite social media platforms. '}
+              </p>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="image-section right-section">
+              <img src="/images/sites/worldwide-stories/screens/share_phone.png" alt="phone with screen shot" />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
