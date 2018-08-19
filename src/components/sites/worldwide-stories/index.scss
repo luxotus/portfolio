@@ -489,7 +489,66 @@ $input-text-size: 1.25em;
 
 /* Mobile Landscape */
 @media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  #worldwide-stories-container {
 
+    .header {
+      height: calc(100vh - 50px);
+    }
+
+    .arrow-down-section {
+      bottom: 20px;
+      height: 33px;
+      width: 33px;
+    }
+
+    .arrow-down-section div {
+      height: 10px;
+      width: 10px;
+      margin-top: 8px;
+    }
+
+    .app-download-section h3 {
+      font-size: 1em;
+    }
+
+    .feature-section {
+      padding-top: 40px;
+    }
+
+    .feature-section .text-section p {
+      width: 95%;
+      padding-left: 5%;
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+
+    .feature-section:nth-child(even) .image-section {
+      padding-left: 0px;
+      margin-left: -30px;
+    }
+
+    .middle-section {
+      flex: 0 0 80%;
+      max-width: 80%;
+      padding-top: 25px;
+
+      .download-message {
+        font-size: 1em;
+      }
+
+      img {
+        height: 50px;
+      }
+
+      .panel-body {
+        padding: 20px 10px;
+      }
+
+      .newsletter-message {
+        font-size: 1.25em;
+      }
+    }
+  }
 }
 
 /* Tablet */
