@@ -124,65 +124,83 @@ export default class WorldwideStories extends React.Component {
     return features;
   }
 
+  buildNewsLetterPanel() {
+    return (
+      <div className="panel panel-default">
+        <div className="panel-body">
+          <p className="newsletter-message text-center">
+            {'Get the latest news from Luxotus delivered straight to your inbox. Join our mailing list today.'}
+          </p>
+          <form action="#" id="newsletter">
+            <div className="row">
+              <div className="col-sm-6">
+                <div className="form-group left">
+                  <input type="text" className="form-control" id="first-name" name="first-name" placeholder="First Name" />
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="form-group right">
+                  <input type="text" className="form-control" id="last-name" name="last-name" placeholder="Last Name" />
+                </div>
+              </div>
+              <div className="col-sm-12">
+                <div className="form-group">
+                  <input type="email" className="form-control" id="email" name="email" placeholder="Email Address" required />
+                </div>
+              </div>
+            </div>
+            <button type="submit" className="btn btn-danger">
+              {'Subscribe'}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  buildNewsLetterSection() {
+    return (
+      <div className="row newsletter-section" style={{ backgroundImage: 'url("/images/sites/worldwide-stories/doodles.png")' }}>
+        <div className="tint">
+          <div className="col-sm-6 middle-section text-center">
+            <p className="download-message">
+              {'Read stories from all of the world. Worldwide stories is the new app for android that helps you explore fascinating stories all in one place.'}
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.luxotus.worldwidestories">
+              <img src="/images/sites/worldwide-stories/play_icon.png" alt="google play icon" />
+            </a>
+            {this.buildNewsLetterPanel()}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  buildFooter() {
+    return (
+      <div className="row footer">
+        <div className="copyright-holder">
+          <p>
+            {'© 2018 Luxotus'}
+          </p>
+        </div>
+        <div className="contact-holder">
+          <a href="mailto:example@email.com">
+            {'Contact'}
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div id="worldwide-stories-container">
         {this.buildMainImage()}
         {this.buildAppDownloadBanner()}
         {this.buildFeatureSections()}
-        <div className="row newsletter-section" style={{ backgroundImage: 'url("/images/sites/worldwide-stories/doodles.png")' }}>
-          <div className="tint">
-            <div className="col-sm-6 middle-section text-center">
-              <p className="download-message">
-                {'Read stories from all of the world. Worldwide stories is the new app for android that helps you explore fascinating stories all in one place.'}
-              </p>
-              <a href="https://play.google.com/store/apps/details?id=com.luxotus.worldwidestories">
-                <img src="/images/sites/worldwide-stories/play_icon.png" alt="google play icon" />
-              </a>
-              <div className="panel panel-default">
-                <div className="panel-body">
-                  <p className="newsletter-message text-center">
-                    {'Get the latest news from Luxotus delivered straight to your inbox. Join our mailing list today.'}
-                  </p>
-                  <form action="#" id="newsletter">
-                    <div className="row">
-                      <div className="col-sm-6">
-                        <div className="form-group left">
-                          <input type="text" className="form-control" id="first-name" name="first-name" placeholder="First Name" />
-                        </div>
-                      </div>
-                      <div className="col-sm-6">
-                        <div className="form-group right">
-                          <input type="text" className="form-control" id="last-name" name="last-name" placeholder="Last Name" />
-                        </div>
-                      </div>
-                      <div className="col-sm-12">
-                        <div className="form-group">
-                          <input type="email" className="form-control" id="email" name="email" placeholder="Email Address" required />
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit" className="btn btn-danger">
-                      {'Subscribe'}
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row footer">
-          <div className="copyright-holder">
-            <p>
-              {'© 2018 Luxotus'}
-            </p>
-          </div>
-          <div className="contact-holder">
-            <a href="mailto:example@email.com">
-              {'Contact'}
-            </a>
-          </div>
-        </div>
+        {this.buildNewsLetterSection()}
+        {this.buildFooter()}
       </div>
     );
   }
