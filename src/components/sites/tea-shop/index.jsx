@@ -186,8 +186,8 @@ export default class TeaShop extends React.Component {
       ));
 
       menu[key].column.right = menu[key].data.filter((element, index) => {
-        const even = (index % 2 === 1);
-        return even;
+        const odd = (index % 2 === 1);
+        return odd;
       }).map(row => (
         <div className="row" key={this.getKey()}>
           <div className="text-sec">
