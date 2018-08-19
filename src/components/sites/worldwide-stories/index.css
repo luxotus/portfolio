@@ -254,3 +254,27 @@
     #worldwide-stories-container .footer a {
       text-decoration: none;
       padding-right: 20px; }
+
+/* Mobile */
+/* Mobile Portrait */
+/* Mobile Landscape */
+/* Tablet */
+/* Tablet Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #worldwide-stories-container .app-download-section h3 {
+    font-size: 1.25em; }
+  #worldwide-stories-container .app-download-section .play-icon-holder {
+    flex: 0 0 26.333333%; }
+  #worldwide-stories-container .app-download-section .col-md-8 {
+    flex: 0 0 71.666667%;
+    max-width: 71.666667%; }
+  #worldwide-stories-container .feature-section .text-section p {
+    width: 95% !important;
+    font-size: 1.35em; }
+  #worldwide-stories-container .feature-section:nth-child(even) .image-section {
+    padding-left: 15px; }
+  #worldwide-stories-container .middle-section {
+    flex: 0 0 75%;
+    max-width: 75%; } }
+
+/* Tablet Landscape */
