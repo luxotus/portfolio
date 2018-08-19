@@ -2,6 +2,33 @@ import React from 'react';
 import './index.css';
 
 export default class WorldwideStories extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
+  }
+
+  getKey() {
+    this.keyCount += 1;
+    return this.keyCount;
+  }
+
+  buildAppDownloadBanner() {
+    return (
+      <div className="row app-download-section">
+        <div className="col-md-8 text-right">
+          <h3>
+            {'Download it FREE (for a limited time) for your Android'}
+          </h3>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.luxotus.worldwidestories" className="col-md-4 play-icon-holder">
+          <img src="/images/sites/worldwide-stories/play_icon.png" alt="google play icon" />
+        </a>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div id="worldwide-stories-container">
@@ -20,16 +47,7 @@ export default class WorldwideStories extends React.Component {
             </a>
           </div>
         </div>
-        <div className="row app-download-section">
-          <div className="col-md-8 text-right">
-            <h3>
-              {'Download it FREE (for a limited time) for your Android'}
-            </h3>
-          </div>
-          <a href="https://play.google.com/store/apps/details?id=com.luxotus.worldwidestories" className="col-md-4 play-icon-holder">
-            <img src="/images/sites/worldwide-stories/play_icon.png" alt="google play icon" />
-          </a>
-        </div>
+        {this.buildAppDownloadBanner()}
         <div className="row feature-section feature-countries">
           <div className="col-sm-6 image-section text-center">
             <img src="/images/sites/worldwide-stories/screens/countries_phone.png" alt="phone with screen shot" />
