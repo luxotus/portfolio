@@ -113,7 +113,7 @@
       margin: 0;
       padding-right: 30px;
       color: white;
-      font-size: 2.25em;
+      font-size: 2em;
       font-weight: 500; }
     #worldwide-stories-container .app-download-section .play-icon-holder {
       display: flex;
@@ -259,6 +259,11 @@
 /* Mobile Portrait */
 /* Mobile Landscape */
 /* Tablet */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  #worldwide-stories-container .middle-section {
+    flex: 0 0 75%;
+    max-width: 75%; } }
+
 /* Tablet Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   #worldwide-stories-container .app-download-section h3 {
@@ -272,9 +277,9 @@
     width: 95% !important;
     font-size: 1.35em; }
   #worldwide-stories-container .feature-section:nth-child(even) .image-section {
-    padding-left: 15px; }
-  #worldwide-stories-container .middle-section {
-    flex: 0 0 75%;
-    max-width: 75%; } }
+    padding-left: 15px; } }
 
 /* Tablet Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  #worldwide-stories-container .app-download-section h3 {
+    font-size: 1.5em; } }

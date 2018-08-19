@@ -166,7 +166,7 @@ $input-text-size: 1.25em;
       margin: 0;
       padding-right: 30px;
       color: white;
-      font-size: 2.25em;
+      font-size: 2em;
       font-weight: 500;
     }
   
@@ -406,7 +406,12 @@ $input-text-size: 1.25em;
 
 /* Tablet */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-
+  #worldwide-stories-container {
+    .middle-section {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+  }
 }
 
 /* Tablet Portrait */
@@ -433,15 +438,14 @@ $input-text-size: 1.25em;
     .feature-section:nth-child(even) .image-section {
       padding-left: 15px;
     }
-
-    .middle-section {
-      flex: 0 0 75%;
-      max-width: 75%;
-    }
   }
 }
 
 /* Tablet Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
+  #worldwide-stories-container {
+    .app-download-section h3 {
+      font-size: 1.5em;
+    }
+  }
 }
