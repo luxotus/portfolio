@@ -18,8 +18,8 @@ export default class SitesPage extends React.Component {
       },
       {
         id: 1,
-        title: 'Online Store',
-        link: '/sites/online-store',
+        title: 'Luxotus',
+        link: '/sites/luxotus-blog',
         images: {
           sm: '/images/sites/testing/site_02.png',
           md: '/images/sites/testing/site_02.png',
