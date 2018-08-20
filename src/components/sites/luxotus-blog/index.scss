@@ -4,9 +4,12 @@
   font-weight: normal;
 }
 
+#top-nav-bar {
+  display: none;
+}
+
 #luxotus-blog-container {
   height: 100%;
-  padding-top: 50px;
   font-family: bpreplay;
 
    /* General */
@@ -69,10 +72,10 @@
     color: #00c3c3;
   }
   .nav-link {
-    display: table-cell;
+    display: flex;
+    align-items: center;
     height: 80px;
     padding: 0 1rem;
-    vertical-align: middle;
     color: #686868;
   }
   .nav-link:not(.active):hover {
