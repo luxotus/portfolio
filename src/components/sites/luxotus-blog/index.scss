@@ -1,3 +1,159 @@
+@font-face {
+  font-family: bpreplay;
+  src: url(/fonts/luxotus/BPreplayExtended.otf);
+  font-weight: normal;
+}
+
 #luxotus-blog-container {
   height: 100%;
+  padding-top: 50px;
+
+  a {
+    text-decoration: none;
+  }
+
+  /* Nav */
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  .nav_holder {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .nav_bar {
+    height: 80px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.15);
+      -moz-box-shadow: 0 1px 1px rgba(0,0,0,.15);
+          box-shadow: 0 1px 1px rgba(0,0,0,.15);
+  }
+  .nav_bar .row {
+    height: 100%;
+  }
+  .nav_main {
+    float: left;
+    flex: 0 0 56%;
+    max-width: 56%;
+    padding: 0 15px;
+  }
+  .nav_logo {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+    float: left;
+    padding-left: 25px;
+    line-height: 80px;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  .nav_logo a {
+    color: #686868;
+  }
+  .nav_logo span {
+    color: #00a6d8;
+  }
+  .nav-link.active {
+    color: #00c3c3;
+  }
+  .nav-link {
+    display: table-cell;
+    height: 80px;
+    padding: 0 1rem;
+    vertical-align: middle;
+    color: #686868;
+  }
+  .nav-link:not(.active):hover {
+    color: #008cb6;
+    opacity: .5;
+  }
+  .nav-link.active:hover {
+    opacity: .5;
+  }
+
+  /* Search Bar */
+  .search_holder {
+    display: none;
+    background-color: #191c1e;
+  }
+  .search_holder .form-group {
+    margin-bottom: 0;
+  }
+  .search_holder .form-control,
+  .search_holder .form-control:focus {
+    min-height: 60px;
+      border: none;
+      margin-top: 11.5px;
+      color: #fff;
+    background-color: #191c1e;
+    font-size: 1.5em;
+  }
+  .search_holder .nav_logo a {
+    color: #fff;
+  }
+  .close {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    margin-top: 25px;
+    float: left;
+  }
+  .close:hover::before, .close:hover::after {
+    background: var(--main-color-dark);
+  }
+  .close::before, .close::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #fff;
+  }
+  .close::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .close::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .close.thick::before, .close.thick::after {
+    height: 4px;
+    margin-top: -2px;
+  }
+  .close.rounded::before, .close.rounded::after {
+    border-radius: 5px;
+  }
+
+  /* Social */
+  .social_container {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+    padding: 0 15px;
+  }
+  .social_container .nav {
+    width: 100%;
+  }
+  .social_container .nav-item {
+    width: 20%;
+  }
+
+  .justify-content-end {
+    justify-content: flex-end!important;
+  }
+
 }
