@@ -16,6 +16,8 @@
   /* Main wrapper */ }
   #luxotus-blog-container .justify-content-end {
     justify-content: flex-end !important; }
+  #luxotus-blog-container .justify-content-center {
+    justify-content: center !important; }
   #luxotus-blog-container .text-center {
     text-align: center; }
   #luxotus-blog-container a {
@@ -57,7 +59,7 @@
   #luxotus-blog-container .nav_logo span {
     color: #00a6d8; }
   #luxotus-blog-container .nav-link.active {
-    color: #00c3c3; }
+    color: #008cb6; }
   #luxotus-blog-container .nav-link {
     display: flex;
     align-items: center;
@@ -65,8 +67,7 @@
     padding: 0 1rem;
     color: #686868; }
   #luxotus-blog-container .nav-link:not(.active):hover {
-    color: #008cb6;
-    opacity: .5; }
+    color: #008cb6; }
   #luxotus-blog-container .nav-link.active:hover {
     opacity: .5; }
   #luxotus-blog-container .search_holder {

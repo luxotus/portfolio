@@ -118,6 +118,40 @@ export default class LuxotusBlog extends React.Component {
     );
   }
 
+  buildTabFilter() {
+    return (
+      <div className="row">
+        <ul className="nav col-xl-12 justify-content-center nav_tabs">
+          <li className="nav-item" data-type="Development, Gadgets, Tutorials, UX">
+            <a className="nav-link active" href="/">
+              {'All'}
+            </a>
+          </li>
+          <li className="nav-item" data-type="Development">
+            <a className="nav-link " href="/">
+              {'Development'}
+            </a>
+          </li>
+          <li className="nav-item" data-type="Gadgets">
+            <a className="nav-link " href="/">
+              {'Gadgets'}
+            </a>
+          </li>
+          <li className="nav-item" data-type="Tutorials">
+            <a className="nav-link " href="/">
+              {'Tutorials'}
+            </a>
+          </li>
+          <li className="nav-item" data-type="UX">
+            <a className="nav-link " href="/">
+              {'UX'}
+            </a>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+
   buildMainWrapper() {
     return (
       <div className="main-blog-wrapper">
@@ -129,6 +163,7 @@ export default class LuxotusBlog extends React.Component {
             <div className="highlight_bar" />
           </div>
         </div>
+        {this.buildTabFilter()}
       </div>
     );
   }

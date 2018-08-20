@@ -12,9 +12,12 @@
   height: 100%;
   font-family: bpreplay;
 
-   /* General */
-   .justify-content-end {
+  /* General */
+  .justify-content-end {
     justify-content: flex-end!important;
+  }
+  .justify-content-center {
+    justify-content: center!important;
   }
   .text-center {
     text-align: center;
@@ -69,7 +72,7 @@
     color: #00a6d8;
   }
   .nav-link.active {
-    color: #00c3c3;
+    color: #008cb6;
   }
   .nav-link {
     display: flex;
@@ -80,7 +83,6 @@
   }
   .nav-link:not(.active):hover {
     color: #008cb6;
-    opacity: .5;
   }
   .nav-link.active:hover {
     opacity: .5;
