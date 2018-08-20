@@ -118,10 +118,26 @@ export default class LuxotusBlog extends React.Component {
     );
   }
 
+  buildMainWrapper() {
+    return (
+      <div className="main-blog-wrapper">
+        <div className="row">
+          <div className="col-xl-12 main_title text-center">
+            <h1>
+              {'Articles'}
+            </h1>
+            <div className="highlight_bar" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div id="luxotus-blog-container">
         {this.buildNav()}
+        {this.buildMainWrapper()}
       </div>
     );
   }
