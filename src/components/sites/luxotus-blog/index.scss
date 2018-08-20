@@ -1,12 +1,13 @@
 @font-face {
   font-family: bpreplay;
-  src: url(/fonts/luxotus/BPreplayExtended.otf);
+  src: url('/fonts/luxotus/BPreplayExtended.otf');
   font-weight: normal;
 }
 
 #luxotus-blog-container {
   height: 100%;
   padding-top: 50px;
+  font-family: bpreplay;
 
   a {
     text-decoration: none;
@@ -80,6 +81,15 @@
     display: none;
     background-color: #191c1e;
   }
+  .search-input-wrapper {
+    float: left;
+    width: 60%;
+    margin-left: 150px;
+  }
+  #search_input {
+    width: 100%;
+    outline: none;
+  }
   .search_holder .form-group {
     margin-bottom: 0;
   }
@@ -97,15 +107,17 @@
   }
   .close {
     position: relative;
-    display: inline-block;
+    display: block;
     width: 30px;
     height: 30px;
     overflow: hidden;
     margin-top: 25px;
     float: left;
+    cursor: pointer;
   }
-  .close:hover::before, .close:hover::after {
-    background: var(--main-color-dark);
+  .close:hover::before,
+  .close:hover::after {
+    background: #00a6d8;
   }
   .close::before, .close::after {
     content: '';

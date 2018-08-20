@@ -97,7 +97,7 @@ export default class LuxotusBlog extends React.Component {
             </span>
           </a>
         </div>
-        <div className="col-xl-8 pull-left">
+        <div className="col-xl-8 pull-left search-input-wrapper">
           <div className="form-group">
             <input type="text" placeholder="Search..." className="form-control" id="search_input" />
           </div>

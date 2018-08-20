@@ -1,11 +1,12 @@
 @font-face {
   font-family: bpreplay;
-  src: url(/fonts/luxotus/BPreplayExtended.otf);
+  src: url("/fonts/luxotus/BPreplayExtended.otf");
   font-weight: normal; }
 
 #luxotus-blog-container {
   height: 100%;
   padding-top: 50px;
+  font-family: bpreplay;
   /* Nav */
   /* Search Bar */
   /* Social */ }
@@ -63,6 +64,13 @@
   #luxotus-blog-container .search_holder {
     display: none;
     background-color: #191c1e; }
+  #luxotus-blog-container .search-input-wrapper {
+    float: left;
+    width: 60%;
+    margin-left: 150px; }
+  #luxotus-blog-container #search_input {
+    width: 100%;
+    outline: none; }
   #luxotus-blog-container .search_holder .form-group {
     margin-bottom: 0; }
   #luxotus-blog-container .search_holder .form-control,
@@ -77,14 +85,16 @@
     color: #fff; }
   #luxotus-blog-container .close {
     position: relative;
-    display: inline-block;
+    display: block;
     width: 30px;
     height: 30px;
     overflow: hidden;
     margin-top: 25px;
-    float: left; }
-  #luxotus-blog-container .close:hover::before, #luxotus-blog-container .close:hover::after {
-    background: var(--main-color-dark); }
+    float: left;
+    cursor: pointer; }
+  #luxotus-blog-container .close:hover::before,
+  #luxotus-blog-container .close:hover::after {
+    background: #00a6d8; }
   #luxotus-blog-container .close::before, #luxotus-blog-container .close::after {
     content: '';
     position: absolute;
