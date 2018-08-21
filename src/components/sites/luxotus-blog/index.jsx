@@ -152,6 +152,118 @@ export default class LuxotusBlog extends React.Component {
     );
   }
 
+  buildArticleBlocks() {
+    const data = [
+      {
+        link: '#',
+        image: '/images/sites/luxotus/example_06.jpg',
+        title: '10 Free Programming Books You Should Read in 2018',
+        description: 'Lorem ipsum sit interdum nulla sociosqu faucibus, nullam quam placerat.',
+        category: 'Computers',
+        types: [
+          'Gadgets',
+        ],
+        date: 'April 11, 2018',
+      },
+      {
+        link: '#',
+        image: '/images/sites/luxotus/example_07.jpg',
+        title: 'Quick Tip: Working with the JavaScript Battery API',
+        description: 'Lorem ipsum sit interdum nulla sociosqu faucibus, nullam quam placerat.',
+        category: 'JavaScript',
+        types: [
+          'Tutorials',
+        ],
+        date: 'April 15, 2018',
+      },
+      {
+        link: '#',
+        image: '/images/sites/luxotus/example_08.jpg',
+        title: 'What You Need To Know About CSS Variables',
+        description: 'Lorem ipsum sit interdum nulla sociosqu faucibus, nullam quam placerat.',
+        category: 'CSS',
+        types: [
+          'UX',
+        ],
+        date: 'April 17, 2018',
+      },
+      {
+        link: '#',
+        image: '/images/sites/luxotus/example_02.jpg',
+        title: 'Building Your First App With Vue.js',
+        description: 'Lorem ipsum sit interdum nulla sociosqu faucibus, nullam quam placerat.',
+        category: 'Vue',
+        types: [
+          'Development',
+          'Tutorials',
+        ],
+        date: 'April 20, 2018',
+      },
+      {
+        link: '#',
+        image: '/images/sites/luxotus/example_03.jpg',
+        title: 'Take a Selfie With JavaScript',
+        description: 'Lorem ipsum sit interdum nulla sociosqu faucibus, nullam quam placerat.',
+        category: 'JavaScript',
+        types: [
+          'Development',
+          'Gadgets',
+        ],
+        date: 'April 21, 2018',
+      },
+      {
+        link: '#',
+        image: '/images/sites/luxotus/example_04.jpg',
+        title: '10 Tips For Writing Modern CSS',
+        description: 'Lorem ipsum sit interdum nulla sociosqu faucibus, nullam quam placerat.',
+        category: 'CSS',
+        types: [
+          'Development',
+          'Tutorials',
+        ],
+        date: 'April 23, 2018',
+      },
+    ];
+
+    const articles = data.map(item => (
+      <div className="col-12 col-sm-6 col-xl-4 mini_article_container">
+        <div className="mini_article_item" data-type={item.types.join(', ')}>
+          <a href={item.link}>
+            <div className="img-fluid mini_article_image" style={{ backgroundImage: `url("${item.image}")` }} />
+          </a>
+          <div className="mini_article_description">
+            <a href={item.link}>
+              <h5>
+                {item.title}
+              </h5>
+            </a>
+            <p>
+              {item.description}
+            </p>
+          </div>
+          <div className="mini_article_footer">
+            <a href={item.link}>
+              <p>
+                {item.category}
+              </p>
+            </a>
+          </div>
+          <div className="mini_article_date">
+            <p>
+              {item.date}
+            </p>
+          </div>
+        </div>
+      </div>
+    ));
+
+    return (
+      <div className="row article_container">
+        {articles}
+      </div>
+    );
+  }
+
   buildMainWrapper() {
     return (
       <div className="main-blog-wrapper">
@@ -164,6 +276,7 @@ export default class LuxotusBlog extends React.Component {
           </div>
         </div>
         {this.buildTabFilter()}
+        {this.buildArticleBlocks()}
       </div>
     );
   }

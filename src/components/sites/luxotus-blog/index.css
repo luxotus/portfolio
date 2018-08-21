@@ -8,12 +8,16 @@
 
 #luxotus-blog-container {
   height: 100%;
+  min-height: 100vh;
+  background-color: #f7f7f7;
   font-family: bpreplay;
   /* General */
   /* Nav */
   /* Search Bar */
   /* Social */
-  /* Main wrapper */ }
+  /* Main wrapper */
+  /* Articles */
+  /* Mini Articles */ }
   #luxotus-blog-container .justify-content-end {
     justify-content: flex-end !important; }
   #luxotus-blog-container .justify-content-center {
@@ -21,6 +25,7 @@
   #luxotus-blog-container .text-center {
     text-align: center; }
   #luxotus-blog-container a {
+    color: #212529;
     text-decoration: none; }
   #luxotus-blog-container .nav {
     display: flex;
@@ -139,6 +144,8 @@
   #luxotus-blog-container .social_container .nav-item {
     width: 20%; }
   #luxotus-blog-container .main-blog-wrapper {
+    padding-right: 15px;
+    padding-left: 15px;
     margin-top: 50px; }
   #luxotus-blog-container .main_title {
     color: #575757; }
@@ -167,3 +174,77 @@
     margin-left: calc(50% - 50px);
     border-radius: 2px;
     background-color: #00a6d8; }
+  #luxotus-blog-container .article_container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 25px; }
+  #luxotus-blog-container .mini_article_item {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    background-color: #fff; }
+  #luxotus-blog-container .mini_article_container {
+    position: relative;
+    margin-bottom: 25px;
+    width: 30.833%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
+    #luxotus-blog-container .mini_article_container h5 {
+      margin-top: 0;
+      margin-bottom: .5rem;
+      font-size: 1.25rem;
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.2;
+      color: inherit; }
+  #luxotus-blog-container .mini_article_image {
+    height: 200px;
+    width: 100%;
+    background-size: cover; }
+  #luxotus-blog-container .mini_article_image[data-image="02"] {
+    background-image: url("/images/sites/luxotus/example_07.jpg"); }
+  #luxotus-blog-container .mini_article_image[data-image="03"] {
+    background-image: url("/images/sites/luxotus/example_08.jpg"); }
+  #luxotus-blog-container .mini_article_image[data-image="04"] {
+    background-image: url("/images/sites/luxotus/example_02.jpg"); }
+  #luxotus-blog-container .mini_article_image[data-image="05"] {
+    background-image: url("/images/sites/luxotus/example_03.jpg"); }
+  #luxotus-blog-container .mini_article_image[data-image="06"] {
+    background-image: url("/images/sites/luxotus/example_04.jpg"); }
+  #luxotus-blog-container .mini_article_description {
+    padding: 25px;
+    padding-bottom: 0px; }
+  #luxotus-blog-container .mini_article_description p {
+    font-size: 15px;
+    color: #747474; }
+  #luxotus-blog-container .mini_article_footer {
+    display: inline-block;
+    padding-left: 25px; }
+  #luxotus-blog-container .mini_article_footer a {
+    margin-bottom: 0px;
+    float: left;
+    color: #008cb6;
+    text-transform: capitalize; }
+  #luxotus-blog-container .mini_article_footer span {
+    float: left;
+    display: block;
+    height: 2px;
+    width: 2px;
+    margin-top: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #008cb6;
+    border-radius: 50%; }
+  #luxotus-blog-container .mini_article_date {
+    padding-left: 25px;
+    padding-bottom: 25px;
+    font-size: 12px;
+    color: #bababa; }
+
+@media (min-width: 1200px) {
+  #luxotus-blog-container .article_container {
+    max-width: 1200px; } }
