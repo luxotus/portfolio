@@ -14,11 +14,75 @@ export default class LuxotusBlog extends React.Component {
     return this.keyCount;
   }
 
+  buildNavSocial() {
+    const data = [
+      {
+        icon: 'fa-facebook-f',
+        link: '#',
+      },
+      {
+        icon: 'fa-google',
+        link: '#',
+      },
+      {
+        icon: 'fa-pinterest-p',
+        link: '#',
+      },
+      {
+        icon: 'fa-twitter',
+        link: '#',
+      },
+    ];
+
+    const navItems = data.map(item => (
+      <li className="nav-item" key={this.getKey()}>
+        <a className="nav-link" href={item.link}>
+          <i className={`fab ${item.icon}`} />
+        </a>
+      </li>
+    ));
+
+    return (
+      <div className="col-sm-3 col-xl-2 social_container">
+        <ul className="nav justify-content-end">
+          {navItems}
+        </ul>
+      </div>
+    );
+  }
+
   buildNavHolder() {
+    const data = [
+      {
+        link: '#',
+        title: 'Development',
+      },
+      {
+        link: '#',
+        title: 'Gadgets',
+      },
+      {
+        link: '#',
+        title: 'Tutorials',
+      },
+      {
+        link: '#',
+        title: 'UX',
+      },
+    ];
+
+    const navLinks = data.map(item => (
+      <li className="nav-item" key={this.getKey()}>
+        <a className="nav-link" href={item.link}>
+          {item.title}
+        </a>
+      </li>
+    ));
+
     return (
       <div className="row nav_holder">
         <div className="col-md-2 col-xl-2 nav_logo">
-          <a href="/">
+          <a href="/sites/luxotus-blog">
             {'Lux'}
             <span>
               {'otus'}
@@ -27,61 +91,19 @@ export default class LuxotusBlog extends React.Component {
         </div>
         <div className="col-sm-6 col-xl-7 nav_main">
           <ul className="nav">
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                {'Development'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                {'Gadgets'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                {'Tutorials'}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                {'UX'}
-              </a>
-            </li>
+            {navLinks}
           </ul>
         </div>
         <div className="col-sm-1 col-xl-1 search_container">
           <ul className="nav justify-content-end">
             <li className="nav-item">
-              <a className="nav-link" href="/" alt="">
+              <a className="nav-link" href="/sites/luxotus-blog" alt="">
                 <i className="fas fa-search" />
               </a>
             </li>
           </ul>
         </div>
-        <div className="col-sm-3 col-xl-2 social_container">
-          <ul className="nav justify-content-end">
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                <i className="fab fa-facebook-f" />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                <i className="fab fa-google" />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                <i className="fab fa-pinterest-p" />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/" alt="">
-                <i className="fab fa-twitter" />
-              </a>
-            </li>
-          </ul>
-        </div>
+        {this.buildNavSocial()}
       </div>
     );
   }
@@ -119,34 +141,51 @@ export default class LuxotusBlog extends React.Component {
   }
 
   buildTabFilter() {
+    const data = [
+      {
+        isActive: true,
+        title: 'All',
+        link: '#',
+        type: 'Development, Gadgets, Tutorials, UX',
+      },
+      {
+        isActive: false,
+        title: 'Development',
+        link: '#',
+        type: 'Development',
+      },
+      {
+        isActive: false,
+        title: 'Gadgets',
+        link: '#',
+        type: 'Gadgets',
+      },
+      {
+        isActive: false,
+        title: 'Tutorials',
+        link: '#',
+        type: 'Tutorials',
+      },
+      {
+        isActive: false,
+        title: 'UX',
+        link: '#',
+        type: 'UX',
+      },
+    ];
+
+    const filterItems = data.map(item => (
+      <li className="nav-item" data-type={item.type} key={this.getKey()}>
+        <a className={`nav-link ${item.isActive ? 'active' : ''}`} href={item.link}>
+          {item.title}
+        </a>
+      </li>
+    ));
+
     return (
       <div className="row">
         <ul className="nav col-xl-12 justify-content-center nav_tabs">
-          <li className="nav-item" data-type="Development, Gadgets, Tutorials, UX">
-            <a className="nav-link active" href="/">
-              {'All'}
-            </a>
-          </li>
-          <li className="nav-item" data-type="Development">
-            <a className="nav-link " href="/">
-              {'Development'}
-            </a>
-          </li>
-          <li className="nav-item" data-type="Gadgets">
-            <a className="nav-link " href="/">
-              {'Gadgets'}
-            </a>
-          </li>
-          <li className="nav-item" data-type="Tutorials">
-            <a className="nav-link " href="/">
-              {'Tutorials'}
-            </a>
-          </li>
-          <li className="nav-item" data-type="UX">
-            <a className="nav-link " href="/">
-              {'UX'}
-            </a>
-          </li>
+          {filterItems}
         </ul>
       </div>
     );
@@ -226,7 +265,7 @@ export default class LuxotusBlog extends React.Component {
     ];
 
     const articles = data.map(item => (
-      <div className="col-12 col-sm-6 col-xl-4 mini_article_container">
+      <div className="col-12 col-sm-6 col-xl-4 mini_article_container" key={this.getKey()}>
         <div className="mini_article_item" data-type={item.types.join(', ')}>
           <a href={item.link}>
             <div className="img-fluid mini_article_image" style={{ backgroundImage: `url("${item.image}")` }} />
@@ -264,6 +303,76 @@ export default class LuxotusBlog extends React.Component {
     );
   }
 
+  buildFooterSocial() {
+    const data = [
+      {
+        icon: 'fa-facebook-f',
+        link: '#',
+      },
+      {
+        icon: 'fa-google',
+        link: '#',
+      },
+      {
+        icon: 'fa-pinterest-p',
+        link: '#',
+      },
+      {
+        icon: 'fa-twitter',
+        link: '#',
+      },
+    ];
+
+    const navItems = data.map(item => (
+      <li className="nav-item" key={this.getKey()}>
+        <a className="nav-link" href={item.link}>
+          <i className={`fab ${item.icon}`} />
+        </a>
+      </li>
+    ));
+
+    return (
+      <div className="row">
+        <ul className="col-12 nav justify-content-center">
+          {navItems}
+        </ul>
+      </div>
+    );
+  }
+
+  buildFooter() {
+    return (
+      <div className="footer">
+        <div className="container-fluid">
+          <div className="row text-center subscribe_container">
+            <h3>
+              {'SUBSCRIBE TO OUR NEWSLETTER'}
+            </h3>
+            <div className="form-group">
+              <input type="email" name="email" className="form-control" id="email" placeholder="Email" />
+              <div className="error" />
+            </div>
+            <button type="button" className="btn btn-submit">
+              {'Sign me up!'}
+            </button>
+            <div className="thx_subscriber">
+              {'Thanks for subscribing!'}
+            </div>
+          </div>
+          <div className="row copyright">
+            <h6 className="col-12 justify-content-center">
+              <a href="/">
+                {'Privacy'}
+              </a>
+              {'© 2018 Luxotus. All Rights Reserved.'}
+            </h6>
+          </div>
+          {this.buildFooterSocial()}
+        </div>
+      </div>
+    );
+  }
+
   buildMainWrapper() {
     return (
       <div className="main-blog-wrapper">
@@ -277,6 +386,7 @@ export default class LuxotusBlog extends React.Component {
         </div>
         {this.buildTabFilter()}
         {this.buildArticleBlocks()}
+        {this.buildFooter()}
       </div>
     );
   }
