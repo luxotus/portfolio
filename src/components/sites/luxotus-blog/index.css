@@ -358,3 +358,67 @@
 @media (min-width: 1200px) {
   #luxotus-blog-container .article_container {
     max-width: 1200px; } }
+
+/* Mobile */
+/* Mobile Portrait */
+@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+  #luxotus-blog-container .nav_logo {
+    padding-left: 15px;
+    font-size: 1em; }
+  #luxotus-blog-container .nav_main {
+    flex: 0 0 66%;
+    max-width: 70%;
+    padding: 0 5px;
+    font-size: 0.75em; }
+  #luxotus-blog-container .nav_holder .nav-link {
+    padding: 0 7px; }
+  #luxotus-blog-container .main-blog-wrapper .nav {
+    padding: 25px 0; }
+  #luxotus-blog-container .main-blog-wrapper .nav-link {
+    height: 40px; }
+  #luxotus-blog-container .mini_article_container {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px; }
+  #luxotus-blog-container .social_container {
+    display: none; }
+  #luxotus-blog-container .article_container {
+    padding: 0; }
+  #luxotus-blog-container .footer .subscribe_container input {
+    width: 86.3%; } }
+
+/* Mobile Landscape */
+@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+  #luxotus-blog-container .nav_logo {
+    padding-left: 15px; }
+  #luxotus-blog-container .nav_main {
+    flex: 0 0 47%;
+    font-size: 0.75em; }
+  #luxotus-blog-container .nav_holder .social_container .nav-item {
+    width: 24%; }
+  #luxotus-blog-container .nav_holder .social_container .nav-link {
+    justify-content: center;
+    padding: 0; }
+  #luxotus-blog-container .main-blog-wrapper {
+    padding: 0; }
+  #luxotus-blog-container .mini_article_container {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px; } }
+
+/* Tablet Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #luxotus-blog-container .mini_article_container {
+    width: 45.833%;
+    padding-right: 10px;
+    padding-left: 10px; } }
+
+/* Tablet Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  #luxotus-blog-container .nav_main {
+    flex: 0 0 51%; }
+  #luxotus-blog-container .mini_article_container {
+    padding-right: 10px;
+    padding-left: 10px; }
+    #luxotus-blog-container .mini_article_container h5 {
+      font-size: 1.15rem; } }

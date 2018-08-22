@@ -255,7 +255,6 @@
       text-decoration: none;
       padding-right: 20px; }
 
-/* Mobile */
 /* Mobile Portrait */
 @media only screen and (max-device-width: 740px) and (orientation: portrait) {
   #worldwide-stories-container .title-section h1 {
