@@ -24,7 +24,6 @@ export default class Header extends React.Component {
 
   menu() {
     const linkItm = [
-      'lab',
       'blog',
       'sites',
       'contact',

@@ -1,7 +1,6 @@
 import React from 'react';
 import MainRouter from '../main-router';
 import Sites from '../home-page/sites';
-import Lab from '../home-page/lab';
 import OpenSource from '../home-page/open-source';
 import Blog from '../home-page/blog';
 import Footer from '../home-page/footer';
@@ -133,7 +132,6 @@ export default class App extends React.Component {
             fadingEffect={this.fadingEffect}
             onClick={selectedPath => this.changeDisplaySize(selectedPath)}
           />
-          <Lab onClick={selectedPath => this.changeDisplaySize(selectedPath)} />
           <OpenSource />
           <Blog />
           <Contact />
