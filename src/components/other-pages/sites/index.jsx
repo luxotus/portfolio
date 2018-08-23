@@ -8,22 +8,22 @@ export default class SitesPage extends React.Component {
     this.siteData = [
       {
         id: 0,
-        title: 'Tea Shop',
-        link: '/sites/tea-shop',
+        title: 'Luxotus',
+        link: '/sites/luxotus-blog',
         images: {
-          sm: '/images/sites/testing/site_01.png',
-          md: '/images/sites/testing/site_01.png',
-          lg: '/images/sites/testing/site_01.png',
+          sm: '/images/sites/screens/luxotus.png',
+          md: '/images/sites/screens/luxotus.png',
+          lg: '/images/sites/screens/luxotus.png',
         },
       },
       {
         id: 1,
-        title: 'Luxotus',
-        link: '/sites/luxotus-blog',
+        title: 'Tea Shop',
+        link: '/sites/tea-shop',
         images: {
-          sm: '/images/sites/testing/site_02.png',
-          md: '/images/sites/testing/site_02.png',
-          lg: '/images/sites/testing/site_02.png',
+          sm: '/images/sites/screens/tea-shop.png',
+          md: '/images/sites/screens/tea-shop.png',
+          lg: '/images/sites/screens/tea-shop.png',
         },
       },
       {
@@ -31,19 +31,9 @@ export default class SitesPage extends React.Component {
         title: 'Worldwide Stories',
         link: '/sites/worldwide-stories',
         images: {
-          sm: '/images/sites/testing/site_03.png',
-          md: '/images/sites/testing/site_03.png',
-          lg: '/images/sites/testing/site_03.png',
-        },
-      },
-      {
-        id: 3,
-        title: 'French Toast',
-        link: '/lab/born-sinner',
-        images: {
-          sm: '/images/sites/testing/site_04.png',
-          md: '/images/sites/testing/site_04.png',
-          lg: '/images/sites/testing/site_04.png',
+          sm: '/images/sites/screens/worldwide-stories.png',
+          md: '/images/sites/screens/worldwide-stories.png',
+          lg: '/images/sites/screens/worldwide-stories.png',
         },
       },
     ];
