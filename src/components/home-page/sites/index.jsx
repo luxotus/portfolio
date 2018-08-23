@@ -110,54 +110,29 @@ export default class Sites extends React.Component {
     const listSites = [
       {
         id: 0,
-        name: 'Main Home',
+        name: 'Luxotus',
         types: [
           'restaurants',
           'landing page',
         ],
-        imageSrc: '/images/sites/testing/test.jpg',
+        imageSrc: '/images/sites/screens/luxotus.png',
       },
       {
         id: 1,
-        name: 'Simple Slide',
+        name: 'Tea Shop',
         types: [
           'news',
           'landing page',
         ],
-        imageSrc: '/images/sites/testing/test.jpg',
+        imageSrc: '/images/sites/screens/tea-shop.png',
       },
       {
         id: 2,
-        name: 'Team Gold',
+        name: 'Worldwide Stories',
         types: [
           'restaurants',
         ],
-        imageSrc: '/images/sites/testing/test.jpg',
-      },
-      {
-        id: 3,
-        name: 'Main Home2',
-        types: [
-          'news',
-          'landing page',
-        ],
-        imageSrc: '/images/sites/testing/test.jpg',
-      },
-      {
-        id: 4,
-        name: 'Simple Slide2',
-        types: [
-          'shops',
-        ],
-        imageSrc: '/images/sites/testing/test.jpg',
-      },
-      {
-        id: 5,
-        name: 'Team Gold2',
-        types: [
-          'social media',
-        ],
-        imageSrc: '/images/sites/testing/test.jpg',
+        imageSrc: '/images/sites/screens/worldwide-stories.png',
       },
     ];
 
