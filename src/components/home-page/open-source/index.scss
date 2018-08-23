@@ -11,7 +11,7 @@ $hover-text-color: #0f89e2de;
 
 #osp-container {
   padding: 75px 0;
-  background-color: #f3f3f3;
+  background-color: #fff;
 
   header h1 {
     padding-bottom: 75px;
@@ -40,9 +40,9 @@ $hover-text-color: #0f89e2de;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #eeeeee;
-    background-color: #fff;
+    background-color: #f3f3f3;
     color: $text-color;
-    box-shadow: 1px 3px 12px 0 rgba(0, 0, 0, 0.11);
+    box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.22);
     text-align: center;
 
     h3 {

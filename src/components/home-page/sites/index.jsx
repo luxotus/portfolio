@@ -79,18 +79,14 @@ export default class Sites extends React.Component {
       },
       {
         id: 2,
-        title: 'news',
-      },
-      {
-        id: 3,
         title: 'shop',
       },
       {
-        id: 4,
+        id: 3,
         title: 'app',
       },
       {
-        id: 5,
+        id: 4,
         title: 'landing page',
       },
     ];
@@ -113,7 +109,6 @@ export default class Sites extends React.Component {
         name: 'Luxotus',
         types: [
           'blog',
-          'news',
         ],
         imageSrc: '/images/sites/screens/luxotus.png',
       },
