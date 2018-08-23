@@ -75,23 +75,23 @@ export default class Sites extends React.Component {
       },
       {
         id: 1,
-        title: 'restaurants',
+        title: 'blog',
       },
       {
         id: 2,
-        title: 'landing page',
+        title: 'news',
       },
       {
         id: 3,
-        title: 'shops',
+        title: 'shop',
       },
       {
         id: 4,
-        title: 'social media',
+        title: 'app',
       },
       {
         id: 5,
-        title: 'news',
+        title: 'landing page',
       },
     ];
 
@@ -112,8 +112,8 @@ export default class Sites extends React.Component {
         id: 0,
         name: 'Luxotus',
         types: [
-          'restaurants',
-          'landing page',
+          'blog',
+          'news',
         ],
         imageSrc: '/images/sites/screens/luxotus.png',
       },
@@ -121,7 +121,7 @@ export default class Sites extends React.Component {
         id: 1,
         name: 'Tea Shop',
         types: [
-          'news',
+          'shop',
           'landing page',
         ],
         imageSrc: '/images/sites/screens/tea-shop.png',
@@ -130,7 +130,8 @@ export default class Sites extends React.Component {
         id: 2,
         name: 'Worldwide Stories',
         types: [
-          'restaurants',
+          'app',
+          'landing page',
         ],
         imageSrc: '/images/sites/screens/worldwide-stories.png',
       },
