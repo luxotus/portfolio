@@ -132,8 +132,8 @@ export default class App extends React.Component {
             fadingEffect={this.fadingEffect}
             onClick={selectedPath => this.changeDisplaySize(selectedPath)}
           />
-          <OpenSource />
           <Blog />
+          <OpenSource />
           <Contact />
           <Footer />
         </div>
