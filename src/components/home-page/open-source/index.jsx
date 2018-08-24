@@ -2,6 +2,57 @@ import React from 'react';
 import './index.css';
 
 export default class OpenSource extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
+  }
+
+  getKey() {
+    this.keyCount += 1;
+    return this.keyCount;
+  }
+
+  buildItems() {
+    const data = [
+      {
+        title: 'Portfolio',
+        description: 'My portfolio that your currently viewing is open source. So if your curious about how I built it or want to use it, feel free!',
+        link: 'https://github.com/luxotus/portfolio',
+      },
+      {
+        title: 'Color Blindness Tool',
+        description: 'Tool to help you view your site as a user with a color deficiency. Giving you confidence that your site is readable for all users.',
+        link: 'https://github.com/luxotus/color-blindness',
+      },
+      {
+        title: 'Color Contrast Tool',
+        description: 'Tool to get the contrast between text and background color. Includes WCAG20 G18 validation, to ensure that your site is accessible.',
+        link: 'https://github.com/luxotus/color-contrast',
+      },
+      {
+        title: 'Color Converter',
+        description: 'A simple tool to colors to different formats. Such as RGB to hex and vice-versa. Also included support for shorthand hex colors.',
+        link: 'https://github.com/luxotus/color-converter',
+      },
+    ];
+
+    const items = data.map(item => (
+      <div className="item" key={this.getKey()}>
+        <h3>
+          {item.title}
+        </h3>
+        <p>
+          {item.description}
+        </p>
+        <a href={item.link} className="icon-github" />
+      </div>
+    ));
+
+    return items;
+  }
+
   render() {
     return (
       <div id="osp-container">
@@ -13,43 +64,7 @@ export default class OpenSource extends React.Component {
           </h1>
         </header>
         <div id="osp-wrapper">
-          <div className="item">
-            <h3>
-              {'Color Blindness Tool'}
-            </h3>
-            <p>
-              {'Tool to help you view your site as a user with a color deficiency. Giving you confidence that your site is readable for all users.'}
-            </p>
-            <a href="https://github.com/luxotus/color-blindness" className="icon-github" />
-          </div>
-          <div className="item">
-            <h3>
-              {'Color Contrast Tool'}
-            </h3>
-            <p>
-              {'Tool to get the contrast between text and background color. Includes WCAG20 G18 validation, to ensure that your site is accessible.'}
-            </p>
-            <a href="https://github.com/luxotus/color-contrast" className="icon-github" />
-          </div>
-          <div className="item">
-            <h3>
-              {'Color Converter'}
-            </h3>
-            <p>
-              {'A simple tool to colors to different formats. Such as RGB to hex and vice-versa. Also included support for shorthand hex colors.'}
-            </p>
-            <a href="https://github.com/luxotus/color-converter" className="icon-github" />
-          </div>
-
-          <div className="item">
-            <h3>
-              {'Portfolio'}
-            </h3>
-            <p>
-              {'My portfolio that your currently viewing is open source. So if your curious how I built it or want to use it, feel free!'}
-            </p>
-            <a href="https://github.com/luxotus/portfolio" className="icon-github" />
-          </div>
+          {this.buildItems()}
         </div>
       </div>
     );
