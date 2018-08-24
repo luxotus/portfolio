@@ -13,9 +13,9 @@
 
 #osp-wrapper {
   display: grid;
-  grid-template-columns:  31.4% 31.4% 31.4%;
+  grid-template-columns:  47.75% 47.75%;
   grid-gap: 30px;
-  width: 80%;
+  width: 53%;
   margin: 0 auto; }
   #osp-wrapper .item {
     padding: 20px;
@@ -37,15 +37,22 @@
 /* Mobile Portrait */
 @media only screen and (max-device-width: 740px) and (orientation: portrait) {
   #osp-wrapper {
+    width: 80%;
     grid-template-columns:  100%; } }
 
 /* Mobile Landscape */
 @media only screen and (max-device-width: 740px) and (orientation: landscape) {
   #osp-wrapper {
-    grid-template-columns:  100%;
-    width: 50%; } }
+    width: 50%;
+    grid-template-columns:  100%; } }
 
 /* Tablet Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   #osp-wrapper {
+    width: 80%;
     grid-template-columns:  47.4% 47.4%; } }
+
+/* Tablet Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  #osp-wrapper {
+    width: 60%; } }
