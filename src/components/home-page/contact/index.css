@@ -25,6 +25,9 @@
     #contact-container h1 a {
       color: #35a2f2;
       text-decoration: none; }
+  #contact-container .particle-container {
+    position: absolute;
+    top: 0; }
 
 /* Mobile */
 @media only screen and (max-device-width: 740px) {

@@ -41,6 +41,11 @@ $highlight-color: #35a2f2;
       text-decoration: none;
     }
   }
+
+  .particle-container {
+    position: absolute;
+    top: 0;
+  }
 }
 
 /* Mobile */
