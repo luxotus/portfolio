@@ -137,8 +137,6 @@ export default class Sites extends React.Component {
         <Link
           key={item.id}
           to={`/sites/${item.name.toLowerCase().replace(' ', '-')}`}
-          onClick={() => this.props.onClick('/sites')}
-          onKeyDown={() => this.props.onClick('/sites')}
         >
           <div className="sites-item" key={item.id} data-types={item.types.join(',')}>
             <div className="item-overlay">
@@ -157,11 +155,7 @@ export default class Sites extends React.Component {
     return (
       <div id="sites-container">
         <h1>
-          <Link
-            to="/sites"
-            onClick={() => this.props.onClick('/sites')}
-            onKeyDown={() => this.props.onClick('/sites')}
-          >
+          <Link to="/sites">
             {'Sites'}
           </Link>
         </h1>

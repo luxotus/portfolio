@@ -61,11 +61,7 @@ export default class Header extends React.Component {
           <ul>
             {linkItm.map(item => (
               <li key={this.getKey()} className={(window.location.pathname.includes(`/${item.title.replace(' ', '-')}`)) ? 'active' : ''}>
-                <Link
-                  to={item.link}
-                  onClick={() => this.props.onClick(`/${item.title.replace(' ', '-')}`)}
-                  onKeyDown={() => this.props.onClick(`/${item.title.replace(' ', '-')}`)}
-                >
+                <Link to={item.link}>
                   {item.title}
                 </Link>
               </li>
@@ -101,11 +97,7 @@ export default class Header extends React.Component {
     return (
       <header id="top-nav-bar">
         <h4>
-          <Link
-            to="/"
-            onClick={() => this.props.onClick('/')}
-            onKeyDown={() => this.props.onClick('/')}
-          >
+          <Link to="/">
             {'Felix Manuel'}
           </Link>
         </h4>

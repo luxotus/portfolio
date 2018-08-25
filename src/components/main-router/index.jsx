@@ -13,9 +13,9 @@ export default class MainRouter extends React.Component {
     return (
       <div id="main-container">
         <Switch>
-          <Route path="/blog" render={({ match }) => <BlogPage match={match} {...this.props} />} />
-          <Route path="/contact" render={({ match }) => <ContactPage match={match} {...this.props} />} />
-          <Route path="/sites" exact render={({ match }) => <SitesPage match={match} {...this.props} />} />
+          <Route path="/blog" component={BlogPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/sites" component={SitesPage} />
           <Route path="/sites/tea-shop" component={TeaShop} />
           <Route path="/sites/luxotus-blog" component={LuxotusBlog} />
           <Route path="/sites/worldwide-stories" component={WorldwideStories} />
