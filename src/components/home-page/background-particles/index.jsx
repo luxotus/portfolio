@@ -15,20 +15,20 @@ export default class BackgroundParticles extends React.Component {
         params={{
           particles: {
             number: {
-              value: 36,
+              value: this.props.data.number.value,
               density: {
                 enable: true,
                 value_area: 800,
               },
             },
             color: {
-              value: this.props.colors.general,
+              value: this.props.data.color.general,
             },
             shape: {
               type: 'circle',
               stroke: {
                 width: 0,
-                color: this.props.colors.points,
+                color: this.props.data.color.points,
               },
               polygon: {
                 nb_sides: 5,
@@ -62,7 +62,7 @@ export default class BackgroundParticles extends React.Component {
             line_linked: {
               enable: true,
               distance: 150,
-              color: this.props.colors.line,
+              color: this.props.data.color.line,
               opacity: 0.49716301422833176,
               width: 1,
             },

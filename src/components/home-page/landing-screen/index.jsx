@@ -3,6 +3,20 @@ import './index.css';
 import BackgroundParticles from '../background-particles';
 
 export default class LandingScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.data = {
+      color: {
+        general: '#a9a9a9',
+        points: '#000000',
+        line: '#bdbdbd',
+      },
+      number: {
+        value: 10,
+      },
+    };
+  }
+
   render() {
     return (
       <div id="landing-screen">
@@ -18,7 +32,7 @@ export default class LandingScreen extends React.Component {
             {'Web developer that uses JavaScript and CSS to build high-end interactive sites, applications and tools.'}
           </p>
         </div>
-        <BackgroundParticles colors={{ general: '#a9a9a9', points: '#000000', line: '#bdbdbd' }} />
+        <BackgroundParticles data={this.data} />
       </div>
     );
   }
