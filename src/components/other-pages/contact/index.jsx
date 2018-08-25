@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import Contact from '../../home-page/contact';
+import Footer from '../../home-page/footer';
 
 export default class ContactPage extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export default class ContactPage extends React.Component {
     return (
       <div id="contact-page-container">
         <Contact />
+        <Footer />
       </div>
     );
   }

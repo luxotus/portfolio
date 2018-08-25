@@ -2,9 +2,10 @@
   height: 100vh;
   overflow: hidden; }
   #contact-page-container #contact-container {
-    height: 100%; }
+    height: calc(100% - 125px);
+    padding-bottom: 0; }
     #contact-page-container #contact-container h1 {
-      margin-top: 14%; }
+      margin-top: 11%; }
   #contact-page-container .particle-container {
     position: absolute;
     top: 0; }

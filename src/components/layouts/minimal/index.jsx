@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css';
+import Footer from '../../home-page/footer';
 
 export default class Minimal extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ export default class Minimal extends React.Component {
       <div id="minimal-layout-container">
         <div className="content-holder">
           {this.content()}
+          <Footer />
         </div>
       </div>
     );
