@@ -39,15 +39,17 @@ export default class OpenSource extends React.Component {
     ];
 
     const items = data.map(item => (
-      <div className="item" key={this.getKey()}>
-        <h3>
-          {item.title}
-        </h3>
-        <p>
-          {item.description}
-        </p>
-        <a href={item.link} className="icon-github" />
-      </div>
+      <a href={item.link} key={this.getKey()}>
+        <div className="item">
+          <h3>
+            {item.title}
+          </h3>
+          <p>
+            {item.description}
+          </p>
+          <span className="icon-github" />
+        </div>
+      </a>
     ));
 
     return items;
@@ -58,9 +60,7 @@ export default class OpenSource extends React.Component {
       <div id="osp-container">
         <header>
           <h1>
-            <a href="/open-source">
-              {'Open Source Projects'}
-            </a>
+            {'Open Source Projects'}
           </h1>
         </header>
         <div id="osp-wrapper">

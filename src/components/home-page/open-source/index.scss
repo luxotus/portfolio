@@ -38,6 +38,15 @@ $item-background-color: #fff;
   width: 53%;
   margin: 0 auto;
 
+  a {
+    text-decoration: none;
+  }
+
+  a:hover span,
+  a:hover h3 {
+    color: $hover-text-color;
+  }
+
   .item {
     padding: 20px;
     border-radius: 5px;
@@ -51,15 +60,17 @@ $item-background-color: #fff;
       font-size: 1.5em;
     }
 
-    a {
+    span {
       color: $text-color;
       font-size: 1.75em;
       text-decoration: none;
     }
+  }
 
-    a:hover {
-      color: $hover-text-color;
-    }
+  .item:hover {
+    box-shadow: 1px 4px 10px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition-duration: 0.35s;
   }
 }
 
