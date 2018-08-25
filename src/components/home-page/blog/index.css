@@ -15,6 +15,7 @@
     #blog-container .title a:hover {
       color: #0f89e2de; }
   #blog-container .blog-sides-wrapper {
+    position: relative;
     display: inline-block;
     padding-top: 15px;
     padding-bottom: 15px; }
@@ -55,11 +56,13 @@
   #blog-container .arrow-section:hover .arrow {
     border-color: #0f89e2de; }
   #blog-container .bread-crumbs {
-    position: relative;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
     display: inline-block;
     height: 50px;
     width: 100%;
-    margin-top: 50px; }
+    margin-top: 0; }
   #blog-container .dot-section {
     width: 75px;
     margin: 17.5px auto; }
@@ -71,7 +74,8 @@
     margin: 0 5px;
     background-color: #373737;
     cursor: pointer; }
-  #blog-container .dot:hover,
+  #blog-container .dot:hover {
+    opacity: .5; }
   #blog-container .dot.active {
     background-color: #0f89e2de; }
   #blog-container .view-page-btn {
@@ -117,14 +121,6 @@
 
 #blog-right-section img {
   max-width: 100%; }
-
-#blog-eraser {
-  position: absolute;
-  right: 0;
-  height: 345px;
-  width: 0%;
-  margin-top: -15px;
-  background-color: #fff; }
 
 /* Mobile */
 @media only screen and (max-device-width: 740px) {

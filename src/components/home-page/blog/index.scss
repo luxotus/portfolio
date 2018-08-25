@@ -32,6 +32,7 @@ $arrow-size: 25px;
   }
 
   .blog-sides-wrapper {
+    position: relative;
     display: inline-block;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -92,11 +93,13 @@ $arrow-size: 25px;
 
 
   .bread-crumbs {
-    position: relative;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
     display: inline-block;
     height: $bread-crumb-section-height;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 0;
   }
 
   .dot-section {
@@ -114,7 +117,10 @@ $arrow-size: 25px;
     cursor: pointer;
   }
 
-  .dot:hover,
+  .dot:hover {
+    opacity: .5;
+  }
+
   .dot.active {
     background-color: $secondary-color;
   }
@@ -184,15 +190,6 @@ $arrow-size: 25px;
   img {
     max-width: 100%;
   }
-}
-
-#blog-eraser {
-  position: absolute;
-  right: 0;
-  height: 345px;
-  width: 0%;
-  margin-top: -15px;
-  background-color: $background-color;
 }
 
 /* Mobile */

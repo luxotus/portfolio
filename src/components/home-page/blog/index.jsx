@@ -52,7 +52,7 @@ export default class Blog extends React.Component {
 
   buildPreviewBlogPost(blogPost) {
     return (
-      <div className="blog-sides-wrapper">
+      <div>
         <div id="blog-left-section" className="blog-sections">
           <div className="pad">
             <h1>
@@ -120,7 +120,7 @@ export default class Blog extends React.Component {
       image: document.getElementById('blog-left-section'),
       wrapper: document.getElementById('blog-right-section'),
     };
-    const step = from > to ? -2 : 2;
+    const step = from > to ? -3.5 : 3.5;
     const xOrigin = to;
     let xPos = from;
 
@@ -156,22 +156,24 @@ export default class Blog extends React.Component {
             </a>
           </h1>
         </div>
-        <div
-          className="arrow-section left"
-          role="presentation"
-          onClick={() => this.blogAnimation('left')}
-          onKeyDown={() => this.blogAnimation('left')}
-        >
-          <div className="arrow" />
-        </div>
-        {this.buildPreviewBlogPost(this.blogData[this.state.visibleBlogPost])}
-        <div
-          className="arrow-section right"
-          role="presentation"
-          onClick={() => this.blogAnimation('right')}
-          onKeyDown={() => this.blogAnimation('right')}
-        >
-          <div className="arrow" />
+        <div className="blog-sides-wrapper">
+          <div
+            className="arrow-section left"
+            role="presentation"
+            onClick={() => this.blogAnimation('left')}
+            onKeyDown={() => this.blogAnimation('left')}
+          >
+            <div className="arrow" />
+          </div>
+          {this.buildPreviewBlogPost(this.blogData[this.state.visibleBlogPost])}
+          <div
+            className="arrow-section right"
+            role="presentation"
+            onClick={() => this.blogAnimation('right')}
+            onKeyDown={() => this.blogAnimation('right')}
+          >
+            <div className="arrow" />
+          </div>
         </div>
         <div className="bread-crumbs">
           <div className="dot-section">
