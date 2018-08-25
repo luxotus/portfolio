@@ -27,7 +27,7 @@ export default class Minimal extends React.Component {
             <h2>
               {item.title}
             </h2>
-            <img src={item.images.lg} alt="" />
+            <img src={item.image} alt={item.title} />
           </Link>
         </section>
       </div>
