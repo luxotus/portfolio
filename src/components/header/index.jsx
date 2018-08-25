@@ -9,7 +9,14 @@ export default class Header extends React.Component {
       isOpen: '',
     };
 
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
     this.toggleState = this.toggleState.bind(this);
+  }
+
+  getKey() {
+    this.keyCount += 1;
+    return this.keyCount;
   }
 
   toggleState() {
@@ -24,10 +31,22 @@ export default class Header extends React.Component {
 
   menu() {
     const linkItm = [
-      'blog',
-      'sites',
-      'contact',
-      'open source',
+      {
+        title: 'home',
+        link: '/',
+      },
+      {
+        title: 'sites',
+        link: '/sites',
+      },
+      {
+        title: 'blog',
+        link: '/blog',
+      },
+      {
+        title: 'contact',
+        link: '/contact',
+      },
     ];
 
     return (
@@ -41,13 +60,13 @@ export default class Header extends React.Component {
         <div id="menu" className="menu-container">
           <ul>
             {linkItm.map(item => (
-              <li key={item} className={(window.location.pathname.includes(`/${item.replace(' ', '-')}`)) ? 'active' : ''}>
+              <li key={this.getKey()} className={(window.location.pathname.includes(`/${item.title.replace(' ', '-')}`)) ? 'active' : ''}>
                 <Link
-                  to={`/${item.replace(' ', '-')}`}
-                  onClick={() => this.props.onClick(`/${item.replace(' ', '-')}`)}
-                  onKeyDown={() => this.props.onClick(`/${item.replace(' ', '-')}`)}
+                  to={item.link}
+                  onClick={() => this.props.onClick(`/${item.title.replace(' ', '-')}`)}
+                  onKeyDown={() => this.props.onClick(`/${item.title.replace(' ', '-')}`)}
                 >
-                  {item}
+                  {item.title}
                 </Link>
               </li>
             ))}
