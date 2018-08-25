@@ -8,6 +8,7 @@ export default class Blog extends React.Component {
 
     this.state = {
       visibleBlogPost: 0,
+      isContentVisible: true,
     };
     this.blogData = [
       {
@@ -26,13 +27,27 @@ export default class Blog extends React.Component {
 
     this.keyCount = 0;
     this.getKey = this.getKey.bind(this);
-    this.updateBlogPost = this.updateBlogPost.bind(this);
     this.dotAnimation = this.dotAnimation.bind(this);
+    this.blogAnimation = this.blogAnimation.bind(this);
   }
 
   getKey() {
     this.keyCount += 1;
     return this.keyCount;
+  }
+
+  getNextPos(currentPos, arrayLength, shouldIncrement) {
+    let nextPosition = 0;
+
+    if (currentPos <= 0 && !shouldIncrement) {
+      nextPosition = arrayLength - 1;
+    } else if (currentPos >= arrayLength - 1 && shouldIncrement) {
+      nextPosition = 0;
+    } else {
+      nextPosition = shouldIncrement ? currentPos + 1 : currentPos - 1;
+    }
+
+    return nextPosition;
   }
 
   buildPreviewBlogPost(blogPost) {
@@ -54,9 +69,6 @@ export default class Blog extends React.Component {
           </div>
         </div>
         <div id="blog-right-section" className="blog-sections">
-          <div className="arrow-section right">
-            <div className="arrow" />
-          </div>
           <div className="pad">
             <Link to={blogPost.link}>
               <img src={blogPost.image} alt="" />
@@ -68,85 +80,10 @@ export default class Blog extends React.Component {
     );
   }
 
-  updateBlogPost(direction, dotLocation) {
-    const returnDirection = direction === 'left' ? 'right' : 'left';
-    let pos = 0;
-
-    if (typeof dotLocation === 'undefined') {
-      if (direction === 'right') {
-        pos = (this.state.visibleBlogPost >= this.blogData.length - 1)
-          ? 0 : this.state.visibleBlogPost + 1;
-      } else {
-        pos = (this.state.visibleBlogPost <= 0)
-          ? this.blogData.length - 1 : this.state.visibleBlogPost - 1;
-      }
-    } else {
-      pos = dotLocation;
-    }
-
-    this.setState({ visibleBlogPost: pos }, () => {
-      this.eraserAnimation(returnDirection);
-    });
-  }
-
-  eraserAnimation(direction, dotLocation) {
-    const element = document.getElementById('blog-eraser');
-    const blogWrapper = document.querySelector('.blog-sides-wrapper');
-    const blogPad = parseFloat(window.getComputedStyle(blogWrapper, null).getPropertyValue('padding-top')) * 2;
-    const blogHeight = parseFloat(window.getComputedStyle(blogWrapper, null).getPropertyValue('height')) + blogPad;
-    const width = {
-      current: parseFloat(window.getComputedStyle(element, null).getPropertyValue('width')),
-      max: window.innerWidth,
-    };
-    const step = 5;
-    const milSec = 10;
-    const needsToBeUnErased = (width.current >= width.max);
-    element.style.display = 'block';
-    element.style.height = `${blogHeight}px`;
-
-    if (!needsToBeUnErased && direction === 'left') {
-      element.style.left = 0;
-      element.style.right = 'inherit';
-      element.style.borderRight = '5px solid aqua';
-      element.style.borderLeft = '';
-    }
-
-    if (!needsToBeUnErased && direction === 'right') {
-      element.style.left = 'inherit';
-      element.style.right = 0;
-      element.style.borderRight = '';
-      element.style.borderLeft = '5px solid aqua';
-    }
-
-    if (needsToBeUnErased) {
-      const timer = setInterval(() => {
-        if (width.current <= 0) {
-          clearInterval(timer);
-          element.style.width = '0px';
-          element.style.display = 'none';
-        } else {
-          element.style.width = `${width.current}px`;
-          width.current -= step;
-        }
-      }, milSec);
-    } else {
-      const timer = setInterval(() => {
-        if (width.current >= width.max) {
-          clearInterval(timer);
-          element.style.width = `${width.max}px`;
-          this.updateBlogPost(direction, dotLocation);
-        } else {
-          element.style.width = `${width.current}px`;
-          width.current += step;
-        }
-      }, milSec);
-    }
-  }
-
   dotAnimation(id) {
     if (this.state.visibleBlogPost !== id) {
       const direction = (id < this.state.visibleBlogPost) ? 'left' : 'right';
-      this.eraserAnimation(direction, id);
+      this.blogAnimation(direction);
     }
   }
 
@@ -165,6 +102,50 @@ export default class Blog extends React.Component {
     return dots;
   }
 
+  updateBlogPost(direction) {
+    const increase = (direction === 'right');
+    const nextDataPos = this.getNextPos(this.state.visibleBlogPost, this.blogData.length, increase);
+
+    if (this.state.isContentVisible) {
+      this.setState({ isContentVisible: false, visibleBlogPost: nextDataPos }, () => {
+        this.blogAnimation();
+      });
+    } else {
+      this.setState({ isContentVisible: true });
+    }
+  }
+
+  animationTranslateX(to, from, direction) {
+    const elements = {
+      image: document.getElementById('blog-left-section'),
+      wrapper: document.getElementById('blog-right-section'),
+    };
+    const step = from > to ? -2 : 2;
+    const xOrigin = to;
+    let xPos = from;
+
+    const timer = setInterval(() => {
+      if ((step < 0 && xPos <= xOrigin) || (step > 0 && xPos >= xOrigin)) {
+        clearInterval(timer);
+        elements.image.style.transform = `translateX(-${xOrigin}%)`;
+        elements.wrapper.style.transform = `translateX(${xOrigin}%)`;
+        this.updateBlogPost(direction);
+      } else {
+        elements.image.style.transform = `translateX(-${xPos}%)`;
+        elements.wrapper.style.transform = `translateX(${xPos}%)`;
+        xPos += step;
+      }
+    }, 10);
+  }
+
+  blogAnimation(direction) {
+    if (this.state.isContentVisible) {
+      this.animationTranslateX(120, 0, direction);
+    } else {
+      this.animationTranslateX(0, 120, direction);
+    }
+  }
+
   render() {
     return (
       <div id="blog-container">
@@ -178,8 +159,8 @@ export default class Blog extends React.Component {
         <div
           className="arrow-section left"
           role="presentation"
-          onClick={() => this.eraserAnimation('left')}
-          onKeyDown={() => this.eraserAnimation('left')}
+          onClick={() => this.blogAnimation('left')}
+          onKeyDown={() => this.blogAnimation('left')}
         >
           <div className="arrow" />
         </div>
@@ -187,8 +168,8 @@ export default class Blog extends React.Component {
         <div
           className="arrow-section right"
           role="presentation"
-          onClick={() => this.eraserAnimation('right')}
-          onKeyDown={() => this.eraserAnimation('right')}
+          onClick={() => this.blogAnimation('right')}
+          onKeyDown={() => this.blogAnimation('right')}
         >
           <div className="arrow" />
         </div>
