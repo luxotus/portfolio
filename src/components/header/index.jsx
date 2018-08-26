@@ -60,7 +60,13 @@ export default class Header extends React.Component {
         <div id="menu" className="menu-container">
           <ul>
             {linkItm.map(item => (
-              <li key={this.getKey()} className={(window.location.pathname.includes(`/${item.title.replace(' ', '-')}`)) ? 'active' : ''}>
+              <li
+                key={this.getKey()}
+                role="presentation"
+                className={(window.location.pathname.includes(`/${item.title.replace(' ', '-')}`)) ? 'active' : ''}
+                onClick={() => document.getElementById(this.props.menuBtnId).click()}
+                onKeyDown={() => document.getElementById(this.props.menuBtnId).click()}
+              >
                 <Link to={item.link}>
                   {item.title}
                 </Link>

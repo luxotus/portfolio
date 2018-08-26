@@ -18,6 +18,7 @@ export default class MainRouter extends React.Component {
       menuBtnId: 'menu-btn-container',
     };
     this.updateMenuState = this.updateMenuState.bind(this);
+    this.unfade = this.unfade.bind(this);
   }
 
   updateMenuState(menuState) {
