@@ -26,6 +26,10 @@ export default class SitesPage extends React.Component {
     ];
   }
 
+  componentDidMount() {
+    this.props.unfade(document.getElementById('minimal-layout-container'));
+  }
+
   render() {
     return (
       <Minimal data={this.siteData} />

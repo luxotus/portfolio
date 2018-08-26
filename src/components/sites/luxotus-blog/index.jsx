@@ -9,6 +9,10 @@ export default class LuxotusBlog extends React.Component {
     this.getKey = this.getKey.bind(this);
   }
 
+  componentDidMount() {
+    this.props.unfade(document.getElementById('luxotus-blog-container'));
+  }
+
   getKey() {
     this.keyCount += 1;
     return this.keyCount;

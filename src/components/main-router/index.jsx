@@ -20,14 +20,17 @@ export default class MainRouter extends React.Component {
     this.updateMenuState = this.updateMenuState.bind(this);
   }
 
-  unfade(el, milSec) {
+  updateMenuState(menuState) {
+    this.setState({ isMenuOpen: menuState });
+  }
+
+  unfade(el) {
     const element = el;
     const maxVal = 1;
-    const OpStep = 0.1;
+    const OpStep = 0.05;
     let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
     op = (op === 0) ? OpStep : op;
     element.style.display = 'block';
-    this.forceUpdate();
 
     const timer = setInterval(() => {
       if (op >= maxVal) {
@@ -39,11 +42,7 @@ export default class MainRouter extends React.Component {
         element.style.filter = `alpha(opacity=${op * 100})`;
         op += op * OpStep;
       }
-    }, milSec);
-  }
-
-  updateMenuState(menuState) {
-    this.setState({ isMenuOpen: menuState });
+    }, 10);
   }
 
   render() {
@@ -55,13 +54,13 @@ export default class MainRouter extends React.Component {
           updateMenuState={this.updateMenuState}
         />
         <Switch>
-          <Route exact path="/" component={App} />
-          <Route path="/blog" component={BlogPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route exact path="/sites" component={SitesPage} />
-          <Route path="/sites/tea-shop" component={TeaShop} />
-          <Route path="/sites/luxotus-blog" component={LuxotusBlog} />
-          <Route path="/sites/worldwide-stories" component={WorldwideStories} />
+          <Route exact path="/" render={({ match }) => <App match={match} unfade={this.unfade} {...this.props} />} />
+          <Route path="/blog" render={({ match }) => <BlogPage match={match} unfade={this.unfade} {...this.props} />} />
+          <Route path="/contact" render={({ match }) => <ContactPage match={match} unfade={this.unfade} {...this.props} />} />
+          <Route exact path="/sites" render={({ match }) => <SitesPage match={match} unfade={this.unfade} {...this.props} />} />
+          <Route path="/sites/tea-shop" render={({ match }) => <TeaShop match={match} unfade={this.unfade} {...this.props} />} />
+          <Route path="/sites/luxotus-blog" render={({ match }) => <LuxotusBlog match={match} unfade={this.unfade} {...this.props} />} />
+          <Route path="/sites/worldwide-stories" render={({ match }) => <WorldwideStories match={match} unfade={this.unfade} {...this.props} />} />
         </Switch>
       </div>
     );

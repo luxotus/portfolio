@@ -21,6 +21,8 @@
   content: "\ea82"; }
 
 #worldwide-stories-container {
+  display: none;
+  opacity: 0;
   padding-top: 50px; }
   #worldwide-stories-container .row {
     position: relative;

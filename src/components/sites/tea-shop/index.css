@@ -1,4 +1,6 @@
 #tea-shop-container {
+  display: none;
+  opacity: 0;
   height: 100%;
   padding-top: 50px; }
   #tea-shop-container a {

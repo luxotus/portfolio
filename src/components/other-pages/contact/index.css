@@ -1,4 +1,6 @@
 #contact-page-container {
+  display: none;
+  opacity: 0;
   height: 100vh;
   overflow: hidden; }
   #contact-page-container #contact-container {

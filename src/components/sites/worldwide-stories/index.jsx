@@ -9,6 +9,10 @@ export default class WorldwideStories extends React.Component {
     this.getKey = this.getKey.bind(this);
   }
 
+  componentDidMount() {
+    this.props.unfade(document.getElementById('worldwide-stories-container'));
+  }
+
   getKey() {
     this.keyCount += 1;
     return this.keyCount;

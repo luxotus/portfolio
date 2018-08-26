@@ -144,6 +144,10 @@ export default class BlogPage extends React.Component {
     ];
   }
 
+  componentDidMount() {
+    this.props.unfade(document.getElementById('maximum-layout-container'));
+  }
+
   render() {
     return (
       <Maximum data={this.blogData} />
