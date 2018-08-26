@@ -5,7 +5,7 @@ export default class Maximum extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeID: 0,
+      activeID: this.props.loadPos,
     };
     this.updateCurrentBlog = this.updateCurrentBlog.bind(this);
     this.keyCount = 0;
