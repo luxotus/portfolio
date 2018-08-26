@@ -107,6 +107,7 @@ export default class Sites extends React.Component {
       {
         id: 0,
         name: 'Luxotus',
+        link: 'luxotus-blog',
         types: [
           'blog',
         ],
@@ -115,6 +116,7 @@ export default class Sites extends React.Component {
       {
         id: 1,
         name: 'Tea Shop',
+        link: 'tea-shop',
         types: [
           'shop',
           'landing page',
@@ -124,6 +126,7 @@ export default class Sites extends React.Component {
       {
         id: 2,
         name: 'Worldwide Stories',
+        link: 'worldwide-stories',
         types: [
           'app',
           'landing page',
@@ -136,7 +139,7 @@ export default class Sites extends React.Component {
       listSites.map(item => (
         <Link
           key={item.id}
-          to={`/sites/${item.name.toLowerCase().replace(' ', '-')}`}
+          to={`/sites/${item.link}`}
         >
           <div className="sites-item" key={item.id} data-types={item.types.join(',')}>
             <div className="item-overlay">

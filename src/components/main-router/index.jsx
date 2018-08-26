@@ -31,6 +31,7 @@ export default class MainRouter extends React.Component {
     let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
     op = (op === 0) ? OpStep : op;
     element.style.display = 'block';
+    window.scrollTo(0, 0);
 
     const timer = setInterval(() => {
       if (op >= maxVal) {
