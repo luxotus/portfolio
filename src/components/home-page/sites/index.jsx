@@ -14,6 +14,27 @@ export default class Sites extends React.Component {
     this.updateActiveCategory = this.updateActiveCategory.bind(this);
   }
 
+  fadingEffect(elHide, milSec) {
+    const element = elHide;
+    const minVal = 0;
+    const OpStep = 0.1;
+    let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
+    op = (op === 0) ? OpStep : op;
+
+    const timer = setInterval(() => {
+      if (op <= 0.1) {
+        clearInterval(timer);
+        element.style.display = 'none';
+        element.style.opacity = minVal;
+        element.style.filter = `alpha(opacity=${minVal})`;
+      } else {
+        element.style.opacity = op;
+        element.style.filter = `alpha(opacity=${op * 100})`;
+        op -= op * OpStep;
+      }
+    }, milSec);
+  }
+
   updateActiveCategory(category) {
     this.setState({ activeCategory: category }, () => {
       this.itemEffect();
@@ -50,7 +71,7 @@ export default class Sites extends React.Component {
       if (matchFound) {
         this.showElement(el);
       } else {
-        this.props.fadingEffect(el, null, 25);
+        this.fadingEffect(el, 25);
       }
     });
   }
