@@ -29,7 +29,7 @@ export default class LandingScreen extends React.Component {
   detectWhenSectionNotVisible(selector) {
     const el = document.querySelector(selector);
     const height = parseInt(window.getComputedStyle(el).height, 10);
-    const topBufferSpace = 250;
+    const topBufferSpace = 50;
 
     if (this.state.showParticles && window.scrollY + topBufferSpace > height) {
       this.updateParticleState(false);
