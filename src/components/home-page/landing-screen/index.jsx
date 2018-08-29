@@ -5,6 +5,9 @@ import BackgroundParticles from '../background-particles';
 export default class LandingScreen extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showParticles: true,
+    };
     this.data = {
       color: {
         general: '#a9a9a9',
@@ -15,6 +18,34 @@ export default class LandingScreen extends React.Component {
         value: 10,
       },
     };
+
+    this.updateParticleState = this.updateParticleState.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => { this.detectWhenSectionNotVisible('#landing-screen'); });
+  }
+
+  detectWhenSectionNotVisible(selector) {
+    const el = document.querySelector(selector);
+    const height = parseInt(window.getComputedStyle(el).height, 10);
+    const topBufferSpace = 250;
+
+    if (this.state.showParticles && window.scrollY + topBufferSpace > height) {
+      this.updateParticleState(false);
+    } else if (!this.state.showParticles && window.scrollY + topBufferSpace < height) {
+      this.updateParticleState(true);
+    }
+  }
+
+  updateParticleState(show) {
+    this.setState({ showParticles: show });
+  }
+
+  addParticles() {
+    return (
+      <BackgroundParticles data={this.data} />
+    );
   }
 
   render() {
@@ -32,7 +63,7 @@ export default class LandingScreen extends React.Component {
             {'Web developer that uses JavaScript and CSS to build high-end interactive sites, applications and tools.'}
           </p>
         </div>
-        <BackgroundParticles data={this.data} />
+        {this.state.showParticles ? this.addParticles() : ''}
       </div>
     );
   }
