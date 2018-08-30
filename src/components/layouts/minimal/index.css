@@ -8,6 +8,7 @@
     overflow: auto;
     float: left;
     height: calc(100% - 50px);
+    width: 100%;
     margin-top: 50px; }
     #minimal-layout-container .content-holder .content-wrapper {
       display: flex;
