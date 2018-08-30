@@ -6,6 +6,9 @@ import BackgroundParticles from '../background-particles';
 export default class Contact extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showParticles: true,
+    };
     this.data = {
       color: {
         general: '#a9a9a9',
@@ -16,6 +19,35 @@ export default class Contact extends React.Component {
         value: 10,
       },
     };
+
+    this.updateParticleState = this.updateParticleState.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => { this.detectWhenSectionNotVisible('contact-container'); });
+  }
+
+  detectWhenSectionNotVisible(selector) {
+    const el = document.getElementById(selector);
+    const height = parseInt(window.getComputedStyle(el).height, 10);
+    const buffer = 300;
+    const offsetTop = document.getElementById(selector).offsetTop - (height + buffer);
+
+    if (this.state.showParticles && window.scrollY < offsetTop) {
+      this.updateParticleState(false);
+    } else if (!this.state.showParticles && window.scrollY > offsetTop) {
+      this.updateParticleState(true);
+    }
+  }
+
+  updateParticleState(show) {
+    this.setState({ showParticles: show });
+  }
+
+  addParticles() {
+    return (
+      <BackgroundParticles data={this.data} />
+    );
   }
 
   render() {
