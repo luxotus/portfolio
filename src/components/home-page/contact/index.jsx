@@ -7,7 +7,7 @@ export default class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showParticles: false,
+      showParticles: true,
     };
     this.data = {
       color: {
