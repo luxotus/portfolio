@@ -7,7 +7,7 @@ export default class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showParticles: true,
+      showParticles: false,
     };
     this.data = {
       color: {
@@ -68,7 +68,7 @@ export default class Contact extends React.Component {
             {'hello@felixmanuel.com'}
           </a>
         </h1>
-        <BackgroundParticles data={this.data} />
+        {this.state.showParticles ? this.addParticles() : ''}
       </div>
     );
   }
