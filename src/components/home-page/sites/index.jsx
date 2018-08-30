@@ -132,7 +132,7 @@ export default class Sites extends React.Component {
         types: [
           'blog',
         ],
-        imageSrc: '/images/sites/screens/luxotus.png',
+        imageSrc: '/images/sites/screens/luxotus-sm.png',
       },
       {
         id: 1,
@@ -142,7 +142,7 @@ export default class Sites extends React.Component {
           'shop',
           'landing page',
         ],
-        imageSrc: '/images/sites/screens/tea-shop.png',
+        imageSrc: '/images/sites/screens/tea-shop-sm.png',
       },
       {
         id: 2,
@@ -152,7 +152,7 @@ export default class Sites extends React.Component {
           'app',
           'landing page',
         ],
-        imageSrc: '/images/sites/screens/worldwide-stories.png',
+        imageSrc: '/images/sites/screens/worldwide-stories-sm.png',
       },
     ];
 
