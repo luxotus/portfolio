@@ -29,14 +29,17 @@ export default class Contact extends React.Component {
 
   detectWhenSectionNotVisible(selector) {
     const el = document.getElementById(selector);
-    const height = parseInt(window.getComputedStyle(el).height, 10);
-    const buffer = 300;
-    const offsetTop = document.getElementById(selector).offsetTop - (height + buffer);
 
-    if (this.state.showParticles && window.scrollY < offsetTop) {
-      this.updateParticleState(false);
-    } else if (!this.state.showParticles && window.scrollY > offsetTop) {
-      this.updateParticleState(true);
+    if (el !== null) {
+      const height = parseInt(window.getComputedStyle(el).height, 10);
+      const buffer = 300;
+      const offsetTop = document.getElementById(selector).offsetTop - (height + buffer);
+
+      if (this.state.showParticles && window.scrollY < offsetTop) {
+        this.updateParticleState(false);
+      } else if (!this.state.showParticles && window.scrollY > offsetTop) {
+        this.updateParticleState(true);
+      }
     }
   }
 
