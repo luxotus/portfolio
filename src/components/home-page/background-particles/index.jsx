@@ -9,26 +9,27 @@ export default class BackgroundParticles extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
     return (
       <Particles
         className="particle-container"
         params={{
           particles: {
             number: {
-              value: this.props.data.number.value,
+              value: data.number.value,
               density: {
                 enable: true,
                 value_area: 800,
               },
             },
             color: {
-              value: this.props.data.color.general,
+              value: data.color.general,
             },
             shape: {
               type: 'circle',
               stroke: {
                 width: 0,
-                color: this.props.data.color.points,
+                color: data.color.points,
               },
               polygon: {
                 nb_sides: 5,
@@ -62,7 +63,7 @@ export default class BackgroundParticles extends React.Component {
             line_linked: {
               enable: true,
               distance: 150,
-              color: this.props.data.color.line,
+              color: data.color.line,
               opacity: 0.49716301422833176,
               width: 1,
             },

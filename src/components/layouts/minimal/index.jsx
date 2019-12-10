@@ -17,7 +17,8 @@ export default class Minimal extends React.Component {
   }
 
   content() {
-    return this.props.data.map(item => (
+    const { data } = this.props;
+    return data.map((item) => (
       <div
         key={this.getKey()}
         className="content-wrapper"

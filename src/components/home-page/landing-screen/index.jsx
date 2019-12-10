@@ -28,14 +28,15 @@ export default class LandingScreen extends React.Component {
 
   detectWhenSectionNotVisible(selector) {
     const el = document.querySelector(selector);
+    const { showParticles } = this.state;
 
     if (el !== null) {
       const height = parseInt(window.getComputedStyle(el).height, 10);
       const topBufferSpace = 50;
 
-      if (this.state.showParticles && window.scrollY + topBufferSpace > height) {
+      if (showParticles && window.scrollY + topBufferSpace > height) {
         this.updateParticleState(false);
-      } else if (!this.state.showParticles && window.scrollY + topBufferSpace < height) {
+      } else if (!showParticles && window.scrollY + topBufferSpace < height) {
         this.updateParticleState(true);
       }
     }
@@ -52,21 +53,24 @@ export default class LandingScreen extends React.Component {
   }
 
   render() {
+    const { showParticles } = this.state;
+
     return (
       <div id="landing-screen">
         <div id="landing-text-holder">
           <h1>
-            {'I create'}
+            I Create
             <br />
-            {'interactive'}
+            Interactive
             <br />
-            {'experiences.'}
+            Experiences.
           </h1>
           <p>
-            {'Web developer that uses JavaScript and CSS to build high-end interactive sites, applications and tools.'}
+            Web developer that uses JavaScript and CSS to build high-end interactive sites,
+            applications and tools.
           </p>
         </div>
-        {this.state.showParticles ? this.addParticles() : ''}
+        {showParticles ? this.addParticles() : ''}
       </div>
     );
   }

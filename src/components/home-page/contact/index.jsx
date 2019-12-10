@@ -29,15 +29,16 @@ export default class Contact extends React.Component {
 
   detectWhenSectionNotVisible(selector) {
     const el = document.getElementById(selector);
+    const { showParticles } = this.state;
 
     if (el !== null) {
       const height = parseInt(window.getComputedStyle(el).height, 10);
       const buffer = 300;
       const offsetTop = document.getElementById(selector).offsetTop - (height + buffer);
 
-      if (this.state.showParticles && window.scrollY < offsetTop) {
+      if (showParticles && window.scrollY < offsetTop) {
         this.updateParticleState(false);
-      } else if (!this.state.showParticles && window.scrollY > offsetTop) {
+      } else if (!showParticles && window.scrollY > offsetTop) {
         this.updateParticleState(true);
       }
     }
@@ -54,24 +55,26 @@ export default class Contact extends React.Component {
   }
 
   render() {
+    const { showParticles } = this.state;
+
     return (
       <div id="contact-container">
         <div className="title">
           <h2>
             <Link to="/contact">
-              {'Get in Touch'}
+              Get in Touch
             </Link>
           </h2>
           <p>
-            {'Any feedback or inquiries is much appreciated!'}
+            Any feedback or inquiries is much appreciated!
           </p>
         </div>
         <h1>
           <a href="mailto:hello@felixmanuel.com">
-            {'hello@felixmanuel.com'}
+            hello@felixmanuel.com
           </a>
         </h1>
-        {this.state.showParticles ? this.addParticles() : ''}
+        {showParticles ? this.addParticles() : ''}
       </div>
     );
   }

@@ -64,9 +64,10 @@ export default class Sites extends React.Component {
 
   itemEffect() {
     const siteItems = document.querySelectorAll('.sites-section .sites-item');
+    const { activeCategory } = this.state;
 
     siteItems.forEach((el) => {
-      const matchFound = (this.state.activeCategory === 'all') ? true : el.getAttribute('data-types').split(',').includes(this.state.activeCategory);
+      const matchFound = (activeCategory === 'all') ? true : el.getAttribute('data-types').split(',').includes(activeCategory);
 
       if (matchFound) {
         this.showElement(el);
@@ -111,11 +112,12 @@ export default class Sites extends React.Component {
         title: 'landing page',
       },
     ];
+    const { activeCategory } = this.state;
 
     return (
-      listTypes.sort(this.compareTitle).map(item => (
-        <li key={item.id} className={this.state.activeCategory === item.title ? 'active' : ''} data-types={item.title}>
-          <button type="button" onClick={e => this.categoryClick(e, this)} onKeyDown={e => this.categoryClick(e, this)}>
+      listTypes.sort(this.compareTitle).map((item) => (
+        <li key={item.id} className={activeCategory === item.title ? 'active' : ''} data-types={item.title}>
+          <button type="button" onClick={(e) => this.categoryClick(e, this)} onKeyDown={(e) => this.categoryClick(e, this)}>
             {item.title}
           </button>
         </li>
@@ -157,7 +159,7 @@ export default class Sites extends React.Component {
     ];
 
     return (
-      listSites.map(item => (
+      listSites.map((item) => (
         <Link
           key={item.id}
           to={`/sites/${item.link}`}
@@ -180,7 +182,7 @@ export default class Sites extends React.Component {
       <div id="sites-container">
         <h1>
           <Link to="/sites">
-            {'Sites'}
+            Sites
           </Link>
         </h1>
         <ul>

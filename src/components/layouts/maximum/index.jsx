@@ -4,8 +4,9 @@ import './index.css';
 export default class Maximum extends React.Component {
   constructor(props) {
     super(props);
+    const { loadPos } = this.props;
     this.state = {
-      activeID: this.props.loadPos,
+      activeID: loadPos,
     };
     this.updateCurrentBlog = this.updateCurrentBlog.bind(this);
     this.keyCount = 0;
@@ -92,14 +93,14 @@ export default class Maximum extends React.Component {
   }
 
   updateCurrentBlog(direction, transform) {
-    let nextPos = this.state.activeID;
+    const { activeID } = this.state;
+    const { data } = this.props;
+    let nextPos = activeID;
 
     if (direction === 'left') {
-      nextPos = (this.state.activeID === 0
-        ? this.props.data.length - 1 : this.state.activeID - 1);
+      nextPos = (activeID === 0 ? data.length - 1 : activeID - 1);
     } else if (direction === 'right') {
-      nextPos = (this.state.activeID === this.props.data.length - 1
-        ? 0 : this.state.activeID + 1);
+      nextPos = (activeID === data.length - 1 ? 0 : activeID + 1);
     }
 
     this.setState({ activeID: nextPos }, () => this.blogPostAnimation(transform));
@@ -122,20 +123,20 @@ export default class Maximum extends React.Component {
   }
 
   createContentFromData(data) {
-    const subSection = data.map(section => (
+    const subSection = data.map((section) => (
       <div className="content-section" key={this.getKey()}>
         <h3>
           {section.title}
         </h3>
         {
-          section.paragraphs.map(paragraph => (
+          section.paragraphs.map((paragraph) => (
             <p key={this.getKey()}>
               {paragraph}
             </p>
           ))
         }
         {
-          section.list.map(list => (
+          section.list.map((list) => (
             <div className="list-holder" key={this.getKey()}>
               <h4>
                 {list.title}
@@ -143,14 +144,14 @@ export default class Maximum extends React.Component {
               <ul className={section.isNumbered ? 'num-list' : ''}>
                 {
                   list.isLinks
-                    ? list.items.map(item => (
+                    ? list.items.map((item) => (
                       <li key={this.getKey()}>
                         <a href={item}>
                           {item}
                         </a>
                       </li>
                     ))
-                    : list.items.map(item => (
+                    : list.items.map((item) => (
                       <li key={this.getKey()}>
                         {item}
                       </li>
@@ -185,7 +186,7 @@ export default class Maximum extends React.Component {
           className="read-more"
           onClick={() => this.showBlogContent()}
         >
-          {'Read More'}
+          Read More
           <div />
         </button>
       </div>
@@ -233,9 +234,12 @@ export default class Maximum extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
+    const { activeID } = this.state;
+
     return (
       <div id="maximum-layout-container">
-        {this.createContentHolder(this.props.data[this.state.activeID])}
+        {this.createContentHolder(data[activeID])}
       </div>
     );
   }

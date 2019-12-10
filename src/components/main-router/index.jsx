@@ -48,11 +48,13 @@ export default class MainRouter extends React.Component {
   }
 
   render() {
+    const { menuBtnId, isMenuOpen } = this.state;
+
     return (
       <div id="main-container">
         <Header
-          menuBtnId={this.state.menuBtnId}
-          isMenuOpen={this.state.isMenuOpen}
+          menuBtnId={menuBtnId}
+          isMenuOpen={isMenuOpen}
           updateMenuState={this.updateMenuState}
         />
         <Switch>

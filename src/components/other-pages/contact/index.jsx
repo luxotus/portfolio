@@ -19,7 +19,8 @@ export default class ContactPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.unfade(document.getElementById('contact-page-container'));
+    const { unfade } = this.props;
+    unfade(document.getElementById('contact-page-container'));
   }
 
   render() {

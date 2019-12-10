@@ -10,7 +10,8 @@ export default class LuxotusBlog extends React.Component {
   }
 
   componentDidMount() {
-    this.props.unfade(document.getElementById('luxotus-blog-container'));
+    const { unfade } = this.props;
+    unfade(document.getElementById('luxotus-blog-container'));
   }
 
   getKey() {
@@ -38,7 +39,7 @@ export default class LuxotusBlog extends React.Component {
       },
     ];
 
-    const navItems = data.map(item => (
+    const navItems = data.map((item) => (
       <li className="nav-item" key={this.getKey()}>
         <a className="nav-link" href={item.link}>
           <i className={`fab ${item.icon}`} />
@@ -75,7 +76,7 @@ export default class LuxotusBlog extends React.Component {
       },
     ];
 
-    const navLinks = data.map(item => (
+    const navLinks = data.map((item) => (
       <li className="nav-item" key={this.getKey()}>
         <a className="nav-link" href={item.link}>
           {item.title}
@@ -87,9 +88,9 @@ export default class LuxotusBlog extends React.Component {
       <div className="row nav_holder">
         <div className="col-md-2 col-xl-2 nav_logo">
           <a href="/sites/luxotus-blog">
-            {'Lux'}
+            Lux
             <span>
-              {'otus'}
+              otus
             </span>
           </a>
         </div>
@@ -117,9 +118,9 @@ export default class LuxotusBlog extends React.Component {
       <div className="row search_holder">
         <div className="col-md-2 col-xl-2 pull-left nav_logo">
           <a href="/">
-            {'Lux'}
+            Lux
             <span>
-              {'otus'}
+              otus
             </span>
           </a>
         </div>
@@ -178,7 +179,7 @@ export default class LuxotusBlog extends React.Component {
       },
     ];
 
-    const filterItems = data.map(item => (
+    const filterItems = data.map((item) => (
       <li className="nav-item" data-type={item.type} key={this.getKey()}>
         <a className={`nav-link ${item.isActive ? 'active' : ''}`} href={item.link}>
           {item.title}
@@ -268,7 +269,7 @@ export default class LuxotusBlog extends React.Component {
       },
     ];
 
-    const articles = data.map(item => (
+    const articles = data.map((item) => (
       <div className="col-12 col-sm-6 col-xl-4 mini_article_container" key={this.getKey()}>
         <div className="mini_article_item" data-type={item.types.join(', ')}>
           <a href={item.link}>
@@ -327,7 +328,7 @@ export default class LuxotusBlog extends React.Component {
       },
     ];
 
-    const navItems = data.map(item => (
+    const navItems = data.map((item) => (
       <li className="nav-item" key={this.getKey()}>
         <a className="nav-link" href={item.link}>
           <i className={`fab ${item.icon}`} />
@@ -350,25 +351,25 @@ export default class LuxotusBlog extends React.Component {
         <div className="container-fluid">
           <div className="row text-center subscribe_container">
             <h3>
-              {'SUBSCRIBE TO OUR NEWSLETTER'}
+              SUBSCRIBE TO OUR NEWSLETTER
             </h3>
             <div className="form-group">
               <input type="email" name="email" className="form-control" id="email" placeholder="Email" />
               <div className="error" />
             </div>
             <button type="button" className="btn btn-submit">
-              {'Sign me up!'}
+              Sign me up!
             </button>
             <div className="thx_subscriber">
-              {'Thanks for subscribing!'}
+              Thanks for subscribing!
             </div>
           </div>
           <div className="row copyright">
             <h6 className="col-12 justify-content-center">
               <a href="/">
-                {'Privacy'}
+                Privacy
               </a>
-              {'© 2018 Luxotus. All Rights Reserved.'}
+              © 2019 Luxotus. All Rights Reserved.
             </h6>
           </div>
           {this.buildFooterSocial()}
@@ -383,7 +384,7 @@ export default class LuxotusBlog extends React.Component {
         <div className="row">
           <div className="col-xl-12 main_title text-center">
             <h1>
-              {'Articles'}
+              Articles
             </h1>
             <div className="highlight_bar" />
           </div>

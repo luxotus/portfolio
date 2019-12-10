@@ -147,7 +147,8 @@ export default class BlogPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.unfade(document.getElementById('maximum-layout-container'));
+    const { unfade } = this.props;
+    unfade(document.getElementById('maximum-layout-container'));
   }
 
   render() {

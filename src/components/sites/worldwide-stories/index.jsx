@@ -10,7 +10,8 @@ export default class WorldwideStories extends React.Component {
   }
 
   componentDidMount() {
-    this.props.unfade(document.getElementById('worldwide-stories-container'));
+    const { unfade } = this.props;
+    unfade(document.getElementById('worldwide-stories-container'));
   }
 
   getKey() {
@@ -24,10 +25,10 @@ export default class WorldwideStories extends React.Component {
         <div className="col-sm-12 title-section">
           <div className="text-center">
             <h1>
-              {'Worldwide Stories'}
+              Worldwide Stories
             </h1>
             <p>
-              {'A new app from your friends at Luxotus.'}
+              A new app from your friends at Luxotus.
             </p>
           </div>
           <a href="/" className="arrow-down-section">
@@ -43,7 +44,7 @@ export default class WorldwideStories extends React.Component {
       <div className="row app-download-section">
         <div className="col-md-8 text-right">
           <h3>
-            {'Download it FREE (for a limited time) for your Android'}
+            Download it FREE (for a limited time) for your Android
           </h3>
         </div>
         <a href="https://play.google.com/store/apps/details?id=com.luxotus.worldwidestories" className="col-md-4 play-icon-holder">
@@ -105,7 +106,7 @@ export default class WorldwideStories extends React.Component {
       }
     });
 
-    const features = data.map(item => (
+    const features = data.map((item) => (
       <div className={`row feature-section feature-${item.title.toLowerCase().trim()}`} key={this.getKey()}>
         {(item.imagePlacement === 'left') ? this.buildFeatureImage(item) : '' }
         <div className="col-sm-6">
@@ -133,7 +134,8 @@ export default class WorldwideStories extends React.Component {
       <div className="panel panel-default">
         <div className="panel-body">
           <p className="newsletter-message text-center">
-            {'Get the latest news from Luxotus delivered straight to your inbox. Join our mailing list today.'}
+            Get the latest news from Luxotus delivered straight to your inbox.
+            Join our mailing list today.
           </p>
           <form action="#" id="newsletter">
             <div className="row">
@@ -154,7 +156,7 @@ export default class WorldwideStories extends React.Component {
               </div>
             </div>
             <button type="submit" className="btn btn-danger">
-              {'Subscribe'}
+              Subscribe
             </button>
           </form>
         </div>
@@ -168,7 +170,8 @@ export default class WorldwideStories extends React.Component {
         <div className="tint">
           <div className="col-sm-6 middle-section text-center">
             <p className="download-message">
-              {'Read stories from all of the world. Worldwide stories is the new app for android that helps you explore fascinating stories all in one place.'}
+              Read stories from all of the world. Worldwide stories is the new app for android
+              that helps you explore fascinating stories all in one place.
             </p>
             <a href="https://play.google.com/store/apps/details?id=com.luxotus.worldwidestories">
               <img src="/images/sites/worldwide-stories/play_icon.png" alt="google play icon" />
@@ -185,12 +188,12 @@ export default class WorldwideStories extends React.Component {
       <div className="row footer">
         <div className="copyright-holder">
           <p>
-            {'© 2018 Luxotus'}
+            © 2019 Luxotus
           </p>
         </div>
         <div className="contact-holder">
           <a href="mailto:example@email.com">
-            {'Contact'}
+            Contact
           </a>
         </div>
       </div>

@@ -20,13 +20,14 @@ export default class Header extends React.Component {
   }
 
   toggleState() {
-    const menuId = document.getElementById(this.props.menuBtnId);
+    const { menuBtnId, updateMenuState } = this.props;
+    const menuId = document.getElementById(menuBtnId);
     const closeBtnClass = 'menu-close-btn';
     menuId.classList.toggle(closeBtnClass);
 
     const menuState = menuId.classList.contains(closeBtnClass) ? 'open-menu' : '';
     this.setState({ isOpen: menuState });
-    this.props.updateMenuState(menuState);
+    updateMenuState(menuState);
   }
 
   menu() {
@@ -48,24 +49,26 @@ export default class Header extends React.Component {
         link: '/contact',
       },
     ];
+    const { isOpen } = this.state;
+    const { menuBtnId } = this.props;
 
     return (
-      <div className={this.state.isOpen}>
+      <div className={isOpen}>
         <div
           id="menu-side-wrapper"
           role="presentation"
-          onClick={() => document.getElementById(this.props.menuBtnId).click()}
-          onKeyDown={() => document.getElementById(this.props.menuBtnId).click()}
+          onClick={() => document.getElementById(menuBtnId).click()}
+          onKeyDown={() => document.getElementById(menuBtnId).click()}
         />
         <div id="menu" className="menu-container">
           <ul>
-            {linkItm.map(item => (
+            {linkItm.map((item) => (
               <li
                 key={this.getKey()}
                 role="presentation"
                 className={(window.location.pathname.includes(`/${item.title.replace(' ', '-')}`)) ? 'active' : ''}
-                onClick={() => document.getElementById(this.props.menuBtnId).click()}
-                onKeyDown={() => document.getElementById(this.props.menuBtnId).click()}
+                onClick={() => document.getElementById(menuBtnId).click()}
+                onKeyDown={() => document.getElementById(menuBtnId).click()}
               >
                 <Link to={item.link}>
                   {item.title}
@@ -74,8 +77,8 @@ export default class Header extends React.Component {
             ))}
           </ul>
           <div className="icon-container">
-            <a href="https://github.com/luxotus" className="icon-github" />
-            <a href="https://twitter.com/ManuelF_Dev" className="icon-twitter" />
+            <a href="https://github.com/luxotus" className="icon-github" aria-label="github" />
+            <a href="https://twitter.com/ManuelF_Dev" className="icon-twitter" aria-label="twitter" />
           </div>
         </div>
       </div>
@@ -83,10 +86,12 @@ export default class Header extends React.Component {
   }
 
   menuBtn() {
+    const { menuBtnId } = this.props;
+
     return (
       <div>
         <div
-          id={this.props.menuBtnId}
+          id={menuBtnId}
           role="presentation"
           onClick={this.toggleState}
           onKeyDown={this.toggleState}
@@ -104,7 +109,7 @@ export default class Header extends React.Component {
       <header id="top-nav-bar">
         <h4>
           <Link to="/">
-            {'Felix Manuel'}
+            Felix Manuel
           </Link>
         </h4>
         {this.menuBtn()}

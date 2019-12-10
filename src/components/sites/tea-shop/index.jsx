@@ -10,7 +10,8 @@ export default class TeaShop extends React.Component {
   }
 
   componentDidMount() {
-    this.props.unfade(document.getElementById('tea-shop-container'));
+    const { unfade } = this.props;
+    unfade(document.getElementById('tea-shop-container'));
   }
 
   getKey() {
@@ -41,7 +42,7 @@ export default class TeaShop extends React.Component {
         el: '.footer',
       },
     ];
-    const nav = links.map(link => (
+    const nav = links.map((link) => (
       <li
         role="presentation"
         key={this.getKey()}
@@ -57,7 +58,7 @@ export default class TeaShop extends React.Component {
     return (
       <header>
         <h2>
-          {'Tea shop'}
+          Tea shop
         </h2>
         <ul>
           {nav}
@@ -71,9 +72,9 @@ export default class TeaShop extends React.Component {
       <div className="main-img-container">
         <div className="main-img" style={{ backgroundImage: 'url("/images/sites/tea-shop/7.jpeg")' }}>
           <h3>
-            {'we use tea as a'}
+            we use tea as a
             <br />
-            {'platform to care for others'}
+            platform to care for others
           </h3>
         </div>
       </div>
@@ -84,7 +85,7 @@ export default class TeaShop extends React.Component {
     return (
       <div className="about-container">
         <h2>
-          {'About Us'}
+          About Us
         </h2>
         <p>
           {'Ab aggrediar tangantur potuerunt cogitatio principia an. Nec res una proinde chartam requiri quaenam confuse. De ea se tamquam haberet exempli memores ipsarum ob. Earum se athei vi erunt. Si ad exhibent reperiri perpauca ab physicam invenero. Veluti unquam loquar easdem sua errare fas imo. Clara harum ipsis tamen ac ha longa co at mente. Ii si videretur ac contineri occurrere remanetne deleantur. Istam nomen in lucis ab donum volui quare. '}
@@ -112,7 +113,7 @@ export default class TeaShop extends React.Component {
       },
     ];
 
-    const details = data.map(item => (
+    const details = data.map((item) => (
       <div className="detail-block" key={this.getKey()}>
         <div className="detail-block-wrapper">
           <div className="detail-img" style={{ backgroundImage: `url("${item.image}")` }} />
@@ -173,7 +174,7 @@ export default class TeaShop extends React.Component {
       menu[key].column.left = menu[key].data.filter((element, index) => {
         const even = (index % 2 === 0);
         return even;
-      }).map(row => (
+      }).map((row) => (
         <div className="row" key={this.getKey()}>
           <div className="text-sec">
             <h4>
@@ -192,7 +193,7 @@ export default class TeaShop extends React.Component {
       menu[key].column.right = menu[key].data.filter((element, index) => {
         const odd = (index % 2 === 1);
         return odd;
-      }).map(row => (
+      }).map((row) => (
         <div className="row" key={this.getKey()}>
           <div className="text-sec">
             <h4>
@@ -209,7 +210,7 @@ export default class TeaShop extends React.Component {
       ));
     });
 
-    const sections = Object.keys(menu).map(key => (
+    const sections = Object.keys(menu).map((key) => (
       <div key={this.getKey()}>
         <h3>
           {key}
@@ -228,7 +229,7 @@ export default class TeaShop extends React.Component {
     return (
       <div className="tea-menu-container">
         <h2>
-          {'Our Menu'}
+          Our Menu
         </h2>
         {sections}
       </div>
@@ -242,7 +243,7 @@ export default class TeaShop extends React.Component {
       '/images/sites/tea-shop/9.jpeg',
       '/images/sites/tea-shop/10.jpeg',
     ];
-    const galleryItems = images.map(item => (
+    const galleryItems = images.map((item) => (
       <div className="gallery-itm" key={this.getKey()} style={{ backgroundImage: `url("${item}")` }} />
     ));
 
@@ -258,30 +259,30 @@ export default class TeaShop extends React.Component {
       <div className="footer">
         <div className="store-hour-container">
           <h4>
-            {'Open Hours'}
+            Open Hours
           </h4>
           <span>
-            {'M-F 9-9pm'}
+            M-F 9-9pm
           </span>
           <span>
-            {'Sat 12-10pm'}
+            Sat 12-10pm
           </span>
           <span>
-            {'Sun 12-6pm'}
+            Sun 12-6pm
           </span>
         </div>
         <div className="contact-us-container">
           <h4>
-            {'Contact Us'}
+            Contact Us
           </h4>
           <a href="mailto:hello@teashop.com">
-            {'hello@teashop.com'}
+            hello@teashop.com
           </a>
           <span>
-            {'West Hills Drive 234'}
+            West Hills Drive 234
           </span>
           <span>
-            {'Knoxville, TN'}
+            Knoxville, TN
           </span>
         </div>
       </div>

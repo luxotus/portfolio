@@ -63,7 +63,7 @@ export default class Blog extends React.Component {
             </p>
             <Link to={blogPost.link}>
               <button type="button">
-                {'View Article'}
+                View Article
               </button>
             </Link>
           </div>
@@ -81,8 +81,10 @@ export default class Blog extends React.Component {
   }
 
   dotAnimation(id) {
-    if (this.state.visibleBlogPost !== id) {
-      const direction = (id < this.state.visibleBlogPost) ? 'left' : 'right';
+    const { visibleBlogPost } = this.state;
+
+    if (visibleBlogPost !== id) {
+      const direction = (id < visibleBlogPost) ? 'left' : 'right';
       this.blogAnimation(direction);
     }
   }
@@ -103,10 +105,11 @@ export default class Blog extends React.Component {
   }
 
   updateBlogPost(direction) {
+    const { visibleBlogPost, isContentVisible } = this.state;
     const increase = (direction === 'right');
-    const nextDataPos = this.getNextPos(this.state.visibleBlogPost, this.blogData.length, increase);
+    const nextDataPos = this.getNextPos(visibleBlogPost, this.blogData.length, increase);
 
-    if (this.state.isContentVisible) {
+    if (isContentVisible) {
       this.setState({ isContentVisible: false, visibleBlogPost: nextDataPos }, () => {
         this.blogAnimation();
       });
@@ -139,7 +142,9 @@ export default class Blog extends React.Component {
   }
 
   blogAnimation(direction) {
-    if (this.state.isContentVisible) {
+    const { isContentVisible } = this.state;
+
+    if (isContentVisible) {
       this.animationTranslateX(120, 0, direction);
     } else {
       this.animationTranslateX(0, 120, direction);
@@ -147,12 +152,14 @@ export default class Blog extends React.Component {
   }
 
   render() {
+    const { visibleBlogPost } = this.state;
+
     return (
       <div id="blog-container">
         <div className="title">
           <h1>
             <a href="/blog">
-              {'Blog'}
+              Blog
             </a>
           </h1>
         </div>
@@ -165,7 +172,7 @@ export default class Blog extends React.Component {
           >
             <div className="arrow" />
           </div>
-          {this.buildPreviewBlogPost(this.blogData[this.state.visibleBlogPost])}
+          {this.buildPreviewBlogPost(this.blogData[visibleBlogPost])}
           <div
             className="arrow-section right"
             role="presentation"
@@ -177,7 +184,7 @@ export default class Blog extends React.Component {
         </div>
         <div className="bread-crumbs">
           <div className="dot-section">
-            {this.buildDots(this.state.visibleBlogPost)}
+            {this.buildDots(visibleBlogPost)}
           </div>
         </div>
       </div>

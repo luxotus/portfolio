@@ -9,7 +9,8 @@ import './index.css';
 
 export default class App extends React.Component {
   componentDidMount() {
-    this.props.unfade(document.getElementById('landing-page-container'));
+    const { unfade } = this.props;
+    unfade(document.getElementById('landing-page-container'));
   }
 
   render() {

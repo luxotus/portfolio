@@ -8,12 +8,12 @@ export default class Footer extends React.Component {
         <h2>
           {'Felix Manuel '}
           <span>
-            {`${String.fromCharCode(169)} 2018`}
+            © 2019
           </span>
         </h2>
         <div className="icon-container">
-          <a href="https://github.com/luxotus" className="icon-github" />
-          <a href="https://twitter.com/ManuelF_Dev" className="icon-twitter" />
+          <a href="https://github.com/luxotus" className="icon-github" aria-label="github" />
+          <a href="https://twitter.com/ManuelF_Dev" className="icon-twitter" aria-label="twitter" />
         </div>
       </footer>
     );

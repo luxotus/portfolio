@@ -38,7 +38,7 @@ export default class OpenSource extends React.Component {
       },
     ];
 
-    const items = data.map(item => (
+    const items = data.map((item) => (
       <a href={item.link} key={this.getKey()}>
         <div className="item">
           <h3>
@@ -60,7 +60,7 @@ export default class OpenSource extends React.Component {
       <div id="osp-container">
         <header>
           <h1>
-            {'Open Source Projects'}
+            Open Source Projects
           </h1>
         </header>
         <div id="osp-wrapper">

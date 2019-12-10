@@ -27,7 +27,8 @@ export default class SitesPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.unfade(document.getElementById('minimal-layout-container'));
+    const { unfade } = this.props;
+    unfade(document.getElementById('minimal-layout-container'));
   }
 
   render() {
