@@ -187,6 +187,11 @@ export default class Blog extends React.Component {
             {this.buildDots(visibleBlogPost)}
           </div>
         </div>
+        <div className="hidden">
+          {this.blogData.map((blogData) => (
+            <img src={blogData.image} alt="" key={`hidden-blog-images-${this.getKey()}`} />
+          ))}
+        </div>
       </div>
     );
   }

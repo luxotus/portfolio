@@ -4,6 +4,8 @@
   display: inline-block;
   padding: 75px 0;
   background-color: #fff; }
+  #blog-container .hidden {
+    display: none; }
   #blog-container .title {
     text-align: center; }
     #blog-container .title h1 {
