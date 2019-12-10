@@ -13,6 +13,8 @@ export default class App extends React.Component {
   }
 
   render() {
+    var efwa;
+
     return (
       <div id="landing-page-container">
         <LandingScreen />
