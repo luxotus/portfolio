@@ -5,5 +5,26 @@
 // Base
 @import 'base/root';
 @import 'base/typography';
+@import 'base/shared';
 
 // Components
+@import 'components/header';
+@import 'components/background-particles';
+@import 'components/footer';
+
+// Components for Home Page
+@import 'components/home-page/background-particles';
+@import 'components/home-page/blog';
+@import 'components/home-page/contact';
+@import 'components/home-page/landing-screen';
+@import 'components/home-page/open-source';
+@import 'components/home-page/sites';
+
+// Pages
+@import 'pages/app';
+
+// Layouts
+@import 'layouts/maximum';
+@import 'layouts/minimal';
+
+// Sites
