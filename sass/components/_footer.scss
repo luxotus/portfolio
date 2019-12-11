@@ -1,18 +1,13 @@
-$primary-color: #fff;
-$secondary-color: #0071c5;
-$foreground-color: #181818;
-$footer-height: 50px;
-
 footer {
   display: grid;
   grid-template-columns: .5fr 1fr .5fr;
   height: $footer-height;
   padding: 0 2%;
-  background-color: $primary-color;
+  background-color: $white-color-1;
 
   h2 {
     margin: 0;
-    color: $foreground-color;
+    color: $black-color-2;
     font-size: 1em;
     font-weight: 100;
     line-height: $footer-height;
@@ -29,19 +24,19 @@ footer {
     }
 
     li a {
-      color: $foreground-color;
+      color: $black-color-2;
       text-decoration: none;
       font-size: 1.15em;
       text-transform: capitalize;
     }
 
     li a:hover {
-      color: $secondary-color;
+      color: $blue-color-2;
     }
   }
 
   span {
-    color: $secondary-color;
+    color: $blue-color-2;
   }
 
   .icon-container {
@@ -52,11 +47,11 @@ footer {
       font-size: 1.5em;
       line-height: $footer-height;
       text-decoration: none;
-      color: $foreground-color;
+      color: $black-color-2;
     }
 
     a:hover {
-      color: $secondary-color;
+      color: $blue-color-2;
     }
   }
 }

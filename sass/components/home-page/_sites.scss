@@ -1,7 +1,3 @@
-$background-color: #f3f3f3;
-$primary-color: #373737;
-$hover-color: #0f89e2de;
-
 @function build-grid-columns($column-width, $column-count) {
   $grid-column: "";
   @for $i from 0 to $column-count {
@@ -14,8 +10,8 @@ $hover-color: #0f89e2de;
   width: inherit;
   padding: 0 10px;
   padding-bottom: 125px;
-  background-color: $background-color;
-  color: $primary-color;
+  background-color: $white-color-3;
+  color: $gray-color-2;
 
   h1 {
     margin: 0;
@@ -26,11 +22,11 @@ $hover-color: #0f89e2de;
 
     a {
       text-decoration: none;
-      color: $primary-color;
+      color: $gray-color-2;
     }
 
     a:hover {
-      color: $hover-color;
+      color: $hover-blue-color-1;
     }
   }
 
@@ -50,7 +46,7 @@ $hover-color: #0f89e2de;
       padding: 5px 20px;
       border: none;
       border-radius: 5px;
-      background-color: $background-color;
+      background-color: $white-color-3;
       font-size: 1.25em;
       text-transform: capitalize;
       cursor: pointer;
@@ -58,12 +54,12 @@ $hover-color: #0f89e2de;
     }
 
     button:hover {
-      color: $hover-color;
+      color: $hover-blue-color-1;
     }
   }
 
   li.active button {
-    color: $hover-color;
+    color: $hover-blue-color-1;
   }
 }
 
@@ -80,7 +76,7 @@ $hover-color: #0f89e2de;
   display: block;
   float: left;
   width: 100%;
-  color: $primary-color;
+  color: $gray-color-2;
 
   .item-overlay {
     display: none;
@@ -124,7 +120,7 @@ $hover-color: #0f89e2de;
 
   #sites-container li button:hover {
     color: #fff;
-    background-color: $hover-color;
+    background-color: $hover-blue-color-1;
   }
 }
 

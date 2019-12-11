@@ -1,17 +1,9 @@
-$primary-color: #373737;
-$secondary-color: #0f89e2de;
-$background-color: #fff;
-$bread-crumb-section-height: 50px;
-$dot-size: 15px;
-$arrow-section-height: 300px;
-$arrow-size: 25px;
-
 #blog-container {
   position: relative;
   overflow-x: hidden;
   display: inline-block;
   padding: 75px 0;
-  background-color: $background-color;
+  background-color: $white-color-1;
 
   .hidden {
     display: none;
@@ -27,11 +19,11 @@ $arrow-size: 25px;
 
     a {
       text-decoration: none;
-      color: $primary-color;
+      color: $gray-color-2;
     }
 
     a:hover {
-      color: $secondary-color;
+      color: $hover-blue-color-1;
     }
   }
 
@@ -57,16 +49,16 @@ $arrow-size: 25px;
     z-index: 2;
     top: 0;
     bottom: 0;
-    height: $arrow-section-height;
+    height: $blog-arrow-section-height;
     width: 50px;
     margin: auto;
     cursor: pointer;
   }
 
   .arrow {
-    height: $arrow-size;
-    width: $arrow-size;
-    margin-top: $arrow-section-height / 2 - $arrow-size;
+    height: $blog-arrow-size;
+    width: $blog-arrow-size;
+    margin-top: $blog-arrow-section-height / 2 - $blog-arrow-size;
     transform: rotate(45deg);
   }
 
@@ -74,9 +66,9 @@ $arrow-size: 25px;
     left: 0;
 
     .arrow {
-      margin-left: $arrow-size * 0.66;
-      border-left: 2px solid $primary-color;
-      border-bottom: 2px solid $primary-color;
+      margin-left: $blog-arrow-size * 0.66;
+      border-left: 2px solid $gray-color-2;
+      border-bottom: 2px solid $gray-color-2;
     }
   }
 
@@ -84,14 +76,14 @@ $arrow-size: 25px;
     right: 0;
 
     .arrow {
-      margin-left: $arrow-size * 0.22;
-      border-top: 2px solid $primary-color;
-      border-right: 2px solid $primary-color;
+      margin-left: $blog-arrow-size * 0.22;
+      border-top: 2px solid $gray-color-2;
+      border-right: 2px solid $gray-color-2;
     }
   }
 
   .arrow-section:hover .arrow {
-    border-color: $secondary-color;
+    border-color: $hover-blue-color-1;
   }
 
 
@@ -107,17 +99,17 @@ $arrow-size: 25px;
   }
 
   .dot-section {
-    width: $dot-size * 5;
-    margin: ($bread-crumb-section-height/2 - $dot-size/2) auto;
+    width: $blog-dot-size * 5;
+    margin: ($bread-crumb-section-height/2 - $blog-dot-size/2) auto;
   }
 
   .dot {
     float: left;
-    height: $dot-size;
-    width: $dot-size;
+    height: $blog-dot-size;
+    width: $blog-dot-size;
     border-radius: 50%;
     margin: 0 5px;
-    background-color: $primary-color;
+    background-color: $gray-color-2;
     cursor: pointer;
   }
 
@@ -126,7 +118,7 @@ $arrow-size: 25px;
   }
 
   .dot.active {
-    background-color: $secondary-color;
+    background-color: $hover-blue-color-1;
   }
 
   .view-page-btn {
@@ -135,19 +127,19 @@ $arrow-size: 25px;
     text-align: center;
 
     a {
-      color: $primary-color;
+      color: $gray-color-2;
       text-decoration: none;
       display: inline-block;
     }
 
     a:hover {
-      color: $secondary-color;
+      color: $hover-blue-color-1;
     }
   }
 }
 
 #blog-left-section {
-  color: $primary-color;
+  color: $gray-color-2;
 
   .pad {
     padding-left: 25%;
@@ -176,12 +168,12 @@ $arrow-size: 25px;
     border: none;
     font-size: 1em;
     color: white;
-    background-color: $primary-color;
+    background-color: $gray-color-2;
   }
 
   button:hover {
     cursor: pointer;
-    background-color: $secondary-color;
+    background-color: $hover-blue-color-1;
   }
 }
 

@@ -1,8 +1,3 @@
-$header-height: 50px;
-
-$hover-color: #00a2d5;
-$primary-color: #000;
-
 #maximum-layout-container {
   display: none;
   opacity: 0;
@@ -38,7 +33,7 @@ $primary-color: #000;
     height: 100%;
     width: 60%;
     float: left;
-    color: $primary-color;
+    color: $black-color-1;
 
     .blog-wrapper {
       overflow: auto;
@@ -78,7 +73,7 @@ $primary-color: #000;
       border: 0;
       margin-top: 42px;
       background: none;
-      color: $primary-color;
+      color: $black-color-1;
       font-size: 1.25em;
       cursor: pointer;
 
@@ -88,8 +83,8 @@ $primary-color: #000;
         margin-top: 9px;
         margin-left: 15px;
         float: right;
-        border-top: 1px solid $primary-color;
-        border-right: 1px solid $primary-color;
+        border-top: 1px solid $black-color-1;
+        border-right: 1px solid $black-color-1;
         transform: rotate(45deg);
       }
     }
@@ -100,11 +95,11 @@ $primary-color: #000;
     }
 
     button.read-more:hover {
-      color: $hover-color;
+      color: $blue-color-4;
     }
 
     button.read-more:hover div {
-      border-color: $hover-color;
+      border-color: $blue-color-4;
     }
 
     .arrow-container {
@@ -135,19 +130,19 @@ $primary-color: #000;
       }
 
       .left-arrow div {
-        border-bottom: 1px solid $primary-color;
-        border-left: 1px solid $primary-color;
+        border-bottom: 1px solid $black-color-1;
+        border-left: 1px solid $black-color-1;
         margin-left: 31px;
       }
 
       .right-arrow div {
-        border-top: 1px solid $primary-color;
-        border-right: 1px solid $primary-color;
+        border-top: 1px solid $black-color-1;
+        border-right: 1px solid $black-color-1;
         margin-left: 22.5px;
       }
 
       .arrow:hover {
-        background-color: $primary-color;
+        background-color: $black-color-1;
 
         div {
           border-color: #fff;
@@ -184,7 +179,7 @@ $primary-color: #000;
       }
 
       .close:hover {
-        background-color: $primary-color;
+        background-color: $black-color-1;
 
         .x:before,
         .x:after {
@@ -212,7 +207,7 @@ $primary-color: #000;
     display: block;
     height: 0;
     width: 15px;
-    border-top: 1px solid $primary-color;
+    border-top: 1px solid $black-color-1;
     margin: auto;
     transform: rotate(45deg);
     transform-origin: center;
@@ -228,7 +223,7 @@ $primary-color: #000;
     display: block;
     height: 0;
     width: 15px;
-    border-top: 1px solid $primary-color;
+    border-top: 1px solid $black-color-1;
     margin: auto;
     transform: rotate(-45deg);
     transform-origin: center;

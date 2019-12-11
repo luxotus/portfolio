@@ -1,14 +1,10 @@
-$primary-color: #181818;
-$secondary-color: #fff;
-$highlight-color: #35a2f2;
-
 #contact-container {
   position: relative;
   height: 500px;
   width: 100%;
   padding: 75px 0;
-  color: $secondary-color;
-  background-color: $primary-color;
+  color: $white-color-1;
+  background-color: $black-color-2;
   
   .title {
     text-align: center;
@@ -18,7 +14,7 @@ $highlight-color: #35a2f2;
     }
 
     a {
-      color: $secondary-color;
+      color: $white-color-1;
       text-decoration: none;
     }
   }
@@ -37,7 +33,7 @@ $highlight-color: #35a2f2;
     text-align: center;
 
     a {
-      color: $highlight-color;
+      color: $blue-color-3;
       text-decoration: none;
     }
   }
