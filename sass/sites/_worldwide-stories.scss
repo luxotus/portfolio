@@ -507,7 +507,7 @@
 }
 
 /* Tablet */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@include tablet {
   #worldwide-stories-container {
     .middle-section {
       flex: 0 0 75%;
@@ -517,7 +517,7 @@
 }
 
 /* Tablet Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@include tablet-portrait {
   #worldwide-stories-container {
     .app-download-section h3 {
       font-size: 1.25em;
@@ -544,7 +544,7 @@
 }
 
 /* Tablet Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@include tablet-landscape {
   #worldwide-stories-container {
     .app-download-section h3 {
       font-size: 1.5em;

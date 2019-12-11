@@ -39,8 +39,8 @@
   }
 }
 
-/* 
-  ##Device = Tablets, Ipads (portrait)
+/*
+  ##Device = Tablets, Ipads
   ##Screen = B/w 768px to 1024px
 */
 @mixin tablet {
@@ -49,7 +49,17 @@
   }
 }
 
-/* 
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@mixin tablet-portrait {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$laptop-width - 1px}) and (orientation: portrait) {
+    @content;
+  }
+}
+
+/*
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
 */
@@ -60,11 +70,21 @@
 }
 
 /*
-  ##Device = Low Resolution Tablets, Mobiles (Portrait)
+  ##Device = Low Resolution Tablets, Mobiles
   ##Screen = B/w 481px to 767px
 */
 @mixin tablet-mobile {
   @media (min-width: #{$tablet-mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Portrait)
+  ##Screen = B/w 481px to 767px
+*/
+@mixin tablet-mobile-portrait {
+  @media (min-width: #{$tablet-mobile-width}) and (max-width: #{$tablet-width - 1px}) and (orientation: portrait) {
     @content;
   }
 }
@@ -80,11 +100,21 @@
 }
 
 /*
-  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Device = Most of the Smartphones Mobiles
   ##Screen = B/w 320px to 479px
 */
 @mixin mobile {
   @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-mobile-width - 1px}) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@mixin mobile-portrait {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-mobile-width - 1px}) and (orientation: portrait) {
     @content;
   }
 }

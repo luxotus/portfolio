@@ -527,7 +527,7 @@
 }
 
 /* Tablet Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@include tablet-portrait {
   #luxotus-blog-container .mini_article_container {
     width: 45.833%;
     padding-right: 10px;
@@ -536,7 +536,7 @@
 }
 
 /* Tablet Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@include tablet-landscape {
   #luxotus-blog-container {
     .nav_main {
       flex: 0 0 51%;

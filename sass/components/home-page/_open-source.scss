@@ -78,7 +78,7 @@
 }
 
 /* Tablet Portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@include tablet-portrait {
   #osp-wrapper {
     width: 80%;
     grid-template-columns: build-grid-columns(47.4%, 2);
@@ -86,7 +86,7 @@
 }
 
 /* Tablet Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@include tablet-landscape {
   #osp-wrapper {
     width: 60%;
   }
