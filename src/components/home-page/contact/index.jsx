@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.css';
 import BackgroundParticles from '../background-particles';
 
 export default class Contact extends React.Component {

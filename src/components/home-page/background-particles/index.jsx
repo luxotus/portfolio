@@ -1,6 +1,5 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import './index.css';
 
 export default class BackgroundParticles extends React.Component {
   constructor(props) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './index.css';
 import BlogPage from '../other-pages/blog';
 import ContactPage from '../other-pages/contact';
 import SitesPage from '../other-pages/sites';

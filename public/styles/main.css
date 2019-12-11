@@ -307,7 +307,8 @@ footer {
     display: flex;
     list-style: none;
     padding: 0;
-    justify-content: center; }
+    justify-content: center;
+    align-items: center; }
     footer ul li:not(:first-child) {
       margin-left: 5%; }
     footer ul li a {

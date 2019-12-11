@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 import BackgroundParticles from '../background-particles';
 
 export default class LandingScreen extends React.Component {

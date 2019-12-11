@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 
 export default class Maximum extends React.Component {
   constructor(props) {
