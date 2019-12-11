@@ -133,14 +133,14 @@
 }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@include semi-mobile-portrait {
   .menu-container ul {
     margin-top: 0;
   }
 }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape)  {
+@include semi-mobile-landscape {
   .menu-container {
 
     ul {

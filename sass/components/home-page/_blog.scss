@@ -189,7 +189,7 @@
 }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@include semi-mobile {
   #blog-container {
     padding: 50px 0;
 

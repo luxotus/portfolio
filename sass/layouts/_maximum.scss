@@ -231,7 +231,7 @@
 }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@include semi-mobile {
   #maximum-layout-container .blog-holder {
     .arrow-container.closed {
       right: 0;
@@ -240,7 +240,7 @@
 }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@include semi-mobile-portrait {
   #maximum-layout-container {
     .blog-image {
       height: 75%;
@@ -270,7 +270,7 @@
 }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 800px) and (max-device-height: 767px) and (orientation: landscape) {
+@include semi-mobile-landscape {
   #maximum-layout-container {
     .blog-image {
       height: 100%;

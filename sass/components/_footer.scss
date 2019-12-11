@@ -58,7 +58,7 @@ footer {
 }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@include semi-mobile {
   footer {
     grid-template-columns: 1fr;
 

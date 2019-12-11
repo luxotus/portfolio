@@ -21,7 +21,7 @@ $primary-color: #373737;
 }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@include semi-mobile-portrait {
   #landing-text-holder {
     width: 80%;
 
@@ -38,7 +38,7 @@ $primary-color: #373737;
 }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@include semi-mobile-landscape {
   #landing-text-holder {
     width: 75%;
 

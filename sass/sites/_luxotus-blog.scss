@@ -436,18 +436,13 @@
 }
 
 @media (min-width: 1200px) {
-	#luxotus-blog-container .article_container {
-		max-width: 1200px;
-	}
-}
-
-/* Mobile */
-@media only screen and (max-device-width: 740px) {
-
+  #luxotus-blog-container .article_container {
+    max-width: 1200px;
+  }
 }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@include semi-mobile-portrait {
   #luxotus-blog-container {
     .nav_logo {
       padding-left: 15px;
@@ -494,7 +489,7 @@
 }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@include semi-mobile-landscape {
   #luxotus-blog-container {
     .nav_logo {
       padding-left: 15px;

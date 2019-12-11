@@ -243,7 +243,7 @@
 }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@include semi-mobile {
   .main-img {
     background-position-y: 0 !important;
   }
@@ -280,7 +280,7 @@
 }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@include semi-mobile-landscape {
   #tea-shop-container .gallery-container .gallery-itm {
     height: 250px;
     width: calc(100% - 100px);

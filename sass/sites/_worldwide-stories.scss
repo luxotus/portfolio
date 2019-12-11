@@ -350,7 +350,7 @@
 }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@include semi-mobile-portrait {
   #worldwide-stories-container {
 
     .title-section h1 {
@@ -443,7 +443,7 @@
 }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@include semi-mobile-landscape {
   #worldwide-stories-container {
 
     .header {

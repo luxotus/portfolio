@@ -62,7 +62,7 @@
 }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@include semi-mobile-portrait {
   #osp-wrapper {
     width: 80%;
     grid-template-columns: build-grid-columns(100%, 1);
@@ -70,7 +70,7 @@
 }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@include semi-mobile-landscape {
   #osp-wrapper {
     width: 50%;
     grid-template-columns: build-grid-columns(100%, 1);

@@ -40,6 +40,18 @@
 */
 /*
   ##Device = Most of the Smartphones Mobiles
+  ##Screen = 740px
+*/
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = 740px
+*/
+/*
+  ##Device = Most of the Smartphones Mobiles (Landscape)
+  ##Screen = 740px
+*/
+/*
+  ##Device = Most of the Smartphones Mobiles
   ##Screen = B/w 320px to 479px
 */
 /*
@@ -276,12 +288,12 @@ body {
     background-color: #333; } }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@media (max-width: 740px) {
   .menu-container ul {
     margin-top: 0; } }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@media (max-width: 740px) {
   .menu-container ul {
     margin-top: 0;
     padding-top: 65px; }
@@ -332,7 +344,7 @@ footer {
       color: #0071c5; }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@media (max-width: 740px) {
   footer {
     grid-template-columns: 1fr; }
     footer h2 {
@@ -478,7 +490,7 @@ footer {
   max-width: 100%; }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@media (max-width: 740px) {
   #blog-container {
     padding: 50px 0; }
     #blog-container .blog-sections {
@@ -546,7 +558,7 @@ footer {
     top: 0; }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@media (max-width: 740px) {
   #contact-container {
     height: 225px; }
     #contact-container .title h2 {
@@ -579,7 +591,7 @@ footer {
     font-size: 1.75em; }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@media (max-width: 740px) {
   #landing-text-holder {
     width: 80%; }
     #landing-text-holder h1 {
@@ -590,7 +602,7 @@ footer {
       font-size: 1em; } }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@media (max-width: 740px) {
   #landing-text-holder {
     width: 75%; }
     #landing-text-holder h1 {
@@ -643,13 +655,13 @@ footer {
     transition-duration: 0.35s; }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@media (max-width: 740px) {
   #osp-wrapper {
     width: 80%;
     grid-template-columns:  100%; } }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@media (max-width: 740px) {
   #osp-wrapper {
     width: 50%;
     grid-template-columns:  100%; } }
@@ -739,7 +751,7 @@ footer {
   cursor: pointer; }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@media (max-width: 740px) {
   .sites-section {
     grid-template-columns:  100%; }
   #sites-container li button {
@@ -750,7 +762,7 @@ footer {
     background-color: #0f89e2de; } }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@media (max-width: 740px) {
   .sites-section {
     width: 50%; } }
 
@@ -939,12 +951,12 @@ footer {
     transform-origin: center; }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@media (max-width: 740px) {
   #maximum-layout-container .blog-holder .arrow-container.closed {
     right: 0; } }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@media (max-width: 740px) {
   #maximum-layout-container .blog-image {
     height: 75%;
     width: 100%; }
@@ -962,7 +974,7 @@ footer {
       padding: 0 5%; } }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 800px) and (max-device-height: 767px) and (orientation: landscape) {
+@media (max-width: 740px) {
   #maximum-layout-container .blog-image {
     height: 100%;
     width: 40%; }
@@ -1042,7 +1054,7 @@ footer {
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.46); }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@media (max-width: 740px) {
   #minimal-layout-container {
     height: 100vh; }
     #minimal-layout-container .content-holder {
@@ -1052,7 +1064,7 @@ footer {
         padding-bottom: 10px; } }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@media (max-width: 740px) {
   #minimal-layout-container .content-holder section {
     padding: 0 2.5%; } }
 
@@ -1424,9 +1436,8 @@ footer {
   #luxotus-blog-container .article_container {
     max-width: 1200px; } }
 
-/* Mobile */
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@media (max-width: 740px) {
   #luxotus-blog-container .nav_logo {
     padding-left: 15px;
     font-size: 1em; }
@@ -1453,7 +1464,7 @@ footer {
     width: 86.3%; } }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@media (max-width: 740px) {
   #luxotus-blog-container .nav_logo {
     padding-left: 15px; }
   #luxotus-blog-container .nav_main {
@@ -1646,7 +1657,7 @@ footer {
         padding-bottom: 10px; }
 
 /* Mobile */
-@media only screen and (max-device-width: 740px) {
+@media (max-width: 740px) {
   .main-img {
     background-position-y: 0 !important; }
   #tea-shop-container .detail-holder .detail-block {
@@ -1665,7 +1676,7 @@ footer {
     width: calc(100% - 20px); } }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@media (max-width: 740px) {
   #tea-shop-container .gallery-container .gallery-itm {
     height: 250px;
     width: calc(100% - 100px);
@@ -1923,7 +1934,7 @@ footer {
       padding-right: 20px; }
 
 /* Mobile Portrait */
-@media only screen and (max-device-width: 740px) and (orientation: portrait) {
+@media (max-width: 740px) {
   #worldwide-stories-container .title-section h1 {
     font-size: 1.25em; }
   #worldwide-stories-container .title-section p {
@@ -1977,7 +1988,7 @@ footer {
       font-size: 1.25em; } }
 
 /* Mobile Landscape */
-@media only screen and (max-device-width: 740px) and (orientation: landscape) {
+@media (max-width: 740px) {
   #worldwide-stories-container .header {
     height: calc(100vh - 50px); }
   #worldwide-stories-container .arrow-down-section {
