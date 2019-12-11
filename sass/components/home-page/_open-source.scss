@@ -1,11 +1,3 @@
-@function build-grid-columns($column-width, $column-count) {
-  $grid-column: "";
-  @for $i from 0 to $column-count {
-    $grid-column: $grid-column + " " + $column-width;
-  }
-  @return unquote($grid-column);
-}
-
 #osp-container {
   padding: 75px 0;
   background-color: $white-color-3;

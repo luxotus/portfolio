@@ -1,0 +1,4 @@
+@mixin height-pair($size) {
+  height: $size;
+  line-height: $size;
+}
