@@ -1,6 +1,6 @@
 import React from 'react';
-import Contact from '../../home-page/contact';
-import Footer from '../../home-page/footer';
+import Contact from '../home-page/contact';
+import Footer from '../home-page/footer';
 
 export default class ContactPage extends React.Component {
   constructor(props) {

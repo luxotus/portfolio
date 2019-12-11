@@ -1,5 +1,5 @@
 import React from 'react';
-import Maximum from '../../layouts/maximum';
+import Maximum from '../layouts/maximum';
 
 export default class BlogPage extends React.Component {
   constructor(props) {

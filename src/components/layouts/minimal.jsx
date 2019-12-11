@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from '../../home-page/footer';
+import Footer from '../home-page/footer';
 
 export default class Minimal extends React.Component {
   constructor(props) {

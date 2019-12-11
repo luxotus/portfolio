@@ -1,7 +1,8 @@
 import React from 'react';
-import BackgroundParticles from '../background-particles';
+import { Link } from 'react-router-dom';
+import BackgroundParticles from './background-particles';
 
-export default class LandingScreen extends React.Component {
+export default class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,20 +23,21 @@ export default class LandingScreen extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', () => { this.detectWhenSectionNotVisible('#landing-screen'); });
+    window.addEventListener('scroll', () => { this.detectWhenSectionNotVisible('contact-container'); });
   }
 
   detectWhenSectionNotVisible(selector) {
-    const el = document.querySelector(selector);
+    const el = document.getElementById(selector);
     const { showParticles } = this.state;
 
     if (el !== null) {
       const height = parseInt(window.getComputedStyle(el).height, 10);
-      const topBufferSpace = 50;
+      const buffer = 300;
+      const offsetTop = document.getElementById(selector).offsetTop - (height + buffer);
 
-      if (showParticles && window.scrollY + topBufferSpace > height) {
+      if (showParticles && window.scrollY < offsetTop) {
         this.updateParticleState(false);
-      } else if (!showParticles && window.scrollY + topBufferSpace < height) {
+      } else if (!showParticles && window.scrollY > offsetTop) {
         this.updateParticleState(true);
       }
     }
@@ -55,20 +57,22 @@ export default class LandingScreen extends React.Component {
     const { showParticles } = this.state;
 
     return (
-      <div id="landing-screen">
-        <div id="landing-text-holder">
-          <h1>
-            I Create
-            <br />
-            Interactive
-            <br />
-            Experiences.
-          </h1>
+      <div id="contact-container">
+        <div className="title">
+          <h2>
+            <Link to="/contact">
+              Get in Touch
+            </Link>
+          </h2>
           <p>
-            Web developer that uses JavaScript and CSS to build high-end interactive sites,
-            applications and tools.
+            Any feedback or inquiries is much appreciated!
           </p>
         </div>
+        <h1>
+          <a href="mailto:hello@felixmanuel.com">
+            hello@felixmanuel.com
+          </a>
+        </h1>
         {showParticles ? this.addParticles() : ''}
       </div>
     );

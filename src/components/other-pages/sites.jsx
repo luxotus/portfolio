@@ -1,5 +1,5 @@
 import React from 'react';
-import Minimal from '../../layouts/minimal';
+import Minimal from '../layouts/minimal';
 
 export default class SitesPage extends React.Component {
   constructor(props) {

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import BlogPage from '../other-pages/blog';
-import ContactPage from '../other-pages/contact';
-import SitesPage from '../other-pages/sites';
-import TeaShop from '../sites/tea-shop';
-import LuxotusBlog from '../sites/luxotus-blog';
-import WorldwideStories from '../sites/worldwide-stories';
-import App from '../app';
-import Header from '../header';
+import BlogPage from './other-pages/blog';
+import ContactPage from './other-pages/contact';
+import SitesPage from './other-pages/sites';
+import TeaShop from './sites/tea-shop';
+import LuxotusBlog from './sites/luxotus-blog';
+import WorldwideStories from './sites/worldwide-stories';
+import App from './app';
+import Header from './header';
 
 export default class MainRouter extends React.Component {
   constructor(props) {
