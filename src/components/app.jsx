@@ -31,8 +31,8 @@ export default class App extends React.Component {
         <LandingScreen />
         <About />
         <Sites />
-        <Blog />
         <OpenSource />
+        <Blog />
         <Contact />
         <Footer />
       </div>

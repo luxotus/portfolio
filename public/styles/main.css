@@ -369,6 +369,9 @@ footer {
       order: 2;
       grid-row: 2; } }
 
+a {
+  color: inherit; }
+
 .particle-container {
   height: calc(100% - 4px);
   width: 100%;
@@ -631,8 +634,7 @@ footer {
     margin: 0;
     text-align: center; }
     #osp-container header h1 a {
-      text-decoration: none;
-      color: #373737; }
+      text-decoration: none; }
     #osp-container header h1 a:hover {
       color: #0f89e2de; }
 
@@ -652,13 +654,11 @@ footer {
     border-radius: 5px;
     border: 1px solid #eeeeee;
     background-color: #fff;
-    color: #373737;
     box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.1);
     text-align: center; }
     #osp-wrapper .item h3 {
       font-size: 1.5em; }
     #osp-wrapper .item span {
-      color: #373737;
       font-size: 1.75em;
       text-decoration: none; }
   #osp-wrapper .item:hover {
@@ -693,8 +693,7 @@ footer {
   width: inherit;
   padding: 0 10px;
   padding-bottom: 125px;
-  background-color: #f3f3f3;
-  color: #373737; }
+  background-color: #fff; }
   #sites-container h1 {
     margin: 0;
     padding-top: 100px;
@@ -719,7 +718,7 @@ footer {
       padding: 5px 20px;
       border: none;
       border-radius: 5px;
-      background-color: #f3f3f3;
+      background-color: transparent;
       font-size: 1.25em;
       text-transform: capitalize;
       cursor: pointer;
@@ -787,7 +786,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 100px 0;
-  background-color: #efefef; }
+  background-color: #f3f3f3; }
   .about-me-section .image-wrapper {
     height: 500px;
     background-color: #373737; }
