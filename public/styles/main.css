@@ -64,7 +64,8 @@
 */
 :root {
   font-size: 12px;
-  font-family: Montserrat, sans-serif; }
+  font-family: Montserrat, sans-serif;
+  color: #343434; }
 
 @font-face {
   font-family: 'icons';
@@ -177,11 +178,22 @@
   content: "\ea82"; }
 
 body {
-  margin: 0px;
-  font-family: sans-serif; }
+  margin: 0px; }
 
 #main-container {
   opacity: 1; }
+
+.icon {
+  display: block;
+  height: 24px;
+  width: 24px; }
+  .icon svg {
+    height: 100%;
+    width: 100%;
+    fill: #343434; }
+
+.icon:hover svg {
+  fill: #0f89e2de; }
 
 #top-nav-bar {
   position: fixed;
@@ -288,12 +300,12 @@ body {
     background-color: #333; } }
 
 /* Mobile Portrait */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: portrait) {
   .menu-container ul {
     margin-top: 0; } }
 
 /* Mobile Landscape */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: landscape) {
   .menu-container ul {
     margin-top: 0;
     padding-top: 65px; }
@@ -591,7 +603,7 @@ footer {
     font-size: 1.75em; }
 
 /* Mobile Portrait */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: portrait) {
   #landing-text-holder {
     width: 80%; }
     #landing-text-holder h1 {
@@ -602,7 +614,7 @@ footer {
       font-size: 1em; } }
 
 /* Mobile Landscape */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: landscape) {
   #landing-text-holder {
     width: 75%; }
     #landing-text-holder h1 {
@@ -655,13 +667,13 @@ footer {
     transition-duration: 0.35s; }
 
 /* Mobile Portrait */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: portrait) {
   #osp-wrapper {
     width: 80%;
     grid-template-columns:  100%; } }
 
 /* Mobile Landscape */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: landscape) {
   #osp-wrapper {
     width: 50%;
     grid-template-columns:  100%; } }
@@ -762,7 +774,7 @@ footer {
     background-color: #0f89e2de; } }
 
 /* Mobile Landscape */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: landscape) {
   .sites-section {
     width: 50%; } }
 
@@ -770,6 +782,61 @@ footer {
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .sites-section {
     grid-template-columns:  47.4% 47.4%; } }
+
+.about-me-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px 0;
+  background-color: #efefef; }
+  .about-me-section .image-wrapper {
+    height: 500px;
+    background-color: #373737; }
+  .about-me-section .content-flex-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 6% 0 10%; }
+  .about-me-section .content-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3vmin; }
+  .about-me-section h1 {
+    margin: 0px 0 10px;
+    font-size: 4.5rem;
+    font-weight: 600; }
+  .about-me-section h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #6c6c6c; }
+  .about-me-section .description p {
+    font-size: 1.25rem;
+    line-height: 1.75rem; }
+  .about-me-section .social-wrapper {
+    display: flex;
+    align-items: center; }
+  .about-me-section .icon.github {
+    height: 34px;
+    width: 34px;
+    margin-right: 10px; }
+  .about-me-section .icon.twitter {
+    height: 28px;
+    width: 28px; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .about-me-section {
+    grid-template-columns: 1fr;
+    padding: 50px 0; }
+    .about-me-section h1 {
+      font-size: 3.5rem; }
+    .about-me-section h4 {
+      font-size: 1.35rem; }
+    .about-me-section .image-wrapper {
+      order: 2;
+      height: 300px;
+      min-height: 0;
+      padding: 0 10%; }
+    .about-me-section .content-flex-wrapper {
+      order: 1;
+      padding: 0 10% 35px; } }
 
 #landing-page-container {
   display: none;
@@ -956,7 +1023,7 @@ footer {
     right: 0; } }
 
 /* Mobile Portrait */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: portrait) {
   #maximum-layout-container .blog-image {
     height: 75%;
     width: 100%; }
@@ -974,7 +1041,7 @@ footer {
       padding: 0 5%; } }
 
 /* Mobile Landscape */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: landscape) {
   #maximum-layout-container .blog-image {
     height: 100%;
     width: 40%; }
@@ -1064,7 +1131,7 @@ footer {
         padding-bottom: 10px; } }
 
 /* Mobile Portrait */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: portrait) {
   #minimal-layout-container .content-holder section {
     padding: 0 2.5%; } }
 
@@ -1437,7 +1504,7 @@ footer {
     max-width: 1200px; } }
 
 /* Mobile Portrait */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: portrait) {
   #luxotus-blog-container .nav_logo {
     padding-left: 15px;
     font-size: 1em; }
@@ -1464,7 +1531,7 @@ footer {
     width: 86.3%; } }
 
 /* Mobile Landscape */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: landscape) {
   #luxotus-blog-container .nav_logo {
     padding-left: 15px; }
   #luxotus-blog-container .nav_main {
@@ -1676,7 +1743,7 @@ footer {
     width: calc(100% - 20px); } }
 
 /* Mobile Landscape */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: landscape) {
   #tea-shop-container .gallery-container .gallery-itm {
     height: 250px;
     width: calc(100% - 100px);
@@ -1934,7 +2001,7 @@ footer {
       padding-right: 20px; }
 
 /* Mobile Portrait */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: portrait) {
   #worldwide-stories-container .title-section h1 {
     font-size: 1.25em; }
   #worldwide-stories-container .title-section p {
@@ -1988,7 +2055,7 @@ footer {
       font-size: 1.25em; } }
 
 /* Mobile Landscape */
-@media (max-width: 740px) {
+@media (max-width: 740px) and (orientation: landscape) {
   #worldwide-stories-container .header {
     height: calc(100vh - 50px); }
   #worldwide-stories-container .arrow-down-section {

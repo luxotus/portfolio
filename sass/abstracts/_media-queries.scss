@@ -114,7 +114,7 @@
   ##Screen = 740px
 */
 @mixin semi-mobile-portrait {
-  @media (max-width: $semi-mobile-width) {
+  @media (max-width: $semi-mobile-width) and (orientation: portrait) {
     @content;
   }
 }
@@ -124,7 +124,7 @@
   ##Screen = 740px
 */
 @mixin semi-mobile-landscape {
-  @media (max-width: $semi-mobile-width) {
+  @media (max-width: $semi-mobile-width) and (orientation: landscape) {
     @content;
   }
 }

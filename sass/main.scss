@@ -8,6 +8,7 @@
 @import 'base/root';
 @import 'base/typography';
 @import 'base/shared';
+@import 'base/svgs';
 
 // Components
 @import 'components/header';
@@ -20,6 +21,7 @@
 @import 'components/home-page/landing-screen';
 @import 'components/home-page/open-source';
 @import 'components/home-page/sites';
+@import 'components/home-page/about';
 
 // Pages
 @import 'pages/app';

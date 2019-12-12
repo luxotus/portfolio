@@ -1,0 +1,85 @@
+.about-me-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px 0;
+  background-color: $white-color-2;
+
+  .image-wrapper {
+    height: 500px;
+    background-color: $gray-color-2;
+  }
+
+  .content-flex-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 6% 0 10%;
+  }
+
+  .content-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3vmin;
+  }
+
+  h1 {
+    margin: 0px 0 10px;
+    font-size: 4.5rem;
+    font-weight: 600;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: $gray-color-3;
+  }
+
+  .description {
+    p {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  .social-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon.github {
+    height: 34px;
+    width: 34px;
+    margin-right: 10px;
+  }
+
+  .icon.twitter {
+    height: 28px;
+    width: 28px;
+  }
+}
+
+@include mobile {
+  .about-me-section {
+    grid-template-columns: 1fr;
+    padding: 50px 0;
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h4 {
+      font-size: 1.35rem;
+    }
+
+    .image-wrapper {
+      order: 2;
+      height: 300px;
+      min-height: 0;
+      padding: 0 10%;
+    }
+
+    .content-flex-wrapper {
+      order: 1;
+      padding: 0 10% 35px;
+    }
+  }
+}

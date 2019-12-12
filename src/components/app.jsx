@@ -5,6 +5,7 @@ import Blog from './home-page/blog';
 import Footer from './home-page/footer';
 import LandingScreen from './home-page/landing-screen';
 import Contact from './home-page/contact';
+import About from './home-page/about';
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
     return (
       <div id="landing-page-container">
         <LandingScreen />
+        <About />
         <Sites />
         <Blog />
         <OpenSource />
