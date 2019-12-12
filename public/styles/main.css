@@ -587,41 +587,142 @@ a {
     #contact-container h1 {
       font-size: 3.5em; } }
 
-#landing-screen {
-  height: 100vh;
-  width: 100%; }
+.landing-screen-wrapper {
+  display: grid;
+  grid-template-columns: 1fr .75fr;
+  padding: 50px 0;
+  overflow-x: hidden; }
+  .landing-screen-wrapper .text-flex-section {
+    display: flex;
+    align-items: center; }
+  .landing-screen-wrapper .text-grid-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4vmin;
+    padding: 0 10%; }
+    .landing-screen-wrapper .text-grid-section h1 {
+      margin: 0;
+      font-size: 5rem;
+      font-weight: 600;
+      text-transform: uppercase; }
+    .landing-screen-wrapper .text-grid-section p {
+      font-size: 1.5rem;
+      line-height: 2.25rem; }
+  .landing-screen-wrapper .visual-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 600px; }
+    .landing-screen-wrapper .visual-section .lg-diamond {
+      position: absolute;
+      right: 50px;
+      height: 400px;
+      width: 400px;
+      transform: rotateZ(45deg);
+      background-color: #343434; }
+    .landing-screen-wrapper .visual-section .sm-diamond {
+      position: absolute;
+      height: 85px;
+      width: 85px;
+      transform: rotateZ(45deg);
+      background-color: #343434; }
+    .landing-screen-wrapper .visual-section .sm-diamond.top-left {
+      top: 45px;
+      left: 35px; }
+    .landing-screen-wrapper .visual-section .sm-diamond.bottom-left {
+      bottom: 45px;
+      left: 35px; }
+    .landing-screen-wrapper .visual-section .sm-diamond.bottom-right {
+      bottom: 46px;
+      right: 0px; }
 
-#landing-text-holder {
-  position: absolute;
-  width: 47%;
-  margin-left: 10%; }
-  #landing-text-holder h1 {
-    margin-top: 25%;
-    font-size: 6em; }
-  #landing-text-holder p {
-    color: #373737;
-    font-size: 1.75em; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .landing-screen-wrapper {
+    grid-template-columns: 1fr;
+    gap: 5vmin; }
+    .landing-screen-wrapper .text-grid-section {
+      text-align: center; }
+    .landing-screen-wrapper .visual-section .lg-diamond {
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto; }
+    .landing-screen-wrapper .visual-section .sm-diamond.top-left {
+      top: 8%;
+      left: 18%; }
+    .landing-screen-wrapper .visual-section .sm-diamond.bottom-left {
+      bottom: 8%;
+      left: 18%; }
+    .landing-screen-wrapper .visual-section .sm-diamond.bottom-right {
+      bottom: 8%;
+      right: 18%; } }
 
-/* Mobile Portrait */
-@media (max-width: 740px) and (orientation: portrait) {
-  #landing-text-holder {
-    width: 80%; }
-    #landing-text-holder h1 {
-      font-size: 3em;
-      line-height: 1.25em;
-      margin-top: 45%; }
-    #landing-text-holder p {
-      font-size: 1em; } }
+@media (min-width: 481px) and (max-width: 767px) {
+  .landing-screen-wrapper {
+    grid-template-columns: 1fr;
+    gap: 5vmin; }
+    .landing-screen-wrapper .text-grid-section {
+      text-align: center;
+      padding: 0 6%; }
+      .landing-screen-wrapper .text-grid-section h1 {
+        font-size: 3rem;
+        word-break: break-word; }
+    .landing-screen-wrapper .visual-section {
+      height: 500px; }
+      .landing-screen-wrapper .visual-section .lg-diamond {
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        height: 250px;
+        width: 250px; }
+      .landing-screen-wrapper .visual-section .sm-diamond {
+        height: 75px;
+        width: 75px; }
+      .landing-screen-wrapper .visual-section .sm-diamond.top-left {
+        top: 18%;
+        left: 18%; }
+      .landing-screen-wrapper .visual-section .sm-diamond.bottom-left {
+        bottom: 18%;
+        left: 18%; }
+      .landing-screen-wrapper .visual-section .sm-diamond.bottom-right {
+        bottom: 18%;
+        right: 18%; } }
 
-/* Mobile Landscape */
-@media (max-width: 740px) and (orientation: landscape) {
-  #landing-text-holder {
-    width: 75%; }
-    #landing-text-holder h1 {
-      margin-top: 10%;
-      font-size: 3.5em; }
-    #landing-text-holder p {
-      font-size: 1.25em; } }
+@media (min-width: 320px) and (max-width: 480px) {
+  .landing-screen-wrapper {
+    grid-template-columns: 1fr;
+    gap: 5vmin; }
+    .landing-screen-wrapper .text-grid-section {
+      text-align: center;
+      padding: 0 6%; }
+      .landing-screen-wrapper .text-grid-section h1 {
+        font-size: 3rem;
+        word-break: break-word; }
+    .landing-screen-wrapper .visual-section {
+      height: 500px; }
+      .landing-screen-wrapper .visual-section .lg-diamond {
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        height: 250px;
+        width: 250px; }
+      .landing-screen-wrapper .visual-section .sm-diamond {
+        height: 75px;
+        width: 75px; }
+      .landing-screen-wrapper .visual-section .sm-diamond.top-left {
+        top: 18%;
+        left: 0; }
+      .landing-screen-wrapper .visual-section .sm-diamond.bottom-left {
+        bottom: 18%;
+        left: 0; }
+      .landing-screen-wrapper .visual-section .sm-diamond.bottom-right {
+        bottom: 18%;
+        right: 0; } }
 
 #osp-container {
   padding: 75px 0;
@@ -833,6 +934,9 @@ a {
     .about-me-section .content-flex-wrapper {
       order: 1;
       padding: 0 10% 35px; } }
+
+#landing-page-container {
+  padding-top: 50px; }
 
 #contact-page-container {
   height: 100vh;
