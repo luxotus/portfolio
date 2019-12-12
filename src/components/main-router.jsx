@@ -15,39 +15,25 @@ export default class MainRouter extends React.Component {
     this.state = {
       isMenuOpen: '',
       menuBtnId: 'menu-btn-container',
+      scrollToSection: '',
     };
+
+    this.updateScrollToSection = this.updateScrollToSection.bind(this);
     this.updateMenuState = this.updateMenuState.bind(this);
-    this.unfade = this.unfade.bind(this);
   }
 
   updateMenuState(menuState) {
     this.setState({ isMenuOpen: menuState });
   }
 
-  unfade(el) {
-    const element = el;
-    const maxVal = 1;
-    const OpStep = 0.05;
-    let op = parseFloat(window.getComputedStyle(element, null).getPropertyValue('opacity'));
-    op = (op === 0) ? OpStep : op;
-    element.style.display = 'block';
-    window.scrollTo(0, 0);
-
-    const timer = setInterval(() => {
-      if (op >= maxVal) {
-        clearInterval(timer);
-        element.style.opacity = maxVal;
-        element.style.filter = `alpha(opacity=${maxVal})`;
-      } else {
-        element.style.opacity = op;
-        element.style.filter = `alpha(opacity=${op * 100})`;
-        op += op * OpStep;
-      }
-    }, 10);
+  updateScrollToSection(scrollToSection) {
+    if (typeof scrollToSection === 'string') {
+      this.setState({ scrollToSection });
+    }
   }
 
   render() {
-    const { menuBtnId, isMenuOpen } = this.state;
+    const { menuBtnId, isMenuOpen, scrollToSection } = this.state;
 
     return (
       <div id="main-container">
@@ -55,15 +41,17 @@ export default class MainRouter extends React.Component {
           menuBtnId={menuBtnId}
           isMenuOpen={isMenuOpen}
           updateMenuState={this.updateMenuState}
+          scrollToSection={scrollToSection}
+          updateScrollToSection={this.updateScrollToSection}
         />
         <Switch>
-          <Route exact path="/" render={({ match }) => <App match={match} unfade={this.unfade} {...this.props} />} />
-          <Route path="/blog" render={({ match }) => <BlogPage match={match} unfade={this.unfade} {...this.props} />} />
-          <Route path="/contact" render={({ match }) => <ContactPage match={match} unfade={this.unfade} {...this.props} />} />
-          <Route exact path="/sites" render={({ match }) => <SitesPage match={match} unfade={this.unfade} {...this.props} />} />
-          <Route path="/sites/tea-shop" render={({ match }) => <TeaShop match={match} unfade={this.unfade} {...this.props} />} />
-          <Route path="/sites/luxotus-blog" render={({ match }) => <LuxotusBlog match={match} unfade={this.unfade} {...this.props} />} />
-          <Route path="/sites/worldwide-stories" render={({ match }) => <WorldwideStories match={match} unfade={this.unfade} {...this.props} />} />
+          <Route exact path="/" render={({ match }) => <App match={match} scrollToSection={scrollToSection} updateScrollToSection={this.updateScrollToSection} />} />
+          <Route path="/blog" render={({ match }) => <BlogPage match={match} {...this.props} />} />
+          <Route path="/contact" render={({ match }) => <ContactPage match={match} {...this.props} />} />
+          <Route exact path="/sites" render={({ match }) => <SitesPage match={match} {...this.props} />} />
+          <Route path="/sites/tea-shop" render={({ match }) => <TeaShop match={match} {...this.props} />} />
+          <Route path="/sites/luxotus-blog" render={({ match }) => <LuxotusBlog match={match} {...this.props} />} />
+          <Route path="/sites/worldwide-stories" render={({ match }) => <WorldwideStories match={match} {...this.props} />} />
         </Switch>
       </div>
     );

@@ -8,11 +8,6 @@ export default class TeaShop extends React.Component {
     this.getKey = this.getKey.bind(this);
   }
 
-  componentDidMount() {
-    const { unfade } = this.props;
-    unfade(document.getElementById('tea-shop-container'));
-  }
-
   getKey() {
     this.keyCount += 1;
     return this.keyCount;

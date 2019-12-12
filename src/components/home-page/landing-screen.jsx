@@ -21,10 +21,6 @@ export default class LandingScreen extends React.Component {
     this.updateParticleState = this.updateParticleState.bind(this);
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', () => { this.detectWhenSectionNotVisible('#landing-screen'); });
-  }
-
   detectWhenSectionNotVisible(selector) {
     const el = document.querySelector(selector);
     const { showParticles } = this.state;

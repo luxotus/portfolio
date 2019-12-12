@@ -29,11 +29,27 @@ export default class Header extends React.Component {
     updateMenuState(menuState);
   }
 
+  handleMenuItemClick(event) {
+    const { menuBtnId, updateScrollToSection } = this.props;
+    const dataScroll = event.currentTarget.getAttribute('data-scroll');
+
+    if (dataScroll !== '') {
+      updateScrollToSection(dataScroll);
+    }
+
+    document.getElementById(menuBtnId).click();
+  }
+
   menu() {
     const linkItm = [
       {
         title: 'home',
         link: '/',
+      },
+      {
+        title: 'about',
+        link: '/',
+        scrollToEl: '.about-me-section',
       },
       {
         title: 'sites',
@@ -65,8 +81,8 @@ export default class Header extends React.Component {
               <li
                 key={this.getKey()}
                 role="presentation"
-                className={(window.location.pathname.includes(`/${item.title.replace(' ', '-')}`)) ? 'active' : ''}
-                onClick={() => document.getElementById(menuBtnId).click()}
+                data-scroll={'scrollToEl' in item ? item.scrollToEl : ''}
+                onClick={(event) => this.handleMenuItemClick(event)}
                 onKeyDown={() => document.getElementById(menuBtnId).click()}
               >
                 <Link to={item.link}>

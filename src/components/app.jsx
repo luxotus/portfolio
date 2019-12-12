@@ -8,9 +8,13 @@ import Contact from './home-page/contact';
 import About from './home-page/about';
 
 export default class App extends React.Component {
-  componentDidMount() {
-    const { unfade } = this.props;
-    unfade(document.getElementById('landing-page-container'));
+  componentDidUpdate() {
+    const { scrollToSection, updateScrollToSection } = this.props;
+
+    if (scrollToSection !== '') {
+      document.querySelector(scrollToSection).scrollIntoView();
+      updateScrollToSection('');
+    }
   }
 
   render() {

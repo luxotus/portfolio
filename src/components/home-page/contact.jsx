@@ -22,10 +22,6 @@ export default class Contact extends React.Component {
     this.updateParticleState = this.updateParticleState.bind(this);
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', () => { this.detectWhenSectionNotVisible('contact-container'); });
-  }
-
   detectWhenSectionNotVisible(selector) {
     const el = document.getElementById(selector);
     const { showParticles } = this.state;
