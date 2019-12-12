@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import BlogPage from './other-pages/blog';
-import ContactPage from './other-pages/contact';
 import SitesPage from './other-pages/sites';
 import TeaShop from './sites/tea-shop';
 import LuxotusBlog from './sites/luxotus-blog';
@@ -47,7 +46,6 @@ export default class MainRouter extends React.Component {
         <Switch>
           <Route exact path="/" render={({ match }) => <App match={match} scrollToSection={scrollToSection} updateScrollToSection={this.updateScrollToSection} />} />
           <Route path="/blog" render={({ match }) => <BlogPage match={match} {...this.props} />} />
-          <Route path="/contact" render={({ match }) => <ContactPage match={match} {...this.props} />} />
           <Route exact path="/sites" render={({ match }) => <SitesPage match={match} {...this.props} />} />
           <Route path="/sites/tea-shop" render={({ match }) => <TeaShop match={match} {...this.props} />} />
           <Route path="/sites/luxotus-blog" render={({ match }) => <LuxotusBlog match={match} {...this.props} />} />

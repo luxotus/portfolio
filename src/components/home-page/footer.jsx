@@ -11,6 +11,11 @@ export default class Footer extends React.Component {
         link: '/',
       },
       {
+        title: 'about',
+        link: '/',
+        scrollToEl: '.about-me-section',
+      },
+      {
         title: 'sites',
         link: '/sites',
       },
@@ -20,7 +25,8 @@ export default class Footer extends React.Component {
       },
       {
         title: 'contact',
-        link: '/contact',
+        link: '/',
+        scrollToEl: '#contact-container',
       },
     ];
     this.keyCount = 0;
@@ -30,6 +36,15 @@ export default class Footer extends React.Component {
   getKey() {
     this.keyCount += 1;
     return this.keyCount;
+  }
+
+  handleMenuItemClick(event) {
+    const { updateScrollToSection } = this.props;
+    const dataScroll = event.currentTarget.getAttribute('data-scroll');
+
+    if (dataScroll !== '') {
+      updateScrollToSection(dataScroll);
+    }
   }
 
   render() {
@@ -43,7 +58,13 @@ export default class Footer extends React.Component {
         </h2>
         <ul>
           {this.pageLinks.map((item) => (
-            <li key={`footer-links-${this.getKey()}`} className="">
+            <li
+              key={`footer-links-${this.getKey()}`}
+              role="presentation"
+              data-scroll={'scrollToEl' in item ? item.scrollToEl : ''}
+              onClick={(event) => this.handleMenuItemClick(event)}
+              onKeyDown={(event) => this.handleMenuItemClick(event)}
+            >
               <Link to={item.link}>
                 {item.title}
               </Link>

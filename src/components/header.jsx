@@ -84,7 +84,7 @@ export default class Header extends React.Component {
                 role="presentation"
                 data-scroll={'scrollToEl' in item ? item.scrollToEl : ''}
                 onClick={(event) => this.handleMenuItemClick(event)}
-                onKeyDown={() => document.getElementById(menuBtnId).click()}
+                onKeyDown={(event) => this.handleMenuItemClick(event)}
               >
                 <Link to={item.link}>
                   {item.title}

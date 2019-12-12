@@ -26,6 +26,8 @@ export default class App extends React.Component {
   }
 
   render() {
+    const { scrollToSection, updateScrollToSection } = this.props;
+
     return (
       <div id="landing-page-container">
         <LandingScreen />
@@ -34,7 +36,7 @@ export default class App extends React.Component {
         <OpenSource />
         <Blog />
         <Contact />
-        <Footer />
+        <Footer scrollToSection={scrollToSection} updateScrollToSection={updateScrollToSection} />
       </div>
     );
   }
