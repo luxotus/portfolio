@@ -8,7 +8,15 @@ import Contact from './home-page/contact';
 import About from './home-page/about';
 
 export default class App extends React.Component {
+  componentDidMount() {
+    this.handleScrollToSection();
+  }
+
   componentDidUpdate() {
+    this.handleScrollToSection();
+  }
+
+  handleScrollToSection() {
     const { scrollToSection, updateScrollToSection } = this.props;
 
     if (scrollToSection !== '') {
