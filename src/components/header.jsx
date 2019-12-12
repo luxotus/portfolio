@@ -61,7 +61,8 @@ export default class Header extends React.Component {
       },
       {
         title: 'contact',
-        link: '/contact',
+        link: '/',
+        scrollToEl: '#contact-container',
       },
     ];
     const { isOpen } = this.state;
