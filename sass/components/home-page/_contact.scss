@@ -9,18 +9,13 @@
 
   .inner-wrapper {
     padding: 0 10%;
+  }
 
+  .inner-wrapper.left {
     h2 {
+      margin-top: 0;
       font-size: 3rem;
       color: $white-color-4;
-    }
-
-    h4 {
-      font-size: 1.35rem;
-    }
-
-    p {
-      font-size: 1.25rem;
     }
 
     form {
@@ -34,27 +29,103 @@
       font-size: 1.35rem;
     }
 
-    input {
+    input,
+    textarea {
       display: block;
-      height: 45px;
       width: 100%;
       border: none;
-      background-color: #343434;
+      background-color: #1f1f1f;
       color: $white-color-1;
       font-size: 1.75rem;
+      box-sizing: border-box;
+    }
+
+    input:focus,
+    textarea:focus {
+      background-color: #474747;
+      outline: none;
+    }
+
+    input {
+      height: 45px;
       text-indent: 10px;
     }
 
     textarea {
-      display: block;
       height: 100px;
-      width: 100%;
       padding: 10px;
-      border: none;
-      background-color: #343434;
-      color: $white-color-1;
-      font-size: 1.75rem;
       resize: none;
+    }
+
+    .btn {
+      opacity: .8;
+    }
+
+    .btn:hover {
+      opacity: 1;
+    }
+  }
+
+  .inner-wrapper.right {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    grid-template-columns: 1fr;
+    gap: 5vmin;
+
+    h4 {
+      margin: 0 0 12px;
+      color: #818181;
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+@include tablet-portrait {
+  .contact-wrapper {
+    grid-template-columns: 1fr .75fr;
+
+    .inner-wrapper {
+      padding: 0 5%;
+    }
+  }
+}
+
+@include tablet-mobile {
+  .contact-wrapper {
+    grid-template-columns: 1fr .75fr;
+
+    .inner-wrapper {
+      padding: 0 5%;
+    }
+  }
+}
+
+@include mobile {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 15vmin;
+
+    .inner-wrapper {
+      padding: 0 10%;
+    }
+
+    .inner-wrapper.left form {
+      gap: 6vmin;
+    }
+
+    .inner-wrapper.left form .group:last-child {
+      text-align: center;
+    }
+
+    .inner-wrapper.right {
+      text-align: center;
     }
   }
 }

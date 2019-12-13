@@ -11,20 +11,20 @@ export default class Contact extends React.Component {
               <label htmlFor="contact-name">Name</label>
               <input type="text" name="name" id="contact-name" />
             </div>
-
             <div className="group">
               <label htmlFor="contact-email">Email</label>
               <input type="email" name="email" id="contact-email" />
             </div>
-
             <div className="group">
               <label htmlFor="contact-subject">Subject</label>
               <input type="text" name="subject" id="contact-subject" />
             </div>
-
             <div className="group active">
               <label htmlFor="contact-message">Message</label>
               <textarea name="" id="contact-message" cols="30" rows="10" />
+            </div>
+            <div className="group">
+              <button type="button" className="btn">Send Message</button>
             </div>
           </form>
         </div>
@@ -42,11 +42,14 @@ export default class Contact extends React.Component {
           <div className="item">
             <h4>Available Hours</h4>
             <p>
-              301 Cannan Dr,
+              Monday - Saturday
               <br />
-              Angleton, TX
+              10am - 6pm
               <br />
-              77515
+              <br />
+              Sunday
+              <br />
+              12pm - 4pm
             </p>
           </div>
           <div className="item">
