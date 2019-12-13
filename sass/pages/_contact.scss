@@ -1,0 +1,18 @@
+#contact-page-container {
+  height: 100vh;
+  overflow: hidden;
+
+  #contact-container {
+    height: calc(100% - 125px);
+    padding-bottom: 0;
+  
+    h1 {
+      margin-top: 11%;
+    }
+  }
+
+  .particle-container {
+    position: absolute;
+    top: 0;
+  }
+}

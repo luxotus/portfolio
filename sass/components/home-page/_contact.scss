@@ -1,0 +1,131 @@
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  width: 100%;
+  padding: 75px 0;
+  color: $white-color-1;
+  background-color: $black-color-2;
+
+  .inner-wrapper {
+    padding: 0 10%;
+  }
+
+  .inner-wrapper.left {
+    h2 {
+      margin-top: 0;
+      font-size: 3rem;
+      color: $white-color-4;
+    }
+
+    form {
+      display: grid;
+      gap: 3vmin;
+    }
+
+    label {
+      display: block;
+      padding-bottom: 10px;
+      font-size: 1.35rem;
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      border: none;
+      background-color: #1f1f1f;
+      color: $white-color-1;
+      font-size: 1.75rem;
+      box-sizing: border-box;
+    }
+
+    input:focus,
+    textarea:focus {
+      background-color: #474747;
+      outline: none;
+    }
+
+    input {
+      height: 45px;
+      text-indent: 10px;
+    }
+
+    textarea {
+      height: 100px;
+      padding: 10px;
+      resize: none;
+    }
+
+    .btn {
+      opacity: .8;
+    }
+
+    .btn:hover {
+      opacity: 1;
+    }
+  }
+
+  .inner-wrapper.right {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    grid-template-columns: 1fr;
+    gap: 5vmin;
+
+    h4 {
+      margin: 0 0 12px;
+      color: #818181;
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+@include tablet-portrait {
+  .contact-wrapper {
+    grid-template-columns: 1fr .75fr;
+
+    .inner-wrapper {
+      padding: 0 5%;
+    }
+  }
+}
+
+@include tablet-mobile {
+  .contact-wrapper {
+    grid-template-columns: 1fr .75fr;
+
+    .inner-wrapper {
+      padding: 0 5%;
+    }
+  }
+}
+
+@include mobile {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 15vmin;
+
+    .inner-wrapper {
+      padding: 0 10%;
+    }
+
+    .inner-wrapper.left form {
+      gap: 6vmin;
+    }
+
+    .inner-wrapper.left form .group:last-child {
+      text-align: center;
+    }
+
+    .inner-wrapper.right {
+      text-align: center;
+    }
+  }
+}

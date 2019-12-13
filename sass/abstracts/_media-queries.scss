@@ -1,0 +1,160 @@
+/*
+  ##Device = Desktops
+  ##Screen = 1920px to higher resolutions
+*/
+@mixin desktop-lg {
+  @media (min-width: #{$desktop-lg-width}) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1440px to 1919px
+*/
+@mixin desktop-md {
+  @media (min-width: #{$desktop-md-width}) and (max-width: #{$desktop-lg-width - 1px}) {
+    @content;
+  }
+}
+
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to 1439px
+*/
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-md-width - 1px}) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@mixin laptop {
+  @media (min-width: #{$laptop-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads
+  ##Screen = B/w 768px to 1024px
+*/
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$laptop-width - 1px}) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@mixin tablet-portrait {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$laptop-width - 1px}) and (orientation: portrait) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@mixin tablet-landscape {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$laptop-width - 1px}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles
+  ##Screen = B/w 481px to 767px
+*/
+@mixin tablet-mobile {
+  @media (min-width: #{$tablet-mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Portrait)
+  ##Screen = B/w 481px to 767px
+*/
+@mixin tablet-mobile-portrait {
+  @media (min-width: #{$tablet-mobile-width}) and (max-width: #{$tablet-width - 1px}) and (orientation: portrait) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@mixin tablet-mobile-landscape {
+  @media (min-width: #{$tablet-mobile-width}) and (max-width: #{$tablet-width - 1px}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles
+  ##Screen = 740px
+*/
+@mixin semi-mobile {
+  @media (max-width: $semi-mobile-width) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = 740px
+*/
+@mixin semi-mobile-portrait {
+  @media (max-width: $semi-mobile-width) and (orientation: portrait) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Landscape)
+  ##Screen = 740px
+*/
+@mixin semi-mobile-landscape {
+  @media (max-width: $semi-mobile-width) and (orientation: landscape) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles
+  ##Screen = B/w 320px to 479px
+*/
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-mobile-width - 1px}) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@mixin mobile-portrait {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-mobile-width - 1px}) and (orientation: portrait) {
+    @content;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Landscape)
+  ##Screen = B/w 320px to 479px
+*/
+@mixin mobile-landscape {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-mobile-width - 1px}) and (orientation: landscape) {
+    @content;
+  }
+}

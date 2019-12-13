@@ -1,0 +1,12 @@
+button:focus {
+  outline: none;
+}
+.btn  {
+  padding: 12px 16px;
+  border: none;
+  font-size: 1.35rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: $black-color-4;
+  cursor: pointer;
+}

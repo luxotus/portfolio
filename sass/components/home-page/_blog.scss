@@ -1,0 +1,247 @@
+#blog-container {
+  position: relative;
+  overflow-x: hidden;
+  display: inline-block;
+  padding: 75px 0;
+  background-color: $white-color-1;
+
+  .hidden {
+    display: none;
+  }
+
+  .title {
+    text-align: center;
+
+    h1 {
+      margin: 0;
+      margin-bottom: 50px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $gray-color-2;
+    }
+
+    a:hover {
+      color: $hover-blue-color-1;
+    }
+  }
+
+  .blog-sides-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .blog-sections {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: inherit;
+    width: 50%;
+    float: left;
+  }
+
+  .arrow-section {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    height: $blog-arrow-section-height;
+    width: 50px;
+    margin: auto;
+    cursor: pointer;
+  }
+
+  .arrow {
+    height: $blog-arrow-size;
+    width: $blog-arrow-size;
+    margin-top: $blog-arrow-section-height / 2 - $blog-arrow-size;
+    transform: rotate(45deg);
+  }
+
+  .arrow-section.left {
+    left: 0;
+
+    .arrow {
+      margin-left: $blog-arrow-size * 0.66;
+      border-left: 2px solid $gray-color-2;
+      border-bottom: 2px solid $gray-color-2;
+    }
+  }
+
+  .arrow-section.right {
+    right: 0;
+
+    .arrow {
+      margin-left: $blog-arrow-size * 0.22;
+      border-top: 2px solid $gray-color-2;
+      border-right: 2px solid $gray-color-2;
+    }
+  }
+
+  .arrow-section:hover .arrow {
+    border-color: $hover-blue-color-1;
+  }
+
+
+
+  .bread-crumbs {
+    display: inline-block;
+    height: $bread-crumb-section-height;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .dot-section {
+    width: $blog-dot-size * 5;
+    margin: ($bread-crumb-section-height/2 - $blog-dot-size/2) auto;
+  }
+
+  .dot {
+    float: left;
+    height: $blog-dot-size;
+    width: $blog-dot-size;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: $gray-color-2;
+    cursor: pointer;
+  }
+
+  .dot:hover {
+    opacity: .5;
+  }
+
+  .dot.active {
+    background-color: $hover-blue-color-1;
+  }
+
+  .view-page-btn {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+
+    a {
+      color: $gray-color-2;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: $hover-blue-color-1;
+    }
+  }
+}
+
+#blog-left-section {
+  color: $gray-color-2;
+
+  .pad {
+    padding-left: 25%;
+    padding-right: 5%;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 100;
+  }
+
+  p {
+    margin: 35px 0;
+    font-size: 1.1em;
+    line-height: 1.25em;
+  }
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  button {
+    padding: 12px 24px;
+    border: none;
+    font-size: 1em;
+    color: white;
+    background-color: $gray-color-2;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: $hover-blue-color-1;
+  }
+}
+
+#blog-right-section {
+  .pad {
+    padding-left: 5%;
+    padding-right: 10%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@include semi-mobile {
+  #blog-container {
+    padding: 50px 0;
+
+    .blog-sections {
+      height: inherit;
+      width: 100%;
+
+      .pad {
+        padding: 0 10%;
+      }
+    }
+
+    .arrow-section {
+      width: 30px;
+
+      .arrow {
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    .arrow-section.left .arrow {
+      margin-left: 8.5px;
+    }
+
+    .bread-crumbs {
+      margin-top: 25px;
+    }
+  }
+
+  #blog-left-section {
+    padding-bottom: 35px;
+  }
+}
+
+/* Tablet Portrait */
+@include tablet-portrait {
+  #blog-left-section .pad {
+    padding-left: 15%;
+  }
+
+  #blog-right-section .pad {
+    padding-left: 0%;
+    padding-right: 15%;
+  }
+}
+
+/* Tablet Landscape */
+@include tablet-landscape {
+  #blog-left-section .pad {
+    padding-left: 20%;
+  }
+
+  #blog-right-section .pad {
+    padding-left: 0%;
+    padding-right: 15%;
+  }
+}
