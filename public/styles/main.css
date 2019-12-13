@@ -538,54 +538,49 @@ a {
     padding-left: 0%;
     padding-right: 15%; } }
 
-#contact-container {
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   position: relative;
-  height: 500px;
   width: 100%;
   padding: 75px 0;
   color: #fff;
   background-color: #181818; }
-  #contact-container .title {
-    text-align: center; }
-    #contact-container .title h2 {
-      font-size: 2em; }
-    #contact-container .title a {
+  .contact-wrapper .inner-wrapper {
+    padding: 0 10%; }
+    .contact-wrapper .inner-wrapper h2 {
+      font-size: 3rem;
+      color: #f4f4f4; }
+    .contact-wrapper .inner-wrapper h4 {
+      font-size: 1.35rem; }
+    .contact-wrapper .inner-wrapper p {
+      font-size: 1.25rem; }
+    .contact-wrapper .inner-wrapper form {
+      display: grid;
+      gap: 3vmin; }
+    .contact-wrapper .inner-wrapper label {
+      display: block;
+      padding-bottom: 10px;
+      font-size: 1.35rem; }
+    .contact-wrapper .inner-wrapper input {
+      display: block;
+      height: 45px;
+      width: 100%;
+      border: none;
+      background-color: #343434;
       color: #fff;
-      text-decoration: none; }
-  #contact-container p {
-    font-size: 1.5em; }
-  #contact-container h1 {
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    right: 0;
-    margin-top: 7%;
-    font-size: 4em;
-    text-align: center; }
-    #contact-container h1 a {
-      color: #35a2f2;
-      text-decoration: none; }
-  #contact-container .particle-container {
-    position: absolute;
-    top: 0; }
-
-/* Mobile */
-@media (max-width: 740px) {
-  #contact-container {
-    height: 225px; }
-    #contact-container .title h2 {
-      font-size: 1.5em; }
-    #contact-container p {
-      font-size: 1em; }
-    #contact-container h1 {
-      font-size: 1.75em; } }
-
-/* Tablet Portrait */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  #contact-container {
-    height: 400px; }
-    #contact-container h1 {
-      font-size: 3.5em; } }
+      font-size: 1.75rem;
+      text-indent: 10px; }
+    .contact-wrapper .inner-wrapper textarea {
+      display: block;
+      height: 100px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #343434;
+      color: #fff;
+      font-size: 1.75rem;
+      resize: none; }
 
 .landing-screen-wrapper {
   display: grid;

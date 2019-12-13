@@ -1,75 +1,60 @@
-#contact-container {
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   position: relative;
-  height: 500px;
   width: 100%;
   padding: 75px 0;
   color: $white-color-1;
   background-color: $black-color-2;
-  
-  .title {
-    text-align: center;
+
+  .inner-wrapper {
+    padding: 0 10%;
 
     h2 {
-      font-size: 2em;
+      font-size: 3rem;
+      color: $white-color-4;
     }
 
-    a {
-      color: $white-color-1;
-      text-decoration: none;
-    }
-  }
-
-  p {
-    font-size: 1.5em;
-  }
-
-  h1 {
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    right: 0;
-    margin-top: 7%;
-    font-size: 4em;
-    text-align: center;
-
-    a {
-      color: $blue-color-3;
-      text-decoration: none;
-    }
-  }
-
-  .particle-container {
-    position: absolute;
-    top: 0;
-  }
-}
-
-/* Mobile */
-@include semi-mobile {
-  #contact-container {
-    height: 225px;
-
-    .title h2 {
-      font-size: 1.5em;
+    h4 {
+      font-size: 1.35rem;
     }
 
     p {
-      font-size: 1em;
+      font-size: 1.25rem;
     }
 
-    h1 {
-      font-size: 1.75em;
+    form {
+      display: grid;
+      gap: 3vmin;
     }
-  }
-}
 
-/* Tablet Portrait */
-@include tablet-portrait {
-  #contact-container {
-    height: 400px;
+    label {
+      display: block;
+      padding-bottom: 10px;
+      font-size: 1.35rem;
+    }
 
-    h1 {
-      font-size: 3.5em;
+    input {
+      display: block;
+      height: 45px;
+      width: 100%;
+      border: none;
+      background-color: #343434;
+      color: $white-color-1;
+      font-size: 1.75rem;
+      text-indent: 10px;
+    }
+
+    textarea {
+      display: block;
+      height: 100px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #343434;
+      color: $white-color-1;
+      font-size: 1.75rem;
+      resize: none;
     }
   }
 }
