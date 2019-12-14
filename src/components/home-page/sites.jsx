@@ -155,6 +155,15 @@ export default class Sites extends React.Component {
         ],
         imageSrc: '/images/sites/screens/worldwide-stories-sm.png',
       },
+      {
+        id: 3,
+        name: 'Collection',
+        link: 'collection',
+        types: [
+          'app',
+        ],
+        imageSrc: '/images/sites/screens/example-sm.png',
+      },
     ];
 
     return (
