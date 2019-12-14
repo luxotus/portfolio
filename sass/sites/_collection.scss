@@ -9,15 +9,21 @@
     border-bottom: 2px solid #efefef;
 
     .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 26px;
       width: 26px;
       margin-right: 2%;
-      background-color: #ea4444;
       border-radius: 50%;
       text-align: center;
       font-size: 1.5rem;
       font-weight: 600;
       color: #fff;
+
+      svg {
+        fill: $pinterest-color;
+      }
     }
 
     .search-bar {
@@ -55,21 +61,21 @@
       position: relative;
       padding: 6px 9px;
       background-color: transparent;
-      opacity: .75;
 
       svg {
+        opacity: .75;
         fill: $black-color-4;
       }
     }
 
-    .btn:hover {
+    .btn:hover svg {
       opacity: 1;
     }
 
     .new-message-count {
       position: absolute;
       padding: 3px;
-      background-color: red;
+      background-color: $pinterest-color;
       color: #fff;
       border-radius: 50%;
       top: -4px;
@@ -159,16 +165,18 @@
     .item {
       display: grid;
       gap: 2vmin;
-      background-color: #ededed;
+      background-color: #fff;
       width: 200px;
+      margin: 0 auto;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.22);
     }
 
     .img-wrapper {
-      height: 250px;
       width: 100%;
       background-color: gray;
 
       img {
+        display: block;
         width: 100%;
       }
     }
@@ -176,12 +184,13 @@
     .details-wrapper {
       display: grid;
       gap: 2vmin;
-      padding: 0 15px;
+      padding: 0 15px 10px;
 
       h3 {
         margin: 0;
         font-size: 1.35rem;
         font-weight: 600;
+        text-transform: capitalize;
       }
 
       p {
@@ -194,6 +203,7 @@
     .sub-section {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       h5,
       h6 {
@@ -212,6 +222,7 @@
 
       .likes {
         display: flex;
+        align-items: center;
       }
 
       .icon {
@@ -234,6 +245,32 @@
       .logo {
         display: none;
       }
+    }
+
+    .upper-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .profile-wrapper {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 8vmin;
+
+      .details {
+        text-align: center;
+      }
+    }
+
+    .stack-grid .item {
+      width: 200px;
+    }
+  }
+}
+
+@include tablet {
+  .collection-site-wrapper {
+    .upper-wrapper {
+      grid-template-columns: 1fr;
     }
   }
 }

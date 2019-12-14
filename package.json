@@ -9,6 +9,7 @@
     "react-particles-js": "*",
     "react-router-dom": "*",
     "react-scripts": "*",
+    "react-stack-grid": "^0.7.1",
     "react-svg": "^11.0.3"
   },
   "scripts": {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactSVG } from 'react-svg';
+import StackGrid from 'react-stack-grid';
 
 export default class Collection extends React.Component {
   constructor(props) {
@@ -14,11 +15,111 @@ export default class Collection extends React.Component {
     return this.keyCount;
   }
 
+  shuffleList(a) {
+    let j;
+    let x;
+    let i;
+    const arr = a;
+
+    for (i = arr.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = arr[i];
+      arr[i] = arr[j];
+      arr[j] = x;
+    }
+
+    return a;
+  }
+
+  randomData(numOfItems) {
+    const images = [
+      '/images/sites/pinterest-redesign/1.jpg',
+      '/images/sites/pinterest-redesign/2.jpg',
+      '/images/sites/pinterest-redesign/3.jpg',
+      '/images/sites/pinterest-redesign/4.jpg',
+      '/images/sites/pinterest-redesign/5.jpg',
+      '/images/sites/pinterest-redesign/6.jpg',
+      '/images/sites/pinterest-redesign/7.jpg',
+      '/images/sites/pinterest-redesign/8.jpg',
+      '/images/sites/pinterest-redesign/9.jpg',
+      '/images/sites/pinterest-redesign/10.jpg',
+      '/images/sites/pinterest-redesign/11.jpg',
+      '/images/sites/pinterest-redesign/12.jpg',
+      '/images/sites/pinterest-redesign/13.jpg',
+    ];
+    const titles = [
+      'Cool title',
+      'Lorem ipsum',
+      'Commodo consequat',
+      'Duis aute irure',
+      'Sed ut perspiciatis',
+      'beatae vitae dicta',
+      'Quis autem vel eum',
+      'quasi architecto',
+      'ullam corporis',
+      'iure reprehenderit',
+      'cupidatat non proident',
+      'fugiat nulla pariatur',
+      'anim id est laborum',
+    ];
+    const siteLinks = [
+      'github.com',
+      'felixmanuel.com',
+      'steam.com',
+      'runners.com',
+      'google.com',
+      'coolsite.com',
+      'logitech.com',
+      'circle.com',
+      'thatshow.com',
+      'random.com',
+      'chillhop.com',
+      'espn.com',
+      'houston.com',
+    ];
+    const details = [
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
+      'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.',
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.',
+      'Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.',
+      'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
+      'Et harum quidem rerum facilis est et expedita distinctio.',
+      'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint.',
+      'Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias.',
+      'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.',
+      'Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.',
+      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.',
+    ];
+    const result = [];
+
+    for (let index = 0; index < numOfItems; index++) {
+      const item = {
+        imagePath: this.shuffleList(images)[Math.floor(Math.random() * images.length)],
+        title: this.shuffleList(titles)[Math.floor(Math.random() * titles.length)],
+        description: this.shuffleList(details)[Math.floor(Math.random() * details.length)],
+        siteLink: this.shuffleList(siteLinks)[Math.floor(Math.random() * siteLinks.length)],
+        likesCount: Math.floor(Math.random() * 900) + 100,
+      };
+
+      result.push(item);
+    }
+
+    return result;
+  }
+
   render() {
+    const numOfPins = 25;
+
     return (
       <div className="collection-site-wrapper">
         <header>
-          <div className="logo">q</div>
+          <div className="logo">
+            <span className="icon">
+              <ReactSVG src="/svg/pinterest.svg" />
+            </span>
+          </div>
           <div className="search-bar">
             <span className="icon">
               <ReactSVG src="/svg/search.svg" />
@@ -47,7 +148,7 @@ export default class Collection extends React.Component {
         <div className="upper-wrapper">
           <div className="profile-wrapper">
             <div className="profile-image-wrapper">
-              {/* image */}
+              <img src="/images/sites/pinterest-redesign/14.jpg" alt="" />
             </div>
             <div className="details">
               <h2 className="name">Jane Doe</h2>
@@ -78,29 +179,33 @@ export default class Collection extends React.Component {
             </div>
           </div>
         </div>
-        <div className="stack-grid">
-          <div className="item">
-            <div className="img-wrapper">
-              {/*  */}
-            </div>
-            <div className="details-wrapper">
-              <h3>Title</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div className="sub-section">
-                <h6>coolsite.com</h6>
-                <div className="likes">
-                  <span className="icon">
-                    <ReactSVG src="/svg/star.svg" />
-                  </span>
-                  <h5>875</h5>
+        <StackGrid
+          monitorImagesLoaded
+          columnWidth={220}
+          gutterHeight={20}
+          className="stack-grid"
+        >
+          {this.randomData(numOfPins).map((item) => (
+            <div className="item" key={`stack-item-${this.getKey()}`}>
+              <div className="img-wrapper">
+                <img src={item.imagePath} alt="" />
+              </div>
+              <div className="details-wrapper">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <div className="sub-section">
+                  <h6>{item.siteLink}</h6>
+                  <div className="likes">
+                    <span className="icon">
+                      <ReactSVG src="/svg/star.svg" />
+                    </span>
+                    <h5>{item.likesCount}</h5>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          ))}
+        </StackGrid>
       </div>
     );
   }
