@@ -157,12 +157,12 @@ export default class Sites extends React.Component {
       },
       {
         id: 3,
-        name: 'Collection',
-        link: 'collection',
+        name: 'Pinterest Redesign',
+        link: 'pinterest-redesign',
         types: [
           'app',
         ],
-        imageSrc: '/images/sites/screens/example-sm.png',
+        imageSrc: '/images/sites/screens/pinterest-redesign-sm.png',
       },
     ];
 

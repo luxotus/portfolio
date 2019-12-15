@@ -2,7 +2,7 @@ import React from 'react';
 import { ReactSVG } from 'react-svg';
 import StackGrid from 'react-stack-grid';
 
-export default class Collection extends React.Component {
+export default class PinterestRedesign extends React.Component {
   constructor(props) {
     super(props);
 
