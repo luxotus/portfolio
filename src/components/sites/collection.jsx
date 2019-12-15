@@ -93,20 +93,41 @@ export default class Collection extends React.Component {
       'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.',
     ];
     const result = [];
+    let shuffledImages = this.shuffleList(images);
+    let imageIndex = 0;
 
     for (let index = 0; index < numOfItems; index++) {
       const item = {
-        imagePath: this.shuffleList(images)[Math.floor(Math.random() * images.length)],
         title: this.shuffleList(titles)[Math.floor(Math.random() * titles.length)],
         description: this.shuffleList(details)[Math.floor(Math.random() * details.length)],
         siteLink: this.shuffleList(siteLinks)[Math.floor(Math.random() * siteLinks.length)],
         likesCount: Math.floor(Math.random() * 900) + 100,
       };
 
+      // Prefer the same image not to cluster when just randomly picked
+      if (imageIndex < images.length) {
+        item.imagePath = shuffledImages[imageIndex];
+      } else {
+        imageIndex = 0;
+        shuffledImages = this.shuffleList(images);
+        item.imagePath = shuffledImages[imageIndex];
+      }
+
+      imageIndex++;
+
       result.push(item);
     }
 
     return result;
+  }
+
+  alignGridOptions() {
+    const itemLeft = document.querySelectorAll('.collection-site-wrapper .stack-grid .item')[0].getBoundingClientRect().left;
+    const gridOpt = document.querySelector('.collection-site-wrapper .grid-options');
+
+    if (gridOpt !== null) {
+      gridOpt.style.paddingLeft = `${itemLeft}px`;
+    }
   }
 
   render() {
@@ -178,12 +199,25 @@ export default class Collection extends React.Component {
               </div>
             </div>
           </div>
+          <div className="create-board-wrapper">
+            <button type="button" className="btn create-board-btn">
+              <span className="icon">
+                <ReactSVG src="/svg/add.svg" />
+              </span>
+              Create a Board
+            </button>
+          </div>
+        </div>
+        <div className="grid-options">
+          <button type="button" className="btn active">Pins</button>
+          <button type="button" className="btn">Boards</button>
         </div>
         <StackGrid
           monitorImagesLoaded
           columnWidth={220}
           gutterHeight={20}
           className="stack-grid"
+          onLayout={() => this.alignGridOptions()}
         >
           {this.randomData(numOfPins).map((item) => (
             <div className="item" key={`stack-item-${this.getKey()}`}>
