@@ -155,6 +155,15 @@ export default class Sites extends React.Component {
         ],
         imageSrc: '/images/sites/screens/worldwide-stories-sm.png',
       },
+      {
+        id: 3,
+        name: 'Pinterest Redesign',
+        link: 'pinterest-redesign',
+        types: [
+          'app',
+        ],
+        imageSrc: '/images/sites/screens/pinterest-redesign-sm.png',
+      },
     ];
 
     return (
