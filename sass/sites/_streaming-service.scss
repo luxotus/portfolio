@@ -138,6 +138,113 @@
         }
       }
     }
+
+    header {
+      display: grid;
+      grid-template-columns: .5fr 1fr;
+      padding: 25px 5%;
+    }
+
+    .nav-buttons-wrapper {
+      .btn {
+        padding: 2px;
+        background-color: transparent;
+        opacity: .5;
+  
+        .icon {
+          height: 28px;
+          width: 28px;
+        }
+  
+        svg {
+          fill: #fff;
+        }
+      }
+
+      .btn.active {
+        opacity: 1;
+      }
+    }
+
+    .search-profile-wrapper {
+      display: grid;
+      align-items: center;
+      justify-self: end;
+      grid-template-columns: 1fr 50px 1fr;
+    }
+
+    .search-wrapper {
+      display: flex;
+      height: 35px;
+      background-color: #fff;
+
+      .search-btn {
+        padding: 0 10px;
+      }
+
+      input {
+        height: 100%;
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+      }
+    }
+
+    .notification-btn-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .notification-btn {
+      padding: 4px;
+      background-color: transparent;
+
+      .icon {
+        height: 20px;
+        width: 20px;
+      }
+
+      svg {
+        fill: #fff;
+      }
+    }
+
+    .image-wrapper {
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+      background-color: gray;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+      }
+    }
+
+    .profile-wrapper {
+      display: grid;
+      grid-template-columns: 65px 1fr;
+      gap: 1vmin;
+      align-items: center;
+    }
+
+    .name-account-wrapper {
+      display: grid;
+      gap: .5vmin;
+
+      h3 {
+        margin: 0;
+        font-weight: 500;
+      }
+
+      a {
+        opacity: .75;
+        text-decoration: none;
+      }
+    }
   }
 }
 

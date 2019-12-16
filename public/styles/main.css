@@ -2572,6 +2572,73 @@ button:focus {
         width: 26px; }
         .streaming-service-wrapper .content-wrapper .menu-btn .icon svg {
           fill: #fff; }
+    .streaming-service-wrapper .content-wrapper header {
+      display: grid;
+      grid-template-columns: .5fr 1fr;
+      padding: 25px 5%; }
+    .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper .btn {
+      padding: 2px;
+      background-color: transparent;
+      opacity: .5; }
+      .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper .btn .icon {
+        height: 28px;
+        width: 28px; }
+      .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper .btn svg {
+        fill: #fff; }
+    .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper .btn.active {
+      opacity: 1; }
+    .streaming-service-wrapper .content-wrapper .search-profile-wrapper {
+      display: grid;
+      align-items: center;
+      justify-self: end;
+      grid-template-columns: 1fr 50px 1fr; }
+    .streaming-service-wrapper .content-wrapper .search-wrapper {
+      display: flex;
+      height: 35px;
+      background-color: #fff; }
+      .streaming-service-wrapper .content-wrapper .search-wrapper .search-btn {
+        padding: 0 10px; }
+      .streaming-service-wrapper .content-wrapper .search-wrapper input {
+        height: 100%;
+        padding: 0;
+        border: 0;
+        background-color: transparent; }
+    .streaming-service-wrapper .content-wrapper .notification-btn-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .streaming-service-wrapper .content-wrapper .notification-btn {
+      padding: 4px;
+      background-color: transparent; }
+      .streaming-service-wrapper .content-wrapper .notification-btn .icon {
+        height: 20px;
+        width: 20px; }
+      .streaming-service-wrapper .content-wrapper .notification-btn svg {
+        fill: #fff; }
+    .streaming-service-wrapper .content-wrapper .image-wrapper {
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+      background-color: gray; }
+      .streaming-service-wrapper .content-wrapper .image-wrapper img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: inherit; }
+    .streaming-service-wrapper .content-wrapper .profile-wrapper {
+      display: grid;
+      grid-template-columns: 65px 1fr;
+      gap: 1vmin;
+      align-items: center; }
+    .streaming-service-wrapper .content-wrapper .name-account-wrapper {
+      display: grid;
+      gap: .5vmin; }
+      .streaming-service-wrapper .content-wrapper .name-account-wrapper h3 {
+        margin: 0;
+        font-weight: 500; }
+      .streaming-service-wrapper .content-wrapper .name-account-wrapper a {
+        opacity: .75;
+        text-decoration: none; }
 
 @media (min-width: 320px) and (max-width: 480px) {
   .streaming-service-wrapper {

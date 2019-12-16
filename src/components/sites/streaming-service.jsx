@@ -120,6 +120,46 @@ export default class StreamingService extends React.Component {
               <ReactSVG src="/svg/menu.svg" />
             </span>
           </button>
+          <header>
+            <div className="nav-buttons-wrapper">
+              <button type="button" className="back-btn btn">
+                <span className="icon">
+                  <ReactSVG src="/svg/arrow-left.svg" />
+                </span>
+              </button>
+              <button type="button" className="forward-btn btn active">
+                <span className="icon">
+                  <ReactSVG src="/svg/arrow-right.svg" />
+                </span>
+              </button>
+            </div>
+            <div className="search-profile-wrapper">
+              <div className="search-wrapper">
+                <button type="button" className="btn search-btn">
+                  <span className="icon">
+                    <ReactSVG src="/svg/search.svg" />
+                  </span>
+                </button>
+                <input type="text" name="search" />
+              </div>
+              <div className="notification-btn-wrapper">
+                <button type="button" className="notification-btn btn">
+                  <span className="icon">
+                    <ReactSVG src="/svg/bell.svg" />
+                  </span>
+                </button>
+              </div>
+              <div className="profile-wrapper">
+                <div className="image-wrapper">
+                  {/* img */}
+                </div>
+                <div className="name-account-wrapper">
+                  <h3>Jane Smith</h3>
+                  <a href="felixmanuel.com">Manage Account</a>
+                </div>
+              </div>
+            </div>
+          </header>
         </div>
       </div>
     );
