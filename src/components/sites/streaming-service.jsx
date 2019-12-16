@@ -142,16 +142,17 @@ export default class StreamingService extends React.Component {
                 </button>
                 <input type="text" name="search" />
               </div>
-              <div className="notification-btn-wrapper">
-                <button type="button" className="notification-btn btn">
-                  <span className="icon">
-                    <ReactSVG src="/svg/bell.svg" />
-                  </span>
-                </button>
-              </div>
               <div className="profile-wrapper">
+                <div className="notification-btn-wrapper">
+                  <div className="dot" />
+                  <button type="button" className="notification-btn btn">
+                    <span className="icon">
+                      <ReactSVG src="/svg/bell.svg" />
+                    </span>
+                  </button>
+                </div>
                 <div className="image-wrapper">
-                  {/* img */}
+                  <img src="/images/sites/streaming-service/14.jpg" alt="" />
                 </div>
                 <div className="name-account-wrapper">
                   <h3>Jane Smith</h3>
@@ -160,6 +161,22 @@ export default class StreamingService extends React.Component {
               </div>
             </div>
           </header>
+          <div className="content">
+            <div className="large-preview">
+              {/*  */}
+            </div>
+            <div className="small-column-preview">
+              <div className="preview-item">
+                {/*  */}
+              </div>
+              <div className="preview-item">
+                {/*  */}
+              </div>
+              <div className="preview-item">
+                {/*  */}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

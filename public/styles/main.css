@@ -2559,7 +2559,8 @@ button:focus {
     display: none; }
   .streaming-service-wrapper .content-wrapper {
     position: relative;
-    min-height: calc(100vh - 50px);
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
     background-color: #0b161a; }
     .streaming-service-wrapper .content-wrapper .menu-btn {
       position: absolute;
@@ -2575,7 +2576,7 @@ button:focus {
     .streaming-service-wrapper .content-wrapper header {
       display: grid;
       grid-template-columns: .5fr 1fr;
-      padding: 25px 5%; }
+      padding: 25px; }
     .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper .btn {
       padding: 2px;
       background-color: transparent;
@@ -2588,37 +2589,66 @@ button:focus {
     .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper .btn.active {
       opacity: 1; }
     .streaming-service-wrapper .content-wrapper .search-profile-wrapper {
-      display: grid;
+      display: flex;
+      justify-content: flex-end;
       align-items: center;
-      justify-self: end;
-      grid-template-columns: 1fr 50px 1fr; }
+      padding-right: 25px; }
     .streaming-service-wrapper .content-wrapper .search-wrapper {
       display: flex;
       height: 35px;
-      background-color: #fff; }
+      width: 7%;
+      border-radius: 4px;
+      transition: width 1s;
+      overflow: hidden; }
       .streaming-service-wrapper .content-wrapper .search-wrapper .search-btn {
-        padding: 0 10px; }
+        padding: 0 10px;
+        background-color: transparent; }
+        .streaming-service-wrapper .content-wrapper .search-wrapper .search-btn svg {
+          fill: #fff; }
       .streaming-service-wrapper .content-wrapper .search-wrapper input {
         height: 100%;
         padding: 0;
         border: 0;
-        background-color: transparent; }
+        background-color: transparent;
+        color: #fff;
+        font-size: 1.15rem;
+        outline: none; }
+    .streaming-service-wrapper .content-wrapper .search-wrapper:hover,
+    .streaming-service-wrapper .content-wrapper .search-wrapper.active {
+      width: 45%;
+      background-color: #14272e; }
     .streaming-service-wrapper .content-wrapper .notification-btn-wrapper {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      margin: 0 10px; }
+      .streaming-service-wrapper .content-wrapper .notification-btn-wrapper .dot {
+        z-index: 1;
+        position: absolute;
+        top: 3px;
+        right: 5px;
+        height: 6px;
+        width: 6px;
+        border: 2px solid #0b161a;
+        background-color: #3fccfe;
+        border-radius: 50%; }
     .streaming-service-wrapper .content-wrapper .notification-btn {
       padding: 4px;
-      background-color: transparent; }
+      background-color: transparent;
+      opacity: .5; }
       .streaming-service-wrapper .content-wrapper .notification-btn .icon {
         height: 20px;
         width: 20px; }
       .streaming-service-wrapper .content-wrapper .notification-btn svg {
         fill: #fff; }
+    .streaming-service-wrapper .content-wrapper .notification-btn:hover {
+      opacity: 1; }
     .streaming-service-wrapper .content-wrapper .image-wrapper {
-      height: 65px;
-      width: 65px;
+      height: 50px;
+      width: 50px;
       border-radius: 50%;
+      margin-right: 15px;
       background-color: gray; }
       .streaming-service-wrapper .content-wrapper .image-wrapper img {
         height: 100%;
@@ -2626,9 +2656,7 @@ button:focus {
         object-fit: cover;
         border-radius: inherit; }
     .streaming-service-wrapper .content-wrapper .profile-wrapper {
-      display: grid;
-      grid-template-columns: 65px 1fr;
-      gap: 1vmin;
+      display: flex;
       align-items: center; }
     .streaming-service-wrapper .content-wrapper .name-account-wrapper {
       display: grid;
@@ -2639,6 +2667,90 @@ button:focus {
       .streaming-service-wrapper .content-wrapper .name-account-wrapper a {
         opacity: .75;
         text-decoration: none; }
+      .streaming-service-wrapper .content-wrapper .name-account-wrapper a:hover {
+        opacity: 1; }
+    .streaming-service-wrapper .content-wrapper .content {
+      display: grid;
+      grid-template-columns: 1fr .25fr;
+      gap: 2vmin;
+      max-width: 65%;
+      padding: 25px 5%;
+      margin: 0 auto; }
+    .streaming-service-wrapper .content-wrapper .large-preview {
+      height: 400px;
+      width: 100%;
+      background-color: gray; }
+    .streaming-service-wrapper .content-wrapper .small-column-preview {
+      display: grid;
+      grid-template-columns: 1fr;
+      height: 400px;
+      width: 100%;
+      gap: 2vmin; }
+    .streaming-service-wrapper .content-wrapper .preview-item {
+      height: 100%;
+      width: 100%;
+      background-color: gray; }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .streaming-service-wrapper .content-wrapper .content {
+    max-width: 85%; } }
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .streaming-service-wrapper .content-wrapper header {
+    grid-template-columns: 1fr;
+    gap: 2vmin; }
+  .streaming-service-wrapper .content-wrapper .search-wrapper {
+    width: 35px; }
+  .streaming-service-wrapper .content-wrapper .search-profile-wrapper {
+    padding-right: 0; }
+  .streaming-service-wrapper .content-wrapper .content {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 25px 8%; }
+  .streaming-service-wrapper .content-wrapper .small-column-preview {
+    grid-template-columns: 1fr 1fr; } }
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .streaming-service-wrapper {
+    grid-template-columns: 1fr; }
+    .streaming-service-wrapper .side-menu-wrapper {
+      position: absolute; }
+    .streaming-service-wrapper .side-menu-wrapper.active {
+      z-index: 1;
+      width: 250px; }
+    .streaming-service-wrapper .side-menu-wrapper.active + .content-wrapper .menu-btn {
+      display: none; }
+    .streaming-service-wrapper .mobile-btn {
+      display: block; }
+    .streaming-service-wrapper .content-wrapper header {
+      grid-template-columns: 1fr;
+      gap: 2vmin;
+      padding-top: 10px; }
+    .streaming-service-wrapper .content-wrapper .search-wrapper,
+    .streaming-service-wrapper .content-wrapper .search-wrapper:hover,
+    .streaming-service-wrapper .content-wrapper .search-wrapper.active {
+      width: 100%;
+      background-color: #14272e;
+      order: 2; }
+    .streaming-service-wrapper .content-wrapper .profile-wrapper {
+      order: 1; }
+    .streaming-service-wrapper .content-wrapper .search-profile-wrapper {
+      display: grid;
+      padding-right: 0;
+      gap: 3vmin; }
+    .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper {
+      display: flex;
+      justify-content: flex-end; }
+    .streaming-service-wrapper .content-wrapper .content {
+      grid-template-columns: 1fr;
+      gap: 3vmin;
+      max-width: 100%;
+      padding: 25px 8%; }
+    .streaming-service-wrapper .content-wrapper .small-column-preview {
+      grid-template-columns: 1fr 1fr;
+      justify-self: center;
+      gap: 3vmin;
+      height: 350px; } }
 
 @media (min-width: 320px) and (max-width: 480px) {
   .streaming-service-wrapper {
@@ -2651,4 +2763,33 @@ button:focus {
     .streaming-service-wrapper .side-menu-wrapper.active + .content-wrapper .menu-btn {
       display: none; }
     .streaming-service-wrapper .mobile-btn {
-      display: block; } }
+      display: block; }
+    .streaming-service-wrapper .content-wrapper header {
+      grid-template-columns: 1fr;
+      gap: 2vmin;
+      padding-top: 10px; }
+    .streaming-service-wrapper .content-wrapper .search-wrapper,
+    .streaming-service-wrapper .content-wrapper .search-wrapper:hover,
+    .streaming-service-wrapper .content-wrapper .search-wrapper.active {
+      width: 100%;
+      background-color: #14272e;
+      order: 2; }
+    .streaming-service-wrapper .content-wrapper .profile-wrapper {
+      order: 1; }
+    .streaming-service-wrapper .content-wrapper .search-profile-wrapper {
+      display: grid;
+      padding-right: 0;
+      gap: 3vmin; }
+    .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper {
+      display: flex;
+      justify-content: flex-end; }
+    .streaming-service-wrapper .content-wrapper .content {
+      grid-template-columns: 1fr;
+      gap: 3vmin;
+      max-width: 100%;
+      padding: 25px 8%; }
+    .streaming-service-wrapper .content-wrapper .small-column-preview {
+      grid-template-columns: 1fr 1fr;
+      justify-self: center;
+      gap: 3vmin;
+      height: 300px; } }
