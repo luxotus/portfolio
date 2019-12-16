@@ -2496,7 +2496,8 @@ button:focus {
     max-height: calc(100vh - 50px);
     padding: 25px 0;
     background-color: #111a1f;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    text-transform: capitalize; }
     .streaming-service-wrapper .side-menu-wrapper .btn {
       position: absolute;
       background-color: transparent; }

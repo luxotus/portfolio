@@ -6,9 +6,37 @@ export default class StreamingService extends React.Component {
     super(props);
     this.state = {
       isMobileMenuOpen: false,
+      activeSection: 'browse',
+      activeItem: 0,
     };
 
+    this.sections = {
+      browse: [
+        'history',
+        'recommendations',
+        'popular',
+        'recently added',
+      ],
+      categories: [
+        'action',
+        'comedy',
+        'documentary',
+        'drama',
+        'horror',
+        'kids',
+        'musicals',
+        'thriller',
+        'TV shows',
+      ],
+    };
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
     this.updateMobileMenuStatus = this.updateMobileMenuStatus.bind(this);
+  }
+
+  getKey() {
+    this.keyCount += 1;
+    return this.keyCount;
   }
 
   updateMobileMenuStatus(isMobileMenuOpen) {
@@ -17,8 +45,22 @@ export default class StreamingService extends React.Component {
     }
   }
 
+  updateActiveSection(activeSection) {
+    if (activeSection === 'browse' || activeSection === 'categories') {
+      this.setState({ activeSection });
+    }
+  }
+
+  updateActiveItem(activeItem) {
+    const { activeSection } = this.state;
+    if (activeItem >= 0 && activeItem < this.sections[activeSection].length) {
+      this.setState({ activeItem });
+    }
+  }
+
   render() {
-    const { isMobileMenuOpen } = this.state;
+    const { isMobileMenuOpen, activeSection, activeItem } = this.state;
+
 
     return (
       <div className="streaming-service-wrapper">
@@ -35,55 +77,18 @@ export default class StreamingService extends React.Component {
           <div className="logo">
             <h2>Logi</h2>
           </div>
-          <div className="list-wrapper active">
-            <h4>Browse</h4>
-            <ul>
-              <li>
-                <p>History</p>
-              </li>
-              <li className="active">
-                <p>Recommendations</p>
-              </li>
-              <li>
-                <p>Popular</p>
-              </li>
-              <li>
-                <p>Recently added</p>
-              </li>
-            </ul>
-          </div>
-          <div className="list-wrapper">
-            <h4>Categories</h4>
-            <ul>
-              <li>
-                <p>Action</p>
-              </li>
-              <li>
-                <p>Comedy</p>
-              </li>
-              <li>
-                <p>Documentary</p>
-              </li>
-              <li>
-                <p>Drama</p>
-              </li>
-              <li>
-                <p>Horror</p>
-              </li>
-              <li>
-                <p>Kids</p>
-              </li>
-              <li>
-                <p>Musicals</p>
-              </li>
-              <li>
-                <p>Thriller</p>
-              </li>
-              <li>
-                <p>TV Shows</p>
-              </li>
-            </ul>
-          </div>
+          {Object.keys(this.sections).map((secKey) => (
+            <div key={`list-wrapper-${this.getKey()}`} className={`list-wrapper ${activeSection === secKey ? 'active' : ''}`}>
+              <h4>{secKey}</h4>
+              <ul>
+                {this.sections[secKey].map((item, index) => (
+                  <li key={`list-item-${this.getKey()}`} className={activeSection === secKey && activeItem === index ? 'active' : ''}>
+                    <p>{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         <div className="content-wrapper">
           <button
