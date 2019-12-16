@@ -50,6 +50,10 @@
     }
 
     .list-wrapper.active {
+      li:hover p {
+        color: #39c2f3;
+      }
+
       p {
         font-weight: 600;
         opacity: 1;
@@ -89,7 +93,11 @@
       }
 
       li.active {
-        border-left: 2px solid #00bcff;
+        border-left: 2px solid #39c2f3;
+      }
+
+      li.active p {
+        color: #39c2f3;
       }
 
       p {

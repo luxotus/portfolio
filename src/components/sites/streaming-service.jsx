@@ -58,9 +58,21 @@ export default class StreamingService extends React.Component {
     }
   }
 
+  handleListItemClick(event) {
+    const { activeSection, activeItem } = this.state;
+    const el = event.currentTarget;
+
+    if (activeSection !== el.getAttribute('data-section')) {
+      this.updateActiveSection(el.getAttribute('data-section'));
+    }
+
+    if (!Number.isNaN(parseInt(el.getAttribute('data-index'), 10)) && activeItem !== parseInt(el.getAttribute('data-index'), 10)) {
+      this.updateActiveItem(parseInt(el.getAttribute('data-index'), 10));
+    }
+  }
+
   render() {
     const { isMobileMenuOpen, activeSection, activeItem } = this.state;
-
 
     return (
       <div className="streaming-service-wrapper">
@@ -82,7 +94,15 @@ export default class StreamingService extends React.Component {
               <h4>{secKey}</h4>
               <ul>
                 {this.sections[secKey].map((item, index) => (
-                  <li key={`list-item-${this.getKey()}`} className={activeSection === secKey && activeItem === index ? 'active' : ''}>
+                  <li
+                    role="presentation"
+                    key={`list-item-${this.getKey()}`}
+                    data-index={index}
+                    data-section={secKey}
+                    className={activeSection === secKey && activeItem === index ? 'active' : ''}
+                    onClick={(event) => this.handleListItemClick(event)}
+                    onKeyDown={(event) => this.handleListItemClick(event)}
+                  >
                     <p>{item}</p>
                   </li>
                 ))}
