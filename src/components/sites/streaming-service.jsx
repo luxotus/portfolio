@@ -19,12 +19,13 @@ export default class StreamingService extends React.Component {
       ],
       categories: [
         'action',
+        'animation',
         'comedy',
+        'crime',
         'documentary',
         'drama',
         'horror',
-        'kids',
-        'musicals',
+        'Sci-Fi',
         'thriller',
         'TV shows',
       ],
@@ -32,12 +33,60 @@ export default class StreamingService extends React.Component {
     this.movies = {
       'continue watching': [
         {
-          imagePath: '',
-          title: '',
-          category: '',
-          parentalRating: '',
-          duration: '',
-          releaseDate: '',
+          imagePath: '/images/sites/streaming-service/1.jpg',
+          title: 'Pulp Fiction',
+          category: 'Drama',
+          parentalRating: 'R',
+          duration: '2h 34min',
+          releaseDate: '1994',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/2.jpg',
+          title: 'Alien',
+          category: 'Sci-Fi',
+          parentalRating: 'R',
+          duration: '1h 57min',
+          releaseDate: '1979',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/3.jpg',
+          title: 'Avengers: Endgame',
+          category: 'Action',
+          parentalRating: 'PG-13',
+          duration: '3h 1min',
+          releaseDate: '2019',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/4.jpg',
+          title: 'Joker',
+          category: 'Thriller',
+          parentalRating: 'R',
+          duration: '2h 2min',
+          releaseDate: '2019',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/5.jpg',
+          title: 'Jaws',
+          category: 'Thriller',
+          parentalRating: 'PG',
+          duration: '2h 4min ',
+          releaseDate: '1975',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/6.jpg',
+          title: 'Toy Story',
+          category: 'Animation',
+          parentalRating: 'PG',
+          duration: '1h 21min',
+          releaseDate: '1995',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/7.jpg',
+          title: 'A Christmas Story',
+          category: 'Comedy',
+          parentalRating: 'PG',
+          duration: '1h 34min',
+          releaseDate: '1983',
         },
       ],
     };
@@ -190,27 +239,23 @@ export default class StreamingService extends React.Component {
             </div>
           </div>
           <div className="content-rows">
-            <div className="row-wrapper">
-              <h2>Continue Watching</h2>
-              <div className="row">
-                <div className="item">
-                  <div className="row-image-wrapper">
-                    {/* img */}
-                  </div>
-                  <h5>Children of the corn</h5>
-                  <h6>Thriller &#8226; 1h 52min &#8226; 2003</h6>
-                  <p>PG-13</p>
-                </div>
-                <div className="item">
-                  <div className="row-image-wrapper">
-                    {/* img */}
-                  </div>
-                  <h5>Children of the corn</h5>
-                  <h6>Thriller &#8226; 1h 52min &#8226; 2003</h6>
-                  <p>PG-13</p>
+            {Object.keys(this.movies).map((key) => (
+              <div key={`row-wrapper-${this.getKey()}`} className="row-wrapper">
+                <h2>{key}</h2>
+                <div className="row">
+                  {this.movies[key].map((item) => (
+                    <div key={`movie-item-${this.getKey()}`} className="item">
+                      <div className="row-image-wrapper">
+                        <img src={item.imagePath} alt="" />
+                      </div>
+                      <h5>{item.title}</h5>
+                      <h6>{`${item.category} • ${item.duration} • ${item.releaseDate}`}</h6>
+                      <p>{item.parentalRating}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

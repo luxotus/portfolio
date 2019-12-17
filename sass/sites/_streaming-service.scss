@@ -8,7 +8,7 @@
     position: relative;
     overflow-y: auto;
     max-height: calc(100vh - #{$header-height});
-    padding: 25px 0;
+    padding: 25px 0 0;
     background-color: #111a1f;
     box-sizing: border-box;
     text-transform: capitalize;
@@ -67,7 +67,7 @@
     }
 
     .list-wrapper {
-      margin-bottom: 50px;
+      margin-bottom: 35px;
 
       h4 {
         color: #818181;
@@ -324,6 +324,7 @@
         margin: 0;
         margin-bottom: 15px;
         font-size: 1.75rem;
+        text-transform: capitalize;
       }
 
       .item {
@@ -387,6 +388,7 @@
 
       .row {
         display: flex;
+        flex-wrap: wrap;
 
         .item:first-child {
           margin-left: -20px; // remove later

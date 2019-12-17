@@ -2494,7 +2494,7 @@ button:focus {
     position: relative;
     overflow-y: auto;
     max-height: calc(100vh - 50px);
-    padding: 25px 0;
+    padding: 25px 0 0;
     background-color: #111a1f;
     box-sizing: border-box;
     text-transform: capitalize; }
@@ -2528,7 +2528,7 @@ button:focus {
     .streaming-service-wrapper .side-menu-wrapper .list-wrapper:not(.active) p {
       opacity: .75; }
     .streaming-service-wrapper .side-menu-wrapper .list-wrapper {
-      margin-bottom: 50px; }
+      margin-bottom: 35px; }
       .streaming-service-wrapper .side-menu-wrapper .list-wrapper h4 {
         color: #818181;
         margin: 0;
@@ -2697,7 +2697,8 @@ button:focus {
       .streaming-service-wrapper .content-wrapper .content-rows h2 {
         margin: 0;
         margin-bottom: 15px;
-        font-size: 1.75rem; }
+        font-size: 1.75rem;
+        text-transform: capitalize; }
       .streaming-service-wrapper .content-wrapper .content-rows .item {
         height: 320px;
         width: 170px;
@@ -2742,7 +2743,8 @@ button:focus {
         .streaming-service-wrapper .content-wrapper .content-rows .item:hover h6, .streaming-service-wrapper .content-wrapper .content-rows .item:hover p {
           display: block; }
       .streaming-service-wrapper .content-wrapper .content-rows .row {
-        display: flex; }
+        display: flex;
+        flex-wrap: wrap; }
         .streaming-service-wrapper .content-wrapper .content-rows .row .item:first-child {
           margin-left: -20px; }
 
