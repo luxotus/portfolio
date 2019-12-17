@@ -2673,7 +2673,7 @@ button:focus {
       display: grid;
       grid-template-columns: 1fr .25fr;
       gap: 2vmin;
-      max-width: 65%;
+      max-width: 80%;
       padding: 25px 5%;
       margin: 0 auto; }
     .streaming-service-wrapper .content-wrapper .large-preview {
@@ -2690,6 +2690,61 @@ button:focus {
       height: 100%;
       width: 100%;
       background-color: gray; }
+    .streaming-service-wrapper .content-wrapper .content-rows {
+      max-width: 80%;
+      padding: 25px 5% 150px;
+      margin: 0 auto; }
+      .streaming-service-wrapper .content-wrapper .content-rows h2 {
+        margin: 0;
+        margin-bottom: 15px;
+        font-size: 1.75rem; }
+      .streaming-service-wrapper .content-wrapper .content-rows .item {
+        height: 320px;
+        width: 170px;
+        padding: 20px; }
+      .streaming-service-wrapper .content-wrapper .content-rows .row-image-wrapper {
+        height: 245px;
+        width: 100%;
+        background-color: gray; }
+        .streaming-service-wrapper .content-wrapper .content-rows .row-image-wrapper img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover; }
+      .streaming-service-wrapper .content-wrapper .content-rows h5 {
+        width: 100%;
+        margin: 0;
+        margin-top: 15px;
+        text-align: center;
+        font-size: 1.35rem;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-word;
+        white-space: nowrap; }
+      .streaming-service-wrapper .content-wrapper .content-rows h6 {
+        display: none;
+        margin: 0;
+        margin-top: 5px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 400;
+        opacity: .55; }
+      .streaming-service-wrapper .content-wrapper .content-rows p {
+        display: none;
+        margin: 0;
+        margin-top: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        opacity: .55; }
+      .streaming-service-wrapper .content-wrapper .content-rows .item:hover {
+        background-color: #18252a;
+        cursor: pointer; }
+        .streaming-service-wrapper .content-wrapper .content-rows .item:hover h6, .streaming-service-wrapper .content-wrapper .content-rows .item:hover p {
+          display: block; }
+      .streaming-service-wrapper .content-wrapper .content-rows .row {
+        display: flex; }
+        .streaming-service-wrapper .content-wrapper .content-rows .row .item:first-child {
+          margin-left: -20px; }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .streaming-service-wrapper .content-wrapper .content {

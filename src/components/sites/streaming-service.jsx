@@ -12,7 +12,7 @@ export default class StreamingService extends React.Component {
 
     this.sections = {
       browse: [
-        'history',
+        'home',
         'recommendations',
         'popular',
         'recently added',
@@ -27,6 +27,18 @@ export default class StreamingService extends React.Component {
         'musicals',
         'thriller',
         'TV shows',
+      ],
+    };
+    this.movies = {
+      'continue watching': [
+        {
+          imagePath: '',
+          title: '',
+          category: '',
+          parentalRating: '',
+          duration: '',
+          releaseDate: '',
+        },
       ],
     };
     this.keyCount = 0;
@@ -174,6 +186,29 @@ export default class StreamingService extends React.Component {
               </div>
               <div className="preview-item">
                 {/*  */}
+              </div>
+            </div>
+          </div>
+          <div className="content-rows">
+            <div className="row-wrapper">
+              <h2>Continue Watching</h2>
+              <div className="row">
+                <div className="item">
+                  <div className="row-image-wrapper">
+                    {/* img */}
+                  </div>
+                  <h5>Children of the corn</h5>
+                  <h6>Thriller &#8226; 1h 52min &#8226; 2003</h6>
+                  <p>PG-13</p>
+                </div>
+                <div className="item">
+                  <div className="row-image-wrapper">
+                    {/* img */}
+                  </div>
+                  <h5>Children of the corn</h5>
+                  <h6>Thriller &#8226; 1h 52min &#8226; 2003</h6>
+                  <p>PG-13</p>
+                </div>
               </div>
             </div>
           </div>
