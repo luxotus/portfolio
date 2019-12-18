@@ -35,6 +35,17 @@ export default class OnlineStore extends React.Component {
             </button>
           </div>
         </header>
+        <div className="upper-content">
+          <div className="large-item item">
+            {/* img */}
+          </div>
+          <div className="small-item item">
+            {/* img */}
+          </div>
+          <div className="small-item item">
+            {/* img */}
+          </div>
+        </div>
       </div>
     );
   }
