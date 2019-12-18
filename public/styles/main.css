@@ -2561,6 +2561,7 @@ button:focus {
     position: relative;
     max-height: calc(100vh - 50px);
     overflow-y: auto;
+    overflow-x: hidden;
     background-color: #0b161a; }
     .streaming-service-wrapper .content-wrapper .menu-btn {
       position: absolute;
@@ -2669,31 +2670,9 @@ button:focus {
         text-decoration: none; }
       .streaming-service-wrapper .content-wrapper .name-account-wrapper a:hover {
         opacity: 1; }
-    .streaming-service-wrapper .content-wrapper .content {
-      display: grid;
-      grid-template-columns: 1fr .25fr;
-      gap: 2vmin;
-      max-width: 80%;
-      padding: 25px 5%;
-      margin: 0 auto; }
-    .streaming-service-wrapper .content-wrapper .large-preview {
-      height: 400px;
-      width: 100%;
-      background-color: gray; }
-    .streaming-service-wrapper .content-wrapper .small-column-preview {
-      display: grid;
-      grid-template-columns: 1fr;
-      height: 400px;
-      width: 100%;
-      gap: 2vmin; }
-    .streaming-service-wrapper .content-wrapper .preview-item {
-      height: 100%;
-      width: 100%;
-      background-color: gray; }
     .streaming-service-wrapper .content-wrapper .content-rows {
       max-width: 80%;
-      padding: 25px 5% 150px;
-      margin: 0 auto; }
+      padding: 25px 5% 150px; }
       .streaming-service-wrapper .content-wrapper .content-rows h2 {
         margin: 0;
         margin-bottom: 15px;
@@ -2701,8 +2680,44 @@ button:focus {
         text-transform: capitalize; }
       .streaming-service-wrapper .content-wrapper .content-rows .item {
         height: 320px;
-        width: 170px;
+        width: 170px !important;
         padding: 20px; }
+      .streaming-service-wrapper .content-wrapper .content-rows .slick-slide {
+        width: 210px; }
+      .streaming-service-wrapper .content-wrapper .content-rows .slick-prev {
+        top: 40%;
+        left: 1%;
+        z-index: 3;
+        display: block;
+        height: 40px;
+        width: 40px;
+        background-color: #1b2a31; }
+      .streaming-service-wrapper .content-wrapper .content-rows .slick-next {
+        top: 40%;
+        right: 2%;
+        display: block;
+        z-index: 3;
+        height: 40px;
+        width: 40px;
+        background-color: #1b2a31; }
+      .streaming-service-wrapper .content-wrapper .content-rows .slick-next:before {
+        content: '';
+        height: 10px;
+        width: 10px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        display: block;
+        transform: rotateZ(-45deg);
+        margin: 12px; }
+      .streaming-service-wrapper .content-wrapper .content-rows .slick-prev:before {
+        content: '';
+        height: 10px;
+        width: 10px;
+        border-left: 2px solid #fff;
+        border-top: 2px solid #fff;
+        display: block;
+        transform: rotateZ(-45deg);
+        margin: 12px 17px; }
       .streaming-service-wrapper .content-wrapper .content-rows .row-image-wrapper {
         height: 245px;
         width: 100%;
@@ -2739,14 +2754,29 @@ button:focus {
         opacity: .55; }
       .streaming-service-wrapper .content-wrapper .content-rows .item:hover {
         background-color: #18252a;
-        cursor: pointer; }
+        cursor: pointer;
+        z-index: 2; }
         .streaming-service-wrapper .content-wrapper .content-rows .item:hover h6, .streaming-service-wrapper .content-wrapper .content-rows .item:hover p {
           display: block; }
-      .streaming-service-wrapper .content-wrapper .content-rows .row {
-        display: flex;
-        flex-wrap: wrap; }
-        .streaming-service-wrapper .content-wrapper .content-rows .row .item:first-child {
-          margin-left: -20px; }
+      .streaming-service-wrapper .content-wrapper .content-rows .row-wrapper {
+        position: relative;
+        width: 113%;
+        margin-top: 10px; }
+      .streaming-service-wrapper .content-wrapper .content-rows .slick-slider {
+        margin-left: -20px; }
+      .streaming-service-wrapper .content-wrapper .content-rows .overlay-row-fade {
+        position: absolute;
+        height: 380px;
+        width: 40px;
+        top: 30px;
+        background-color: #0b161ad6;
+        z-index: 1; }
+      .streaming-service-wrapper .content-wrapper .content-rows .overlay-row-fade.left {
+        left: -40px;
+        box-shadow: 8px 0px 20px 13px #0b161ad6; }
+      .streaming-service-wrapper .content-wrapper .content-rows .overlay-row-fade.right {
+        right: 0;
+        box-shadow: -8px 0px 20px 13px #0b161ad6; }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .streaming-service-wrapper .content-wrapper .content {

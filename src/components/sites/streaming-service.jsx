@@ -1,5 +1,8 @@
 import React from 'react';
 import { ReactSVG } from 'react-svg';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default class StreamingService extends React.Component {
   constructor(props) {
@@ -31,7 +34,24 @@ export default class StreamingService extends React.Component {
       ],
     };
     this.movies = {
-      'continue watching': [
+      'continue watching': this.getRandomMovies(),
+      'just for you': this.getRandomMovies(),
+      recommended: this.getRandomMovies(),
+      popular: this.getRandomMovies(),
+    };
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
+    this.updateMobileMenuStatus = this.updateMobileMenuStatus.bind(this);
+  }
+
+  getKey() {
+    this.keyCount += 1;
+    return this.keyCount;
+  }
+
+  getRandomMovies() {
+    return this.shuffleList(
+      [
         {
           imagePath: '/images/sites/streaming-service/1.jpg',
           title: 'Pulp Fiction',
@@ -88,16 +108,48 @@ export default class StreamingService extends React.Component {
           duration: '1h 34min',
           releaseDate: '1983',
         },
-      ],
-    };
-    this.keyCount = 0;
-    this.getKey = this.getKey.bind(this);
-    this.updateMobileMenuStatus = this.updateMobileMenuStatus.bind(this);
-  }
-
-  getKey() {
-    this.keyCount += 1;
-    return this.keyCount;
+        {
+          imagePath: '/images/sites/streaming-service/8.jpg',
+          title: 'Get Out',
+          category: 'Horror',
+          parentalRating: 'R',
+          duration: '1h 44min',
+          releaseDate: '2017',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/9.jpg',
+          title: 'Avatar',
+          category: 'Action',
+          parentalRating: 'PG-13',
+          duration: '2h 42min',
+          releaseDate: '2009',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/10.jpg',
+          title: 'Drive',
+          category: 'Drama',
+          parentalRating: 'R',
+          duration: '1h 40min',
+          releaseDate: '2011',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/11.jpg',
+          title: 'Sinister',
+          category: 'Horror',
+          parentalRating: 'R',
+          duration: '1h 50min',
+          releaseDate: '2012',
+        },
+        {
+          imagePath: '/images/sites/streaming-service/12.jpg',
+          title: 'Black Swan',
+          category: 'Thriller',
+          parentalRating: 'R',
+          duration: '1h 48min',
+          releaseDate: '2010',
+        },
+      ]
+    );
   }
 
   updateMobileMenuStatus(isMobileMenuOpen) {
@@ -119,6 +171,22 @@ export default class StreamingService extends React.Component {
     }
   }
 
+  shuffleList(a) {
+    let j;
+    let x;
+    let i;
+    const arr = a;
+
+    for (i = arr.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = arr[i];
+      arr[i] = arr[j];
+      arr[j] = x;
+    }
+
+    return a;
+  }
+
   handleListItemClick(event) {
     const { activeSection, activeItem } = this.state;
     const el = event.currentTarget;
@@ -134,6 +202,14 @@ export default class StreamingService extends React.Component {
 
   render() {
     const { isMobileMenuOpen, activeSection, activeItem } = this.state;
+    const sliderSettings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      variableWidth: true,
+    };
 
     return (
       <div className="streaming-service-wrapper">
@@ -222,27 +298,11 @@ export default class StreamingService extends React.Component {
               </div>
             </div>
           </header>
-          <div className="content">
-            <div className="large-preview">
-              {/*  */}
-            </div>
-            <div className="small-column-preview">
-              <div className="preview-item">
-                {/*  */}
-              </div>
-              <div className="preview-item">
-                {/*  */}
-              </div>
-              <div className="preview-item">
-                {/*  */}
-              </div>
-            </div>
-          </div>
           <div className="content-rows">
             {Object.keys(this.movies).map((key) => (
               <div key={`row-wrapper-${this.getKey()}`} className="row-wrapper">
                 <h2>{key}</h2>
-                <div className="row">
+                <Slider {...sliderSettings}>
                   {this.movies[key].map((item) => (
                     <div key={`movie-item-${this.getKey()}`} className="item">
                       <div className="row-image-wrapper">
@@ -253,7 +313,9 @@ export default class StreamingService extends React.Component {
                       <p>{item.parentalRating}</p>
                     </div>
                   ))}
-                </div>
+                </Slider>
+                {/* <div className="overlay-row-fade left" /> */}
+                <div className="overlay-row-fade right" />
               </div>
             ))}
           </div>

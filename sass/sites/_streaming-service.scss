@@ -121,6 +121,7 @@
     position: relative;
     max-height: calc(100vh - #{$header-height});
     overflow-y: auto;
+    overflow-x: hidden;
     background-color: #0b161a;
 
     .menu-btn {
@@ -286,39 +287,9 @@
       }
     }
 
-    .content {
-      display: grid;
-      grid-template-columns: 1fr .25fr;
-      gap: 2vmin;
-      max-width: 80%;
-      padding: 25px 5%;
-      margin: 0 auto;
-    }
-
-    .large-preview {
-      height: 400px;
-      width: 100%;
-      background-color: gray;
-    }
-
-    .small-column-preview {
-      display: grid;
-      grid-template-columns: 1fr;
-      height: 400px;
-      width: 100%;
-      gap: 2vmin;
-    }
-
-    .preview-item {
-      height: 100%;
-      width: 100%;
-      background-color: gray;
-    }
-
     .content-rows {
       max-width: 80%;
       padding: 25px 5% 150px;
-      margin: 0 auto;
 
       h2 {
         margin: 0;
@@ -329,8 +300,54 @@
 
       .item {
         height: 320px;
-        width: 170px;
+        width: 170px !important;
         padding: 20px;
+      }
+
+      .slick-slide {
+        width: 210px;
+      }
+
+      .slick-prev {
+        top: 40%;
+        left: 1%;
+        z-index: 3;
+        display: block;
+        height: 40px;
+        width: 40px;
+        background-color: #1b2a31;
+      }
+
+      .slick-next {
+        top: 40%;
+        right: 2%;
+        display: block;
+        z-index: 3;
+        height: 40px;
+        width: 40px;
+        background-color: #1b2a31;
+      }
+
+      .slick-next:before {
+        content: '';
+        height: 10px;
+        width: 10px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        display: block;
+        transform: rotateZ(-45deg);
+        margin: 12px;
+      }
+
+      .slick-prev:before{
+        content: '';
+        height: 10px;
+        width: 10px;
+        border-left: 2px solid #fff;
+        border-top: 2px solid #fff;
+        display: block;
+        transform: rotateZ(-45deg);
+        margin: 12px 17px;
       }
 
       .row-image-wrapper {
@@ -380,19 +397,40 @@
       .item:hover {
         background-color: #18252a;
         cursor: pointer;
+        z-index: 2;
 
         h6, p {
           display: block;
         }
       }
 
-      .row {
-        display: flex;
-        flex-wrap: wrap;
+      .row-wrapper {
+        position: relative;
+        width: 113%;
+        margin-top: 10px;
+      }
 
-        .item:first-child {
-          margin-left: -20px; // remove later
-        }
+      .slick-slider {
+        margin-left: -20px; // remove later
+      }
+
+      .overlay-row-fade {
+        position: absolute;
+        height: 380px;
+        width: 40px;
+        top: 30px;
+        background-color: #0b161ad6;
+        z-index: 1;
+      }
+
+      .overlay-row-fade.left {
+        left: -40px;
+        box-shadow: 8px 0px 20px 13px #0b161ad6;
+      }
+
+      .overlay-row-fade.right {
+        right: 0;
+        box-shadow: -8px 0px 20px 13px #0b161ad6;
       }
     }
   }
