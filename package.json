@@ -9,8 +9,10 @@
     "react-particles-js": "*",
     "react-router-dom": "*",
     "react-scripts": "*",
+    "react-slick": "^0.25.2",
     "react-stack-grid": "^0.7.1",
-    "react-svg": "^11.0.3"
+    "react-svg": "^11.0.3",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -164,6 +164,15 @@ export default class Sites extends React.Component {
         ],
         imageSrc: '/images/sites/screens/pinterest-redesign-sm.png',
       },
+      {
+        id: 4,
+        name: 'Streaming Service',
+        link: 'streaming-service',
+        types: [
+          'app',
+        ],
+        imageSrc: '/images/sites/screens/streaming-service-sm.png',
+      },
     ];
 
     return (
