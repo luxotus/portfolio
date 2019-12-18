@@ -171,7 +171,7 @@ export default class Sites extends React.Component {
         types: [
           'app',
         ],
-        imageSrc: '/images/sites/screens/example-sm.png',
+        imageSrc: '/images/sites/screens/streaming-service-sm.png',
       },
     ];
 
