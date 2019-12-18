@@ -7,6 +7,7 @@ import LuxotusBlog from './sites/luxotus-blog';
 import WorldwideStories from './sites/worldwide-stories';
 import PinterestRedesign from './sites/pinterest-redesign';
 import StreamingService from './sites/streaming-service';
+import OnlineStore from './sites/online-store';
 import App from './app';
 import Header from './header';
 
@@ -54,6 +55,7 @@ export default class MainRouter extends React.Component {
           <Route path="/sites/worldwide-stories" render={({ match }) => <WorldwideStories match={match} {...this.props} />} />
           <Route path="/sites/pinterest-redesign" render={({ match }) => <PinterestRedesign match={match} {...this.props} />} />
           <Route path="/sites/streaming-service" render={({ match }) => <StreamingService match={match} {...this.props} />} />
+          <Route path="/sites/online-store" render={({ match }) => <OnlineStore match={match} {...this.props} />} />
         </Switch>
       </div>
     );

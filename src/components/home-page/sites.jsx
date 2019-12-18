@@ -173,6 +173,15 @@ export default class Sites extends React.Component {
         ],
         imageSrc: '/images/sites/screens/streaming-service-sm.png',
       },
+      {
+        id: 5,
+        name: 'Online Store',
+        link: 'online-store',
+        types: [
+          'shop',
+        ],
+        imageSrc: '/images/sites/screens/example-sm.png',
+      },
     ];
 
     return (

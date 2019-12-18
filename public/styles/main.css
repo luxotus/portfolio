@@ -2860,3 +2860,77 @@ button:focus {
     .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper {
       display: flex;
       justify-content: flex-end; } }
+
+.online-store-wrapper {
+  padding-top: 50px; }
+  .online-store-wrapper a {
+    text-decoration: none; }
+  .online-store-wrapper header {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    height: 60px;
+    padding: 0px 25px;
+    box-sizing: border-box; }
+    .online-store-wrapper header .logo-nav-wrapper {
+      display: flex;
+      align-items: center; }
+    .online-store-wrapper header .logo {
+      margin-right: 30px; }
+      .online-store-wrapper header .logo h3 {
+        margin: 0;
+        font-size: 1.5rem; }
+    .online-store-wrapper header nav {
+      text-align: center; }
+      .online-store-wrapper header nav a {
+        padding: 0 5px;
+        margin-right: 10px;
+        font-size: 1.15rem; }
+      .online-store-wrapper header nav a.active {
+        color: #3366ff;
+        font-weight: 500; }
+      .online-store-wrapper header nav a:hover {
+        color: #3366ff; }
+    .online-store-wrapper header .side {
+      display: flex;
+      justify-content: space-between; }
+    .online-store-wrapper header .search-wrapper {
+      display: flex;
+      height: 32px;
+      width: calc(100% - 42px);
+      align-items: center;
+      justify-content: flex-end; }
+      .online-store-wrapper header .search-wrapper input {
+        height: 100%;
+        width: 0%;
+        border: none;
+        padding: 0;
+        transition: width 1s;
+        background-color: #eeeeee;
+        text-indent: 10px;
+        font-size: 1.15rem; }
+      .online-store-wrapper header .search-wrapper .btn {
+        padding: 0 10px;
+        height: 100%;
+        transition: background-color 1s;
+        background-color: transparent; }
+      .online-store-wrapper header .search-wrapper .icon {
+        height: 20px;
+        width: 20px; }
+    .online-store-wrapper header .btn:hover svg {
+      fill: #3366ff; }
+    .online-store-wrapper header .search-wrapper:hover input,
+    .online-store-wrapper header .search-wrapper:focus input {
+      width: 50%;
+      outline: none; }
+    .online-store-wrapper header .search-wrapper:hover .btn,
+    .online-store-wrapper header .search-wrapper:focus .btn {
+      background-color: #eeeeee; }
+    .online-store-wrapper header .shop-btn {
+      height: 32px;
+      padding: 0 10px;
+      background-color: transparent; }
+      .online-store-wrapper header .shop-btn .icon {
+        height: 20px;
+        width: 20px; }
