@@ -7,6 +7,33 @@ export default class OnlineStore extends React.Component {
       <div className="online-store-wrapper">
         <header>
           <div className="logo-nav-wrapper">
+            <div className="mobile-menu-wrapper">
+              <button type="button" className="menu-btn">
+                <span className="icon">
+                  <ReactSVG src="/svg/menu.svg" />
+                </span>
+              </button>
+              <ul className="mobile-menu">
+                <li>
+                  <a className="active" href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/">Latest</a>
+                </li>
+                <li>
+                  <a href="/">Gadgets</a>
+                </li>
+                <li>
+                  <a href="/">Furniture</a>
+                </li>
+                <li>
+                  <a href="/">Fashion</a>
+                </li>
+                <li>
+                  <a href="/">Outdoors</a>
+                </li>
+              </ul>
+            </div>
             <div className="logo">
               <h3>LQ</h3>
             </div>
