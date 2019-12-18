@@ -2672,7 +2672,7 @@ button:focus {
         opacity: 1; }
     .streaming-service-wrapper .content-wrapper .content-rows {
       max-width: 80%;
-      padding: 25px 5% 150px; }
+      padding: 25px 5%; }
       .streaming-service-wrapper .content-wrapper .content-rows h2 {
         margin: 0;
         margin-bottom: 15px;
@@ -2789,13 +2789,7 @@ button:focus {
   .streaming-service-wrapper .content-wrapper .search-wrapper {
     width: 35px; }
   .streaming-service-wrapper .content-wrapper .search-profile-wrapper {
-    padding-right: 0; }
-  .streaming-service-wrapper .content-wrapper .content {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-    padding: 25px 8%; }
-  .streaming-service-wrapper .content-wrapper .small-column-preview {
-    grid-template-columns: 1fr 1fr; } }
+    padding-right: 0; } }
 
 @media (min-width: 481px) and (max-width: 767px) {
   .streaming-service-wrapper {
@@ -2827,17 +2821,7 @@ button:focus {
       gap: 3vmin; }
     .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper {
       display: flex;
-      justify-content: flex-end; }
-    .streaming-service-wrapper .content-wrapper .content {
-      grid-template-columns: 1fr;
-      gap: 3vmin;
-      max-width: 100%;
-      padding: 25px 8%; }
-    .streaming-service-wrapper .content-wrapper .small-column-preview {
-      grid-template-columns: 1fr 1fr;
-      justify-self: center;
-      gap: 3vmin;
-      height: 350px; } }
+      justify-content: flex-end; } }
 
 @media (min-width: 320px) and (max-width: 480px) {
   .streaming-service-wrapper {
@@ -2869,14 +2853,4 @@ button:focus {
       gap: 3vmin; }
     .streaming-service-wrapper .content-wrapper .nav-buttons-wrapper {
       display: flex;
-      justify-content: flex-end; }
-    .streaming-service-wrapper .content-wrapper .content {
-      grid-template-columns: 1fr;
-      gap: 3vmin;
-      max-width: 100%;
-      padding: 25px 8%; }
-    .streaming-service-wrapper .content-wrapper .small-column-preview {
-      grid-template-columns: 1fr 1fr;
-      justify-self: center;
-      gap: 3vmin;
-      height: 300px; } }
+      justify-content: flex-end; } }

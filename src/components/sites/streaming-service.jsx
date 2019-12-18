@@ -148,7 +148,7 @@ export default class StreamingService extends React.Component {
           duration: '1h 48min',
           releaseDate: '2010',
         },
-      ]
+      ],
     );
   }
 

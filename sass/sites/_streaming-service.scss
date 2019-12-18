@@ -289,7 +289,7 @@
 
     .content-rows {
       max-width: 80%;
-      padding: 25px 5% 150px;
+      padding: 25px 5%;
 
       h2 {
         margin: 0;
@@ -461,16 +461,6 @@
       .search-profile-wrapper {
         padding-right: 0;
       }
-
-      .content {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-        padding: 25px 8%;
-      }
-
-      .small-column-preview {
-        grid-template-columns: 1fr 1fr;
-      }
     }
   }
 }
@@ -525,20 +515,6 @@
         display: flex;
         justify-content: flex-end;
       }
-
-      .content {
-        grid-template-columns: 1fr;
-        gap: 3vmin;
-        max-width: 100%;
-        padding: 25px 8%;
-      }
-
-      .small-column-preview {
-        grid-template-columns: 1fr 1fr;
-        justify-self: center;
-        gap: 3vmin;
-        height: 350px;
-      }
     }
   }
 }
@@ -592,20 +568,6 @@
       .nav-buttons-wrapper {
         display: flex;
         justify-content: flex-end;
-      }
-
-      .content {
-        grid-template-columns: 1fr;
-        gap: 3vmin;
-        max-width: 100%;
-        padding: 25px 8%;
-      }
-
-      .small-column-preview {
-        grid-template-columns: 1fr 1fr;
-        justify-self: center;
-        gap: 3vmin;
-        height: 300px;
       }
     }
   }
