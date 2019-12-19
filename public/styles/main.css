@@ -2862,7 +2862,8 @@ button:focus {
       justify-content: flex-end; } }
 
 .online-store-wrapper {
-  padding-top: 50px; }
+  padding-top: 50px;
+  background-color: #f3f3f3; }
   .online-store-wrapper a {
     text-decoration: none; }
   .online-store-wrapper header {
@@ -2945,10 +2946,44 @@ button:focus {
     margin: 25px auto 50px; }
     .online-store-wrapper .upper-content .item {
       width: 100%;
-      background-color: gray; }
+      background-color: #cbd0d2; }
     .online-store-wrapper .upper-content .large-item {
       grid-column: span 2;
-      height: 300px; }
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      height: 300px;
+      background-color: #93aeba; }
+      .online-store-wrapper .upper-content .large-item .text-wrapper {
+        padding: 5px 12%;
+        box-sizing: border-box; }
+        .online-store-wrapper .upper-content .large-item .text-wrapper h1 {
+          font-size: 2rem;
+          font-weight: 400;
+          line-height: 2.65rem;
+          margin: 0;
+          margin-bottom: 10px;
+          font-weight: 500;
+          text-transform: capitalize; }
+        .online-store-wrapper .upper-content .large-item .text-wrapper p {
+          font-size: 1.25rem;
+          margin: 0;
+          margin-bottom: 50px; }
+        .online-store-wrapper .upper-content .large-item .text-wrapper a {
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding-bottom: 3px;
+          border-bottom: 1px solid #343434; }
+        .online-store-wrapper .upper-content .large-item .text-wrapper a:hover {
+          color: #1317c9;
+          border-bottom: 1px solid #1317c9; }
+      .online-store-wrapper .upper-content .large-item .image-wrapper {
+        max-height: 300px;
+        height: 100%; }
+        .online-store-wrapper .upper-content .large-item .image-wrapper img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain; }
     .online-store-wrapper .upper-content .small-item {
       height: 200px; }
   .online-store-wrapper .lower-content {
@@ -2961,12 +2996,48 @@ button:focus {
     .online-store-wrapper .lower-content .preview-wrapper {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 0.333fr));
-      gap: 0.5vmin;
-      background-color: #4d4d4d; }
+      gap: 0.5vmin; }
       .online-store-wrapper .lower-content .preview-wrapper .item {
         height: 250px;
         width: 100%;
-        background-color: gray; }
+        padding: 15px;
+        box-sizing: border-box;
+        background-color: #fafafa; }
+      .online-store-wrapper .lower-content .preview-wrapper .top-row {
+        display: flex;
+        justify-content: space-between; }
+        .online-store-wrapper .lower-content .preview-wrapper .top-row h5 {
+          font-size: 1.25rem;
+          margin: 0;
+          opacity: .75;
+          font-style: italic;
+          font-weight: 400; }
+        .online-store-wrapper .lower-content .preview-wrapper .top-row button {
+          padding: 2px 4px;
+          background-color: transparent;
+          opacity: .75; }
+          .online-store-wrapper .lower-content .preview-wrapper .top-row button .icon {
+            height: 20px;
+            width: 20px; }
+      .online-store-wrapper .lower-content .preview-wrapper .middle-row {
+        height: calc(100% - 44px);
+        padding: 5px;
+        box-sizing: border-box; }
+        .online-store-wrapper .lower-content .preview-wrapper .middle-row img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain; }
+      .online-store-wrapper .lower-content .preview-wrapper .bottom-row {
+        display: flex;
+        justify-content: space-between; }
+        .online-store-wrapper .lower-content .preview-wrapper .bottom-row h5 {
+          font-size: 1.25rem;
+          margin: 0;
+          font-weight: 500; }
+        .online-store-wrapper .lower-content .preview-wrapper .bottom-row h4 {
+          font-size: 1.35rem;
+          margin: 0;
+          font-weight: 500; }
 
 @media (min-width: 1920px) {
   .online-store-wrapper .upper-content {

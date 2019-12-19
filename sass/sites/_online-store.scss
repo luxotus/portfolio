@@ -1,5 +1,6 @@
 .online-store-wrapper {
   padding-top: $header-height;
+  background-color: #f3f3f3;
 
   a {
     text-decoration: none;
@@ -127,12 +128,60 @@
 
     .item {
       width: 100%;
-      background-color: gray;
+      background-color: #cbd0d2;
     }
 
     .large-item {
       grid-column: span 2;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
       height: 300px;
+      background-color: #93aeba;
+
+      .text-wrapper {
+        padding: 5px 12%;
+        box-sizing: border-box;
+
+        h1 {
+          font-size: 2rem;
+          font-weight: 400;
+          line-height: 2.65rem;
+          margin: 0;
+          margin-bottom: 10px;
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+
+        p {
+          font-size: 1.25rem;
+          margin: 0;
+          margin-bottom: 50px;
+        }
+
+        a {
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding-bottom: 3px;
+          border-bottom: 1px solid #343434;
+        }
+
+        a:hover {
+          color: #1317c9;
+          border-bottom: 1px solid #1317c9;
+        }
+      }
+
+      .image-wrapper {
+        max-height: 300px;
+        height: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
     }
 
     .small-item {
@@ -156,12 +205,66 @@
       display: grid;
       grid-template-columns: repeat( auto-fit, minmax(300px, .333fr) );
       gap: 0.5vmin;
-      background-color: #4d4d4d;
 
       .item {
         height: 250px;
         width: 100%;
-        background-color: gray;
+        padding: 15px;
+        box-sizing: border-box;
+        background-color: #fafafa;
+      }
+
+      .top-row {
+        display: flex;
+        justify-content: space-between;
+
+        h5 {
+          font-size: 1.25rem;
+          margin: 0;
+          opacity: .75;
+          font-style: italic;
+          font-weight: 400;
+        }
+
+        button {
+          padding: 2px 4px;
+          background-color: transparent;
+          opacity: .75;
+
+          .icon {
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
+
+      .middle-row {
+        height: calc(100% - 44px);
+        padding: 5px;
+        box-sizing: border-box;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .bottom-row {
+        display: flex;
+        justify-content: space-between;
+
+        h5 {
+          font-size: 1.25rem;
+          margin: 0;
+          font-weight: 500;
+        }
+
+        h4 {
+          font-size: 1.35rem;
+          margin: 0;
+          font-weight: 500;
+        }
       }
     }
   }
