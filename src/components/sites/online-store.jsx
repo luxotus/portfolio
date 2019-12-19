@@ -183,15 +183,29 @@ export default class OnlineStore extends React.Component {
             </div>
           </div>
           <div className="small-item item">
-            {/* img */}
+            <div className="text-wrapper">
+              <h1>Relaxing Chairs</h1>
+              <p>Drift into the wonderful bliss of pure comfort.</p>
+              <a href="/">Check it Out</a>
+            </div>
+            <div className="image-wrapper">
+              <img src="/images/sites/online-store/24.png" alt="" />
+            </div>
           </div>
-          <div className="small-item item">
-            {/* img */}
+          <div className="small-item reverse-order item">
+            <div className="text-wrapper">
+              <h1>Luxury Cribs</h1>
+              <p>Your baby can sleep in style. While staying cozy.</p>
+              <a href="/">Check it Out</a>
+            </div>
+            <div className="image-wrapper">
+              <img src="/images/sites/online-store/25.png" alt="" />
+            </div>
           </div>
         </div>
         <div className="lower-content">
           <div className="title">
-            <h2>Title</h2>
+            <h2>Best Deals of the day</h2>
           </div>
           <div className="preview-wrapper">
             {this.buildRandomItems().map((item) => (

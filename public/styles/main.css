@@ -2910,7 +2910,7 @@ button:focus {
         border: none;
         padding: 0;
         transition: width 1s;
-        background-color: #eeeeee;
+        background-color: #d1d1d1;
         text-indent: 10px;
         font-size: 1.15rem; }
       .online-store-wrapper header .search-wrapper .btn {
@@ -2929,7 +2929,7 @@ button:focus {
       outline: none; }
     .online-store-wrapper header .search-wrapper:hover .btn,
     .online-store-wrapper header .search-wrapper:focus .btn {
-      background-color: #eeeeee; }
+      background-color: #d1d1d1; }
     .online-store-wrapper header .shop-btn {
       height: 32px;
       padding: 0 10px;
@@ -2975,8 +2975,8 @@ button:focus {
           padding-bottom: 3px;
           border-bottom: 1px solid #343434; }
         .online-store-wrapper .upper-content .large-item .text-wrapper a:hover {
-          color: #1317c9;
-          border-bottom: 1px solid #1317c9; }
+          color: #fff;
+          border-bottom: 1px solid #fff; }
       .online-store-wrapper .upper-content .large-item .image-wrapper {
         max-height: 300px;
         height: 100%; }
@@ -2985,24 +2985,62 @@ button:focus {
           width: 100%;
           object-fit: contain; }
     .online-store-wrapper .upper-content .small-item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr .85fr;
       height: 200px; }
+      .online-store-wrapper .upper-content .small-item .text-wrapper {
+        padding: 5px 8%;
+        box-sizing: border-box; }
+        .online-store-wrapper .upper-content .small-item .text-wrapper h1 {
+          font-size: 1.5rem;
+          font-weight: 400;
+          line-height: 2rem;
+          margin: 0;
+          margin-bottom: 5px;
+          font-weight: 500;
+          text-transform: capitalize; }
+        .online-store-wrapper .upper-content .small-item .text-wrapper p {
+          font-size: 1.1rem;
+          margin: 0;
+          margin-bottom: 55px; }
+        .online-store-wrapper .upper-content .small-item .text-wrapper a {
+          font-size: 1rem;
+          font-weight: 500;
+          padding-bottom: 3px;
+          border-bottom: 1px solid #343434; }
+        .online-store-wrapper .upper-content .small-item .text-wrapper a:hover {
+          color: #fff;
+          border-bottom: 1px solid #fff; }
+      .online-store-wrapper .upper-content .small-item .image-wrapper {
+        max-height: 200px;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box; }
+        .online-store-wrapper .upper-content .small-item .image-wrapper img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain; }
   .online-store-wrapper .lower-content {
     padding: 0 5% 100px; }
     .online-store-wrapper .lower-content .title {
       margin: 25px 0 15px; }
       .online-store-wrapper .lower-content .title h2 {
-        font-size: 2rem;
-        margin: 0; }
+        font-size: 1.75rem;
+        margin: 0;
+        font-weight: 600;
+        text-transform: capitalize; }
     .online-store-wrapper .lower-content .preview-wrapper {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 0.333fr));
-      gap: 0.5vmin; }
+      gap: 1.5vmin; }
       .online-store-wrapper .lower-content .preview-wrapper .item {
         height: 250px;
         width: 100%;
         padding: 15px;
         box-sizing: border-box;
-        background-color: #fafafa; }
+        background-color: #fafafa;
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.06); }
       .online-store-wrapper .lower-content .preview-wrapper .top-row {
         display: flex;
         justify-content: space-between; }
@@ -3144,9 +3182,13 @@ button:focus {
     max-width: 80%;
     grid-template-columns: 1fr; }
     .online-store-wrapper .upper-content .large-item {
-      grid-column: 1; }
-    .online-store-wrapper .upper-content .small-item {
-      height: 150px; }
+      grid-column: 1;
+      grid-template-columns: 1fr; }
+    .online-store-wrapper .upper-content .item {
+      height: inherit; }
+      .online-store-wrapper .upper-content .item .text-wrapper {
+        padding-top: 25px;
+        padding-bottom: 25px; }
   .online-store-wrapper .lower-content {
     padding: 0 10% 50px; }
     .online-store-wrapper .lower-content .preview-wrapper {
