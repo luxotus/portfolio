@@ -13,24 +13,30 @@ export default class SitesPage extends React.Component {
       },
       {
         id: 1,
+        title: 'Online Store',
+        link: '/sites/online-store',
+        image: '/images/sites/screens/online-store.png',
+      },
+      {
+        id: 2,
         title: 'Pinterest Redesign',
         link: '/sites/pinterest-redesign',
         image: '/images/sites/screens/pinterest-redesign.png',
       },
       {
-        id: 2,
+        id: 3,
         title: 'Luxotus',
         link: '/sites/luxotus-blog',
         image: '/images/sites/screens/luxotus.png',
       },
       {
-        id: 3,
+        id: 4,
         title: 'Tea Shop',
         link: '/sites/tea-shop',
         image: '/images/sites/screens/tea-shop.png',
       },
       {
-        id: 4,
+        id: 5,
         title: 'Worldwide Stories',
         link: '/sites/worldwide-stories',
         image: '/images/sites/screens/worldwide-stories.png',

@@ -180,7 +180,7 @@ export default class Sites extends React.Component {
         types: [
           'shop',
         ],
-        imageSrc: '/images/sites/screens/example-sm.png',
+        imageSrc: '/images/sites/screens/online-store-sm.png',
       },
     ];
 
