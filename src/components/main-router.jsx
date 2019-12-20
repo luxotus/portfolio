@@ -4,7 +4,6 @@ import BlogPage from './other-pages/blog';
 import SitesPage from './other-pages/sites';
 import TeaShop from './sites/tea-shop';
 import LuxotusBlog from './sites/luxotus-blog';
-import WorldwideStories from './sites/worldwide-stories';
 import PinterestRedesign from './sites/pinterest-redesign';
 import StreamingService from './sites/streaming-service';
 import OnlineStore from './sites/online-store';
@@ -52,7 +51,6 @@ export default class MainRouter extends React.Component {
           <Route exact path="/sites" render={({ match }) => <SitesPage match={match} {...this.props} />} />
           <Route path="/sites/tea-shop" render={({ match }) => <TeaShop match={match} {...this.props} />} />
           <Route path="/sites/luxotus-blog" render={({ match }) => <LuxotusBlog match={match} {...this.props} />} />
-          <Route path="/sites/worldwide-stories" render={({ match }) => <WorldwideStories match={match} {...this.props} />} />
           <Route path="/sites/pinterest-redesign" render={({ match }) => <PinterestRedesign match={match} {...this.props} />} />
           <Route path="/sites/streaming-service" render={({ match }) => <StreamingService match={match} {...this.props} />} />
           <Route path="/sites/online-store" render={({ match }) => <OnlineStore match={match} {...this.props} />} />
