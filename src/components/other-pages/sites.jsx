@@ -35,12 +35,6 @@ export default class SitesPage extends React.Component {
         link: '/sites/tea-shop',
         image: '/images/sites/screens/tea-shop.png',
       },
-      {
-        id: 5,
-        title: 'Worldwide Stories',
-        link: '/sites/worldwide-stories',
-        image: '/images/sites/screens/worldwide-stories.png',
-      },
     ];
   }
 

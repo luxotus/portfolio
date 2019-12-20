@@ -147,16 +147,6 @@ export default class Sites extends React.Component {
       },
       {
         id: 2,
-        name: 'Worldwide Stories',
-        link: 'worldwide-stories',
-        types: [
-          'app',
-          'landing page',
-        ],
-        imageSrc: '/images/sites/screens/worldwide-stories-sm.png',
-      },
-      {
-        id: 3,
         name: 'Pinterest Redesign',
         link: 'pinterest-redesign',
         types: [
@@ -165,7 +155,7 @@ export default class Sites extends React.Component {
         imageSrc: '/images/sites/screens/pinterest-redesign-sm.png',
       },
       {
-        id: 4,
+        id: 3,
         name: 'Streaming Service',
         link: 'streaming-service',
         types: [
@@ -174,11 +164,12 @@ export default class Sites extends React.Component {
         imageSrc: '/images/sites/screens/streaming-service-sm.png',
       },
       {
-        id: 5,
+        id: 4,
         name: 'Online Store',
         link: 'online-store',
         types: [
           'shop',
+          'landing page',
         ],
         imageSrc: '/images/sites/screens/online-store-sm.png',
       },
