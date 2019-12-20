@@ -33,6 +33,10 @@
     color: $hover-blue-color-1;
   }
 
+  a:hover svg {
+    fill: $hover-blue-color-1;
+  }
+
   .item {
     padding: 20px;
     border-radius: 5px;
@@ -46,6 +50,7 @@
     }
 
     span {
+      margin: 0 auto;
       font-size: 1.75em;
       text-decoration: none;
     }

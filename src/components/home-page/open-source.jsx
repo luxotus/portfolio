@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactSVG } from 'react-svg';
 
 export default class OpenSource extends React.Component {
   constructor(props) {
@@ -46,7 +47,9 @@ export default class OpenSource extends React.Component {
           <p>
             {item.description}
           </p>
-          <span className="icon-github" />
+          <span className="icon">
+            <ReactSVG src="/svg/github.svg" />
+          </span>
         </div>
       </a>
     ));

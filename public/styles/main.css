@@ -795,6 +795,8 @@ button:focus {
   #osp-wrapper a:hover span,
   #osp-wrapper a:hover h3 {
     color: #0f89e2de; }
+  #osp-wrapper a:hover svg {
+    fill: #0f89e2de; }
   #osp-wrapper .item {
     padding: 20px;
     border-radius: 5px;
@@ -805,6 +807,7 @@ button:focus {
     #osp-wrapper .item h3 {
       font-size: 1.5em; }
     #osp-wrapper .item span {
+      margin: 0 auto;
       font-size: 1.75em;
       text-decoration: none; }
   #osp-wrapper .item:hover {
