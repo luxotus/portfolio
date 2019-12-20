@@ -786,9 +786,9 @@ button:focus {
 
 #osp-wrapper {
   display: grid;
-  grid-template-columns:  47.75% 47.75%;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
-  width: 53%;
+  max-width: 680px;
   margin: 0 auto; }
   #osp-wrapper a {
     text-decoration: none; }
@@ -798,6 +798,7 @@ button:focus {
   #osp-wrapper a:hover svg {
     fill: #0f89e2de; }
   #osp-wrapper .item {
+    max-width: 280px;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #eeeeee;
@@ -806,6 +807,9 @@ button:focus {
     text-align: center; }
     #osp-wrapper .item h3 {
       font-size: 1.5em; }
+    #osp-wrapper .item p {
+      font-size: 1.15rem;
+      line-height: 1.5rem; }
     #osp-wrapper .item span {
       margin: 0 auto;
       font-size: 1.75em;

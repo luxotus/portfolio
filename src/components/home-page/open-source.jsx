@@ -22,19 +22,19 @@ export default class OpenSource extends React.Component {
         link: 'https://github.com/luxotus/portfolio',
       },
       {
+        title: 'General Stat Helper',
+        description: 'Collection of statistical functions implemented in ES6, that are often used in machine learning applications.',
+        link: 'https://github.com/luxotus/general-stat-helper',
+      },
+      {
         title: 'Color Blindness Tool',
         description: 'Tool to help you view your site as a user with a color deficiency. Giving you confidence that your site is readable for all users.',
         link: 'https://github.com/luxotus/color-blindness',
       },
       {
         title: 'Color Contrast Tool',
-        description: 'Tool to get the contrast between text and background color. Includes WCAG20 G18 validation, to ensure that your site is accessible.',
+        description: 'Tool to get the contrast between text and background color. Using WCAG20 G18 validation, to ensure that your site is accessible.',
         link: 'https://github.com/luxotus/color-contrast',
-      },
-      {
-        title: 'Color Converter',
-        description: 'A simple tool to colors to different formats. Such as RGB to hex and vice-versa. Also included support for shorthand hex colors.',
-        link: 'https://github.com/luxotus/color-converter',
       },
     ];
 
