@@ -169,6 +169,7 @@ export default class Sites extends React.Component {
         link: 'online-store',
         types: [
           'shop',
+          'landing page',
         ],
         imageSrc: '/images/sites/screens/online-store-sm.png',
       },
