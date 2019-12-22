@@ -27,6 +27,11 @@ export default class OpenSource extends React.Component {
         link: 'https://github.com/luxotus/general-stat-helper',
       },
       {
+        title: 'Text Summarizer',
+        description: 'Research tool that uses NLTK for summarizing multiple articles at once and extracting their top keywords.',
+        link: 'https://github.com/luxotus/general-stat-helper',
+      },
+      {
         title: 'Color Blindness Tool',
         description: 'Tool to help you view your site as a user with a color deficiency. Giving you confidence that your site is readable for all users.',
         link: 'https://github.com/luxotus/color-blindness',
