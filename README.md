@@ -25,4 +25,4 @@ npm run start
 ```
 
 ## License
-[MIT](https://github.com/luxotus/ui-components-library/blob/master/LICENSE)
+[MIT](https://github.com/luxotus/portfolio/blob/master/LICENSE)
