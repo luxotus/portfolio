@@ -1,4 +1,4 @@
-#maximum-layout-container {
+.blog-layout-container {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
@@ -230,7 +230,7 @@
 
 /* Mobile */
 @include semi-mobile {
-  #maximum-layout-container .blog-holder {
+  .blog-layout-container .blog-holder {
     .arrow-container.closed {
       right: 0;
     }
@@ -239,7 +239,7 @@
 
 /* Mobile Portrait */
 @include semi-mobile-portrait {
-  #maximum-layout-container {
+  .blog-layout-container {
     .blog-image {
       height: 75%;
       width: 100%;
@@ -269,7 +269,7 @@
 
 /* Mobile Landscape */
 @include semi-mobile-landscape {
-  #maximum-layout-container {
+  .blog-layout-container {
     .blog-image {
       height: 100%;
       width: 40%;
@@ -304,14 +304,14 @@
 
 /* Tablet */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (min-device-height: 768px) {
-  #maximum-layout-container .blog-holder .arrow-container.closed {
+  .blog-layout-container .blog-holder .arrow-container.closed {
     right: 0;
   }
 }
 
 /* Tablet Portrait */
 @include tablet-portrait {
-  #maximum-layout-container {
+  .blog-layout-container {
     .blog-image {
       height: 30%;
       width: 100%;

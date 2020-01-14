@@ -68,7 +68,7 @@ export default class SitesPage extends React.Component {
 
   render() {
     return (
-      <div id="minimal-layout-container">
+      <div className="site-layout-container">
         <div className="content-holder">
           {this.content()}
           <Footer />

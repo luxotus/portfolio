@@ -1,4 +1,4 @@
-#minimal-layout-container {
+.site-layout-container {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
@@ -44,7 +44,7 @@
 }
 
 @include desktop-lg {
-  #minimal-layout-container .content-holder .content-wrapper {
+  .site-layout-container .content-holder .content-wrapper {
     padding: 50px 0;
   }
 }
@@ -92,7 +92,7 @@
 
 /* Mobile */
 @include semi-mobile {
-  #minimal-layout-container {
+  .site-layout-container {
     height: 100vh;
 
     .content-holder {
@@ -108,7 +108,7 @@
 
 /* Mobile Portrait */
 @include semi-mobile-portrait {
-  #minimal-layout-container {
+  .site-layout-container {
     .content-holder section {
       padding: 0 2.5%;
     }
@@ -118,14 +118,14 @@
 
 /* Tablet */
 @include tablet {
-  #minimal-layout-container {
+  .site-layout-container {
     height: 100vh;
   }
 }
 
 /* Tablet Portrait */
 @include tablet-portrait {
-  #minimal-layout-container {
+  .site-layout-container {
     .content-holder {
       width: 100%;
 

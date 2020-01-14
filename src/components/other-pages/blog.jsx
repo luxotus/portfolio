@@ -167,7 +167,7 @@ export default class BlogPage extends React.Component {
   }
 
   scaleImage(shouldIncrement) {
-    const element = document.querySelector('#maximum-layout-container .blog-image');
+    const element = document.querySelector('.blog-layout-container .blog-image');
     const step = 0.01;
     const milSec = 10;
     const range = {
@@ -205,23 +205,23 @@ export default class BlogPage extends React.Component {
   }
 
   showBlogContent() {
-    document.querySelector('#maximum-layout-container button.read-more').style.display = 'none';
-    document.querySelector('#maximum-layout-container .blog-content .content').style.display = 'block';
-    document.querySelector('#maximum-layout-container .arrow-container').classList.add('closed');
+    document.querySelector('.blog-layout-container button.read-more').style.display = 'none';
+    document.querySelector('.blog-layout-container .blog-content .content').style.display = 'block';
+    document.querySelector('.blog-layout-container .arrow-container').classList.add('closed');
     this.scaleImage(true);
   }
 
   hideBlogContent() {
-    document.querySelector('#maximum-layout-container button.read-more').style.display = 'block';
-    document.querySelector('#maximum-layout-container .blog-content .content').style.display = 'none';
-    document.querySelector('#maximum-layout-container .arrow-container').classList.remove('closed');
+    document.querySelector('.blog-layout-container button.read-more').style.display = 'block';
+    document.querySelector('.blog-layout-container .blog-content .content').style.display = 'none';
+    document.querySelector('.blog-layout-container .arrow-container').classList.remove('closed');
     this.scaleImage(false);
   }
 
   blogPostAnimation(transform) {
     const elements = {
-      image: document.querySelector('#maximum-layout-container .blog-image'),
-      wrapper: document.querySelector('#maximum-layout-container .blog-wrapper'),
+      image: document.querySelector('.blog-layout-container .blog-image'),
+      wrapper: document.querySelector('.blog-layout-container .blog-wrapper'),
     };
     const step = 5;
     const xOrigin = 0;
@@ -255,8 +255,8 @@ export default class BlogPage extends React.Component {
 
   changeBlogPost(direction) {
     const elements = {
-      image: document.querySelector('#maximum-layout-container .blog-image'),
-      wrapper: document.querySelector('#maximum-layout-container .blog-wrapper'),
+      image: document.querySelector('.blog-layout-container .blog-image'),
+      wrapper: document.querySelector('.blog-layout-container .blog-wrapper'),
     };
     let matrix = window.getComputedStyle(elements.image, null).getPropertyValue('transform');
     matrix = matrix.substring(7, matrix.length - 1).split(', ');
@@ -384,7 +384,7 @@ export default class BlogPage extends React.Component {
     const { activeID } = this.state;
 
     return (
-      <div id="maximum-layout-container">
+      <div className="blog-layout-container">
         {this.createContentHolder(this.blogData[activeID])}
       </div>
     );
