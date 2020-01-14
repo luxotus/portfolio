@@ -1,10 +1,11 @@
 import React from 'react';
-import Minimal from '../layouts/minimal';
+import { Link } from 'react-router-dom';
+import Footer from '../home-page/footer';
 
 export default class SitesPage extends React.Component {
   constructor(props) {
     super(props);
-    this.siteData = [
+    this.data = [
       {
         id: 0,
         title: 'Streaming Service',
@@ -36,11 +37,43 @@ export default class SitesPage extends React.Component {
         image: '/images/sites/screens/tea-shop.png',
       },
     ];
+
+    this.keyCount = 0;
+    this.getKey = this.getKey.bind(this);
+  }
+
+  getKey() {
+    this.keyCount += 1;
+    return this.keyCount;
+  }
+
+  content() {
+    return this.data.map((item) => (
+      <div
+        key={this.getKey()}
+        className="content-wrapper"
+        id={`content-wrapper-${item.id}`}
+      >
+        <section>
+          <Link to={item.link}>
+            <h2>
+              {item.title}
+            </h2>
+            <img src={item.image} alt={item.title} />
+          </Link>
+        </section>
+      </div>
+    ));
   }
 
   render() {
     return (
-      <Minimal data={this.siteData} />
+      <div id="minimal-layout-container">
+        <div className="content-holder">
+          {this.content()}
+          <Footer />
+        </div>
+      </div>
     );
   }
 }
