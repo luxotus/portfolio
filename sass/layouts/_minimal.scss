@@ -43,6 +43,12 @@
   }
 }
 
+@include desktop-lg {
+  #minimal-layout-container .content-holder .content-wrapper {
+    padding: 50px 0;
+  }
+}
+
 #content-wrapper-0 {
   background-color: #132e3e;
 

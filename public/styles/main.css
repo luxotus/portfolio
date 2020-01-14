@@ -208,7 +208,8 @@ body {
     width: fit-content;
     margin: 0;
     margin-left: 2%;
-    line-height: 50px; }
+    line-height: 50px;
+    font-size: 1.5rem; }
     #top-nav-bar h4 a {
       font-size: inherit;
       color: inherit;
@@ -1386,6 +1387,10 @@ button:focus {
       #minimal-layout-container .content-holder section img {
         height: 100%;
         width: 100%; }
+
+@media (min-width: 1920px) {
+  #minimal-layout-container .content-holder .content-wrapper {
+    padding: 50px 0; } }
 
 #content-wrapper-0 {
   background-color: #132e3e; }
