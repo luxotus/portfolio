@@ -41,6 +41,11 @@ export default class OpenSource extends React.Component {
         description: 'Tool to get the contrast between text and background color. Using WCAG20 G18 validation, to ensure that your site is accessible.',
         link: 'https://github.com/luxotus/color-contrast',
       },
+      {
+        title: 'UI Components Library',
+        description: 'A collection of UI components that are commonly used by many websites. All components use basic html, css and plain javascript.',
+        link: 'https://github.com/luxotus/color-contrast',
+      },
     ];
 
     const items = data.map((item) => (
