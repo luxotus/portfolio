@@ -259,6 +259,8 @@ body {
   position: absolute;
   right: 0;
   z-index: 1;
+  display: flex;
+  align-items: center;
   height: 100vh;
   width: 250px;
   border-left: solid 1px #efefef;
@@ -266,13 +268,14 @@ body {
   transition-duration: 1s;
   transform: translateX(250px); }
   .menu-container ul {
-    margin-top: 35px;
-    padding-top: 60%;
     padding-left: 30px;
     list-style: none; }
+  .menu-container li {
+    padding: 15px 0; }
   .menu-container li a {
-    font-size: 2em;
-    line-height: 2em; }
+    font-size: 2.5em;
+    line-height: 2em;
+    font-weight: 500; }
   .menu-container a {
     text-decoration: none;
     text-transform: capitalize;
@@ -283,12 +286,14 @@ body {
   .menu-container .icon-container {
     position: absolute;
     bottom: 25px;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    gap: 2vmin;
+    justify-content: center;
     width: 100%;
     text-align: center; }
     .menu-container .icon-container a {
-      padding-left: 5%;
-      padding-right: 5%;
-      font-size: 1.75em; }
+      font-size: 2.5em; }
 
 .open-menu .menu-container {
   transition-duration: 1s;
@@ -355,6 +360,22 @@ footer {
     footer .icon-container a:hover {
       color: #0071c5; }
 
+@media (min-width: 1920px) {
+  footer ul li a {
+    font-size: 1.5em;
+    font-weight: 500; }
+  footer h2 {
+    font-size: 1.25rem;
+    font-weight: 500; } }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  footer ul li a {
+    font-size: 1.5em;
+    font-weight: 500; }
+  footer h2 {
+    font-size: 1.25rem;
+    font-weight: 500; } }
+
 /* Mobile */
 @media (max-width: 740px) {
   footer {
@@ -384,12 +405,6 @@ button:focus {
   color: #343434;
   cursor: pointer; }
 
-.particle-container {
-  height: calc(100% - 4px);
-  width: 100%;
-  position: relative;
-  z-index: 1; }
-
 #blog-container {
   position: relative;
   overflow-x: hidden;
@@ -399,10 +414,10 @@ button:focus {
   #blog-container .hidden {
     display: none; }
   #blog-container .title {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 75px; }
     #blog-container .title h1 {
-      margin: 0;
-      margin-bottom: 50px; }
+      margin: 0; }
     #blog-container .title a {
       text-decoration: none;
       color: #373737; }
@@ -487,19 +502,21 @@ button:focus {
     padding-right: 5%; }
   #blog-left-section h1 {
     margin: 0;
-    font-size: 3em;
-    font-weight: 100; }
+    font-size: 3rem;
+    font-weight: 500; }
   #blog-left-section p {
     margin: 35px 0;
-    font-size: 1.1em;
-    line-height: 1.25em; }
+    font-size: 1.5rem;
+    line-height: 2.25rem; }
   #blog-left-section a {
     text-decoration: none;
     display: inline-block; }
   #blog-left-section button {
     padding: 12px 24px;
     border: none;
-    font-size: 1em;
+    font-size: 2rem;
+    font-family: inherit;
+    border-radius: 5px;
     color: white;
     background-color: #373737; }
   #blog-left-section button:hover {
@@ -512,6 +529,22 @@ button:focus {
 
 #blog-right-section img {
   max-width: 100%; }
+
+@media (min-width: 1920px) {
+  #blog-container {
+    padding: 100px 0; }
+    #blog-container .title h1 {
+      font-size: 3rem; }
+  #blog-left-section p {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    margin-bottom: 60px; } }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  #blog-container {
+    padding: 100px 0; }
+    #blog-container .title h1 {
+      font-size: 3rem; } }
 
 /* Mobile */
 @media (max-width: 740px) {
@@ -592,7 +625,9 @@ button:focus {
     padding: 10px;
     resize: none; }
   .contact-wrapper .inner-wrapper.left .btn {
-    opacity: .8; }
+    opacity: .8;
+    border-radius: 5px;
+    font-size: 2rem; }
   .contact-wrapper .inner-wrapper.left .btn:hover {
     opacity: 1; }
   .contact-wrapper .inner-wrapper.right {
@@ -609,6 +644,18 @@ button:focus {
       margin: 0;
       font-size: 1.25rem;
       line-height: 2rem; }
+
+@media (min-width: 1920px) {
+  .contact-wrapper {
+    padding: 125px 0; }
+    .contact-wrapper .inner-wrapper.right h4 {
+      font-size: 1.75rem; } }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .contact-wrapper {
+    padding: 125px 0; }
+    .contact-wrapper .inner-wrapper.right h4 {
+      font-size: 1.75rem; } }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .contact-wrapper {
@@ -683,6 +730,32 @@ button:focus {
     .landing-screen-wrapper .visual-section .sm-diamond.bottom-right {
       bottom: 46px;
       right: 0px; }
+
+@media (min-width: 1920px) {
+  .landing-screen-wrapper {
+    padding: 150px 0; }
+    .landing-screen-wrapper .visual-section .lg-diamond {
+      height: 450px;
+      width: 450px;
+      right: 65px; }
+    .landing-screen-wrapper .visual-section .sm-diamond.top-left,
+    .landing-screen-wrapper .visual-section .sm-diamond.bottom-left {
+      left: 85px; }
+    .landing-screen-wrapper .visual-section .sm-diamond {
+      height: 115px;
+      width: 115px; }
+    .landing-screen-wrapper .text-grid-section h1 {
+      font-size: 7rem; }
+    .landing-screen-wrapper .text-grid-section p {
+      font-size: 2.5rem;
+      line-height: 3.25rem; } }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .landing-screen-wrapper {
+    padding: 100px 0; }
+    .landing-screen-wrapper .text-grid-section p {
+      font-size: 1.85rem;
+      line-height: 2.75rem; } }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .landing-screen-wrapper {
@@ -799,7 +872,6 @@ button:focus {
   #osp-wrapper a:hover svg {
     fill: #0f89e2de; }
   #osp-wrapper .item {
-    max-width: 280px;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #eeeeee;
@@ -812,13 +884,40 @@ button:focus {
       font-size: 1.15rem;
       line-height: 1.5rem; }
     #osp-wrapper .item span {
+      height: 36px;
+      width: 36px;
       margin: 0 auto;
-      font-size: 1.75em;
       text-decoration: none; }
   #osp-wrapper .item:hover {
     box-shadow: 1px 4px 10px 0 rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
     transition-duration: 0.35s; }
+
+@media (min-width: 1920px) {
+  #osp-container {
+    padding: 150px 0; }
+    #osp-container header h1 {
+      font-size: 3rem; }
+    #osp-container .item h3 {
+      font-size: 1.65em; }
+    #osp-container .item p {
+      font-size: 1.25rem;
+      line-height: 1.8rem; }
+  #osp-wrapper {
+    grid-template-columns: repeat(auto-fit, 340px); } }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  #osp-container {
+    padding: 125px 0; }
+    #osp-container header h1 {
+      font-size: 3rem; }
+    #osp-container .item h3 {
+      font-size: 1.65em; }
+    #osp-container .item p {
+      font-size: 1.25rem;
+      line-height: 1.8rem; }
+  #osp-wrapper {
+    grid-template-columns: repeat(auto-fit, 340px); } }
 
 /* Mobile Portrait */
 @media (max-width: 740px) and (orientation: portrait) {
@@ -915,6 +1014,24 @@ button:focus {
   font-size: 1.5em;
   cursor: pointer; }
 
+@media (min-width: 1920px) {
+  #sites-container h1 {
+    font-size: 3rem; }
+  #sites-container li button {
+    font-size: 1.65em; }
+  .sites-item:hover .item-overlay {
+    font-size: 1.75em;
+    font-weight: 600; } }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  #sites-container h1 {
+    font-size: 3rem; }
+  #sites-container li button {
+    font-size: 1.65em; }
+  .sites-item:hover .item-overlay {
+    font-size: 1.75em;
+    font-weight: 600; } }
+
 /* Mobile */
 @media (max-width: 740px) {
   .sites-section {
@@ -973,6 +1090,24 @@ button:focus {
   .about-me-section .icon.twitter {
     height: 28px;
     width: 28px; }
+
+@media (min-width: 1920px) {
+  .about-me-section {
+    padding: 175px 0; }
+    .about-me-section h4 {
+      font-size: 1.75rem; }
+    .about-me-section .description p {
+      font-size: 1.5rem;
+      line-height: 2rem; } }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .about-me-section {
+    padding: 150px 0; }
+    .about-me-section h4 {
+      font-size: 1.75rem; }
+    .about-me-section .description p {
+      font-size: 1.5rem;
+      line-height: 2rem; } }
 
 @media (min-width: 320px) and (max-width: 480px) {
   .about-me-section {

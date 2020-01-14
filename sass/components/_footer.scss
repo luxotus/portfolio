@@ -57,6 +57,30 @@ footer {
   }
 }
 
+@include desktop-lg {
+  footer ul li a {
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+
+  footer h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
+
+@include desktop-md {
+  footer ul li a {
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+
+  footer h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
+
 /* Mobile */
 @include semi-mobile {
   footer {
