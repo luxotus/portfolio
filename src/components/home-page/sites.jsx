@@ -100,7 +100,7 @@ export default class Sites extends React.Component {
       },
       {
         id: 2,
-        title: 'shop',
+        title: 'social',
       },
       {
         id: 3,
@@ -132,6 +132,7 @@ export default class Sites extends React.Component {
         link: 'luxotus-blog',
         types: [
           'blog',
+          'landing page',
         ],
         imageSrc: '/images/sites/screens/luxotus-sm.png',
       },
@@ -140,7 +141,6 @@ export default class Sites extends React.Component {
         name: 'Tea Shop',
         link: 'tea-shop',
         types: [
-          'shop',
           'landing page',
         ],
         imageSrc: '/images/sites/screens/tea-shop-sm.png',
@@ -151,6 +151,7 @@ export default class Sites extends React.Component {
         link: 'pinterest-redesign',
         types: [
           'app',
+          'social',
         ],
         imageSrc: '/images/sites/screens/pinterest-redesign-sm.png',
       },
@@ -168,7 +169,6 @@ export default class Sites extends React.Component {
         name: 'Online Store',
         link: 'online-store',
         types: [
-          'shop',
           'landing page',
         ],
         imageSrc: '/images/sites/screens/online-store-sm.png',

@@ -57,6 +57,36 @@
   }
 }
 
+@include desktop-lg {
+  .about-me-section {
+    padding: 175px 0;
+
+    h4 {
+      font-size: 1.75rem;
+    }
+
+    .description p {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+@include desktop-md {
+  .about-me-section {
+    padding: 150px 0;
+
+    h4 {
+      font-size: 1.75rem;
+    }
+
+    .description p {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+
 @include mobile {
   .about-me-section {
     grid-template-columns: 1fr;

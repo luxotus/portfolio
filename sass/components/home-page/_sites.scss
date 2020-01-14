@@ -98,6 +98,40 @@
   }
 }
 
+@include desktop-lg {
+  #sites-container {
+    h1 {
+      font-size: 3rem;
+    }
+
+    li button {
+      font-size: 1.65em;
+    }
+  }
+
+  .sites-item:hover .item-overlay {
+    font-size: 1.75em;
+    font-weight: 600;
+  }
+}
+
+@include desktop-md {
+  #sites-container {
+    h1 {
+      font-size: 3rem;
+    }
+
+    li button {
+      font-size: 1.65em;
+    }
+  }
+
+  .sites-item:hover .item-overlay {
+    font-size: 1.75em;
+    font-weight: 600;
+  }
+}
+
 /* Mobile */
 @include semi-mobile {
   .sites-section {

@@ -59,6 +59,8 @@
 
     .btn {
       opacity: .8;
+      border-radius: 5px;
+      font-size: 2rem;
     }
 
     .btn:hover {
@@ -83,6 +85,26 @@
       margin: 0;
       font-size: 1.25rem;
       line-height: 2rem;
+    }
+  }
+}
+
+@include desktop-lg {
+  .contact-wrapper {
+    padding: 125px 0;
+
+    .inner-wrapper.right h4 {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+@include desktop-md {
+  .contact-wrapper {
+    padding: 125px 0;
+
+    .inner-wrapper.right h4 {
+      font-size: 1.75rem;
     }
   }
 }
