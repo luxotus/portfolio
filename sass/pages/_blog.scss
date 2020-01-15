@@ -102,6 +102,9 @@
       background-color: #e6e6e6;
 
       .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
         width: 50%;
         float: left;
@@ -114,29 +117,20 @@
         border-right: 1px solid #fff;
       }
 
-      .arrow div {
-        height: 15px;
-        width: 15px;
-        transform: rotate(45deg);
-      }
+      .icon {
+        height: 40px;
+        width: 40px;
 
-      .left-arrow div {
-        border-bottom: 1px solid $black-color-1;
-        border-left: 1px solid $black-color-1;
-        margin-left: 31px;
-      }
-
-      .right-arrow div {
-        border-top: 1px solid $black-color-1;
-        border-right: 1px solid $black-color-1;
-        margin-left: 22.5px;
+        svg {
+          fill: $black-color-1;
+        }
       }
 
       .arrow:hover {
         background-color: $black-color-1;
 
-        div {
-          border-color: #fff;
+        .icon svg {
+          fill: #fff;
         }
       }
 
@@ -169,55 +163,25 @@
         cursor: pointer;
       }
 
+      .icon {
+        height: 32px;
+        width: 32px;
+
+        svg {
+          fill: $black-color-1;
+        }
+      }
+
       .close:hover {
         background-color: $black-color-1;
 
-        .x:before,
-        .x:after {
-          border-color: #fff !important;
+        .icon svg {
+          fill: #fff;
         }
       }
+
     }
-  }
 
-  .x {
-    display: block;
-    position: relative;
-    height: 20px;
-    width: 20px;
-    opacity: 1;
-  }
-
-  .x:before {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 0;
-    width: 15px;
-    border-top: 1px solid $black-color-1;
-    margin: auto;
-    transform: rotate(45deg);
-    transform-origin: center;
-  }
-
-  .x:after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 0;
-    width: 15px;
-    border-top: 1px solid $black-color-1;
-    margin: auto;
-    transform: rotate(-45deg);
-    transform-origin: center;
   }
 }
 

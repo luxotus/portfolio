@@ -1215,6 +1215,9 @@ button:focus {
       right: 0;
       background-color: #e6e6e6; }
       .blog-layout-container .blog-holder .arrow-container .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
         width: 50%;
         float: left;
@@ -1223,22 +1226,15 @@ button:focus {
         cursor: pointer; }
       .blog-layout-container .blog-holder .arrow-container .left-arrow {
         border-right: 1px solid #fff; }
-      .blog-layout-container .blog-holder .arrow-container .arrow div {
-        height: 15px;
-        width: 15px;
-        transform: rotate(45deg); }
-      .blog-layout-container .blog-holder .arrow-container .left-arrow div {
-        border-bottom: 1px solid #343434;
-        border-left: 1px solid #343434;
-        margin-left: 31px; }
-      .blog-layout-container .blog-holder .arrow-container .right-arrow div {
-        border-top: 1px solid #343434;
-        border-right: 1px solid #343434;
-        margin-left: 22.5px; }
+      .blog-layout-container .blog-holder .arrow-container .icon {
+        height: 40px;
+        width: 40px; }
+        .blog-layout-container .blog-holder .arrow-container .icon svg {
+          fill: #343434; }
       .blog-layout-container .blog-holder .arrow-container .arrow:hover {
         background-color: #343434; }
-        .blog-layout-container .blog-holder .arrow-container .arrow:hover div {
-          border-color: #fff; }
+        .blog-layout-container .blog-holder .arrow-container .arrow:hover .icon svg {
+          fill: #fff; }
       .blog-layout-container .blog-holder .arrow-container .close {
         display: none; }
     .blog-layout-container .blog-holder .arrow-container.expanded {
@@ -1258,45 +1254,15 @@ button:focus {
         background: transparent;
         border: 0;
         cursor: pointer; }
+      .blog-layout-container .blog-holder .arrow-container.closed .icon {
+        height: 32px;
+        width: 32px; }
+        .blog-layout-container .blog-holder .arrow-container.closed .icon svg {
+          fill: #343434; }
       .blog-layout-container .blog-holder .arrow-container.closed .close:hover {
         background-color: #343434; }
-        .blog-layout-container .blog-holder .arrow-container.closed .close:hover .x:before,
-        .blog-layout-container .blog-holder .arrow-container.closed .close:hover .x:after {
-          border-color: #fff !important; }
-  .blog-layout-container .x {
-    display: block;
-    position: relative;
-    height: 20px;
-    width: 20px;
-    opacity: 1; }
-  .blog-layout-container .x:before {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 0;
-    width: 15px;
-    border-top: 1px solid #343434;
-    margin: auto;
-    transform: rotate(45deg);
-    transform-origin: center; }
-  .blog-layout-container .x:after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 0;
-    width: 15px;
-    border-top: 1px solid #343434;
-    margin: auto;
-    transform: rotate(-45deg);
-    transform-origin: center; }
+        .blog-layout-container .blog-holder .arrow-container.closed .close:hover .icon svg {
+          fill: #fff; }
 
 /* Mobile */
 @media (max-width: 740px) {

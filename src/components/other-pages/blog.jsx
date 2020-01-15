@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactSVG } from 'react-svg';
 
 export default class BlogPage extends React.Component {
   constructor(props) {
@@ -355,21 +356,27 @@ export default class BlogPage extends React.Component {
           className="left-arrow arrow"
           onClick={() => this.changeBlogPost('left')}
         >
-          <div />
+          <span className="icon">
+            <ReactSVG src="/svg/arrow-left.svg" />
+          </span>
         </button>
         <button
           type="button"
           className="right-arrow arrow"
           onClick={() => this.changeBlogPost('right')}
         >
-          <div />
+          <span className="icon">
+            <ReactSVG src="/svg/arrow-right.svg" />
+          </span>
         </button>
         <button
           type="button"
           className="close"
           onClick={() => this.hideBlogContent()}
         >
-          <div className="x" />
+          <span className="icon">
+            <ReactSVG src="/svg/close.svg" />
+          </span>
         </button>
       </div>
     );
