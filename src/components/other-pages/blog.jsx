@@ -3,7 +3,9 @@ import React from 'react';
 export default class BlogPage extends React.Component {
   constructor(props) {
     super(props);
-    let loadPos = 0;
+    this.state = {
+      activeID: 0,
+    };
 
     this.blogData = [
       {
@@ -146,19 +148,17 @@ export default class BlogPage extends React.Component {
       },
     ];
 
-    this.blogData.forEach((item, index) => {
-      if (item.main.link === window.location.pathname) {
-        loadPos = index;
-      }
-    });
-
-    this.state = {
-      activeID: loadPos,
-    };
-
     this.updateCurrentBlog = this.updateCurrentBlog.bind(this);
     this.keyCount = 0;
     this.getKey = this.getKey.bind(this);
+  }
+
+  componentDidMount() {
+    this.blogData.forEach((item, index) => {
+      if (item.main.link === window.location.pathname) {
+        this.updateActiveIdD(index);
+      }
+    });
   }
 
   getKey() {
@@ -238,6 +238,12 @@ export default class BlogPage extends React.Component {
         xPos -= step;
       }
     }, 20);
+  }
+
+  updateActiveIdD(id) {
+    if (!Number.isNaN(parseInt(id, 10))) {
+      this.setState({ activeID: id });
+    }
   }
 
   updateCurrentBlog(direction, transform) {
