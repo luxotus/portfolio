@@ -247,7 +247,7 @@ body {
   left: 0;
   height: 100vh;
   width: 0;
-  background-color: #000;
+  background-color: #343434;
   opacity: .5;
   transition-duration: 1s; }
 
@@ -1145,7 +1145,8 @@ button:focus {
 .blog-layout-container {
   overflow: hidden;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  background-color: #f5f5f5; }
   .blog-layout-container a {
     text-decoration: none !important; }
   .blog-layout-container .content-holder {
@@ -1166,7 +1167,7 @@ button:focus {
     height: 100%;
     width: 60%;
     float: left;
-    color: #000; }
+    color: #343434; }
     .blog-layout-container .blog-holder .blog-wrapper {
       overflow: auto;
       height: 93.5%;
@@ -1176,7 +1177,7 @@ button:focus {
       font-size: 4em; }
     .blog-layout-container .blog-holder .blog-content {
       margin: 0;
-      font-size: 1.15em;
+      font-size: 1.5em;
       line-height: 1.75em; }
       .blog-layout-container .blog-holder .blog-content .content {
         display: none; }
@@ -1187,29 +1188,25 @@ button:focus {
         .blog-layout-container .blog-holder .blog-content .content-section .num-list {
           list-style: decimal; }
     .blog-layout-container .blog-holder button.read-more {
-      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-radius: 5px;
       border: 0;
       margin-top: 42px;
-      background: none;
-      color: #000;
-      font-size: 1.25em;
+      font-size: 1.45rem;
+      font-family: inherit;
+      font-weight: 600;
+      color: #343434;
+      background-color: #e6e6e6;
       cursor: pointer; }
-      .blog-layout-container .blog-holder button.read-more div {
-        height: 7px;
-        width: 7px;
-        margin-top: 9px;
-        margin-left: 15px;
-        float: right;
-        border-top: 1px solid #000;
-        border-right: 1px solid #000;
-        transform: rotate(45deg); }
     .blog-layout-container .blog-holder button:focus,
     .blog-layout-container .blog-holder button:hover {
       outline: none; }
     .blog-layout-container .blog-holder button.read-more:hover {
-      color: #00a2d5; }
-    .blog-layout-container .blog-holder button.read-more:hover div {
-      border-color: #00a2d5; }
+      color: #e6e6e6;
+      background-color: #343434; }
     .blog-layout-container .blog-holder .arrow-container {
       position: absolute;
       height: 65px;
@@ -1231,15 +1228,15 @@ button:focus {
         width: 15px;
         transform: rotate(45deg); }
       .blog-layout-container .blog-holder .arrow-container .left-arrow div {
-        border-bottom: 1px solid #000;
-        border-left: 1px solid #000;
+        border-bottom: 1px solid #343434;
+        border-left: 1px solid #343434;
         margin-left: 31px; }
       .blog-layout-container .blog-holder .arrow-container .right-arrow div {
-        border-top: 1px solid #000;
-        border-right: 1px solid #000;
+        border-top: 1px solid #343434;
+        border-right: 1px solid #343434;
         margin-left: 22.5px; }
       .blog-layout-container .blog-holder .arrow-container .arrow:hover {
-        background-color: #000; }
+        background-color: #343434; }
         .blog-layout-container .blog-holder .arrow-container .arrow:hover div {
           border-color: #fff; }
       .blog-layout-container .blog-holder .arrow-container .close {
@@ -1262,7 +1259,7 @@ button:focus {
         border: 0;
         cursor: pointer; }
       .blog-layout-container .blog-holder .arrow-container.closed .close:hover {
-        background-color: #000; }
+        background-color: #343434; }
         .blog-layout-container .blog-holder .arrow-container.closed .close:hover .x:before,
         .blog-layout-container .blog-holder .arrow-container.closed .close:hover .x:after {
           border-color: #fff !important; }
@@ -1282,7 +1279,7 @@ button:focus {
     display: block;
     height: 0;
     width: 15px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #343434;
     margin: auto;
     transform: rotate(45deg);
     transform-origin: center; }
@@ -1296,7 +1293,7 @@ button:focus {
     display: block;
     height: 0;
     width: 15px;
-    border-top: 1px solid #000;
+    border-top: 1px solid #343434;
     margin: auto;
     transform: rotate(-45deg);
     transform-origin: center; }

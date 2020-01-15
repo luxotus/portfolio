@@ -328,7 +328,9 @@ export default class BlogPage extends React.Component {
         </h1>
         <div className="blog-content">
           <div className="description">
-            {data.main.description}
+            <p>
+              {data.main.description}
+            </p>
           </div>
           <div className="content">
             {this.createContentFromData(data.subSections)}
@@ -340,7 +342,6 @@ export default class BlogPage extends React.Component {
           onClick={() => this.showBlogContent()}
         >
           Read More
-          <div />
         </button>
       </div>
     );
