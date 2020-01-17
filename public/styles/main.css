@@ -1171,10 +1171,17 @@ button:focus {
     .blog-layout-container .blog-holder .blog-wrapper {
       overflow: auto;
       height: 93.5%;
-      padding: 0 12%;
+      padding: 0 8%;
       padding-top: 50px; }
     .blog-layout-container .blog-holder h1 {
-      font-size: 4em; }
+      font-size: 4rem; }
+    .blog-layout-container .blog-holder h2 {
+      font-size: 2.5rem;
+      line-height: 3.5rem; }
+    .blog-layout-container .blog-holder a {
+      color: #0071c5; }
+    .blog-layout-container .blog-holder i {
+      font-weight: 500; }
     .blog-layout-container .blog-holder .blog-content {
       margin: 0;
       font-size: 1.5em;
