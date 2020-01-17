@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import mvpData from '../../blog-data/mvp';
+import devCommunityData from '../../blog-data/dev-community';
+import productiveTipsData from '../../blog-data/productive-tips';
+
 export default class Blog extends React.Component {
   constructor(props) {
     super(props);
@@ -9,20 +13,7 @@ export default class Blog extends React.Component {
       visibleBlogPost: 0,
       isContentVisible: true,
     };
-    this.blogData = [
-      {
-        title: 'Minimum Viable Product',
-        description: 'When your starting a new product you should have a minimal viable product. Without it you could end up with a solution to a problem that no one uses or cares about. With it you can reduce your overall risk and increase your chances of launching a successful product.',
-        link: '/blog/minimal-viable-product',
-        image: '/images/blog/minimum-viable-product-side-sm.jpeg',
-      },
-      {
-        title: 'Keeping up with the latest in your Dev Community',
-        description: 'Keeping up with the latest in your development community will help you grow as a developer. From finding better employment opportunities to gaining insight into some of your common problems that others in the community have solved.',
-        link: '/blog/keeping-up-with-dev-community',
-        image: '/images/blog/keeping-up-with-the-latest-sm.jpeg',
-      },
-    ];
+    this.blogData = [productiveTipsData().main, mvpData().main, devCommunityData().main];
 
     this.keyCount = 0;
     this.getKey = this.getKey.bind(this);
@@ -58,7 +49,7 @@ export default class Blog extends React.Component {
               {blogPost.title}
             </h1>
             <p>
-              {blogPost.description}
+              {blogPost.description[0]}
             </p>
             <Link to={blogPost.link}>
               <button type="button">
@@ -70,7 +61,7 @@ export default class Blog extends React.Component {
         <div id="blog-right-section" className="blog-sections">
           <div className="pad">
             <Link to={blogPost.link}>
-              <img src={blogPost.image} alt="" />
+              <img src={blogPost.imageSmall} alt="" />
             </Link>
           </div>
         </div>

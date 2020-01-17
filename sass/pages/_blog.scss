@@ -1,7 +1,8 @@
-#maximum-layout-container {
+.blog-layout-container {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  background-color: #f5f5f5;
 
   a {
     text-decoration: none !important;
@@ -36,17 +37,30 @@
     .blog-wrapper {
       overflow: auto;
       height: 93.5%;
-      padding: 0 12%;
+      padding: 0 8%;
       padding-top: 50px;
     }
 
     h1 {
-      font-size: 4em;
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+    }
+
+    a {
+      color: $blue-color-2;
+    }
+
+    i {
+      font-weight: 500;
     }
 
     .blog-content {
       margin: 0;
-      font-size: 1.15em;
+      font-size: 1.5em;
       line-height: 1.75em;
 
       .content {
@@ -67,24 +81,19 @@
     }
 
     button.read-more {
-      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-radius: 5px;
       border: 0;
       margin-top: 42px;
-      background: none;
+      font-size: 1.45rem;
+      font-family: inherit;
+      font-weight: 600;
       color: $black-color-1;
-      font-size: 1.25em;
+      background-color: #e6e6e6;
       cursor: pointer;
-
-      div {
-        height: 7px;
-        width: 7px;
-        margin-top: 9px;
-        margin-left: 15px;
-        float: right;
-        border-top: 1px solid $black-color-1;
-        border-right: 1px solid $black-color-1;
-        transform: rotate(45deg);
-      }
     }
 
     button:focus,
@@ -93,11 +102,8 @@
     }
 
     button.read-more:hover {
-      color: $blue-color-4;
-    }
-
-    button.read-more:hover div {
-      border-color: $blue-color-4;
+      color: #e6e6e6;
+      background-color: $black-color-1;
     }
 
     .arrow-container {
@@ -109,6 +115,9 @@
       background-color: #e6e6e6;
 
       .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
         width: 50%;
         float: left;
@@ -121,29 +130,20 @@
         border-right: 1px solid #fff;
       }
 
-      .arrow div {
-        height: 15px;
-        width: 15px;
-        transform: rotate(45deg);
-      }
+      .icon {
+        height: 40px;
+        width: 40px;
 
-      .left-arrow div {
-        border-bottom: 1px solid $black-color-1;
-        border-left: 1px solid $black-color-1;
-        margin-left: 31px;
-      }
-
-      .right-arrow div {
-        border-top: 1px solid $black-color-1;
-        border-right: 1px solid $black-color-1;
-        margin-left: 22.5px;
+        svg {
+          fill: $black-color-1;
+        }
       }
 
       .arrow:hover {
         background-color: $black-color-1;
 
-        div {
-          border-color: #fff;
+        .icon svg {
+          fill: #fff;
         }
       }
 
@@ -176,61 +176,31 @@
         cursor: pointer;
       }
 
+      .icon {
+        height: 32px;
+        width: 32px;
+
+        svg {
+          fill: $black-color-1;
+        }
+      }
+
       .close:hover {
         background-color: $black-color-1;
 
-        .x:before,
-        .x:after {
-          border-color: #fff !important;
+        .icon svg {
+          fill: #fff;
         }
       }
+
     }
-  }
 
-  .x {
-    display: block;
-    position: relative;
-    height: 20px;
-    width: 20px;
-    opacity: 1;
-  }
-
-  .x:before {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 0;
-    width: 15px;
-    border-top: 1px solid $black-color-1;
-    margin: auto;
-    transform: rotate(45deg);
-    transform-origin: center;
-  }
-
-  .x:after {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 0;
-    width: 15px;
-    border-top: 1px solid $black-color-1;
-    margin: auto;
-    transform: rotate(-45deg);
-    transform-origin: center;
   }
 }
 
 /* Mobile */
 @include semi-mobile {
-  #maximum-layout-container .blog-holder {
+  .blog-layout-container .blog-holder {
     .arrow-container.closed {
       right: 0;
     }
@@ -239,7 +209,7 @@
 
 /* Mobile Portrait */
 @include semi-mobile-portrait {
-  #maximum-layout-container {
+  .blog-layout-container {
     .blog-image {
       height: 75%;
       width: 100%;
@@ -269,7 +239,7 @@
 
 /* Mobile Landscape */
 @include semi-mobile-landscape {
-  #maximum-layout-container {
+  .blog-layout-container {
     .blog-image {
       height: 100%;
       width: 40%;
@@ -304,14 +274,14 @@
 
 /* Tablet */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (min-device-height: 768px) {
-  #maximum-layout-container .blog-holder .arrow-container.closed {
+  .blog-layout-container .blog-holder .arrow-container.closed {
     right: 0;
   }
 }
 
 /* Tablet Portrait */
 @include tablet-portrait {
-  #maximum-layout-container {
+  .blog-layout-container {
     .blog-image {
       height: 30%;
       width: 100%;
