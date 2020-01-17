@@ -4,6 +4,7 @@ export default function mvpData() {
       title: 'Minimal Viable Product',
       link: '/blog/minimal-viable-product',
       image: '/images/blog/minimum-viable-product.jpeg',
+      imageSmall: '/images/blog/minimum-viable-product-side-sm.jpeg',
       description: [
         'When your starting a new product you should have a minimal viable product. Without it you could end up with a solution to a problem that no one uses or cares about. With it you can reduce your overall risk and increase your chances of launching a successful product.',
       ],

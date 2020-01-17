@@ -4,6 +4,7 @@ export default function devCommunityData() {
       title: 'Keeping up with the latest in your Dev Community',
       link: '/blog/keeping-up-with-dev-community',
       image: '/images/blog/keeping-up-with-the-latest.jpeg',
+      imageSmall: '/images/blog/keeping-up-with-the-latest-sm.jpeg',
       description: [
         'Keeping up with the latest in your development community will help you grow as a developer. From finding better employment opportunities to gaining insight into some of your common problems that others in the community have solved.',
       ],

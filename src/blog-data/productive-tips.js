@@ -4,6 +4,7 @@ export default function productiveTipsData() {
       title: 'How to be more productive',
       link: '/blog/how-to-be-more-productive',
       image: '/images/blog/1.jpg',
+      imageSmall: '/images/blog/1-sm.jpg',
       description: [
         'Being more productive is often thought of as a complex system that few ever master. But, In my opinion it\'s often much simpler then most of other blog posts portray it to be. Instead of giving you the top 10, 20, 30 ways of being more productive, I simplified it to just 4 easy ways to get the most out of your time.',
         'Some seem pretty obvious like placing your phone on silent and keeping track of your tasks and how long it takes to complete. While others may seem counter intuitive like spending more time sleeping. If you follow these simple methods I’m confident you will be more productive.',
