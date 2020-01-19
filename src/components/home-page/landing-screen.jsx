@@ -1,6 +1,11 @@
 import React from 'react';
+import animatedBlobs from '../../general/blob';
 
 export default class LandingScreen extends React.Component {
+  componentDidMount() {
+    animatedBlobs.init();
+  }
+
   render() {
     return (
       <div className="landing-screen-wrapper">
@@ -20,11 +25,10 @@ export default class LandingScreen extends React.Component {
           </div>
         </div>
         <div className="visual-section">
-          <div className="lg-diamond" />
-          <div className="sm-diamond top-left" />
-          {/* <div className="sm-diamond top-right" /> */}
-          <div className="sm-diamond bottom-left" />
-          <div className="sm-diamond bottom-right" />
+          {/* <div className="dark-line" /> */}
+          <div className="dark-bkg">
+            <div className="blob-wrapper" />
+          </div>
         </div>
       </div>
     );
