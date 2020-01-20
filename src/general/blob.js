@@ -11,7 +11,7 @@ const animatedBlobs = (function() {
 
   function frame(el, translateRange) {
     const blob = el;
-    const step = randomNum(50, 25) / 100;
+    const step = randomNum(35, 25) / 100;
     const position = {
       x: parseFloat(blob.getAttribute('data-x')),
       y: parseFloat(blob.getAttribute('data-y')),
@@ -72,10 +72,10 @@ const animatedBlobs = (function() {
       width: parseFloat(window.getComputedStyle(wrapper).width),
     };
     const blobSize = {
-      height: randomNum(150, 75),
-      width: randomNum(150, 75),
+      height: 125,
+      width: 125,
     };
-    const numberOfBlobs = 10;
+    const numberOfBlobs = 25;
     const padding = 10;
     const translateRange = {
       max: {
@@ -104,8 +104,8 @@ const animatedBlobs = (function() {
       blob.setAttribute('data-index', index);
       blob.setAttribute('data-x', position.x);
       blob.setAttribute('data-y', position.y);
-      blob.setAttribute('data-direction-x', (position.x >= 0 ? '+' : '-'));
-      blob.setAttribute('data-direction-y', (position.y >= 0 ? '+' : '-'));
+      blob.setAttribute('data-direction-x', (Math.random() > 0.5 ? '+' : '-'));
+      blob.setAttribute('data-direction-y', (Math.random() > 0.5 ? '+' : '-'));
       blob.setAttribute('data-rotation', rotation);
 
 

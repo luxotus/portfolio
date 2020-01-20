@@ -10,20 +10,20 @@
 
 .blob {
   position: absolute;
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   background-color: #0e0029;
   border-radius: 50%;
 }
 
 .blob:after {
   content: '';
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   background-color: #0e0029;
   display: block;
   position: absolute;
   top: 25px;
-  left: -125px;
+  left: -200px;
   border-radius: 50%;
 }

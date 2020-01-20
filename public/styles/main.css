@@ -716,7 +716,7 @@ button:focus {
       height: 100%;
       width: 85%;
       box-shadow: inset 0px 0px 16px 0px #000;
-      border-radius: 30px; }
+      border-radius: 50% 30px; }
 
 @media (min-width: 1920px) {
   .landing-screen-wrapper {
@@ -758,7 +758,8 @@ button:focus {
       .landing-screen-wrapper .visual-section .dark-bkg {
         margin: auto;
         left: 0;
-        right: 0; } }
+        right: 0;
+        border-radius: 30px 30px; } }
 
 @media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
   .landing-screen-wrapper .visual-section {
@@ -779,7 +780,8 @@ button:focus {
       .landing-screen-wrapper .visual-section .dark-bkg {
         margin: auto;
         left: 0;
-        right: 0; } }
+        right: 0;
+        border-radius: 30px 30px; } }
 
 @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
   .landing-screen-wrapper .visual-section {
@@ -1077,20 +1079,20 @@ button:focus {
 
 .blob {
   position: absolute;
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   background-color: #0e0029;
   border-radius: 50%; }
 
 .blob:after {
   content: '';
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   background-color: #0e0029;
   display: block;
   position: absolute;
   top: 25px;
-  left: -125px;
+  left: -200px;
   border-radius: 50%; }
 
 #landing-page-container {
