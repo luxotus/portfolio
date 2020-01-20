@@ -9,62 +9,6 @@ const animatedBlobs = (function() {
     return result;
   }
 
-  function frame(el, translateRange) {
-    const blob = el;
-    const step = randomNum(35, 25) / 100;
-    const position = {
-      x: parseFloat(blob.getAttribute('data-x')),
-      y: parseFloat(blob.getAttribute('data-y')),
-    };
-    const direction = {
-      x: blob.getAttribute('data-direction-x'),
-      y: blob.getAttribute('data-direction-y'),
-    };
-    let rotation = parseFloat(blob.getAttribute('data-rotation'));
-
-    if (rotation + step >= 360) {
-      rotation = 0;
-    } else {
-      rotation += step;
-    }
-
-    blob.setAttribute('data-rotation', rotation);
-
-    if (direction.x === '+' && position.x + step >= translateRange.max.x) {
-      direction.x = '-';
-      blob.setAttribute('data-direction-x', direction.x);
-    } else if (direction.x === '-' && position.x - step <= translateRange.min.x) {
-      direction.x = '+';
-      blob.setAttribute('data-direction-x', direction.x);
-    }
-
-    if (direction.y === '+' && position.y + step >= translateRange.max.y) {
-      direction.y = '-';
-      blob.setAttribute('data-direction-y', direction.y);
-    } else if (direction.y === '-' && position.y - step <= translateRange.min.y) {
-      direction.y = '+';
-      blob.setAttribute('data-direction-y', direction.y);
-    }
-
-    if (direction.x === '+') {
-      position.x += step;
-    } else if (direction.x === '-') {
-      position.x -= step;
-    }
-
-    if (direction.y === '+') {
-      position.y += step;
-    } else if (direction.y === '-') {
-      position.y -= step;
-    }
-
-    blob.setAttribute('data-x', position.x);
-    blob.setAttribute('data-y', position.y);
-
-    const transform = `translate(${position.x}%, ${position.y}%) rotate(${rotation}deg)`;
-    blob.style.transform = transform;
-  }
-
   function calcPercentageOfCoordinate(distance, blobSize) {
     return {
       x: (distance.x / blobSize.width * 100),
@@ -279,8 +223,6 @@ const animatedBlobs = (function() {
       const transform = `translate(${position.x}%, ${position.y}%) rotate(${rotation}deg)`;
       blob.style.transform = transform;
       wrapper.append(blob);
-
-      // setInterval(() => { frame(blob, translateRange); }, 10);
     }
 
     followMouse(translateRange);
