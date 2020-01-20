@@ -76,9 +76,19 @@ const animatedBlobs = (function() {
     return x >= min && x <= max;
   }
 
-  function blobsToMouse(el, blobSize) {
+  function randomLocation(mc, translateRange, blob) {
+    const mouseFromCenter = mc;
+
+    mouseFromCenter.x = randomNum(translateRange.max.x, translateRange.min.x);
+    mouseFromCenter.y = randomNum(translateRange.max.y, translateRange.min.y);
+
+    blob.setAttribute('mouseFromCenterX', mouseFromCenter.x);
+    blob.setAttribute('mouseFromCenterY', mouseFromCenter.y);
+  }
+
+  function blobsToMouse(el, blobSize, translateRange, isLastEl) {
     const blob = el;
-    const step = randomNum(75, 5) / 100;
+    let step = randomNum(35, 25) / 100;
     const position = {
       x: parseFloat(blob.getAttribute('data-x')),
       y: parseFloat(blob.getAttribute('data-y')),
@@ -87,17 +97,42 @@ const animatedBlobs = (function() {
       x: blob.getAttribute('data-direction-x'),
       y: blob.getAttribute('data-direction-y'),
     };
-    const mouseFromCenter = {
+    let mouseFromCenter = {
       x: parseFloat(blob.getAttribute('mouseFromCenterX')),
       y: parseFloat(blob.getAttribute('mouseFromCenterY')),
     };
-    const targetLocation = calcPercentageOfCoordinate(mouseFromCenter, blobSize);
+    const isMouseInside = (blob.parentElement.getAttribute('data-inside') === '1');
+    const scatter = (blob.parentElement.getAttribute('data-scatter') === '1');
+
+    if (mouseFromCenter.x === 0 && mouseFromCenter.y === 0) {
+      randomLocation(mouseFromCenter, translateRange, blob);
+    }
+
+    let targetLocation = calcPercentageOfCoordinate(mouseFromCenter, blobSize);
     let rotation = parseFloat(blob.getAttribute('data-rotation'));
 
     if (rotation + step >= 360) {
       rotation = 0;
     } else {
       rotation += step;
+    }
+
+    if (isMouseInside) {
+      step *= 2;
+    } else if (scatter) {
+      randomLocation(mouseFromCenter, translateRange, blob);
+
+      mouseFromCenter = {
+        x: parseFloat(blob.getAttribute('mouseFromCenterX')),
+        y: parseFloat(blob.getAttribute('mouseFromCenterY')),
+      };
+      targetLocation = calcPercentageOfCoordinate(mouseFromCenter, blobSize);
+
+      step *= 5;
+
+      if (isLastEl) {
+        blob.parentElement.setAttribute('data-scatter', 0);
+      }
     }
 
     blob.setAttribute('data-rotation', rotation);
@@ -128,6 +163,8 @@ const animatedBlobs = (function() {
       }
 
       blob.setAttribute('data-x', position.x);
+    } else {
+      randomLocation(mouseFromCenter, translateRange, blob);
     }
 
     if (!between(position.y, targetLocation.y - tolerance, targetLocation.y + tolerance)) {
@@ -138,13 +175,15 @@ const animatedBlobs = (function() {
       }
 
       blob.setAttribute('data-y', position.y);
+    } else {
+      randomLocation(mouseFromCenter, translateRange, blob);
     }
 
     const transform = `translate(${position.x}%, ${position.y}%) rotate(${rotation}deg)`;
     blob.style.transform = transform;
   }
 
-  function followMouse() {
+  function followMouse(translateRange) {
     const wrapper = document.querySelector('.blob-wrapper');
     const wrapperPosition = wrapper.getBoundingClientRect();
     const wrapperCenter = {
@@ -158,15 +197,25 @@ const animatedBlobs = (function() {
       y: 0,
     };
 
-    blobs.forEach((blob) => {
+    blobs.forEach((blob, index) => {
       const blobSize = {
         height: parseFloat(window.getComputedStyle(blob).height),
         width: parseFloat(window.getComputedStyle(blob).width),
       };
+      const isLastEl = blobs.length - 1 === index;
       blob.setAttribute('mouseFromCenterX', mouseFromCenter.x);
       blob.setAttribute('mouseFromCenterY', mouseFromCenter.y);
 
-      // setInterval(() => { blobsToMouse(blob, blobSize); }, 10);
+      setInterval(() => { blobsToMouse(blob, blobSize, translateRange, isLastEl); }, 10);
+    });
+
+    wrapper.addEventListener('mouseenter', (event) => {
+      event.currentTarget.setAttribute('data-inside', 1);
+    });
+
+    wrapper.addEventListener('mouseleave', (event) => {
+      event.currentTarget.setAttribute('data-inside', 0);
+      event.currentTarget.setAttribute('data-scatter', 1);
     });
 
     wrapper.addEventListener('mousemove', (event) => {
@@ -183,7 +232,7 @@ const animatedBlobs = (function() {
   }
 
   function init() {
-    const numberOfBlobs = 2; // 25
+    const numberOfBlobs = 20; // 25
     const padding = 10;
     const wrapper = document.querySelector('.blob-wrapper');
     const wrapperSize = {
@@ -234,7 +283,7 @@ const animatedBlobs = (function() {
       // setInterval(() => { frame(blob, translateRange); }, 10);
     }
 
-    followMouse();
+    followMouse(translateRange);
   }
 
   return {
