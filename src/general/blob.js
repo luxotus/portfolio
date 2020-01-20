@@ -118,21 +118,25 @@ const animatedBlobs = (function() {
       blob.setAttribute('data-direction-y', direction.y);
     }
 
-    if (!between(position.x, targetLocation.x - 1, targetLocation.x + 1)
-      && !between(position.y, targetLocation.y - 1, targetLocation.y + 1)) {
+    const tolerance = 1;
+
+    if (!between(position.x, targetLocation.x - tolerance, targetLocation.x + tolerance)) {
       if (direction.x === '+') {
         position.x += step;
       } else if (direction.x === '-') {
         position.x -= step;
       }
 
+      blob.setAttribute('data-x', position.x);
+    }
+
+    if (!between(position.y, targetLocation.y - tolerance, targetLocation.y + tolerance)) {
       if (direction.y === '+') {
         position.y += step;
       } else if (direction.y === '-') {
         position.y -= step;
       }
 
-      blob.setAttribute('data-x', position.x);
       blob.setAttribute('data-y', position.y);
     }
 
@@ -162,7 +166,7 @@ const animatedBlobs = (function() {
       blob.setAttribute('mouseFromCenterX', mouseFromCenter.x);
       blob.setAttribute('mouseFromCenterY', mouseFromCenter.y);
 
-      setInterval(() => { blobsToMouse(blob, blobSize); }, 10);
+      // setInterval(() => { blobsToMouse(blob, blobSize); }, 10);
     });
 
     wrapper.addEventListener('mousemove', (event) => {
@@ -170,14 +174,6 @@ const animatedBlobs = (function() {
         x: (event.clientX - wrapperCenter.x),
         y: (event.clientY - wrapperCenter.y),
       };
-
-      // console.log({
-      //   mouseX: event.clientX,
-      //   mouseY: event.clientY,
-      //   wrapperCenter,
-      //   mouseFromCenter,
-      //   targetLocation,
-      // });
 
       blobs.forEach((blob) => {
         blob.setAttribute('mouseFromCenterX', mouseFromCenter.x);
