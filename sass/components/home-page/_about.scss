@@ -7,6 +7,15 @@
   .image-wrapper {
     height: 500px;
     background-color: $gray-color-2;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.33);
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
   }
 
   .content-flex-wrapper {
@@ -59,10 +68,14 @@
 
 @include desktop-lg {
   .about-me-section {
-    padding: 175px 0;
+    padding: 250px 0;
 
     h4 {
       font-size: 1.75rem;
+    }
+
+    .content-flex-wrapper {
+      padding: 0 15% 0 15%;
     }
 
     .description p {

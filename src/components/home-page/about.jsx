@@ -6,7 +6,7 @@ export default class About extends React.Component {
     return (
       <div className="about-me-section">
         <div className="image-wrapper">
-          {/* <img src="" alt="" /> */}
+          <img src="/images/blog/1.jpg" alt="" />
         </div>
         <div className="content-flex-wrapper">
           <div className="content-grid-wrapper">
