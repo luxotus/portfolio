@@ -687,7 +687,9 @@ button:focus {
   display: grid;
   grid-template-columns: 1fr .75fr;
   padding: 50px 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background-color: #0f0f0f;
+  color: #fff; }
   .landing-screen-wrapper .text-flex-section {
     display: flex;
     align-items: center; }
