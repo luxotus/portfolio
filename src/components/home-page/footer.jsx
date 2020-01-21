@@ -9,6 +9,7 @@ export default class Footer extends React.Component {
       {
         title: 'home',
         link: '/',
+        scrollToEl: '#landing-page-container',
       },
       {
         title: 'about',
@@ -26,7 +27,7 @@ export default class Footer extends React.Component {
       {
         title: 'contact',
         link: '/',
-        scrollToEl: '#contact-container',
+        scrollToEl: '.contact-wrapper',
       },
     ];
     this.keyCount = 0;

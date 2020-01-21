@@ -202,7 +202,7 @@ const animatedBlobs = (function() {
       const blob = document.createElement('div');
       const radius = {
         tl: blobSize.height / 2,
-        br: randomNum(blobSize.height, blobSize.height / 4),
+        br: randomNum(blobSize.height, blobSize.height / 8),
       };
       const position = {
         x: randomNum(translateRange.max.x, translateRange.min.x),

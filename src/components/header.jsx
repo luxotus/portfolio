@@ -45,6 +45,7 @@ export default class Header extends React.Component {
       {
         title: 'home',
         link: '/',
+        scrollToEl: '#landing-page-container',
       },
       {
         title: 'about',
@@ -62,7 +63,7 @@ export default class Header extends React.Component {
       {
         title: 'contact',
         link: '/',
-        scrollToEl: '#contact-container',
+        scrollToEl: '.contact-wrapper',
       },
     ];
     const { isOpen } = this.state;
