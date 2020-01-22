@@ -1,11 +1,50 @@
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   position: relative;
   width: 100%;
   padding: 75px 0;
   color: $white-color-1;
   background-color: $black-color-2;
+
+  .center-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    max-width: 1000px;
+    width: 100%;
+    gap: 5vmin;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .success-message {
+    color: #96ff96;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.25rem;
+    opacity: 1;
+  }
+
+  .error-message {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.25rem;
+    color: #ec4a4a;
+  }
+  
+  .fade-out {
+    animation: fadeOut 5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 1;}
+    25% { opacity: 1;}
+    99% { opacity: 0.01;}
+    100% { opacity: 0;}
+  }
 
   .inner-wrapper {
     padding: 0 10%;
@@ -36,7 +75,8 @@
       border: none;
       background-color: #1f1f1f;
       color: $white-color-1;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
+      font-weight: 400;
       box-sizing: border-box;
     }
 
@@ -52,7 +92,7 @@
     }
 
     textarea {
-      height: 100px;
+      height: 150px;
       padding: 10px;
       resize: none;
     }
@@ -60,7 +100,7 @@
     .btn {
       opacity: .8;
       border-radius: 5px;
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
 
     .btn:hover {

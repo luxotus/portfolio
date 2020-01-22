@@ -586,12 +586,44 @@ button:focus {
 
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   position: relative;
   width: 100%;
   padding: 75px 0;
   color: #fff;
   background-color: #181818; }
+  .contact-wrapper .center-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    max-width: 1000px;
+    width: 100%;
+    gap: 5vmin; }
+  .contact-wrapper .hide {
+    display: none !important; }
+  .contact-wrapper .success-message {
+    color: #96ff96;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.25rem;
+    opacity: 1; }
+  .contact-wrapper .error-message {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.25rem;
+    color: #ec4a4a; }
+  .contact-wrapper .fade-out {
+    animation: fadeOut 5s;
+    animation-fill-mode: forwards; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  99% {
+    opacity: 0.01; }
+  100% {
+    opacity: 0; } }
   .contact-wrapper .inner-wrapper {
     padding: 0 10%; }
   .contact-wrapper .inner-wrapper.left h2 {
@@ -612,7 +644,8 @@ button:focus {
     border: none;
     background-color: #1f1f1f;
     color: #fff;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     box-sizing: border-box; }
   .contact-wrapper .inner-wrapper.left input:focus,
   .contact-wrapper .inner-wrapper.left textarea:focus {
@@ -622,13 +655,13 @@ button:focus {
     height: 45px;
     text-indent: 10px; }
   .contact-wrapper .inner-wrapper.left textarea {
-    height: 100px;
+    height: 150px;
     padding: 10px;
     resize: none; }
   .contact-wrapper .inner-wrapper.left .btn {
     opacity: .8;
     border-radius: 5px;
-    font-size: 2rem; }
+    font-size: 1.75rem; }
   .contact-wrapper .inner-wrapper.left .btn:hover {
     opacity: 1; }
   .contact-wrapper .inner-wrapper.right {
