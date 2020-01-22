@@ -1003,15 +1003,13 @@ button:focus {
   padding: 100px 0;
   background-color: #f3f3f3; }
   .about-me-section .image-wrapper {
-    height: 500px;
-    background-color: #373737;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.33); }
-    .about-me-section .image-wrapper img {
+    justify-self: center;
+    height: 600px;
+    width: 600px; }
+    .about-me-section .image-wrapper svg {
       height: 100%;
       width: 100%;
-      object-fit: cover;
-      border-radius: inherit; }
+      filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.35)); }
   .about-me-section .content-flex-wrapper {
     display: flex;
     align-items: center;
@@ -1019,36 +1017,36 @@ button:focus {
   .about-me-section .content-grid-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3vmin; }
+    gap: 1vmin; }
   .about-me-section h1 {
     margin: 0px 0 10px;
     font-size: 4.5rem;
     font-weight: 600; }
-  .about-me-section h4 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #6c6c6c; }
   .about-me-section .description p {
     font-size: 1.25rem;
     line-height: 1.75rem; }
+    .about-me-section .description p a {
+      color: #0071c5;
+      padding-left: 5px; }
   .about-me-section .social-wrapper {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin-top: 10px; }
   .about-me-section .icon.github {
-    height: 34px;
-    width: 34px;
-    margin-right: 10px; }
+    height: 38px;
+    width: 38px;
+    margin-right: 20px; }
   .about-me-section .icon.twitter {
-    height: 28px;
-    width: 28px; }
+    height: 32px;
+    width: 32px; }
 
 @media (min-width: 1920px) {
   .about-me-section {
-    padding: 250px 0; }
+    padding: 150px 0; }
     .about-me-section h4 {
       font-size: 1.75rem; }
     .about-me-section .content-flex-wrapper {
-      padding: 0 15% 0 15%; }
+      padding: 0 20% 0 0%; }
     .about-me-section .description p {
       font-size: 1.5rem;
       line-height: 2rem; } }
