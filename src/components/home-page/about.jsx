@@ -6,7 +6,7 @@ export default class About extends React.Component {
     return (
       <div className="about-me-section">
         <div className="image-wrapper">
-          <ReactSVG src="/images/blob-shape.svg" />
+          <ReactSVG src="/images/about/blob-shape.svg" />
         </div>
         <div className="content-flex-wrapper">
           <div className="content-grid-wrapper">
