@@ -29,7 +29,7 @@ export default class OpenSource extends React.Component {
       {
         title: 'Text Summarizer',
         description: 'Research tool that uses NLTK for summarizing multiple articles at once and extracting their top keywords.',
-        link: 'https://github.com/luxotus/general-stat-helper',
+        link: 'https://github.com/luxotus/mits',
       },
       {
         title: 'Color Blindness Tool',
@@ -44,7 +44,7 @@ export default class OpenSource extends React.Component {
       {
         title: 'UI Components Library',
         description: 'A collection of UI components that are commonly used by many websites. All components use basic html, css and plain javascript.',
-        link: 'https://github.com/luxotus/color-contrast',
+        link: 'https://github.com/luxotus/ui-components-library',
       },
     ];
 
