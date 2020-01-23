@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<svg
+  width="600"
+  height="600"
+  viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <defs>
+    <pattern id="imgMe" patternContentUnits="objectBoundingBox" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <image xlink:href="/images/about/2.jpg" width="1" height="1" preserveAspectRatio="xMidYMid slice" />
+    </pattern>
+  </defs>
+  <g transform="translate(250,250)">
+    <path d="M105.1,-165.9C142.1,-139.8,182,-120.6,209.5,-87.7C237.1,-54.8,252.2,-8.2,247.5,36.8C242.9,81.7,218.6,125,180.4,140.2C142.2,155.4,90.1,142.5,44.6,159C-0.8,175.6,-39.7,221.6,-82.6,231.7C-125.5,241.8,-172.3,215.8,-200.6,177.2C-228.9,138.5,-238.7,87.1,-223.1,45.9C-207.5,4.7,-166.5,-26.3,-147.2,-66.6C-127.8,-106.9,-130.1,-156.5,-109.2,-190C-88.3,-223.4,-44.2,-240.7,-5,-232.9C34.1,-225,68.1,-192,105.1,-165.9Z" fill="url(#imgMe)" />
+  </g>
+</svg>

@@ -6,27 +6,29 @@ export default class About extends React.Component {
     return (
       <div className="about-me-section">
         <div className="image-wrapper">
-          {/* <img src="" alt="" /> */}
+          <ReactSVG src="/images/about/blob-shape.svg" />
         </div>
         <div className="content-flex-wrapper">
           <div className="content-grid-wrapper">
             <div className="title-wrapper">
               <h1>About Me</h1>
-              <h4>Felix Manuel - Front End Developer</h4>
             </div>
             <div className="description">
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget dolor. Aenean massa.
-                Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Aenean massa.
-                Cum sociis natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus.
+                I believe being a good front-end developer means being able to take good design
+                principles and combine that with the knowledge and experience of web development,
+                to create clean and effective UX & UI. I achieve this by reading and learning from
+                experts in both design and web development, then I apply that knowledge through
+                personal & work related projects. I have over 8 years of professional experience
+                in web development. Building websites for small businesses to implementing
+                redesigns and new features for a popular CMS and even working on apps.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget dolor. Gaseab massa.
-                Cum sociis natoque penatibus et magnis dis parturient montes
+                Using libraries and frameworks like React, JQuery, Angular and my personal
+                favorite Vanilla Javascript. On the backend I have experience working with Laravel,
+                Django. If your a business seeking to get a website built or your an employer
+                looking to hire, you can get in touch with me
+                <a href="mailto:hello@felixmanuel.com">here.</a>
               </p>
             </div>
             <div className="social-wrapper">

@@ -118,12 +118,12 @@
     display: grid;
     grid-template-columns: min-content min-content;
     gap: 2vmin;
-    justify-content: center;
+    padding-left: 30px;
     width: 100%;
     text-align: center;
   
     a {
-      font-size: 2.5em;
+      font-size: 2.5rem;
     }
   }
 }
@@ -151,18 +151,17 @@
 @include semi-mobile-landscape {
   .menu-container {
 
-    ul {
-      margin-top: 0;
-      padding-top: 65px;
-    }
-
     li a {
-      font-size: 1.5em;
-      line-height: 1.75em;
+      font-size: 1.5rem;
+      line-height: 1.75rem;
     }
 
     .icon-container {
       bottom: 10px;
+
+      a {
+        font-size: 2rem;
+      }
     }
   }
 }

@@ -290,11 +290,11 @@ body {
     display: grid;
     grid-template-columns: min-content min-content;
     gap: 2vmin;
-    justify-content: center;
+    padding-left: 30px;
     width: 100%;
     text-align: center; }
     .menu-container .icon-container a {
-      font-size: 2.5em; }
+      font-size: 2.5rem; }
 
 .open-menu .menu-container {
   transition-duration: 1s;
@@ -312,14 +312,13 @@ body {
 
 /* Mobile Landscape */
 @media (max-width: 740px) and (orientation: landscape) {
-  .menu-container ul {
-    margin-top: 0;
-    padding-top: 65px; }
   .menu-container li a {
-    font-size: 1.5em;
-    line-height: 1.75em; }
+    font-size: 1.5rem;
+    line-height: 1.75rem; }
   .menu-container .icon-container {
-    bottom: 10px; } }
+    bottom: 10px; }
+    .menu-container .icon-container a {
+      font-size: 2rem; } }
 
 footer {
   display: grid;
@@ -586,12 +585,44 @@ button:focus {
 
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   position: relative;
   width: 100%;
   padding: 75px 0;
   color: #fff;
   background-color: #181818; }
+  .contact-wrapper .center-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    max-width: 1000px;
+    width: 100%;
+    gap: 5vmin; }
+  .contact-wrapper .hide {
+    display: none !important; }
+  .contact-wrapper .success-message {
+    color: #96ff96;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.25rem;
+    opacity: 1; }
+  .contact-wrapper .error-message {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.25rem;
+    color: #ec4a4a; }
+  .contact-wrapper .fade-out {
+    animation: fadeOut 5s;
+    animation-fill-mode: forwards; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  99% {
+    opacity: 0.01; }
+  100% {
+    opacity: 0; } }
   .contact-wrapper .inner-wrapper {
     padding: 0 10%; }
   .contact-wrapper .inner-wrapper.left h2 {
@@ -612,7 +643,8 @@ button:focus {
     border: none;
     background-color: #1f1f1f;
     color: #fff;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     box-sizing: border-box; }
   .contact-wrapper .inner-wrapper.left input:focus,
   .contact-wrapper .inner-wrapper.left textarea:focus {
@@ -622,13 +654,13 @@ button:focus {
     height: 45px;
     text-indent: 10px; }
   .contact-wrapper .inner-wrapper.left textarea {
-    height: 100px;
+    height: 150px;
     padding: 10px;
     resize: none; }
   .contact-wrapper .inner-wrapper.left .btn {
     opacity: .8;
     border-radius: 5px;
-    font-size: 2rem; }
+    font-size: 1.75rem; }
   .contact-wrapper .inner-wrapper.left .btn:hover {
     opacity: 1; }
   .contact-wrapper .inner-wrapper.right {
@@ -659,29 +691,27 @@ button:focus {
       font-size: 1.75rem; } }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .contact-wrapper {
-    grid-template-columns: 1fr .75fr; }
-    .contact-wrapper .inner-wrapper {
-      padding: 0 5%; } }
+  .contact-wrapper .center-wrapper {
+    grid-template-columns: 1fr .75fr;
+    gap: 1vmin; } }
 
 @media (min-width: 481px) and (max-width: 767px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr .75fr; }
-    .contact-wrapper .inner-wrapper {
-      padding: 0 5%; } }
+  .contact-wrapper .center-wrapper {
+    grid-template-columns: 1fr .75fr;
+    gap: 1vmin; } }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .contact-wrapper {
+  .contact-wrapper .center-wrapper {
     grid-template-columns: 1fr;
     gap: 15vmin; }
-    .contact-wrapper .inner-wrapper {
-      padding: 0 10%; }
-    .contact-wrapper .inner-wrapper.left form {
-      gap: 6vmin; }
-    .contact-wrapper .inner-wrapper.left form .group:last-child {
-      text-align: center; }
-    .contact-wrapper .inner-wrapper.right {
-      text-align: center; } }
+  .contact-wrapper .inner-wrapper {
+    padding: 0 10%; }
+  .contact-wrapper .inner-wrapper.left form {
+    gap: 6vmin; }
+  .contact-wrapper .inner-wrapper.left form .group:last-child {
+    text-align: center; }
+  .contact-wrapper .inner-wrapper.right {
+    text-align: center; } }
 
 .landing-screen-wrapper {
   display: grid;
@@ -1003,8 +1033,13 @@ button:focus {
   padding: 100px 0;
   background-color: #f3f3f3; }
   .about-me-section .image-wrapper {
-    height: 500px;
-    background-color: #373737; }
+    justify-self: center;
+    height: 600px;
+    width: 600px; }
+    .about-me-section .image-wrapper svg {
+      height: 100%;
+      width: 100%;
+      filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.25)); }
   .about-me-section .content-flex-wrapper {
     display: flex;
     align-items: center;
@@ -1012,34 +1047,36 @@ button:focus {
   .about-me-section .content-grid-wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3vmin; }
+    gap: 1vmin; }
   .about-me-section h1 {
     margin: 0px 0 10px;
     font-size: 4.5rem;
     font-weight: 600; }
-  .about-me-section h4 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #6c6c6c; }
   .about-me-section .description p {
     font-size: 1.25rem;
     line-height: 1.75rem; }
+    .about-me-section .description p a {
+      color: #0071c5;
+      padding-left: 5px; }
   .about-me-section .social-wrapper {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin-top: 10px; }
   .about-me-section .icon.github {
-    height: 34px;
-    width: 34px;
-    margin-right: 10px; }
+    height: 38px;
+    width: 38px;
+    margin-right: 20px; }
   .about-me-section .icon.twitter {
-    height: 28px;
-    width: 28px; }
+    height: 32px;
+    width: 32px; }
 
 @media (min-width: 1920px) {
   .about-me-section {
-    padding: 175px 0; }
+    padding: 150px 0; }
     .about-me-section h4 {
       font-size: 1.75rem; }
+    .about-me-section .content-flex-wrapper {
+      padding: 0 20% 0 0%; }
     .about-me-section .description p {
       font-size: 1.5rem;
       line-height: 2rem; } }
@@ -1053,6 +1090,24 @@ button:focus {
       font-size: 1.5rem;
       line-height: 2rem; } }
 
+@media (min-width: 481px) and (max-width: 767px) {
+  .about-me-section {
+    grid-template-columns: 1fr;
+    padding: 50px 0; }
+    .about-me-section h1 {
+      font-size: 3.5rem; }
+    .about-me-section h4 {
+      font-size: 1.35rem; }
+    .about-me-section .image-wrapper {
+      order: 2;
+      height: 300px;
+      width: 300px;
+      min-height: 0;
+      padding: 0 10%; }
+    .about-me-section .content-flex-wrapper {
+      order: 1;
+      padding: 0 7% 35px; } }
+
 @media (min-width: 320px) and (max-width: 480px) {
   .about-me-section {
     grid-template-columns: 1fr;
@@ -1064,11 +1119,12 @@ button:focus {
     .about-me-section .image-wrapper {
       order: 2;
       height: 300px;
+      width: 300px;
       min-height: 0;
       padding: 0 10%; }
     .about-me-section .content-flex-wrapper {
       order: 1;
-      padding: 0 10% 35px; } }
+      padding: 0 7% 35px; } }
 
 .blob-wrapper {
   display: flex;
