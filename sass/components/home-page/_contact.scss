@@ -33,7 +33,7 @@
     font-size: 1.25rem;
     color: #ec4a4a;
   }
-  
+
   .fade-out {
     animation: fadeOut 5s;
     animation-fill-mode: forwards;
@@ -150,29 +150,25 @@
 }
 
 @include tablet-portrait {
-  .contact-wrapper {
+  .contact-wrapper .center-wrapper {
     grid-template-columns: 1fr .75fr;
-
-    .inner-wrapper {
-      padding: 0 5%;
-    }
+    gap: 1vmin;
   }
 }
 
 @include tablet-mobile {
-  .contact-wrapper {
+  .contact-wrapper .center-wrapper {
     grid-template-columns: 1fr .75fr;
-
-    .inner-wrapper {
-      padding: 0 5%;
-    }
+    gap: 1vmin;
   }
 }
 
 @include mobile {
   .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 15vmin;
+    .center-wrapper {
+      grid-template-columns: 1fr;
+      gap: 15vmin;
+    }
 
     .inner-wrapper {
       padding: 0 10%;

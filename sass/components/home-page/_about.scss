@@ -98,6 +98,34 @@
   }
 }
 
+@include tablet-mobile {
+  .about-me-section {
+    grid-template-columns: 1fr;
+    padding: 50px 0;
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h4 {
+      font-size: 1.35rem;
+    }
+
+    .image-wrapper {
+      order: 2;
+      height: 300px;
+      width: 300px;
+      min-height: 0;
+      padding: 0 10%;
+    }
+
+    .content-flex-wrapper {
+      order: 1;
+      padding: 0 7% 35px;
+    }
+  }
+}
+
 @include mobile {
   .about-me-section {
     grid-template-columns: 1fr;
@@ -114,13 +142,14 @@
     .image-wrapper {
       order: 2;
       height: 300px;
+      width: 300px;
       min-height: 0;
       padding: 0 10%;
     }
 
     .content-flex-wrapper {
       order: 1;
-      padding: 0 10% 35px;
+      padding: 0 7% 35px;
     }
   }
 }
