@@ -6,10 +6,12 @@ import Footer from './home-page/footer';
 import LandingScreen from './home-page/landing-screen';
 import Contact from './home-page/contact';
 import About from './home-page/about';
+import animatedBlobs from '../general/blob';
 
 export default class App extends React.Component {
   componentDidMount() {
     this.handleScrollToSection();
+    animatedBlobs.init();
   }
 
   componentDidUpdate() {

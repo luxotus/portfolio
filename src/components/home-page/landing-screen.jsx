@@ -1,16 +1,11 @@
 import React from 'react';
-import animatedBlobs from '../../general/blob';
 
 export default class LandingScreen extends React.Component {
-  componentDidMount() {
-    animatedBlobs.init();
-  }
-
   render() {
     return (
       <div className="landing-screen-wrapper">
         <div className="text-flex-section">
-          <div className="text-grid-section">
+          <div className="text-grid-section" style={{ color: '#ffffff' }}>
             <h1>
               I Create
               <br />
@@ -25,7 +20,6 @@ export default class LandingScreen extends React.Component {
           </div>
         </div>
         <div className="visual-section">
-          {/* <div className="dark-line" /> */}
           <div className="dark-bkg">
             <div className="blob-wrapper" />
           </div>
